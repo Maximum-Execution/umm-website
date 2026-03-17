@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Work — Untitled Mixed Media"
+  description="Hand-painted murals, sign restorations, and public art installations across Richmond, Virginia."
+>
+  <Nav />
+  <main class="pt-28 pb-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <h1 class="font-heading text-[var(--text-fluid-4xl)] text-titanium-white mb-4" data-animate>
+        Our Work
+      </h1>
+      <p class="text-[var(--text-fluid-lg)] text-shadow-gray mb-16 max-w-2xl" data-animate>
+        Hand-painted murals, sign restorations, and public art installations across Richmond, Virginia.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <div data-animate>
+            <ProjectCard project={project} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

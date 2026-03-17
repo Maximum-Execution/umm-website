@@ -1,0 +1,30 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  class?: string;
+}
+
+const {
+  href = 'mailto:hello@untitledmixedmedia.com',
+  variant = 'primary',
+  class: className = '',
+} = Astro.props;
+
+const variants = {
+  primary: 'bg-titanium-white text-bone-black hover:bg-light-ash',
+  secondary: 'border border-soft-gray text-soft-gray hover:border-titanium-white hover:text-titanium-white',
+  ghost: 'text-soft-gray hover:text-titanium-white underline underline-offset-4',
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-block px-8 py-3.5 text-sm font-medium tracking-widest uppercase transition-all duration-200',
+    variants[variant],
+    className,
+  ]}
+>
+  <slot />
+</a>

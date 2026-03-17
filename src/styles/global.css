@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ─── UMM Design Tokens ─────────────────────────────────── */
+
+@theme {
+  /* Core Palette */
+  --color-bone-black: #000205;
+  --color-midnight-graphite: #1E1F22;
+  --color-slate-gray: #3C3D3E;
+  --color-smoke-gray: #595A5B;
+  --color-middle-grey: #777777;
+  --color-shadow-gray: #959494;
+  --color-soft-gray: #B3B2B0;
+  --color-light-ash: #D0CFCD;
+  --color-titanium-white: #EEECE9;
+
+  /* Artist Primaries */
+  --color-pyrrole-red: #e41a1c;
+  --color-cobalt-blue: #377eb8;
+  --color-sap-green: #4daf4a;
+  --color-dioxazine-mauve: #984ea3;
+  --color-cadmium-orange: #ff7f00;
+  --color-lemon-yellow: #ffff33;
+  --color-burnt-sienna: #a65628;
+  --color-dusty-rose: #f781bf;
+
+  /* Typography */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Fraunces', Georgia, serif;
+
+  /* Fluid Type Scale */
+  --text-fluid-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-fluid-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-fluid-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-fluid-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+  --text-fluid-xl: clamp(1.25rem, 1rem + 1.25vw, 1.75rem);
+  --text-fluid-2xl: clamp(1.5rem, 1.1rem + 2vw, 2.25rem);
+  --text-fluid-3xl: clamp(1.875rem, 1.2rem + 3.375vw, 3rem);
+  --text-fluid-4xl: clamp(2.25rem, 1.3rem + 4.75vw, 4rem);
+  --text-fluid-5xl: clamp(3rem, 1.5rem + 7.5vw, 5rem);
+
+  /* Spacing */
+  --spacing-section: clamp(4rem, 3rem + 5vw, 8rem);
+}
+
+/* ─── DaisyUI Theme ─────────────────────────────────────── */
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+[data-theme="umm"] {
+  --p: 207 70% 47%;       /* Cobalt Blue */
+  --pf: 207 70% 37%;
+  --pc: 36 2% 93%;        /* Titanium White */
+  --s: 292 52% 47%;       /* Dioxazine Mauve */
+  --sf: 292 52% 37%;
+  --sc: 36 2% 93%;
+  --a: 30 100% 50%;       /* Cadmium Orange */
+  --af: 30 100% 40%;
+  --ac: 210 100% 1%;
+  --n: 220 12% 13%;       /* Midnight Graphite */
+  --nf: 210 100% 1%;      /* Bone Black */
+  --nc: 36 2% 93%;
+  --b1: 210 100% 1%;      /* Bone Black */
+  --b2: 220 12% 13%;      /* Midnight Graphite */
+  --b3: 210 3% 24%;       /* Slate Gray */
+  --bc: 36 2% 93%;        /* Titanium White */
+}
+
+/* ─── Base Styles ───────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bone-black);
+  color: var(--color-titanium-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Scroll Reveal ─────────────────────────────────────── */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Utility ───────────────────────────────────────────── */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+::selection {
+  background-color: var(--color-cobalt-blue);
+  color: var(--color-titanium-white);
+}

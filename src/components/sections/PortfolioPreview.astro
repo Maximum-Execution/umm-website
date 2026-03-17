@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import SectionWrapper from '../SectionWrapper.astro';
+import ProjectCard from '../ProjectCard.astro';
+
+const projects = (await getCollection('projects'))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<SectionWrapper id="work" background="elevated">
+  <div data-animate>
+    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-16">
+      Recent work
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {projects.map((project) => (
+      <div data-animate>
+        <ProjectCard project={project} />
+      </div>
+    ))}
+  </div>
+</SectionWrapper>

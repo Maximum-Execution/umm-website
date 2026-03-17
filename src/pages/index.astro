@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import StakesSection from '../components/sections/StakesSection.astro';
+import ValuePropSection from '../components/sections/ValuePropSection.astro';
+import GuideSection from '../components/sections/GuideSection.astro';
+import ProcessSection from '../components/sections/ProcessSection.astro';
+import ExplanatorySection from '../components/sections/ExplanatorySection.astro';
+import PortfolioPreview from '../components/sections/PortfolioPreview.astro';
+import CTASection from '../components/sections/CTASection.astro';
+---
+
+<BaseLayout>
+  <Nav />
+  <main>
+    <HeroSection />
+    <StakesSection />
+    <ValuePropSection />
+    <GuideSection />
+    <ProcessSection />
+    <PortfolioPreview />
+    <ExplanatorySection />
+    <CTASection />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// First project is featured (full-width), rest go in the 3-column row
+const featured = projects[0];
+const rest = projects.slice(1);
+
+// Signs gallery is a separate page, included as a manual entry in the grid
+const signsEntry = {
+  title: 'Hand-Painted Signs',
+  description: 'Lettering, gold leaf, and restoration work for businesses across Richmond.',
+  cover: '/images/signs/signs-cover.jpg',
+  tags: ['signs', 'lettering', 'gold leaf'],
+  href: '/work/signs',
+};
+---
+
+<section id="work" class="px-6 lg:px-12">
+  <div data-animate>
+    <p class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-12">
+      Selected Work
+    </p>
+  </div>
+
+  <!-- Featured project — full width -->
+  {featured && (
+    <a
+      href={`/work/${featured.id}`}
+      class="group block mb-6 overflow-hidden"
+      data-animate
+    >
+      <div class="relative aspect-[16/9] overflow-hidden bg-midnight-graphite">
+        <img
+          src={featured.data.cover}
+          alt={featured.data.title}
+          class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </div>
+      <div class="mt-4 flex items-baseline justify-between gap-4">
+        <h3 class="font-heading text-[var(--text-fluid-2xl)] text-titanium-white group-hover:text-soft-gray transition-colors">
+          {featured.data.title}
+        </h3>
+        <div class="hidden sm:flex gap-3 shrink-0">
+          {featured.data.tags.map((tag: string) => (
+            <span class="font-mono text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)]">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </a>
+  )}
+
+  <!-- Remaining projects — 3-column grid -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+    {rest.map((project) => (
+      <a
+        href={`/work/${project.id}`}
+        class="group block overflow-hidden"
+        data-animate
+      >
+        <div class="relative aspect-[4/3] overflow-hidden bg-midnight-graphite">
+          <img
+            src={project.data.cover}
+            alt={project.data.title}
+            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+            loading="lazy"
+          />
+        </div>
+        <div class="mt-4">
+          <h3 class="font-heading text-[var(--text-fluid-lg)] text-titanium-white group-hover:text-soft-gray transition-colors">
+            {project.data.title}
+          </h3>
+          <div class="flex gap-2 mt-1">
+            {project.data.tags.map((tag: string) => (
+              <span class="font-mono text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </a>
+    ))}
+
+    <!-- Signs gallery card -->
+    <a
+      href={signsEntry.href}
+      class="group block overflow-hidden"
+      data-animate
+    >
+      <div class="relative aspect-[4/3] overflow-hidden bg-midnight-graphite">
+        <img
+          src={signsEntry.cover}
+          alt={signsEntry.title}
+          class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          loading="lazy"
+        />
+      </div>
+      <div class="mt-4">
+        <h3 class="font-heading text-[var(--text-fluid-lg)] text-titanium-white group-hover:text-soft-gray transition-colors">
+          {signsEntry.title}
+        </h3>
+        <div class="flex gap-2 mt-1">
+          {signsEntry.tags.map((tag) => (
+            <span class="font-mono text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)]">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </a>
+  </div>
+</section>

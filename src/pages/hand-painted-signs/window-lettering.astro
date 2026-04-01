@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted Window Lettering | Untitled Mixed Media" description="Hand-painted window lettering and reverse glass gilding in Richmond, Virginia. Professional window signage that outlasts vinyl decals.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Window Lettering' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted Window Lettering
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> A business owner who wants professional, distinctive lettering on their glass &mdash; storefront windows, entry doors, transoms. They want signage that looks like it belongs to the building, not stuck on top of it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> Vinyl window decals bubble, peel at the edges, and turn cloudy within a few years. They look temporary because they are temporary.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They are embarrassed by peeling decals or bare glass. The window is prime real estate and it is wasted.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Glass is the most visible surface on any storefront. It deserves lettering applied with the same care as the business behind it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> UMM paints window lettering by hand using one-shot enamel and traditional reverse-glass gilding techniques. We have lettered doors, transoms, and full window displays &mdash; and we know how to work with your existing architecture.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> Lettering that looks like it was always part of the building. Hours, name, and branding visible from the sidewalk &mdash; permanent and professional.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> Bare glass or peeling vinyl. Potential customers who walk past because nothing told them to stop.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo of hand-painted window lettering &mdash; ideally showing the lettering from the street with interior light behind it, demonstrating how painted glass reads differently than vinyl.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'What is reverse glass gilding?', answer: 'Reverse glass gilding is gold leaf applied to the back side of the glass, then backed with paint. The gold is protected by the glass itself, making it extremely durable. It produces a deep, luminous effect that front-surface applications cannot match.' },
+      { question: 'What kind of paint do you use on glass?', answer: 'We use one-shot enamel lettering paint &mdash; the industry standard for sign painters. It bonds permanently to glass, resists UV fading, and holds crisp edges for decades. For interior windows, we can also use low-odor alternatives.' },
+      { question: 'Can window lettering be removed later?', answer: 'Painted lettering can be scraped off glass cleanly with a razor blade without damaging the glass. This is actually easier than removing old vinyl adhesive residue. Gold leaf on glass can be removed the same way.' },
+      { question: 'Can you paint business hours and other details on the door?', answer: 'Yes. Hours, suite numbers, phone numbers, logos, and regulatory text are all common door and window lettering jobs. We match your brand typography and lay everything out for maximum readability at pedestrian distance.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },
+      { title: 'Gold Leaf Signs', href: '/hand-painted-signs/gold-leaf-signs', description: 'Real gold lettering for a premium, classic appearance.' },
+      { title: 'Interior Signs', href: '/hand-painted-signs/interior-signs', description: 'Branded interiors &mdash; wayfinding, feature walls, and lettering.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

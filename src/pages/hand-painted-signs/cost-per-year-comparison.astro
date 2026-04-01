@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted vs Vinyl: Cost Per Year | Untitled Mixed Media" description="A cost-per-year breakdown comparing hand-painted signs to vinyl lettering. See which option actually costs less over 5, 10, and 15 years.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Cost Per Year Comparison' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted vs Vinyl: Cost Per Year
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> A cost-conscious business owner who evaluates purchases on total cost of ownership, not sticker price. They want to know which sign option is actually cheaper when you factor in replacements, maintenance, and removal labor over 10 to 15 years.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> Vinyl looks cheaper on the quote, but the quote only covers the first installation. Nobody tells you about the second installation in 4 years, or the third one in 8.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They feel tricked by the upfront pricing of vinyl. They suspect hand-painted is the better deal but need the numbers to confirm it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Honest pricing means showing the full picture &mdash; not just the first invoice.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> UMM does not compete on first-day price. We compete on cost per year. This page shows the math so you can see for yourself where the real savings are.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> One investment that pays for itself by year 6. No recurring replacement costs. No downtime with a bare wall while waiting for the next installation.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> Paying for the same sign three times and still ending up with something that looks worse each round.
+        </p>
+      </div>
+
+      <!-- Detailed Cost Comparison Placeholder -->
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Table placeholder &mdash; Detailed Cost Comparison</p>
+        <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-sm);">Build a detailed cost comparison with real numbers. Structure:</p>
+        <ul class="font-body text-shadow-gray space-y-2" style="font-size: var(--text-fluid-sm);">
+          <li>- Vinyl scenario: Initial install ($X) + removal at year 4 ($X) + reinstall ($X) + removal at year 8 ($X) + reinstall ($X) = total over 12 years</li>
+          <li>- Hand-painted scenario: Initial install ($X) + touch-up at year 8 ($X) = total over 12 years</li>
+          <li>- Cost per year: vinyl total / years vs hand-painted total / years</li>
+          <li>- Break-even point: the year when hand-painted becomes cheaper cumulatively</li>
+          <li>- Include notes on hidden costs: removal labor, adhesive damage repair, business downtime during replacement</li>
+        </ul>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add a simple chart or infographic showing the cost crossover point &mdash; the moment hand-painted becomes the cheaper option on a per-year basis.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How often does vinyl need to be replaced?', answer: 'Exterior vinyl typically needs full replacement every 3 to 5 years. In direct sun or extreme temperatures, it can fail sooner. Each replacement includes removal, surface cleaning, and new installation &mdash; all billable.' },
+      { question: 'What does vinyl removal cost?', answer: 'Vinyl removal runs $150 to $500 depending on the size of the sign and how badly the adhesive has bonded. If the adhesive damages the surface underneath, repair costs add more. This is a cost that never appears on the original vinyl quote.' },
+      { question: 'What is the total cost of ownership for each option over 10 years?', answer: 'Placeholder: insert specific numbers here based on a typical Richmond storefront sign (approximately 3 by 6 feet). The key insight is that hand-painted costs more on day one but less per year by year 5 or 6.' },
+      { question: 'At what point does hand-painted break even with vinyl?', answer: 'For most sign sizes, hand-painted breaks even with vinyl at the 5 to 7 year mark &mdash; right around when the second vinyl replacement is needed. After that, every year is pure savings.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Hand-Painted vs Vinyl', href: '/hand-painted-signs/hand-painted-vs-vinyl', description: 'The full comparison &mdash; lifespan, maintenance, and appearance.' },
+      { title: 'Why Hand-Painted Signs Last Longer', href: '/hand-painted-signs/why-hand-painted-signs-last-longer', description: 'The science of paint bonding vs adhesive failure.' },
+      { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

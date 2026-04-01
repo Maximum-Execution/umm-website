@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted Storefront Signs in Richmond, VA | Untitled Mixed Media" description="Custom hand-painted storefront signs in Richmond, Virginia. Gold leaf, reverse glass, and traditional lettering that gives your business real street presence.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Storefront Signs Richmond VA' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted Storefront Signs in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> A retail shop owner, restaurant operator, or boutique proprietor in Richmond who wants their storefront to stop foot traffic and pull people inside. They want real street presence &mdash; the kind that makes someone cross the road to look closer.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> Their current signage is vinyl, faded, generic, or nonexistent. It looks like every other storefront on the block.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They feel invisible. Customers walk past without noticing, and the storefront doesn't reflect the quality of what's inside.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> A business that takes pride in its product deserves a sign that shows it. Craft should be visible from the street.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> UMM has painted storefronts across Richmond &mdash; from Carytown boutiques to Scott's Addition restaurants. We know the city's architecture, its sign codes, and how to make lettering that belongs on the building.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> A storefront that people photograph. A sign that weathers into character. Foot traffic that starts before the door opens.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> Another year blending in. Another vinyl sign peeling at the corners while the business across the street gets the Instagram photos.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo of a completed Richmond storefront sign &mdash; ideally showing the full facade with the business name visible and the street context.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'What size options are available for storefront signs?', answer: 'Every storefront is different. We design to your specific facade &mdash; whether that is a 2-foot transom window or a 20-foot brick wall. The site visit determines what the building can support and what will read best from the street.' },
+      { question: 'Is gold leaf available for storefront lettering?', answer: 'Yes. We offer 23-karat gold leaf, 12-karat white gold, and imitation gold depending on your budget and the look you want. Gold leaf catches light in a way no paint or vinyl can replicate.' },
+      { question: 'How long does a storefront sign take?', answer: 'Most storefront signs take 1 to 3 weeks from design approval to completion, depending on size, detail level, and weather. We will give you a specific timeline after the site visit.' },
+      { question: 'Can you paint double-sided or projecting signs?', answer: 'Yes. We paint hanging blade signs, projecting signs, and A-frame sidewalk boards. If it has a paintable surface, we can letter it.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Bar & Restaurant Signs', href: '/hand-painted-signs/bar-and-restaurant-signs', description: 'Signage that builds atmosphere before guests walk in.' },
+      { title: 'Gold Leaf Signs', href: '/hand-painted-signs/gold-leaf-signs', description: 'Real gold lettering for a premium, classic appearance.' },
+      { title: 'Window Lettering', href: '/hand-painted-signs/window-lettering', description: 'Hand-painted and gilded glass for storefronts and doors.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

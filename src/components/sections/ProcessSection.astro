@@ -1,6 +1,4 @@
 ---
-import SectionWrapper from '../SectionWrapper.astro';
-
 const steps = [
   {
     number: '01',
@@ -20,26 +18,26 @@ const steps = [
 ];
 ---
 
-<SectionWrapper id="process" background="elevated">
+<section id="process" class="bg-midnight-graphite py-[var(--spacing-section)] px-6 lg:px-12">
   <div data-animate>
-    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-16 text-balance">
-      How it works
-    </h2>
+    <p class="font-sans text-shadow-gray uppercase mb-16" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+      Process
+    </p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-12">
+  <div class="grid md:grid-cols-3 gap-12 max-w-7xl">
     {steps.map((step) => (
       <div data-animate>
-        <span class="text-[var(--text-fluid-4xl)] font-heading text-slate-gray mb-4 block">
+        <span class="font-mono text-slate-gray mb-4 block" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);">
           {step.number}
         </span>
-        <h3 class="font-heading text-[var(--text-fluid-xl)] text-titanium-white mb-4">
+        <h3 class="font-heading text-titanium-white mb-4">
           {step.title}
         </h3>
-        <p class="text-[var(--text-fluid-base)] text-shadow-gray">
+        <p class="font-body text-shadow-gray">
           {step.body}
         </p>
       </div>
     ))}
   </div>
-</SectionWrapper>
+</section>

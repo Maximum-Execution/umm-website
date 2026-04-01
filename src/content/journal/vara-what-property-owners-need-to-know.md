@@ -48,5 +48,4 @@ Briefly explain how Untitled Mixed Media handles VARA in its contracts. Transpar
 
 ### Key internal links to include
 
-- [VARA Compliance](/murals/vara-compliance) — UMM's VARA compliance information
 - [Property Owner Murals](/murals/property-owner-murals-richmond-va) — service page for property owners commissioning murals

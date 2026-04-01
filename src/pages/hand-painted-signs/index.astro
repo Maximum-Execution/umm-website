@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+---
+
+<BaseLayout
+  title="Hand-Painted Signs — Untitled Mixed Media | Richmond VA Sign Painter"
+  description="Hand-painted signs, gold leaf lettering, window lettering, and sign restoration in Richmond, Virginia. Craft that outlasts vinyl."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Hand-Painted Signs
+      </p>
+
+      <!-- TODO: Write headline from Brand Book.
+           StoryBrand: Character = business owner who needs signage. Problem = vinyl peels, fades,
+           and looks like every other sign on the block. Guide = UMM with hand-painting craft.
+           Success = a sign that weathers into character instead of deteriorating. -->
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        [Placeholder: Write an identity/longevity headline for hand-painted signs.
+        Not "We paint signs." Something about craft that outlasts vinyl and ages into the building.]
+      </h1>
+
+      <!-- PLACEHOLDER COPY: 2-3 sentences about the sign painting service.
+           External problem: vinyl signs peel, crack, and fade within 3-5 years.
+           Internal problem: a cheap-looking sign makes the business feel cheap.
+           Philosophical problem: a business that cares about quality deserves signage that reflects it.
+           Guide: UMM hand-paints every letter. Gold leaf, enamel, window lettering — techniques
+           that have lasted centuries. Plan: consultation → design → paint → seal.
+           Success: A sign that gets better with age, not worse. -->
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        [Placeholder: Write 2-3 sentences. Open with the problem — vinyl signs that peel and fade.
+        Then introduce the alternative: hand-painted lettering that weathers into the building's character.
+        Gold leaf, enamel, window lettering — techniques that have lasted centuries.]
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]" data-animate>
+        <ServiceCard
+          title="Storefront Signs Richmond VA"
+          description="[Placeholder: Exterior storefront signs — the first thing customers see.]"
+          href="/hand-painted-signs/storefront-signs-richmond-va"
+        />
+        <ServiceCard
+          title="Gold Leaf Signs"
+          description="[Placeholder: 23-karat gold leaf lettering — the highest standard in sign painting.]"
+          href="/hand-painted-signs/gold-leaf-signs"
+        />
+        <ServiceCard
+          title="Window Lettering"
+          description="[Placeholder: Reverse-glass lettering and window gilding for storefronts.]"
+          href="/hand-painted-signs/window-lettering"
+        />
+        <ServiceCard
+          title="Bar & Restaurant Signs"
+          description="[Placeholder: Signage for hospitality — menus, chalkboards, exterior identity.]"
+          href="/hand-painted-signs/bar-and-restaurant-signs"
+        />
+        <ServiceCard
+          title="Interior Signs"
+          description="[Placeholder: Lobby lettering, wayfinding, and branded interior walls.]"
+          href="/hand-painted-signs/interior-signs"
+        />
+        <ServiceCard
+          title="Hand-Painted Menus"
+          description="[Placeholder: Menu boards, specials boards, and price lists painted to last.]"
+          href="/hand-painted-signs/hand-painted-menus"
+        />
+        <ServiceCard
+          title="Hand-Painted vs Vinyl"
+          description="[Placeholder: Why hand-painted signs outlast and outperform vinyl — a direct comparison.]"
+          href="/hand-painted-signs/hand-painted-vs-vinyl"
+        />
+        <ServiceCard
+          title="Cost Per Year Comparison"
+          description="[Placeholder: The math on longevity — why hand-painted costs less over 10 years.]"
+          href="/hand-painted-signs/cost-per-year-comparison"
+        />
+        <ServiceCard
+          title="Why Hand-Painted Signs Last Longer"
+          description="[Placeholder: Materials science — enamel, gold leaf, and proper surface preparation.]"
+          href="/hand-painted-signs/why-hand-painted-signs-last-longer"
+        />
+      </div>
+
+      <!-- Sign Restoration -->
+      <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
+        <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Restoration
+        </h2>
+        <div class="max-w-lg">
+          <ServiceCard
+            title="Sign Restoration"
+            description="[Placeholder: Restoring faded, damaged, and historic signs — ghost signs, gilded lettering, and century-old painted advertisements brought back to life.]"
+            href="/hand-painted-signs/sign-restoration"
+          />
+        </div>
+      </section>
+
+      <!-- Cross-hub link -->
+      <p class="font-body text-shadow-gray mb-16" style="font-size: var(--text-fluid-lg);">
+        We also paint <a href="/murals" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">murals</a>.
+      </p>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

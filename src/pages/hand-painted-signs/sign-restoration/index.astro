@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+import ServiceCard from '../../../components/ServiceCard.astro';
+---
+
+<BaseLayout
+  title="Sign Restoration — Untitled Mixed Media | Richmond VA"
+  description="Restoring faded, damaged, and historic hand-painted signs in Richmond, Virginia. Ghost signs, gilded lettering, and century-old advertisements brought back to life."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Sign Restoration' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Sign Restoration
+      </p>
+
+      <!-- TODO: Write headline from Brand Book.
+           This page is about restoring OLD signs that are fading — not murals.
+           Ghost signs, historic gilded lettering, painted advertisements from decades past.
+           The headline should honor the original craftsmanship while promising faithful restoration. -->
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        [Placeholder: Write a headline about restoring old signs that are fading.
+        Not about murals. About bringing back the craft that was already there —
+        ghost signs, gold leaf, century-old painted advertisements.]
+      </h1>
+
+      <!-- PLACEHOLDER COPY: 2-3 sentences about sign restoration.
+           Problem: historic and vintage signs are fading, flaking, and disappearing.
+           Internal: it feels like losing a piece of the building's identity and the neighborhood's history.
+           Guide: UMM restores signs using the same techniques the original sign painters used.
+           We match materials, study the original lettering, and bring it back faithfully.
+           Success: the sign looks the way it did when it was first painted — or better. -->
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        [Placeholder: Write 2-3 sentences about sign restoration. Open with what's being lost —
+        the ghost signs and gilded lettering fading off Richmond's buildings. Then introduce the
+        restoration approach: matching original materials and techniques, faithful to the original craft.]
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]" data-animate>
+        <ServiceCard
+          title="Ghost Signs Richmond VA"
+          description="[Placeholder: Faded painted advertisements on brick — preserving or restoring Richmond's ghost signs.]"
+          href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va"
+        />
+        <ServiceCard
+          title="Historic Sign Restoration"
+          description="[Placeholder: Restoring signs on historic buildings — matching original materials and techniques.]"
+          href="/hand-painted-signs/sign-restoration/historic-sign-restoration"
+        />
+        <ServiceCard
+          title="Secretary of Interior Standards"
+          description="[Placeholder: Restoration work that meets the Secretary of the Interior's Standards for historic preservation.]"
+          href="/hand-painted-signs/sign-restoration/secretary-of-interior-standards"
+        />
+        <ServiceCard
+          title="Sign Restoration Cost"
+          description="[Placeholder: What determines restoration cost — condition, materials, size, and historic requirements.]"
+          href="/hand-painted-signs/sign-restoration/sign-restoration-cost"
+        />
+        <ServiceCard
+          title="How It Works"
+          description="[Placeholder: The restoration process — assessment, documentation, materials matching, restoration, sealing.]"
+          href="/hand-painted-signs/sign-restoration/how-it-works"
+        />
+      </div>
+
+      <!-- Parent link -->
+      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg);">
+        <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">
+          &larr; Back to Hand-Painted Signs
+        </a>
+      </p>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,149 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const muralProjects = (await getCollection('projects'))
+  .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('mural')))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Murals — Untitled Mixed Media | Richmond VA Mural Painter"
+  description="Hand-painted murals for businesses, property owners, and public spaces in Richmond, Virginia. Every mural starts with your building's story."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Murals
+      </p>
+
+      <!-- TODO: Write the identity-transformation headline for murals.
+           StoryBrand: Character = business or property owner. Problem = their building looks anonymous,
+           blends into the block, doesn't stop anyone. Guide = UMM with the provenance methodology —
+           we study the building, the neighborhood, and the history before we ever sketch.
+           Plan = site visit → discovery → render → paint. Success = a building people photograph,
+           remember, and use as a landmark. -->
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        [Placeholder: Write the identity-transformation headline for murals here.
+        Not "We paint murals." Something that speaks to the outcome — the building becomes a landmark.]
+      </h1>
+
+      <!-- PLACEHOLDER COPY: 2-3 sentences about the mural service.
+           Character: business/property owner who has invested in their space but the exterior doesn't match.
+           External problem: the building looks like every other building on the block.
+           Internal problem: it feels like the business is invisible.
+           Philosophical problem: a great business deserves a building that reflects it.
+           Guide: UMM discovers the mural from the building's own story — neighborhood, history, architecture.
+           Plan: Site visit → discovery → photorealistic Blender render → paint.
+           Success: People photograph your building. They use it as a landmark. They remember it. -->
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        [Placeholder: Write 2-3 sentences that make the building owner feel understood, then introduce
+        UMM's provenance approach — we start with your building, not a catalog of designs.]
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]" data-animate>
+        <ServiceCard
+          title="Business Murals Richmond VA"
+          description="[Placeholder: Exterior and interior murals that turn storefronts into destinations.]"
+          href="/murals/business-murals-richmond-va"
+        />
+        <ServiceCard
+          title="Outdoor Murals Richmond VA"
+          description="[Placeholder: Weather-resistant exterior murals built for Virginia's four-season climate.]"
+          href="/murals/outdoor-murals-richmond-va"
+        />
+        <ServiceCard
+          title="Property Owner Murals"
+          description="[Placeholder: Murals that increase property value and attract quality tenants.]"
+          href="/murals/property-owner-murals-richmond-va"
+        />
+        <ServiceCard
+          title="Mural Cost Richmond VA"
+          description="[Placeholder: Transparent pricing — what determines cost and what to expect.]"
+          href="/murals/mural-cost-richmond-va"
+        />
+        <ServiceCard
+          title="Indoor Murals Richmond VA"
+          description="[Placeholder: Interior murals for restaurants, offices, lobbies, and retail.]"
+          href="/murals/indoor-murals-richmond-va"
+        />
+        <ServiceCard
+          title="Real Estate Developer Murals"
+          description="[Placeholder: Large-scale murals for mixed-use, multifamily, and commercial developments.]"
+          href="/murals/real-estate-developer-murals"
+        />
+        <ServiceCard
+          title="Public Art Murals Richmond VA"
+          description="[Placeholder: Community murals, percent-for-art commissions, and civic installations.]"
+          href="/murals/public-art-murals-richmond-va"
+        />
+        <ServiceCard
+          title="VARA Compliance"
+          description="[Placeholder: Visual Artists Rights Act — what property owners and artists need to know.]"
+          href="/murals/vara-compliance"
+        />
+        <ServiceCard
+          title="Mural Maintenance"
+          description="[Placeholder: How to protect your investment — cleaning, sealing, and touch-up schedules.]"
+          href="/murals/mural-maintenance"
+        />
+      </div>
+
+      <!-- Featured Projects -->
+      {muralProjects.length > 0 && (
+        <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
+          <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Featured Projects
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {muralProjects.map((project) => (
+              <a href={`/murals/${project.id}`} class="group block overflow-hidden" data-animate>
+                <div class="aspect-[4/3] overflow-hidden bg-midnight-graphite">
+                  <img
+                    src={project.data.cover}
+                    alt={project.data.title}
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-4 mb-8">
+                  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors" style="font-size: var(--text-fluid-xl);">
+                    {project.data.title}
+                  </h3>
+                  <div class="flex gap-2 mt-1">
+                    {project.data.tags.map((tag: string) => (
+                      <span class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Cross-hub link -->
+      <p class="font-body text-shadow-gray mb-16" style="font-size: var(--text-fluid-lg);">
+        We also paint <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">hand-painted signs</a>.
+      </p>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

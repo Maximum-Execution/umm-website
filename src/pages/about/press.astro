@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Press and Media | Untitled Mixed Media" description="Media coverage and press features for Untitled Mixed Media. Mural and sign work featured in Richmond publications and broadcasts.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about' },
+        { label: 'Press' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        About
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Press and Media
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Placeholder: Write a brief introductory sentence. Keep it simple — this page is a reference list, not a narrative. Something like: "Selected media coverage of Untitled Mixed Media projects."
+        </p>
+      </div>
+
+      <!-- Press mentions -->
+      <!-- Add each press mention as: Publication name, article title, date, link -->
+      <div class="space-y-8 mb-16">
+        <article class="border-b border-slate-gray pb-8">
+          <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            Richmond Times-Dispatch
+          </p>
+          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-xl); line-height: 1.3;">
+            [Placeholder: Article title about the Short Pump Park mural project]
+          </h2>
+          <p class="font-body text-shadow-gray mb-3" style="font-size: var(--text-fluid-sm);">
+            [Placeholder: Publication date]
+          </p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+            Placeholder: Brief description of the article. Feature coverage of the Short Pump Park mural commission for Henrico County — three curved walls covering Native American heritage, local growth, and education themes.
+          </p>
+          <a href="#" class="font-mono text-cobalt-blue hover:text-titanium-white transition-colors inline-block mt-3" style="font-size: var(--text-fluid-sm);">
+            Read article →
+          </a>
+        </article>
+
+        <article class="border-b border-slate-gray pb-8">
+          <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            WCVE (Virginia's Home for Public Media)
+          </p>
+          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-xl); line-height: 1.3;">
+            [Placeholder: Segment title about the Short Pump Park mural]
+          </h2>
+          <p class="font-body text-shadow-gray mb-3" style="font-size: var(--text-fluid-sm);">
+            [Placeholder: Air date]
+          </p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+            Placeholder: Brief description of the radio segment. WCVE coverage of the Short Pump Park public art installation and the community engagement process behind the mural design.
+          </p>
+          <a href="#" class="font-mono text-cobalt-blue hover:text-titanium-white transition-colors inline-block mt-3" style="font-size: var(--text-fluid-sm);">
+            Listen to segment →
+          </a>
+        </article>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Media inquiries</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          For press inquiries, interview requests, or high-resolution project images, contact <a href="mailto:hello@untitledmixedmedia.com" class="text-cobalt-blue hover:text-titanium-white transition-colors">hello@untitledmixedmedia.com</a>.
+        </p>
+      </div>
+    </div>
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'About', href: '/about', description: 'Who we are and what we do.' },
+      { title: 'Process', href: '/about/process', description: 'The provenance methodology in three steps.' },
+      { title: 'Philosophy', href: '/about/philosophy', description: 'Why we start with discovery, not design.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

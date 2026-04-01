@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Discovery First, Not Design First | Untitled Mixed Media" description="Why Untitled Mixed Media starts with on-site research instead of a mood board. Meaning discovered, not imposed.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about' },
+        { label: 'Philosophy' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        About
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Discovery First, Not Design First
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: 1.5;">
+          Your building is already telling a story. We make sure it is the right one.
+        </p>
+
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Placeholder: Write the core philosophy statement. Most mural companies start with a mood board or a style reference. UMM starts with the site itself. The controlling idea is "meaning discovered, not imposed." The design should emerge from the building's history, the neighborhood's character, and the client's purpose — not from a generic template or trending aesthetic.
+        </p>
+
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          Placeholder: Explain WHY this matters to the client. A mural that comes from the site feels inevitable — like it belongs there. A mural imposed from outside feels decorative at best, generic at worst. The difference is whether people stop and look, or walk past without noticing.
+        </p>
+
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          Placeholder: Describe what "discovery" looks like in practice. It is not just research — it is on-site time. Walking the block. Talking to the people who use the space. Understanding the light, the materials, the scale, the sight lines. Photographing context that a Google Maps screenshot cannot capture. The design brief writes itself when you listen to the place.
+        </p>
+
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          Placeholder: Connect the philosophy to the outcome. This approach takes longer at the front end but eliminates the endless revision cycles that come from starting with the wrong concept. Clients approve faster because the design feels right from the first presentation. And the finished work endures — not just physically, but in relevance — because it is rooted in something real.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a photo that shows the discovery process in action — Spencer on site, examining a wall, taking measurements, photographing context. The image should communicate "research" not "painting." Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Process', href: '/about/process', description: 'The provenance methodology in three steps.' },
+      { title: 'About', href: '/about', description: 'Who we are and what we do.' },
+      { title: 'Press', href: '/about/press', description: 'Media coverage and features.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

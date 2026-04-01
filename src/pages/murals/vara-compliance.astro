@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="VARA Compliance for Murals | Untitled Mixed Media" description="VARA compliance guidance for mural projects. Understand the Visual Artists Rights Act, property owner obligations, artist rights, and how to handle mural removal legally.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'VARA Compliance' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        VARA Compliance for Murals
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> Write 2-3 sentences identifying the property owner, real estate developer, or facility manager who needs to understand the Visual Artists Rights Act before commissioning, modifying, or removing a mural. They want clear guidance on their legal obligations so they can make informed decisions without ending up in a legal dispute.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> VARA creates legal obligations that most property owners do not know about. A mural cannot simply be painted over or removed without following specific procedures. Violating VARA can result in litigation and financial damages.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They feel confused and anxious about a law they did not know existed until now. They worry they may have already violated it or will inadvertently create legal liability with a new project.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Art created with skill and care deserves legal protection. At the same time, property owners deserve clear guidance on what they can and cannot do with their own walls. Both interests can be respected.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> Express understanding that VARA is confusing and that most property owners encounter it only after a problem arises. Demonstrate authority through working knowledge of VARA provisions, experience writing mural contracts that address VARA proactively, and a track record of handling artist-property owner relationships professionally.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> A mural project with clear legal terms from day one. Both the property owner and the artist know their rights. No surprises, no disputes, no litigation.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> A costly legal dispute that could have been avoided with a properly structured contract. Murals destroyed without notice, artists suing for damages, and property owners paying legal fees that far exceed the cost of the mural itself.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a photo of a mural in a context that suggests permanence and legal consideration — a public art installation, a mural on a building slated for renovation, or a signed contract. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'What does VARA protect?', answer: 'The Visual Artists Rights Act (VARA) is a federal law that gives visual artists the right of attribution (to be credited as the creator) and the right of integrity (to prevent intentional distortion, mutilation, or destruction of their work). It applies to paintings, sculptures, and other visual works of recognized stature — including murals.' },
+      { question: 'What are property owners obligated to do under VARA?', answer: 'If a mural is considered a work of "recognized stature," the property owner cannot destroy or significantly alter it without giving the artist 90 days written notice to remove the work (if it is removable). For murals that cannot be removed without destruction, the obligations are more complex. The best approach is to address VARA in the original contract before any work begins.' },
+      { question: 'How do I remove or paint over a mural legally?', answer: 'The legal process depends on whether the mural can be removed without destruction and whether VARA protections apply. In general: notify the artist in writing, provide 90 days for them to remove the work if possible, and document the process. If VARA was addressed in the original contract with a written waiver, the process is straightforward. Without a contract, consult an attorney before proceeding.' },
+      { question: 'How do your contracts handle VARA?', answer: 'Every mural contract we write includes a VARA section that clearly defines ownership of the physical work, the artist\'s moral rights, modification and removal procedures, notice requirements, and any waivers agreed to by both parties. We address this upfront so both sides have clarity from the start. Our goal is to protect both the art and the property owner\'s interests.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Public Art Murals', href: '/murals/public-art-murals-richmond-va', description: 'Community-scale public art and heritage commissions.' },
+      { title: 'Real Estate Developer Murals', href: '/murals/real-estate-developer-murals', description: 'Murals as a strategic investment for developments.' },
+      { title: 'Property Owner Murals', href: '/murals/property-owner-murals-richmond-va', description: 'Murals that increase property value and tenant demand.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

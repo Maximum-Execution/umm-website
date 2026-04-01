@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Outdoor Murals in Richmond, VA | Untitled Mixed Media" description="Hand-painted outdoor murals in Richmond, VA. Weather-durable exterior murals using archival-grade paint systems designed to withstand Virginia's climate for years.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Outdoor Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Outdoor Murals in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> Write 2-3 sentences identifying the property owner, business operator, or community leader in Richmond who wants to transform a blank or deteriorating exterior wall into something remarkable. They want a mural that survives Virginia summers, freezing winters, and UV exposure without fading or peeling.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> The exterior wall is blank, stained, tagged, or visually neglected. It detracts from the property and the surrounding streetscape.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They worry about investing in outdoor art that will fade, peel, or look worn within a few years. They have seen cheap murals deteriorate and do not want that for their property.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Public-facing walls should contribute to the community, not detract from it. Art that cannot withstand its environment is not built with integrity.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> Express understanding of the legitimate concern about durability — outdoor murals face real environmental stress. Demonstrate authority through knowledge of paint systems (KEIM mineral paint, Nova Color acrylics, UV-resistant clear coats), surface preparation methods, and completed exterior projects that have held up over time.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> A weather-durable mural that transforms the property, attracts positive attention, and holds its color and clarity for years. The wall becomes a landmark rather than an eyesore.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> The wall continues to deteriorate or remains blank. Graffiti fills the void. The property loses curb appeal and the neighborhood loses a potential point of pride.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a large-scale exterior mural on brick, concrete, or stucco — ideally showing the scale of the wall and the surrounding environment. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How long do outdoor murals last?', answer: 'With proper surface preparation, archival-grade paints, and UV-resistant clear coats, exterior murals in Richmond typically last 7-15 years before needing significant touch-up. KEIM mineral paint systems can last even longer — they bond chemically with masonry and become part of the wall itself.' },
+      { question: 'What type of paint do you use for outdoor murals?', answer: 'We select paint systems based on the surface material and exposure conditions. For masonry walls, KEIM mineral silicate paint is the gold standard — it is breathable, UV-stable, and bonds permanently with the substrate. For other surfaces, we use high-grade acrylic systems with UV-resistant top coats. Every project gets a paint specification matched to its environment.' },
+      { question: 'Do I need a permit for an outdoor mural in Richmond?', answer: 'Richmond mural permits depend on the district, wall visibility from public right-of-way, and whether the mural includes signage or branding. We help navigate the permitting process and can advise on what your specific location requires before we start.' },
+      { question: 'How do you maintain an outdoor mural?', answer: 'We provide a maintenance guide with every completed exterior mural. Most outdoor murals need only periodic cleaning with mild detergent and water. We offer scheduled touch-up services and can apply anti-graffiti coatings for walls in high-traffic areas.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Business Murals', href: '/murals/business-murals-richmond-va', description: 'Commercial murals that drive foot traffic and brand identity.' },
+      { title: 'Mural Maintenance', href: '/murals/mural-maintenance', description: 'Keep your mural looking sharp for years.' },
+      { title: 'Public Art Murals', href: '/murals/public-art-murals-richmond-va', description: 'Community-scale public art and heritage murals.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

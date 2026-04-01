@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Public Art Murals in Richmond, VA | Untitled Mixed Media" description="Public art murals in Richmond, VA. Community murals, heritage projects, and percent-for-art commissions. RFP-experienced with archival paint systems built to last decades.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Public Art Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Public Art Murals in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> Write 2-3 sentences identifying the municipality official, arts organization director, or community group leader who wants to commission public art that represents their community. They want a mural that tells a story, honors history, celebrates identity, and becomes a lasting point of pride — not a trendy installation that fades in two years.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> The community needs public art but navigating the process — RFPs, budgets, community engagement, permits, archival materials — is complex. Many muralists cannot handle the administrative and logistical demands of public commissions.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They worry about choosing the wrong artist and ending up with art that does not represent the community, deteriorates prematurely, or creates controversy instead of pride.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Public art should serve the public. It should be created with community input, executed with archival integrity, and maintained for future generations.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> Express understanding of the unique accountability that comes with public commissions — community stakeholders, government oversight, and long-term maintenance obligations. Demonstrate authority through experience with RFP processes, community engagement methods, KEIM mineral paint systems, and completed public art projects like the Short Pump Park heritage murals.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> A mural that the community claims as its own — photographed, celebrated, and maintained for decades. A public investment that generates civic pride and becomes part of the community's identity.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> Public funds spent on art that fades, cracks, or fails to resonate with the community. A cautionary tale instead of a point of pride.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a public art mural — ideally the Short Pump Park heritage mural or a similar community-scale project. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'Do you respond to RFPs for public art commissions?', answer: 'Yes. We are experienced with the RFP process for public art commissions at the municipal, county, and state levels. We can provide proposals with detailed design concepts, material specifications, timelines, budgets, community engagement plans, and maintenance schedules. We are familiar with Virginia Commission for the Arts and percent-for-art program requirements.' },
+      { question: 'How do you incorporate community input into mural design?', answer: 'Our community engagement process is tailored to each project. It can include stakeholder interviews, community meetings, design presentations with feedback rounds, and historical research. For the Short Pump Park project, we researched Native American heritage, local growth patterns, and educational themes through community input and historical documentation. The goal is art that the community recognizes as theirs.' },
+      { question: 'Can public art murals be funded through grants?', answer: 'Many public murals are funded through grants from organizations like the Virginia Commission for the Arts, NEA Our Town grants, local arts councils, and percent-for-art programs tied to development projects. We can help identify applicable funding sources and provide the documentation and project plans that grant applications require.' },
+      { question: 'What is your approach to long-term maintenance of public murals?', answer: 'Every public art project includes a written maintenance plan specifying inspection intervals, cleaning procedures, touch-up protocols, and expected material lifespan. We use KEIM mineral paint for heritage projects — it bonds chemically with masonry and can last 50+ years. We also offer maintenance service agreements for ongoing care.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'VARA Compliance', href: '/murals/vara-compliance', description: 'Visual Artists Rights Act guidance for public art projects.' },
+      { title: 'Property Owner Murals', href: '/murals/property-owner-murals-richmond-va', description: 'Murals that increase property value and curb appeal.' },
+      { title: 'Mural Maintenance', href: '/murals/mural-maintenance', description: 'Long-term care and protection for murals.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

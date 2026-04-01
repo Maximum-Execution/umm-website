@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Murals for Property Owners in Richmond, VA | Untitled Mixed Media" description="Hand-painted murals for property owners in Richmond, VA. Increase property value, attract tenants, and transform blank walls into neighborhood landmarks.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Property Owner Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Murals for Property Owners in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> Write 2-3 sentences identifying the property owner or landlord in Richmond who wants to increase the value of their building, attract better tenants, or revitalize a property that has been sitting underutilized. They see blank walls as wasted potential and want to invest in something that pays dividends in curb appeal and tenant demand.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> The property has blank or deteriorating exterior walls. It does not stand out in a competitive rental or commercial real estate market. The building looks dated or neglected from the street.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They feel the property is not living up to its potential. They worry that cosmetic neglect signals broader neglect to prospective tenants, buyers, and the community.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Property owners have a responsibility to the streetscape. Buildings that contribute visually to the neighborhood are worth more — to tenants, to the community, and as assets.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> Express understanding that property improvements need to justify their cost. Demonstrate authority through knowledge of how murals affect property values, tenant attraction, and neighborhood perception. Reference the Blender pre-visualization process that lets owners see exactly what the mural will look like before committing.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> A property that commands higher rents, attracts quality tenants faster, and becomes a recognized landmark in the neighborhood. The mural is an investment with measurable returns.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> The property continues to underperform. Blank walls attract graffiti and signal neglect. Better tenants choose buildings with more character and curb appeal.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a mural on a commercial or mixed-use property — ideally a before/after or a shot that conveys the property improvement angle. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'Do murals increase property value?', answer: 'Studies in cities with active mural programs show measurable increases in property values and rental rates in areas with public art. In Richmond specifically, murals have become a draw for tenants, visitors, and foot traffic. The exact impact depends on location, visibility, and quality — but a well-executed mural is a capital improvement that enhances curb appeal.' },
+      { question: 'Do tenants need to approve the mural?', answer: 'That depends on your lease agreements. We recommend coordinating with existing tenants, especially if the mural will change the appearance of their storefront. Many tenants welcome murals because they increase visibility and foot traffic. We can help facilitate the conversation if needed.' },
+      { question: 'Is the mural covered by my property insurance?', answer: 'Most commercial property insurance policies cover murals as part of the building exterior once completed. We recommend notifying your insurance provider before the project begins to confirm coverage. We also provide documentation of materials and process for your records.' },
+      { question: 'How long does a property mural project take?', answer: 'From initial site visit through completed mural, most projects take 4-8 weeks total. The painting phase itself typically runs 1-3 weeks depending on scale and complexity. We work around tenant schedules and can phase the work to minimize disruption to the property.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Real Estate Developer Murals', href: '/murals/real-estate-developer-murals', description: 'Murals as a development strategy for new and renovated properties.' },
+      { title: 'Business Murals', href: '/murals/business-murals-richmond-va', description: 'Commercial murals that drive foot traffic and identity.' },
+      { title: 'Outdoor Murals', href: '/murals/outdoor-murals-richmond-va', description: 'Weather-durable exterior murals built to last.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

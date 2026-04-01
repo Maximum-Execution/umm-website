@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Murals for Real Estate Developers | Untitled Mixed Media" description="Hand-painted murals for real estate developers. Differentiate new developments, increase property value, and create visual anchors that attract tenants and buyers.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Real Estate Developer Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Murals for Real Estate Developers
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> Write 2-3 sentences identifying the real estate developer who wants to differentiate a new construction, adaptive reuse, or renovation project. They think in terms of ROI, lease-up velocity, and competitive positioning. They want art that functions as a marketing asset — not decoration, but a strategic investment that makes the property memorable and desirable.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> New developments look identical to every other new development. Mixed-use projects and apartment complexes lack character and identity. There is nothing distinctive to anchor marketing materials or attract attention from the street.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They know differentiation drives lease-up speed and premium pricing, but they are not sure how to achieve it beyond standard finishes and amenities. They see competitors using murals effectively and want the same edge.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> Development should contribute to the character of a neighborhood, not homogenize it. Buildings that look like everywhere could be anywhere.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> Express understanding of the developer's timeline pressures, budget constraints, and ROI-driven decision-making. Demonstrate authority through experience coordinating with construction schedules, knowledge of surface prep for new construction, VARA compliance awareness, and the ability to deliver within development timelines.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> A development that stands out in the market, leases faster, commands premium pricing, and generates organic social media attention. The mural becomes a marketing asset that pays for itself.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> Another generic development that competes solely on price and location. Slower lease-up. Lower rents. The property is forgettable from day one.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a mural on a new development or renovated property — ideally showing the scale and context within a development project. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'What is the ROI on a mural for a development project?', answer: 'Murals drive measurable value for developments: faster lease-up through increased visibility and social media exposure, premium positioning that supports higher rental rates, and long-term neighborhood identity that anchors the property. The cost of a mural is a fraction of a typical marketing budget and generates organic, ongoing attention that paid advertising cannot replicate.' },
+      { question: 'Can you coordinate with our construction timeline?', answer: 'Yes. We are experienced working within construction schedules and can phase our work around other trades. We need the wall surface to be complete and cured — typically 28 days for new concrete or masonry. We can begin design development while construction is in progress so the mural is ready to paint as soon as the surface is available.' },
+      { question: 'Do you offer volume pricing for multi-building projects?', answer: 'For developments with multiple mural locations, we offer project-rate pricing that accounts for the efficiencies of working across a single site. We can scope and quote the full package or phase deliverables across the development timeline. Contact us to discuss your specific project.' },
+      { question: 'What about VARA compliance?', answer: 'The Visual Artists Rights Act (VARA) gives muralists certain rights over their work, including the right to prevent destruction or modification. We address VARA proactively in every contract — defining ownership, modification rights, and removal procedures upfront so there are no legal surprises down the road. See our VARA compliance page for details.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Property Owner Murals', href: '/murals/property-owner-murals-richmond-va', description: 'Murals that increase property value and tenant demand.' },
+      { title: 'Public Art Murals', href: '/murals/public-art-murals-richmond-va', description: 'Community-scale public art and heritage murals.' },
+      { title: 'VARA Compliance', href: '/murals/vara-compliance', description: 'Visual Artists Rights Act guidance for property owners.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

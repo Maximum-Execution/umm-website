@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Indoor Murals in Richmond, VA | Untitled Mixed Media" description="Hand-painted indoor murals in Richmond, VA. Low-VOC interior murals for restaurants, offices, retail spaces, and homes that transform walls into immersive experiences.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Indoor Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Indoor Murals in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          <strong class="text-titanium-white">CHARACTER & DESIRE:</strong> Write 2-3 sentences identifying the business owner or homeowner in Richmond who wants to transform an interior space. They want a restaurant dining room that feels immersive, an office lobby that makes a statement, a retail space that gets photographed, or a home with a feature wall that is genuinely original.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (External):</strong> The interior walls are flat, generic, and forgettable. The space does not reflect the personality or quality of what happens inside it. Paint colors and framed prints are not enough.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Internal):</strong> They feel their space is uninspired. They know a great interior creates an emotional response — they just have not found the right way to achieve it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PROBLEM (Philosophical):</strong> People spend most of their time indoors. Those spaces should inspire, not bore. A hand-painted wall tells a different story than mass-produced decor.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">GUIDE:</strong> Express understanding of the unique challenges of interior mural work — ventilation concerns, working around furniture and fixtures, paint fumes in occupied spaces. Demonstrate authority through experience with low-VOC paint systems, interior surface preparation, and completed indoor projects in restaurants, offices, and homes.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">PLAN:</strong> 1. We visit your site. 2. You see the design before we start. 3. We paint it and prove it.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Success):</strong> An interior space that stops people in their tracks, generates social media posts from visitors, and creates an atmosphere that elevates the entire experience. The mural becomes the room.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">STAKES (Failure):</strong> The space remains generic. Customers walk in and out without remembering the environment. Another coat of neutral paint does not solve the problem.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a completed indoor mural — restaurant interior, office lobby, or residential feature wall. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'Are the paint fumes safe for indoor spaces?', answer: 'We use low-VOC and zero-VOC paint systems for all interior mural work. These paints produce minimal odor and are safe for occupied spaces. For sensitive environments like restaurants or medical offices, we can schedule painting during closed hours and ensure proper ventilation throughout the process.' },
+      { question: 'How long does an indoor mural take?', answer: 'Interior murals typically take 3-10 days of painting depending on wall size and complexity. The total project timeline from site visit through completion is usually 3-6 weeks. We can work around your operating hours — evenings, weekends, or closed days — to minimize disruption.' },
+      { question: 'How do you prepare interior wall surfaces?', answer: 'Surface prep depends on the existing wall condition. We clean, repair any damage, prime as needed, and ensure proper adhesion before painting. For drywall, we use compatible primer systems. For textured walls, we discuss whether to smooth the surface or incorporate the texture into the design. All prep work is included in our pricing.' },
+      { question: 'How does lighting affect an indoor mural?', answer: 'Lighting is a critical consideration for indoor murals. We evaluate your existing lighting during the site visit and design the mural to work with it — accounting for natural light sources, artificial lighting direction, and how the colors will read under your specific conditions. We can also recommend lighting adjustments to enhance the mural after installation.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Business Murals', href: '/murals/business-murals-richmond-va', description: 'Commercial murals for storefronts, restaurants, and retail.' },
+      { title: 'Outdoor Murals', href: '/murals/outdoor-murals-richmond-va', description: 'Weather-durable exterior murals built to last.' },
+      { title: 'Mural Cost', href: '/murals/mural-cost-richmond-va', description: 'Transparent pricing for every scale and style.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

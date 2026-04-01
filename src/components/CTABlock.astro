@@ -1,0 +1,38 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  headline?: string;
+  description?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  headline = 'Ready to start?',
+  description,
+  primaryHref = '/price-estimator',
+  primaryLabel = 'Get a Free Estimate',
+  secondaryHref = '/contact',
+  secondaryLabel = 'Contact Us',
+} = Astro.props;
+---
+
+<section class="border-t border-slate-gray py-[var(--spacing-section)] px-6 lg:px-12">
+  <div class="max-w-4xl">
+    <h2 class="font-heading text-titanium-white mb-6" style={`font-size: var(--text-fluid-3xl);`}>
+      {headline}
+    </h2>
+    {description && (
+      <p class="font-body text-shadow-gray mb-10" style={`font-size: var(--text-fluid-lg);`}>
+        {description}
+      </p>
+    )}
+    <div class="flex flex-wrap items-center gap-6">
+      <Button href={primaryHref} variant="primary">{primaryLabel}</Button>
+      <Button href={secondaryHref} variant="ghost">{secondaryLabel}</Button>
+    </div>
+  </div>
+</section>

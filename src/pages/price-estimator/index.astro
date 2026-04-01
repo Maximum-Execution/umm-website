@@ -19,19 +19,22 @@ import CTABlock from '../../components/CTABlock.astro';
       </p>
 
       <form class="space-y-6 max-w-xl mb-16">
-        <div class="grid grid-cols-2 gap-6">
-          <div>
-            <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Wall Width (ft)</label>
-            <input type="number" min="1" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="20" />
+        <fieldset>
+          <legend class="sr-only">Wall Dimensions</legend>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label for="est-width" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Wall Width (ft)</label>
+              <input type="number" id="est-width" name="wall_width" min="1" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="20" />
+            </div>
+            <div>
+              <label for="est-height" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Wall Height (ft)</label>
+              <input type="number" id="est-height" name="wall_height" min="1" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="12" />
+            </div>
           </div>
-          <div>
-            <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Wall Height (ft)</label>
-            <input type="number" min="1" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="12" />
-          </div>
-        </div>
+        </fieldset>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Surface Type</label>
-          <select class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);">
+          <label for="est-surface" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Surface Type</label>
+          <select id="est-surface" name="surface_type" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
             <option value="" disabled selected>Select surface type</option>
             <option value="brick">Brick</option>
             <option value="stucco">Stucco</option>
@@ -42,16 +45,16 @@ import CTABlock from '../../components/CTABlock.astro';
           </select>
         </div>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Location</label>
-          <select class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);">
+          <label for="est-location" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Location</label>
+          <select id="est-location" name="location" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
             <option value="" disabled selected>Select location</option>
             <option value="exterior">Exterior</option>
             <option value="interior">Interior</option>
           </select>
         </div>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Style Complexity</label>
-          <select class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);">
+          <label for="est-complexity" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Style Complexity</label>
+          <select id="est-complexity" name="style_complexity" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
             <option value="" disabled selected>Select complexity level</option>
             <option value="simple">Simple graphics / text</option>
             <option value="moderate">Moderate detail</option>
@@ -59,23 +62,23 @@ import CTABlock from '../../components/CTABlock.astro';
           </select>
         </div>
         <div class="border-t border-slate-gray pt-6">
-          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Your Information</p>
-          <div class="space-y-6">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;" id="your-info-heading">Your Information</p>
+          <div class="space-y-6" role="group" aria-labelledby="your-info-heading">
             <div>
-              <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Your Name</label>
-              <input type="text" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="Your name" />
+              <label for="est-name" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Your Name</label>
+              <input type="text" id="est-name" name="name" required autocomplete="name" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Your name" />
             </div>
             <div>
-              <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Email</label>
-              <input type="email" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="you@example.com" />
+              <label for="est-email" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Email</label>
+              <input type="email" id="est-email" name="email" required autocomplete="email" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="you@example.com" />
             </div>
             <div>
-              <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Phone <span class="text-smoke-gray">(optional)</span></label>
-              <input type="tel" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="(804) 555-0100" />
+              <label for="est-phone" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Phone <span class="text-smoke-gray">(optional)</span></label>
+              <input type="tel" id="est-phone" name="phone" autocomplete="tel" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="(804) 555-0100" />
             </div>
           </div>
         </div>
-        <button type="submit" class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors" style="font-size: var(--text-fluid-sm);">
+        <button type="submit" class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-bone-black" style="font-size: var(--text-fluid-sm);">
           Get My Estimate
         </button>
       </form>

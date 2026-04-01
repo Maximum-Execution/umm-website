@@ -19,20 +19,20 @@ import Footer from '../components/Footer.astro';
 
       <form class="space-y-6 max-w-xl mb-16">
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Name</label>
-          <input type="text" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="Your name" />
+          <label for="contact-name" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Name</label>
+          <input type="text" id="contact-name" name="name" required autocomplete="name" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Your name" />
         </div>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Email</label>
-          <input type="email" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="you@example.com" />
+          <label for="contact-email" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Email</label>
+          <input type="email" id="contact-email" name="email" required autocomplete="email" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="you@example.com" />
         </div>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Phone <span class="text-smoke-gray">(optional)</span></label>
-          <input type="tel" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="(804) 555-0100" />
+          <label for="contact-phone" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Phone <span class="text-smoke-gray">(optional)</span></label>
+          <input type="tel" id="contact-phone" name="phone" autocomplete="tel" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="(804) 555-0100" />
         </div>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Project Type</label>
-          <select class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);">
+          <label for="contact-project-type" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Project Type</label>
+          <select id="contact-project-type" name="project_type" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
             <option value="" disabled selected>Select a project type</option>
             <option value="mural">Mural</option>
             <option value="hand-painted-sign">Hand-Painted Sign</option>
@@ -41,10 +41,10 @@ import Footer from '../components/Footer.astro';
           </select>
         </div>
         <div>
-          <label class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Message</label>
-          <textarea rows="6" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body" style="font-size: var(--text-fluid-base);" placeholder="Tell us about the project — the wall, the location, the idea, the timeline."></textarea>
+          <label for="contact-message" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Message</label>
+          <textarea id="contact-message" name="message" required rows="6" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Tell us about the project — the wall, the location, the idea, the timeline."></textarea>
         </div>
-        <button type="submit" class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors" style="font-size: var(--text-fluid-sm);">
+        <button type="submit" class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-bone-black" style="font-size: var(--text-fluid-sm);">
           Send Message
         </button>
       </form>

@@ -7,8 +7,11 @@ const navLinks = [
 ];
 ---
 
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-titanium-white focus:text-bone-black focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:tracking-[0.15em] focus:uppercase">
+  Skip to content
+</a>
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
-  <nav class="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
+  <nav aria-label="Main navigation" class="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="text-titanium-white font-blackletter text-xl tracking-wide hover:opacity-80 transition-opacity">
       untitled<span class="font-heading font-normal"> mixed media</span>
@@ -51,7 +54,7 @@ const navLinks = [
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="hidden md:hidden bg-bone-black/95 backdrop-blur-md border-t border-slate-gray" id="mobile-menu">
+  <div class="hidden md:hidden bg-bone-black/95 backdrop-blur-md border-t border-slate-gray" id="mobile-menu" role="region" aria-label="Mobile navigation">
     <ul class="flex flex-col items-center gap-6 py-8">
       {navLinks.map((link) => (
         <li>
@@ -64,9 +67,11 @@ const navLinks = [
         </li>
       ))}
     </ul>
-    <a href="/price-estimator" class="mt-4 inline-block bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
-      Get an Estimate
-    </a>
+    <div class="flex justify-center pb-8">
+      <a href="/price-estimator" class="inline-block bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+        Get an Estimate
+      </a>
+    </div>
   </div>
 </header>
 
@@ -84,14 +89,24 @@ const navLinks = [
     btn.setAttribute('aria-expanded', String(isOpen));
   });
 
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    menuIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    btn?.setAttribute('aria-expanded', 'false');
+    btn?.focus();
+  }
+
   // Close mobile menu on link click
   menu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-      btn?.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu?.classList.contains('hidden')) {
+      closeMenu();
+    }
   });
 
   // Nav background on scroll

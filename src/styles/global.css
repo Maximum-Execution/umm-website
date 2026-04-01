@@ -223,6 +223,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ─── Focus Styles ────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-titanium-white);
+  outline-offset: 2px;
+}
+
+/* Remove default focus ring when mouse-clicking (keep for keyboard) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect reduced motion for smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bone-black);

@@ -1,7 +1,7 @@
 ---
 title: "How Much Does a Mural Cost in Richmond, VA?"
 description: "A detailed breakdown of mural pricing by type, size, complexity, and surface in the Richmond market. What to expect before you commit."
-date: 2026-03-15
+date: 2026-04-01
 tags: ["cost", "murals", "richmond"]
 author: "Spencer Bennett"
 featured: true

@@ -1,7 +1,7 @@
 ---
 title: "VARA and Your Mural: What Property Owners Need to Know"
 description: "The Visual Artists Rights Act gives muralists legal protections that property owners need to understand. Here is what VARA covers, what triggers it, and how a good contract protects everyone."
-date: 2025-11-11
+date: 2025-10-19
 tags: ["murals", "VARA", "legal", "property owners"]
 author: "Spencer Bennett"
 featured: false

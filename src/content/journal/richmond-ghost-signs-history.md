@@ -1,7 +1,7 @@
 ---
 title: "A Brief History of Richmond's Ghost Signs"
 description: "Richmond's fading painted advertisements tell the story of a city's commercial past. A look at the ghost sign tradition, notable surviving examples, and the line between preservation and restoration."
-date: 2025-04-04
+date: 2025-03-29
 tags: ["ghost signs", "richmond", "history", "preservation"]
 author: "Spencer Bennett"
 featured: false

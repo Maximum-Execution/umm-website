@@ -1,7 +1,7 @@
 ---
 title: "Why Businesses Invest in Murals (And What They Get Back)"
 description: "Murals drive foot traffic, generate social media content, strengthen neighborhood identity, and increase property value. Here is the case for treating a mural as a business investment, not an expense."
-date: 2025-08-15
+date: 2025-07-30
 tags: ["murals", "business", "ROI"]
 author: "Spencer Bennett"
 featured: false

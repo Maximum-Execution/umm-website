@@ -1,7 +1,7 @@
 ---
 title: "How Public Art Gets Funded in Virginia"
 description: "Percent-for-art programs, Virginia Commission for the Arts grants, NEA funding, and community fundraising — a practical guide to how public murals and art installations get funded in Virginia."
-date: 2026-02-06
+date: 2026-01-09
 tags: ["public art", "funding", "virginia", "grants"]
 author: "Spencer Bennett"
 featured: false

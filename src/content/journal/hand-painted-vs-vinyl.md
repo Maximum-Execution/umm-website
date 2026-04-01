@@ -1,7 +1,7 @@
 ---
 title: "Hand-Painted Signs vs Vinyl: A 12-Year Cost Breakdown"
 description: "Vinyl signs cost less upfront. Hand-painted signs cost less per year. Here's the math over 12 years, and why the difference matters more than you think."
-date: 2026-03-01
+date: 2026-02-19
 tags: ["signs", "vinyl", "cost comparison"]
 author: "Spencer Bennett"
 featured: false

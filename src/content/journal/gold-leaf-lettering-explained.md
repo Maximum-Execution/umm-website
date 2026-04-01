@@ -1,7 +1,7 @@
 ---
 title: "Gold Leaf Lettering: What It Is, How It Works, and Why It Lasts"
 description: "23-karat, 12-karat, or imitation? Water gilding or oil gilding? A sign painter's guide to gold leaf lettering — the materials, the process, and why real gold catches light like nothing else."
-date: 2025-05-19
+date: 2025-05-09
 tags: ["signs", "gold leaf", "craft"]
 author: "Spencer Bennett"
 featured: false

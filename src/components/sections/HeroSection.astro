@@ -2,39 +2,27 @@
 import Button from '../Button.astro';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center pt-20">
-  <!-- Background overlay -->
-  <div class="absolute inset-0 bg-bone-black/60 z-10"></div>
-
-  <!-- Hero image placeholder -->
-  <div class="absolute inset-0 bg-midnight-graphite">
-    <!-- Replace with actual hero image: -->
-    <!-- <img src="/images/hero/trolley-barn.jpg" alt="" class="w-full h-full object-cover" /> -->
-  </div>
-
-  <!-- Content -->
-  <div class="relative z-20 mx-auto max-w-4xl px-6 text-center">
-    <h1 class="font-heading text-[var(--text-fluid-5xl)] text-titanium-white mb-6 text-balance">
-      Hand-painted murals and signs.<br />
-      <span class="text-soft-gray">Landmarks, not lookalikes.</span>
-    </h1>
-
-    <p class="text-[var(--text-fluid-lg)] text-shadow-gray max-w-2xl mx-auto mb-10 text-balance">
-      We paint murals, restore signs, and build brand installations
-      for the businesses and stories that refuse to be forgotten.
+<section class="relative min-h-screen flex flex-col justify-center px-6 lg:px-12 pt-20">
+  <div class="max-w-7xl w-full">
+    <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-sm); letter-spacing: 0.08em; line-height: 1.5;">
+      Richmond, Virginia &mdash; Hand-painted murals &amp; signs
     </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <h1 class="font-heading text-titanium-white font-black mb-4" style="font-size: var(--text-fluid-5xl); line-height: 1.15; letter-spacing: -0.02em;">
+      Landmarks, not lookalikes.
+    </h1>
+
+    <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-xl); line-height: 1.5; letter-spacing: 0.02em;">
+      Public art from your story, not a template. We paint murals and signs in Richmond, Virginia.
+    </p>
+
+    <div class="flex flex-row items-center gap-6">
       <Button href="mailto:hello@untitledmixedmedia.com">
         Request a Site Visit
       </Button>
-      <Button href="/work" variant="secondary">
-        See Our Work
+      <Button href="#work" variant="ghost">
+        See the Work
       </Button>
     </div>
-
-    <p class="text-smoke-gray text-[var(--text-fluid-xs)] mt-8 italic">
-      Every commission treated like the landmark it is.
-    </p>
   </div>
 </section>

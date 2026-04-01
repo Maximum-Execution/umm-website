@@ -15,7 +15,15 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, description, cover, images, tags, client, location } = project.data;
+const { title, description, cover, tags, client, location, materials, date } = project.data;
+const year = date.getFullYear();
+
+// Prev/Next navigation
+const allProjects = (await getCollection('projects'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const currentIndex = allProjects.findIndex((p) => p.id === project.id);
+const prevProject = allProjects[currentIndex - 1] ?? allProjects[allProjects.length - 1];
+const nextProject = allProjects[currentIndex + 1] ?? allProjects[0];
 ---
 
 <BaseLayout
@@ -24,98 +32,133 @@ const { title, description, cover, images, tags, client, location } = project.da
   ogImage={cover}
 >
   <Nav />
-  <main class="pt-28 pb-16">
-    <div class="mx-auto max-w-7xl px-6">
-      <!-- Back link -->
-      <a
-        href="/work"
-        class="inline-flex items-center gap-2 text-shadow-gray hover:text-titanium-white transition-colors mb-8 text-[var(--text-fluid-sm)]"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H5m0 0l7 7m-7-7l7-7" />
-        </svg>
-        All Projects
-      </a>
-
-      <!-- Hero image -->
-      <div class="aspect-[21/9] overflow-hidden mb-12">
-        <img
-          src={cover}
-          alt={title}
-          class="w-full h-full object-cover"
-        />
+  <main class="pt-24">
+    <!-- Title + metadata line -->
+    <div class="px-6 lg:px-12 mb-8">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="font-heading text-titanium-white mb-3 text-balance">
+          {title}
+        </h1>
+        <p class="font-sans text-[var(--text-fluid-sm)] text-shadow-gray tracking-wide">
+          {[client, location, year].filter(Boolean).join(' · ')}
+        </p>
       </div>
+    </div>
 
-      <!-- Project info -->
-      <div class="grid lg:grid-cols-[1fr_300px] gap-16">
-        <div>
-          <h1 class="font-heading text-[var(--text-fluid-4xl)] text-titanium-white mb-6">
-            {title}
-          </h1>
-          <p class="text-[var(--text-fluid-lg)] text-shadow-gray mb-12">
+    <!-- Hero image — full width -->
+    <div class="px-6 lg:px-12 mb-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="aspect-[21/9] overflow-hidden">
+          <img
+            src={cover}
+            alt={title}
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- About This Project — always visible, two-column -->
+    <div class="px-6 lg:px-12 mb-20">
+      <div class="max-w-7xl mx-auto">
+        <p class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-8">
+          About This Project
+        </p>
+
+        <div class="grid lg:grid-cols-[1fr_280px] gap-12">
+          <!-- Description -->
+          <p class="font-body text-[var(--text-fluid-lg)] text-shadow-gray text-balance" style="max-width: var(--measure-wide);">
             {description}
           </p>
 
-          <!-- Content from markdown -->
-          <div class="prose prose-invert max-w-none
-            prose-headings:font-heading prose-headings:text-titanium-white
-            prose-p:text-shadow-gray prose-p:text-[var(--text-fluid-base)]
-            prose-strong:text-titanium-white
-            prose-a:text-cobalt-blue prose-a:underline-offset-4">
-            <Content />
-          </div>
-        </div>
-
-        <!-- Sidebar -->
-        <aside class="lg:border-l lg:border-slate-gray lg:pl-8">
-          {client && (
-            <div class="mb-6">
-              <h3 class="text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-widest mb-1">Client</h3>
-              <p class="text-titanium-white">{client}</p>
-            </div>
-          )}
-          {location && (
-            <div class="mb-6">
-              <h3 class="text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-widest mb-1">Location</h3>
-              <p class="text-titanium-white">{location}</p>
-            </div>
-          )}
-          <div class="mb-8">
-            <h3 class="text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-widest mb-2">Tags</h3>
-            <div class="flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <span class="text-[var(--text-fluid-xs)] text-smoke-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <Button href="mailto:hello@untitledmixedmedia.com" class="w-full text-center">
-            Start Your Project
-          </Button>
-        </aside>
-      </div>
-
-      <!-- Image Gallery -->
-      {images && images.length > 0 && (
-        <div class="mt-16">
-          <h2 class="font-heading text-[var(--text-fluid-2xl)] text-titanium-white mb-8">Gallery</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            {images.map((img) => (
-              <div class="aspect-[4/3] overflow-hidden">
-                <img
-                  src={img}
-                  alt={`${title} project photo`}
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
+          <!-- Metadata sidebar -->
+          <aside class="lg:border-l lg:border-slate-gray lg:pl-8 space-y-5">
+            {client && (
+              <div>
+                <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Client</span>
+                <p class="font-body text-titanium-white">{client}</p>
               </div>
-            ))}
-          </div>
+            )}
+            {location && (
+              <div>
+                <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Location</span>
+                <p class="font-body text-titanium-white">{location}</p>
+              </div>
+            )}
+            {materials && (
+              <div>
+                <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Materials</span>
+                <p class="font-body text-titanium-white">{materials}</p>
+              </div>
+            )}
+            <div>
+              <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Year</span>
+              <p class="font-body text-titanium-white">{year}</p>
+            </div>
+            <div>
+              <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-2 block">Tags</span>
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span class="font-mono text-[var(--text-fluid-xs)] text-smoke-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
-      )}
+      </div>
     </div>
+
+    <!-- Narrative content — rendered markdown -->
+    <div class="case-study-content px-6 lg:px-12 pb-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="case-study-prose">
+          <Content />
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA block -->
+    <div class="px-6 lg:px-12 py-20 border-t border-slate-gray">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="font-heading text-[var(--text-fluid-2xl)] text-titanium-white mb-6 text-balance">
+          Tell us about your walls.
+        </p>
+        <Button href="mailto:hello@untitledmixedmedia.com">
+          Start a Conversation
+        </Button>
+      </div>
+    </div>
+
+    <!-- Prev / Next Navigation -->
+    <nav class="px-6 lg:px-12 border-t border-slate-gray">
+      <div class="max-w-7xl mx-auto py-12 grid grid-cols-2 gap-8">
+        <a
+          href={`/work/${prevProject.id}`}
+          class="group"
+        >
+          <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[0.15em] block mb-2">
+            Previous
+          </span>
+          <span class="font-heading text-[var(--text-fluid-lg)] text-titanium-white group-hover:text-soft-gray transition-colors">
+            {prevProject.data.title}
+          </span>
+        </a>
+        <a
+          href={`/work/${nextProject.id}`}
+          class="group text-right"
+        >
+          <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[0.15em] block mb-2">
+            Next
+          </span>
+          <span class="font-heading text-[var(--text-fluid-lg)] text-titanium-white group-hover:text-soft-gray transition-colors">
+            {nextProject.data.title}
+          </span>
+        </a>
+      </div>
+    </nav>
   </main>
   <Footer />
 </BaseLayout>

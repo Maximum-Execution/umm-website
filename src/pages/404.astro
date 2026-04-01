@@ -5,14 +5,14 @@ import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
 ---
 
-<BaseLayout title="Page Not Found — Untitled Mixed Media">
+<BaseLayout title="Page Not Found | Untitled Mixed Media" description="The page you're looking for doesn't exist. Head back to the homepage." noindex={true}>
   <Nav />
   <main class="pt-24 pb-16 px-6 lg:px-12 flex items-center min-h-[60vh]">
     <div>
-      <p class="font-mono text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-4">
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
         404
       </p>
-      <h1 class="font-heading text-titanium-white mb-6 text-balance">
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" style="font-size: var(--text-fluid-4xl); line-height: 1.1;">
         This page doesn't exist.
       </h1>
       <Button href="/" variant="ghost">

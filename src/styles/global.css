@@ -235,10 +235,6 @@ html {
   outline: none;
 }
 
-/* Respect reduced motion for smooth scroll */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
 
 body {
   font-family: var(--font-body);
@@ -303,7 +299,7 @@ body {
 [data-animate] {
   opacity: 0;
   transform: translateY(1.5rem);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 [data-animate].is-visible {
@@ -312,6 +308,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   [data-animate] {
     opacity: 1;
     transform: none;

@@ -10,7 +10,7 @@ const navLinks = [
 <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-titanium-white focus:text-bone-black focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:tracking-[0.15em] focus:uppercase">
   Skip to content
 </a>
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+<header class="fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter] duration-300" id="main-nav">
   <nav aria-label="Main navigation" class="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="text-titanium-white font-blackletter text-xl tracking-wide hover:opacity-80 transition-opacity">
@@ -109,12 +109,19 @@ const navLinks = [
     }
   });
 
-  // Nav background on scroll
+  // Nav background on scroll — passive listener, classList toggle is compositor-friendly
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav?.classList.add('bg-bone-black/90', 'backdrop-blur-md');
-    } else {
-      nav?.classList.remove('bg-bone-black/90', 'backdrop-blur-md');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          nav?.classList.add('bg-bone-black/90', 'backdrop-blur-md');
+        } else {
+          nav?.classList.remove('bg-bone-black/90', 'backdrop-blur-md');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-  });
+  }, { passive: true });
 </script>

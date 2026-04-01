@@ -3,12 +3,16 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 const {
   title = 'Untitled Mixed Media — Hand-Painted Murals & Signs | Richmond, VA',
   description = 'Hand-painted murals and signs built from your actual location. Landmarks, not lookalikes. Richmond, Virginia.',
   ogImage = '/og-image.png',
+  ogType = 'website',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -25,10 +29,11 @@ import '../styles/global.css';
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

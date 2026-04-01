@@ -1,16 +1,17 @@
 ---
 const navLinks = [
+  { label: 'About', href: '/about' },
   { label: 'Work', href: '/work' },
-  { label: 'Process', href: '/#process' },
-  { label: 'Contact', href: 'mailto:hello@untitledmixedmedia.com' },
+  { label: 'Journal', href: '/journal' },
+  { label: 'Contact', href: '/contact' },
 ];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
   <nav class="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="text-titanium-white font-heading text-lg tracking-tight hover:opacity-80 transition-opacity">
-      UNTITLED<span class="text-middle-grey"> Mixed Media</span>
+    <a href="/" class="text-titanium-white font-blackletter text-xl tracking-wide hover:opacity-80 transition-opacity">
+      untitled<span class="font-heading font-normal"> mixed media</span>
     </a>
 
     <!-- Desktop Nav -->
@@ -19,7 +20,7 @@ const navLinks = [
         <li>
           <a
             href={link.href}
-            class="text-soft-gray text-sm tracking-wide uppercase hover:text-titanium-white transition-colors"
+            class="font-sans text-soft-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors"
           >
             {link.label}
           </a>
@@ -27,17 +28,23 @@ const navLinks = [
       ))}
     </ul>
 
+    <!-- Desktop CTA -->
+    <a href="/price-estimator" class="hidden md:inline-block bg-titanium-white text-bone-black font-sans px-6 py-2.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+      Get an Estimate
+    </a>
+
     <!-- Mobile Menu Button -->
     <button
       class="md:hidden text-titanium-white p-2"
       id="mobile-menu-btn"
       aria-label="Toggle menu"
       aria-expanded="false"
+      aria-controls="mobile-menu"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="close-icon">
+      <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="close-icon" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
@@ -50,13 +57,16 @@ const navLinks = [
         <li>
           <a
             href={link.href}
-            class="text-soft-gray text-base tracking-wide uppercase hover:text-titanium-white transition-colors"
+            class="font-sans text-soft-gray text-base tracking-[0.15em] uppercase hover:text-titanium-white transition-colors"
           >
             {link.label}
           </a>
         </li>
       ))}
     </ul>
+    <a href="/price-estimator" class="mt-4 inline-block bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+      Get an Estimate
+    </a>
   </div>
 </header>
 

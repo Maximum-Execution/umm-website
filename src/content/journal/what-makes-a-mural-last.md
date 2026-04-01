@@ -1,7 +1,7 @@
 ---
 title: "What Makes a Mural Last? Materials, Prep, and Maintenance"
 description: "UV-resistant paints, proper surface preparation, protective sealants, and a maintenance schedule — the four factors that determine whether a mural lasts 5 years or 25."
-date: 2025-02-16
+date: 2025-02-18
 tags: ["murals", "maintenance", "materials"]
 author: "Spencer Bennett"
 featured: false

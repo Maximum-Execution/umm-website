@@ -1,7 +1,7 @@
 ---
 title: "Interior Murals vs. Wallpaper: Which Is Right for Your Space?"
 description: "Cost, longevity, customization, and maintenance — a side-by-side comparison of interior murals and wallpaper to help you decide which is the better investment for your space."
-date: 2025-11-29
+date: 2025-12-04
 tags: ["murals", "interior design", "comparison"]
 author: "Spencer Bennett"
 featured: false

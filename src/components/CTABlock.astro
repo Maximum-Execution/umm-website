@@ -8,31 +8,47 @@ interface Props {
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  trustLine?: string;
 }
 
 const {
-  headline = 'Ready to start?',
+  headline = 'See what your wall could become.',
   description,
   primaryHref = '/price-estimator',
   primaryLabel = 'Get a Free Estimate',
   secondaryHref = '/contact',
   secondaryLabel = 'Contact Us',
+  trustLine = 'Free estimates. No obligation. Richmond, VA and surrounding areas.',
 } = Astro.props;
 ---
 
-<section class="border-t border-slate-gray py-[var(--spacing-section)] px-6 lg:px-12">
-  <div class="max-w-4xl">
-    <h2 class="font-heading text-titanium-white mb-6" style={`font-size: var(--text-fluid-3xl);`}>
+<section class="border-t border-slate-gray py-24 lg:py-32 px-6 lg:px-12">
+  <div class="max-w-4xl mx-auto text-center" data-animate="fade">
+    <h2
+      class="font-heading text-titanium-white mb-6"
+      style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);"
+    >
       {headline}
     </h2>
     {description && (
-      <p class="font-body text-shadow-gray mb-10" style={`font-size: var(--text-fluid-lg);`}>
+      <p
+        class="font-body text-shadow-gray mb-10 max-w-2xl mx-auto"
+        style="font-size: var(--text-fluid-lg);"
+      >
         {description}
       </p>
     )}
-    <div class="flex flex-wrap items-center gap-6">
+    <div class="flex flex-wrap items-center justify-center gap-6 mb-8">
       <Button href={primaryHref} variant="primary">{primaryLabel}</Button>
       <Button href={secondaryHref} variant="ghost">{secondaryLabel}</Button>
     </div>
+    {trustLine && (
+      <p
+        class="font-mono text-smoke-gray uppercase"
+        style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+      >
+        {trustLine}
+      </p>
+    )}
   </div>
 </section>

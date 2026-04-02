@@ -5,9 +5,10 @@ interface Props {
   href: string;
   date: Date;
   tags?: string[];
+  cover?: string;
 }
 
-const { title, description, href, date, tags } = Astro.props;
+const { title, description, href, date, tags, cover } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -16,24 +17,59 @@ const formattedDate = date.toLocaleDateString('en-US', {
 });
 ---
 
-<a href={href} class="group block">
+<a
+  href={href}
+  class="group block transition-transform duration-300 hover:-translate-y-1"
+>
+  <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-5">
+    {cover ? (
+      <img
+        src={cover}
+        alt=""
+        class="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-75"
+        loading="lazy"
+      />
+    ) : (
+      <div class="w-full h-full flex items-center justify-center">
+        <span
+          class="font-mono text-smoke-gray uppercase"
+          style="font-size: var(--text-fluid-xs);"
+        >
+          Journal
+        </span>
+      </div>
+    )}
+  </div>
+
   <time
     datetime={date.toISOString().split('T')[0]}
     class="font-mono text-smoke-gray uppercase"
-    style={`font-size: var(--text-fluid-xs);`}
+    style="font-size: var(--text-fluid-xs);"
   >
     {formattedDate}
   </time>
-  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200 mt-2 mb-3" style={`font-size: var(--text-fluid-xl);`}>
+
+  <h3
+    class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200 mt-2 mb-3"
+    style="font-size: var(--text-fluid-xl);"
+  >
     {title}
   </h3>
-  <p class="font-body text-shadow-gray mb-4" style={`font-size: var(--text-fluid-base);`}>
+
+  <p
+    class="font-body text-shadow-gray mb-4"
+    style="font-size: var(--text-fluid-base);"
+  >
     {description}
   </p>
+
   {tags && tags.length > 0 && (
     <div class="flex flex-wrap gap-3">
       {tags.map((tag) => (
-        <span class="font-mono text-smoke-gray uppercase" style={`font-size: var(--text-fluid-xs);`}>
+        <span
+          class="font-mono text-smoke-gray uppercase"
+          style="font-size: var(--text-fluid-xs);"
+        >
           {tag}
         </span>
       ))}

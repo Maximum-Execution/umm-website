@@ -1,0 +1,47 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  stats?: Stat[];
+}
+
+const { stats = [
+  { value: '20+', label: 'Years Painting' },
+  { value: '50+', label: 'Projects Completed' },
+  { value: '10,000+', label: 'Square Feet Painted' },
+  { value: 'Richmond', label: 'Virginia' },
+] } = Astro.props;
+---
+
+<section class="bg-midnight-graphite border-y border-slate-gray">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+      {stats.map((stat, i) => (
+        <div
+          class:list={[
+            'text-center',
+            i > 0 && 'lg:border-l lg:border-slate-gray',
+          ]}
+          data-animate="fade"
+          data-animate-delay={String(Math.min(i + 1, 4))}
+        >
+          <p
+            class="font-heading text-titanium-white mb-2"
+            style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid); letter-spacing: var(--tracking-tight);"
+          >
+            {stat.value}
+          </p>
+          <p
+            class="font-mono text-smoke-gray uppercase"
+            style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+          >
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

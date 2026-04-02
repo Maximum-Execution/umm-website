@@ -1,28 +1,83 @@
 ---
-import Button from '../Button.astro';
+interface Props {
+  headline?: string;
+  subline?: string;
+  videoSrc?: string;
+  posterSrc?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  headline = 'Landmarks, not lookalikes.',
+  subline = 'Hand-painted murals and signs in Richmond, Virginia.',
+  videoSrc = '/video/hero-reel.mp4',
+  posterSrc = '/images/hero-poster.jpg',
+  ctaLabel = 'See the Work',
+  ctaHref = '/work',
+} = Astro.props;
 ---
 
-<section class="relative min-h-screen flex flex-col justify-center px-6 lg:px-12 pt-20">
-  <div class="max-w-7xl w-full">
-    <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-sm); letter-spacing: 0.08em; line-height: 1.5;">
-      Richmond, Virginia &mdash; Hand-painted murals &amp; signs
-    </p>
+<section class="relative min-h-screen flex items-end overflow-hidden">
+  <!-- Video Background -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster={posterSrc}
+    preload="metadata"
+  >
+    <source src={videoSrc} type="video/mp4" />
+  </video>
 
-    <h1 class="font-heading text-titanium-white font-black mb-4" style="font-size: var(--text-fluid-5xl); line-height: 1.15; letter-spacing: -0.02em;">
-      Landmarks, not lookalikes.
-    </h1>
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-bone-black via-bone-black/50 to-bone-black/20" aria-hidden="true"></div>
 
-    <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-xl); line-height: 1.5; letter-spacing: 0.02em;">
-      Public art from your story, not a template. We paint murals and signs in Richmond, Virginia.
-    </p>
-
-    <div class="flex flex-row items-center gap-6">
-      <Button href="mailto:hello@untitledmixedmedia.com">
-        Request a Site Visit
-      </Button>
-      <Button href="#work" variant="ghost">
-        See the Work
-      </Button>
+  <!-- Content -->
+  <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
+    <div class="max-w-5xl">
+      <h1
+        class="font-blackletter text-titanium-white mb-4"
+        style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid); letter-spacing: var(--tracking-tighter);"
+        data-animate
+      >
+        {headline}
+      </h1>
+      {subline && (
+        <p
+          class="font-body text-soft-gray mb-10 max-w-2xl"
+          style="font-size: var(--text-fluid-lg);"
+          data-animate
+          data-animate-delay="1"
+        >
+          {subline}
+        </p>
+      )}
+      <a
+        href={ctaHref}
+        class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+        data-animate
+        data-animate-delay="2"
+      >
+        {ctaLabel}
+      </a>
     </div>
   </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
+    <div
+      class="w-px h-12 bg-titanium-white/60 origin-top"
+      style="animation: scroll-pulse 2s ease-in-out infinite;"
+    ></div>
+  </div>
 </section>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    video { display: none; }
+    [style*="scroll-pulse"] { animation: none !important; opacity: 0.6; }
+  }
+</style>

@@ -59,7 +59,6 @@ import '../styles/global.css';
     <slot />
 
     <script>
-      // Scroll reveal — skip for users who prefer reduced motion
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -70,11 +69,14 @@ import '../styles/global.css';
               }
             });
           },
-          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
         );
-
-        document.querySelectorAll('[data-animate]').forEach((el) => {
+        document.querySelectorAll('[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"]').forEach((el) => {
           observer.observe(el);
+        });
+      } else {
+        document.querySelectorAll('[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"]').forEach((el) => {
+          el.classList.add('is-visible');
         });
       }
     </script>

@@ -309,11 +309,68 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  [data-animate] {
+  [data-animate],
+  [data-animate="scale"],
+  [data-animate="fade"],
+  [data-animate="reveal"] {
     opacity: 1;
     transform: none;
+    clip-path: none;
     transition: none;
   }
+  [data-animate-delay="1"],
+  [data-animate-delay="2"],
+  [data-animate-delay="3"],
+  [data-animate-delay="4"],
+  [data-animate-delay="5"] {
+    transition-delay: 0ms;
+  }
+}
+
+/* ─── Staggered Animation Delays ──────────────────────── */
+
+[data-animate-delay="1"] { transition-delay: 100ms; }
+[data-animate-delay="2"] { transition-delay: 200ms; }
+[data-animate-delay="3"] { transition-delay: 300ms; }
+[data-animate-delay="4"] { transition-delay: 400ms; }
+[data-animate-delay="5"] { transition-delay: 500ms; }
+
+/* ─── Animation Variants ──────────────────────────────── */
+
+/* Scale-in (for cards, grid items) */
+[data-animate="scale"] {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+[data-animate="scale"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Fade only (no movement) */
+[data-animate="fade"] {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+[data-animate="fade"].is-visible {
+  opacity: 1;
+}
+
+/* Clip-path wipe reveal (for images) */
+[data-animate="reveal"] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+[data-animate="reveal"].is-visible {
+  clip-path: inset(0);
+}
+
+/* ─── Scroll Indicator Pulse ──────────────────────────── */
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.4; transform: scaleY(0.6); }
 }
 
 /* ─── Noise Overlay ─────────────────────────────────────── */

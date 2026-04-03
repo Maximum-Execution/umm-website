@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted Menus and Menu Boards | Untitled Mixed Media" description="Hand-painted menu boards, chalkboard menus, and permanent menu displays for restaurants and bars in Richmond, Virginia.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Hand-Painted Menus' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted Menus and Menu Boards
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Your menu is the first thing guests read in your restaurant, and right now it does not reflect the thought you put into the food. Printed menus look corporate. Digital screens feel cold. The board behind the counter &mdash; if there is one &mdash; is either a cluttered chalkboard nobody can read or a whiteboard with dry-erase markers. You have a wall that could be a feature, and it is being wasted.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We paint menu boards for restaurants, coffee shops, breweries, and bars. Every board is designed for readability at ordering distance, and we know how to balance permanent branding with updatable sections for rotating items. Whether you need a fully permanent menu or a hybrid with chalkboard areas for daily specials, we build it to work the way your kitchen actually operates.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We visit your space, measure the wall, and show you the design before we start. Once you approve the layout, we paint it on site. The finished board is something guests photograph and share &mdash; clear, beautiful presentation that makes ordering easy and makes the food sound as good as it tastes.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo of a hand-painted menu board in a restaurant or bar setting &mdash; showing the full board with legible text and the surrounding environment.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'Can menu items be updated after the board is painted?', answer: 'Yes. We design boards with permanent header sections and designated chalkboard or dry-erase areas for rotating items. For fully permanent menus, we can repaint individual items when your menu changes &mdash; this is a quick, low-cost update.' },
+      { question: 'What materials do you paint menu boards on?', answer: 'We paint on wood panels, MDO board, chalkboard-painted surfaces, directly on walls, and pre-built frames. We can build the board from scratch or paint on a surface you provide. The material depends on your space and whether you need portability.' },
+      { question: 'What sizes work for menu boards?', answer: 'Size depends on viewing distance and menu length. A coffee shop counter board might be 3 by 4 feet. A full restaurant menu wall can be 4 by 8 feet or larger. We measure your space and design to fit.' },
+      { question: 'What is the difference between chalkboard and permanent menu boards?', answer: 'Chalkboard menus are written in chalk or chalk markers and can be erased and rewritten. Permanent menus are painted in enamel and last for years. Most restaurants benefit from a hybrid &mdash; permanent branding and categories with chalkboard areas for changing items.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Bar & Restaurant Signs', href: '/hand-painted-signs/bar-and-restaurant-signs', description: 'Signage that builds atmosphere before guests walk in.' },
+      { title: 'Interior Signs', href: '/hand-painted-signs/interior-signs', description: 'Branded interiors &mdash; wayfinding, feature walls, and lettering.' },
+      { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

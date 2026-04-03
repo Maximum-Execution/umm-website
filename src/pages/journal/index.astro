@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import JournalCard from '../../components/JournalCard.astro';
+
+const posts = (await getCollection('journal'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Journal — Untitled Mixed Media"
+  description="Writing about murals, signs, and the buildings that wear them. Process, materials, and stories from the field."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Journal' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Journal
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        Writing about murals, signs, and the buildings that wear them.
+      </h1>
+
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        Process notes, materials research, and the stories behind completed projects. We write about what we know — how murals are made, why certain paints outlast others, and what it takes to turn a blank wall into something worth remembering.
+      </p>
+
+      {posts.length > 0 ? (
+        <div class="space-y-12">
+          {posts.map((post, i) => (
+            <div class="border-b border-slate-gray pb-12" data-animate="fade" data-animate-delay={String(Math.min(i + 1, 5))}>
+              <JournalCard
+                title={post.data.title}
+                description={post.data.description}
+                href={`/journal/${post.id}`}
+                date={post.data.date}
+                tags={post.data.tags}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-lg);">
+          No posts yet. Check back soon.
+        </p>
+      )}
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

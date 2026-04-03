@@ -3,26 +3,80 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import HeroSection from '../components/sections/HeroSection.astro';
-import StakesSection from '../components/sections/StakesSection.astro';
-import ValuePropSection from '../components/sections/ValuePropSection.astro';
-import GuideSection from '../components/sections/GuideSection.astro';
+import FeaturedGrid from '../components/sections/FeaturedGrid.astro';
+import BrandMarquee from '../components/sections/BrandMarquee.astro';
+// CredibilityStrip removed — stats were placeholder/unverified. Re-add when real numbers are available.
 import ProcessSection from '../components/sections/ProcessSection.astro';
-import ExplanatorySection from '../components/sections/ExplanatorySection.astro';
-import PortfolioPreview from '../components/sections/PortfolioPreview.astro';
-import CTASection from '../components/sections/CTASection.astro';
+import TestimonialSection from '../components/sections/TestimonialSection.astro';
+import ServiceShowcase from '../components/sections/ServiceShowcase.astro';
+import JournalCard from '../components/JournalCard.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { getCollection } from 'astro:content';
+
+const journalPosts = (await getCollection('journal'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
 ---
 
 <BaseLayout>
   <Nav />
   <main>
+    {/* 1. Hero — full-screen video with headline */}
     <HeroSection />
-    <StakesSection />
-    <ValuePropSection />
-    <GuideSection />
+
+    {/* 2. Featured Projects — asymmetric full-bleed grid */}
+    <FeaturedGrid />
+
+    {/* 3. Brand Marquee — scrolling text rhythm break (Colossal Media pattern) */}
+    <BrandMarquee />
+
+    {/* 4. Process — 3 steps with imagery */}
     <ProcessSection />
-    <PortfolioPreview />
-    <ExplanatorySection />
-    <CTASection />
+
+    {/* 6. Testimonial — full-width pull quote */}
+    <TestimonialSection />
+
+    {/* 7. Services — image-backed showcase cards */}
+    <ServiceShowcase />
+
+    {/* 8. Journal Preview — 3 recent posts, text-forward */}
+    {journalPosts.length > 0 && (
+      <section class="py-24 lg:py-32 px-6 lg:px-12 border-t border-slate-gray">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex items-baseline justify-between mb-12">
+            <p
+              class="font-mono text-smoke-gray uppercase"
+              style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+            >
+              Journal
+            </p>
+            <a
+              href="/journal"
+              class="font-mono text-smoke-gray uppercase hover:text-titanium-white transition-colors"
+              style="font-size: var(--text-fluid-xs);"
+            >
+              View all &rarr;
+            </a>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            {journalPosts.map((post, i) => (
+              <div data-animate="fade" data-animate-delay={String(i + 1)}>
+                <JournalCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  href={`/journal/${post.id}`}
+                  date={post.data.date}
+                  tags={post.data.tags}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* 9. CTA Block — question-format final conversion */}
+    <CTABlock />
   </main>
   <Footer />
 </BaseLayout>

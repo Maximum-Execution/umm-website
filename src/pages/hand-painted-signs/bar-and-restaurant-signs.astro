@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted Bar and Restaurant Signs | Untitled Mixed Media" description="Hand-painted signs for bars, restaurants, and hospitality venues in Richmond, Virginia. Menu boards, exterior signage, and interior lettering that builds atmosphere.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Bar & Restaurant Signs' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted Bar and Restaurant Signs
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          You have invested in the food, the drinks, and the design of your space &mdash; but the signage does not match. Printed menu boards look cheap. Vinyl logos peel in kitchen humidity. Generic signs feel like a corporate afterthought in a place built on personality. Atmosphere starts before the first drink is poured, and right now your signage is not pulling its weight.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We have painted signs for bars, breweries, and restaurants across Richmond. We understand the hospitality environment &mdash; humidity, grease, foot traffic &mdash; and we use materials that hold up to all of it. Every sign is hand-painted to match your brand, your space, and the feeling you want guests to have before they sit down.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We visit your venue, assess the surfaces and the layout, and show you the design before we start. Once approved, we paint it on site. The result is signage that guests photograph before they photograph the food &mdash; mentioned in reviews, shared on social media, and remembered long after the meal.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo of a hand-painted bar or restaurant sign &mdash; showing the sign in context within the venue, capturing the atmosphere it creates.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'Can you paint menu boards that we can update?', answer: 'Yes. We paint permanent menu board frames and headers, then leave designated areas as chalkboard surfaces for rotating items. You get the look of a hand-painted board with the flexibility to change daily specials.' },
+      { question: 'Do you paint specials boards and daily menus?', answer: 'We can paint permanent specials boards with a chalkboard or dry-erase area for changing items. For fully permanent menus, we paint every item &mdash; these work best for restaurants with a fixed menu.' },
+      { question: 'What about exterior signage for restaurants?', answer: 'Exterior signs get our most durable treatment &mdash; marine-grade enamel, UV-resistant clear coats, and weather-sealed edges. We design for readability from the street and compliance with local sign ordinances.' },
+      { question: 'Can you match our existing brand style?', answer: 'Yes. Send us your brand guidelines, and we will match your typefaces, colors, and visual language. If you do not have formal guidelines, we can work from your logo, menus, or website to create signage that feels cohesive.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Hand-Painted Menus', href: '/hand-painted-signs/hand-painted-menus', description: 'Menu boards and displays painted by hand.' },
+      { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },
+      { title: 'Interior Signs', href: '/hand-painted-signs/interior-signs', description: 'Branded interiors &mdash; wayfinding, feature walls, and lettering.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

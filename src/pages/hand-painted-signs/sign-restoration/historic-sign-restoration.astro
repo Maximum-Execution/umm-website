@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import RelatedPages from '../../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Historic Sign Restoration | Untitled Mixed Media" description="Professional historic sign restoration in Richmond, VA. Color matching, structural repair, and documentation for deteriorating hand-painted signs on historic buildings.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration' },
+        { label: 'Historic Sign Restoration' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Sign Restoration
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Historic Sign Restoration
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Your building has a hand-painted sign that is flaking, fading, or barely legible. Paint is delaminating from the substrate. The sign may be at risk during upcoming renovation work. You want it restored correctly &mdash; not covered up, not approximated &mdash; but most sign companies install vinyl or digital prints. Finding someone who understands traditional materials and will not cut corners on something irreplaceable is the real challenge.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We work with the same traditional materials and techniques used in the original signs &mdash; enamel paint systems, gold leaf sizing, and period-appropriate pigments. We use spectrophotometer readings on surviving paint to match original colors accurately, not approximately. Every restoration is documented with before, during, and after photography, material analysis, and a written report that serves as a permanent record of the work.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          The process begins with a site visit and condition assessment. We examine the sign's substrate, paint layers, and structural attachment, then provide a detailed scope of work and cost estimate. Once approved, we stabilize the structure, match the original colors, and restore the sign to its documented historic appearance. The building gains character, meets preservation requirements, and tells a story that connects the present to the past.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a before-and-after photo of a historic sign restoration project. Show the deteriorated state alongside the completed restoration. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How do you assess a historic sign before restoration?', answer: 'The assessment begins with a site visit to examine the sign\'s condition, substrate integrity, paint layers, and structural attachment. We photograph the sign in detail, take paint samples for color analysis, and document any areas of loss or damage. The assessment report includes a condition summary, recommended scope of work, and cost estimate.' },
+      { question: 'How do you match original colors on a historic sign?', answer: 'We use spectrophotometer readings on surviving paint to identify the original pigments and color values. Where original paint is too deteriorated, we cross-reference with historical paint catalogs and period-appropriate color systems. The goal is an accurate match to the original — not a modern reinterpretation.' },
+      { question: 'Can you repair structural damage to historic signs?', answer: 'Yes. Structural issues — cracked substrates, detached mounting hardware, water-damaged wood panels — are addressed before any paint restoration begins. We stabilize the physical structure using period-appropriate materials and techniques whenever possible, ensuring the repair is durable without compromising the sign\'s historic character.' },
+      { question: 'Do you document the restoration process?', answer: 'Every restoration is documented with before, during, and after photography. We record material analysis, color matching data, and the methods used at each stage. The final documentation package serves as a permanent record for the property owner, preservation boards, and future maintenance planning.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Ghost Signs in Richmond', href: '/hand-painted-signs/sign-restoration/ghost-signs-richmond-va', description: 'A guide to Richmond\'s fading painted advertisements.' },
+      { title: 'Secretary of the Interior Standards', href: '/hand-painted-signs/sign-restoration/secretary-of-interior-standards', description: 'Federal standards for historic sign restoration.' },
+      { title: 'Sign Restoration Cost', href: '/hand-painted-signs/sign-restoration/sign-restoration-cost', description: 'What drives the cost of restoring a sign.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,36 +1,56 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-
-const projects = (await getCollection('projects'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
 ---
 
 <BaseLayout
   title="Work — Untitled Mixed Media"
-  description="Hand-painted murals, sign restorations, and public art installations across Richmond, Virginia."
+  description="Hand-painted murals and signs for businesses across Richmond, Virginia. Two service lines, one craft — built from your actual location."
 >
   <Nav />
-  <main class="pt-28 pb-16">
-    <div class="mx-auto max-w-7xl px-6">
-      <h1 class="font-heading text-[var(--text-fluid-4xl)] text-titanium-white mb-4" data-animate>
-        Our Work
-      </h1>
-      <p class="text-[var(--text-fluid-lg)] text-shadow-gray mb-16 max-w-2xl" data-animate>
-        Hand-painted murals, sign restorations, and public art installations across Richmond, Virginia.
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        What we do
       </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <div data-animate>
-            <ProjectCard project={project} />
-          </div>
-        ))}
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        Murals and hand-painted signs built from your actual location.
+      </h1>
+
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        Your building already has a story — its materials, its neighborhood, its history. We discover it, design from it, and paint it by hand. Two service lines, one craft: murals that transform identity and signs that outlast anything vinyl can do.
+      </p>
+
+      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Murals"
+            description="Hand-painted murals discovered from your building's own story. Site visit, photorealistic render, then paint. The result is a landmark."
+            href="/murals"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Hand-Painted Signs"
+            description="Gold leaf, window lettering, storefront signs, and menu boards. Hand-painted lettering that weathers into character instead of peeling off in three years."
+            href="/hand-painted-signs"
+          />
+        </div>
       </div>
     </div>
   </main>
+
+  <CTABlock />
+
   <Footer />
 </BaseLayout>

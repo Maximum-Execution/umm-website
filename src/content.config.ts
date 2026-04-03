@@ -13,7 +13,20 @@ const projects = defineCollection({
     featured: z.boolean().default(false),
     client: z.string().optional(),
     location: z.string().optional(),
+    materials: z.string().optional(),
   }),
 });
 
-export const collections = { projects };
+const journal = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/journal' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    tags: z.array(z.string()),
+    author: z.string().default('Spencer Bennett'),
+    featured: z.boolean().default(false),
+  }),
+});
+
+export const collections = { projects, journal };

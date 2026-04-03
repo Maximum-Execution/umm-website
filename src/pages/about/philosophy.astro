@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Philosophy — Meaning Discovered, Not Imposed | Untitled Mixed Media" description="Places become distinctive when meaning is discovered from them, not imposed on them. The philosophy behind every Untitled Mixed Media project.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about' },
+        { label: 'Philosophy' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        About
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Meaning Discovered, Not Imposed
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Every building has a story it is already telling. The brickwork, the neighborhood, the light, the people who pass by every day. Most muralists arrive with a portfolio of designs and look for a wall to put them on. We arrive with questions and look for the answers the place already holds.
+        </p>
+      </div>
+
+      <!-- Discovery Over Imposition -->
+      <div class="space-y-10 mb-16">
+        <div>
+          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+            Discovery Over Imposition
+          </h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+            The difference between a mural that belongs and one that merely occupies space is where the idea came from. When the concept is discovered from the site itself, from the history of the building, the character of the street, the materials underfoot, the work becomes inseparable from its location. It could not exist anywhere else. That specificity is what makes public art meaningful rather than decorative.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+            Craft Over Production
+          </h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+            Hand-painting is slower than printing. It is more expensive than vinyl. It requires years of training that cannot be automated or outsourced. That is exactly the point. A hand-painted sign or mural carries evidence of human decision-making in every brushstroke. The slight variations in letterforms, the way pigment sits differently on textured brick versus smooth plaster, the subtle shifts in density where the painter adjusted pressure. These are not imperfections. They are proof that a human being made this, here, for this place.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+            Landmarks, Not Lookalikes
+          </h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+            A landmark is something people navigate by. It is the mural on the corner that tells you where to turn, the sign that has been there so long it has become part of the neighborhood's identity. A lookalike is something you scroll past because you have seen it in every other city. We build landmarks. Work that is so rooted in its location that removing it would leave a visible gap in the streetscape.
+          </p>
+        </div>
+      </div>
+
+      <div class="aspect-[16/9] overflow-hidden mb-16">
+        <img
+          src="/images/service-murals.jpg"
+          alt="Hand-painted mural in context with its surrounding neighborhood"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Our Process', href: '/about/process', description: 'The Provenance Method from discovery to completion.' },
+      { title: 'About', href: '/about', description: 'Untitled Mixed Media — hand-painted murals and signs in Richmond, VA.' },
+      { title: 'Murals', href: '/murals', description: 'Hand-painted murals in Richmond, VA.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

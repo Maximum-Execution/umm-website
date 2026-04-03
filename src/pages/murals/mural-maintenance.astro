@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Mural Maintenance and Protection | Untitled Mixed Media" description="Mural maintenance, cleaning, UV protection, anti-graffiti coatings, and touch-up services. Keep your mural looking sharp for years with proper care and protection.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Mural Maintenance' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Mural Maintenance and Protection
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          You invested real money in a mural and now it is showing its age. Maybe the colors are fading from UV exposure, dirt is building up, graffiti appeared overnight, or the clear coat is starting to peel. You want to fix it, but you are not sure how to clean or repair a mural without making things worse. A pressure washer will strip the paint. The wrong solvent will dissolve the finish. And doing nothing means watching your investment slowly disappear.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          Mural maintenance is specialized work, and most property owners have never had to think about it before. We know the correct cleaning methods for different paint systems, which UV-protective coatings perform best based on your wall's orientation and sun exposure, how to apply anti-graffiti coatings that let you remove tags without touching the art underneath, and how to do touch-ups that match the original work exactly. Art that was worth creating is worth maintaining.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We visit your site, assess the mural's current condition, and recommend the right course of action. Whether that is a cleaning, a UV recoat, graffiti removal, or a full touch-up, we handle it with the same care that went into painting it the first time. Your mural stays vibrant, your property keeps its visual impact, and the investment you made continues to pay off.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing mural maintenance in action — touch-up work, cleaning, or a well-preserved mural that demonstrates the result of proper care. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How should I clean my mural?', answer: 'For most exterior murals, gentle cleaning with a soft brush or cloth and mild detergent diluted in water is sufficient. Never use pressure washers, abrasive cleaners, or solvents on a painted mural — they will strip the finish. For interior murals, a damp microfiber cloth is usually all that is needed. If the mural has a clear coat, the cleaning process is even simpler. We provide specific cleaning instructions with every completed project.' },
+      { question: 'How often does a mural need touch-ups?', answer: 'Exterior murals in Richmond typically benefit from a professional inspection every 2-3 years, with minor touch-ups as needed. Interior murals may go 5-10 years without any attention. The timeline depends on sun exposure, weather conditions, surface material, and paint system. KEIM mineral paint murals require the least maintenance of any system.' },
+      { question: 'What is UV protection and do I need it?', answer: 'UV-resistant clear coats act as a shield against ultraviolet radiation, which is the primary cause of color fading in exterior murals. We apply UV-protective finishes to all exterior murals as part of the standard process. For south-facing and west-facing walls with heavy sun exposure, we use the highest-grade UV coatings available. This is included in our pricing — not an add-on.' },
+      { question: 'What are anti-graffiti coatings?', answer: 'Anti-graffiti coatings create a sacrificial or non-stick layer over the mural surface. If the mural gets tagged, the graffiti can be removed without damaging the mural underneath. Sacrificial coatings are removed along with the graffiti and then reapplied. Non-stick coatings allow graffiti to be wiped off and last longer. We recommend anti-graffiti coatings for any mural in a high-traffic urban area.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Outdoor Murals', href: '/murals/outdoor-murals-richmond-va', description: 'Weather-durable exterior murals built to last.' },
+      { title: 'Business Murals', href: '/murals/business-murals-richmond-va', description: 'Exterior and interior murals that turn storefronts into destinations.' },
+      { title: 'Mural Cost', href: '/murals/mural-cost-richmond-va', description: 'Transparent pricing for every scale and style.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

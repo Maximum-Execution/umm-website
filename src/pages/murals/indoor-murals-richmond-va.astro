@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Indoor Murals in Richmond, VA | Untitled Mixed Media" description="Hand-painted indoor murals in Richmond, VA. Low-VOC interior murals for restaurants, offices, retail spaces, and homes that transform walls into immersive experiences.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Indoor Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Indoor Murals in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Your interior does not match the experience you are creating. The dining room feels flat, the lobby makes no impression, or the retail floor just blends into the background. You know a great space creates an emotional response the moment someone walks in, but paint swatches and framed prints are not getting you there. The walls are the largest surfaces in the room and they are doing nothing.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          Interior mural work comes with its own set of challenges. Ventilation matters. Paint fumes in an occupied restaurant or office are not acceptable. Furniture, fixtures, and foot traffic have to be accounted for. We use low-VOC and zero-VOC paint systems for all indoor projects, schedule around your operating hours, and handle all setup and cleanup so your business keeps running. We have painted interiors in restaurants, offices, and homes across Richmond and understand how lighting, wall texture, and room geometry affect the finished piece.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We visit your space, evaluate the walls and lighting, and build a photorealistic mockup so you see the design in context before we start. Then we paint it. The result is a room that stops people in their tracks, gives visitors something to photograph, and turns your interior into an experience people remember.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a completed indoor mural — restaurant interior, office lobby, or residential feature wall. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'Are the paint fumes safe for indoor spaces?', answer: 'We use low-VOC and zero-VOC paint systems for all interior mural work. These paints produce minimal odor and are safe for occupied spaces. For sensitive environments like restaurants or medical offices, we can schedule painting during closed hours and ensure proper ventilation throughout the process.' },
+      { question: 'How long does an indoor mural take?', answer: 'Interior murals typically take 3-10 days of painting depending on wall size and complexity. The total project timeline from site visit through completion is usually 3-6 weeks. We can work around your operating hours — evenings, weekends, or closed days — to minimize disruption.' },
+      { question: 'How do you prepare interior wall surfaces?', answer: 'Surface prep depends on the existing wall condition. We clean, repair any damage, prime as needed, and ensure proper adhesion before painting. For drywall, we use compatible primer systems. For textured walls, we discuss whether to smooth the surface or incorporate the texture into the design. All prep work is included in our pricing.' },
+      { question: 'How does lighting affect an indoor mural?', answer: 'Lighting is a critical consideration for indoor murals. We evaluate your existing lighting during the site visit and design the mural to work with it — accounting for natural light sources, artificial lighting direction, and how the colors will read under your specific conditions. We can also recommend lighting adjustments to enhance the mural after installation.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Business Murals', href: '/murals/business-murals-richmond-va', description: 'Commercial murals for storefronts, restaurants, and retail.' },
+      { title: 'Outdoor Murals', href: '/murals/outdoor-murals-richmond-va', description: 'Weather-durable exterior murals built to last.' },
+      { title: 'Mural Cost', href: '/murals/mural-cost-richmond-va', description: 'Transparent pricing for every scale and style.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

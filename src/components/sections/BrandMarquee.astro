@@ -1,0 +1,52 @@
+---
+interface Props {
+  text?: string;
+  speed?: string;
+}
+
+const {
+  text = 'Landmarks Not Lookalikes',
+  speed = '25s',
+} = Astro.props;
+
+const repeated = Array(6).fill(text);
+---
+
+<section class="border-y border-slate-gray overflow-hidden py-6 lg:py-8" aria-hidden="true">
+  <div class="marquee-track flex whitespace-nowrap" style={`--marquee-speed: ${speed};`}>
+    {repeated.map((t) => (
+      <span
+        class="font-heading text-titanium-white/10 uppercase shrink-0 mx-8 lg:mx-12"
+        style="font-size: var(--text-fluid-4xl); letter-spacing: var(--tracking-wider);"
+      >
+        {t}
+      </span>
+    ))}
+    {repeated.map((t) => (
+      <span
+        class="font-heading text-titanium-white/10 uppercase shrink-0 mx-8 lg:mx-12"
+        style="font-size: var(--text-fluid-4xl); letter-spacing: var(--tracking-wider);"
+        aria-hidden="true"
+      >
+        {t}
+      </span>
+    ))}
+  </div>
+</section>
+
+<style>
+  .marquee-track {
+    animation: marquee-scroll var(--marquee-speed, 25s) linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>

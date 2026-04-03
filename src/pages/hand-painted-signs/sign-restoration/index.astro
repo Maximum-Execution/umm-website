@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+import ServiceCard from '../../../components/ServiceCard.astro';
+---
+
+<BaseLayout
+  title="Sign Restoration — Untitled Mixed Media | Richmond VA"
+  description="Restoring faded, damaged, and historic hand-painted signs in Richmond, Virginia. Ghost signs, gilded lettering, and century-old advertisements brought back to life."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Sign Restoration' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Sign Restoration
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        Bringing back the craft that was already there.
+      </h1>
+
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        Richmond's ghost signs and gilded lettering are disappearing — fading off brick walls one winter at a time. We restore them using the same techniques the original sign painters used: matching materials, studying the original letterforms, and bringing the work back faithfully. The goal isn't to make old signs look new. It's to make them look the way they did when someone first painted them with care.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Ghost Signs Richmond VA"
+            description="Faded painted advertisements on brick. Preserving and restoring Richmond's ghost signs before they disappear."
+            href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Historic Sign Restoration"
+            description="Restoring signs on historic buildings. Matching original materials and techniques, faithful to the original craft."
+            href="/hand-painted-signs/sign-restoration/historic-sign-restoration"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Secretary of Interior Standards"
+            description="Restoration work that meets the Secretary of the Interior's Standards for historic preservation compliance."
+            href="/hand-painted-signs/sign-restoration/secretary-of-interior-standards"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Sign Restoration Cost"
+            description="What determines restoration cost. Condition, materials, size, and historic district requirements explained."
+            href="/hand-painted-signs/sign-restoration/sign-restoration-cost"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="How It Works"
+            description="The restoration process from assessment to completion. Documentation, materials matching, restoration, and sealing."
+            href="/hand-painted-signs/sign-restoration/how-it-works"
+          />
+        </div>
+      </div>
+
+      <!-- Parent link -->
+      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg);">
+        <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">
+          &larr; Back to Hand-Painted Signs
+        </a>
+      </p>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

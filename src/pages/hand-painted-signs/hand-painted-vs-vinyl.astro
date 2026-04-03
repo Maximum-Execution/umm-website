@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted Signs vs Vinyl: Which Lasts Longer? | Untitled Mixed Media" description="An honest comparison of hand-painted signs versus vinyl lettering. Lifespan, maintenance, weather resistance, and long-term appearance.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Hand-Painted vs Vinyl' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted Signs vs Vinyl: Which Lasts Longer?
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          You are trying to decide between hand-painted signage and vinyl lettering, and you want the honest answer &mdash; not a sales pitch. Vinyl is cheaper upfront, but it fails within 3 to 7 years. You have seen it on other buildings: peeling edges, UV fading, adhesive residue on the wall. You should not have to choose between looking good now and looking good in ten years.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We have seen both sides. We have painted over peeling vinyl and we have maintained hand-painted signs that are 15 years old and still sharp. The difference comes down to how each material bonds to the surface. Vinyl sits on top, held by adhesive that weakens in heat and becomes brittle in cold. Paint penetrates the substrate and becomes part of it. This page lays out the facts so you can decide for yourself.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          If you choose hand-painted, the process is straightforward: we visit your site, show you the design, and paint it. The result is a sign that looks better at year 10 than vinyl looks at year 3 &mdash; a single investment instead of a recurring replacement cost.
+        </p>
+      </div>
+
+      <!-- 12-Year Cost Breakdown Table Placeholder -->
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Table placeholder: 12-Year Cost Breakdown</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Build a comparison table with columns for: Year (1 through 12), Vinyl cumulative cost (initial install plus replacements every 3 to 5 years plus removal labor), Hand-painted cumulative cost (initial install plus minor touch-ups at year 7 to 8), and Appearance rating (vinyl degrades while hand-painted weathers gracefully). Show the crossover point where hand-painted becomes cheaper per year.</p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add side-by-side comparison photo: a 5-year-old vinyl sign showing edge peeling and UV fade next to a 10-year-old hand-painted sign still holding its color and edges.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How long do vinyl signs actually last?', answer: 'Most exterior vinyl lettering lasts 3 to 7 years depending on sun exposure, temperature swings, and surface prep. Premium cast vinyl can last longer, but adhesive failure and edge lifting are inevitable on most surfaces.' },
+      { question: 'How long do hand-painted signs last?', answer: 'A properly painted sign on a well-prepared surface lasts 15 to 25 years or more. Marine-grade enamel bonds into the surface rather than sitting on top of it, which is why hand-painted signs weather rather than peel.' },
+      { question: 'What about maintenance?', answer: 'Vinyl cannot be repaired. Once it starts peeling, the whole sign needs replacing. Hand-painted signs can be touched up in place. A minor touch-up at year 8 or 10 costs a fraction of a full replacement.' },
+      { question: 'How do they compare in different weather?', answer: 'Vinyl adhesive weakens in heat and becomes brittle in cold. Hand-painted enamel flexes with temperature changes because it is bonded to the substrate. In Richmond hot summers and occasional ice storms, paint outlasts adhesive every time.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Cost Per Year Comparison', href: '/hand-painted-signs/cost-per-year-comparison', description: 'The real numbers behind hand-painted vs vinyl pricing.' },
+      { title: 'Why Hand-Painted Signs Last Longer', href: '/hand-painted-signs/why-hand-painted-signs-last-longer', description: 'The science of paint bonding vs adhesive failure.' },
+      { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

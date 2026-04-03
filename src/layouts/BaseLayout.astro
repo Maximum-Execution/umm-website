@@ -3,12 +3,16 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 const {
   title = 'Untitled Mixed Media — Hand-Painted Murals & Signs | Richmond, VA',
   description = 'Hand-painted murals and signs built from your actual location. Landmarks, not lookalikes. Richmond, Virginia.',
   ogImage = '/og-image.png',
+  ogType = 'website',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -25,10 +29,11 @@ import '../styles/global.css';
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -40,39 +45,73 @@ import '../styles/global.css';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts — preload critical paths -->
+    <link rel="preload" href="/fonts/woff2/LyonText-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/woff2/Canela-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/woff2/Gotham-Book.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- LocalBusiness JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Untitled Mixed Media",
+      "description": "Hand-painted murals and signs for businesses in Richmond, Virginia. Landmarks, not lookalikes.",
+      "url": "https://untitledmixedmedia.com",
+      "email": "hello@untitledmixedmedia.com",
+      "image": "https://untitledmixedmedia.com/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Richmond",
+        "addressRegion": "VA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.5407,
+        "longitude": -77.4360
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.5407, "longitude": -77.4360 },
+        "geoRadius": "80000"
+      },
+      "priceRange": "$500 - $100,000+",
+      "knowsAbout": ["Murals", "Hand-Painted Signs", "Gold Leaf Lettering", "Sign Restoration", "Public Art"],
+      "sameAs": [
+        "https://www.instagram.com/untitledmixedmedia/",
+        "https://www.facebook.com/untitledmixedmedia"
+      ]
+    })} />
+
     <slot name="head" />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col" id="main-content">
     <slot />
 
     <script>
-      // Scroll reveal
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-      );
-
-      document.querySelectorAll('[data-animate]').forEach((el) => {
-        observer.observe(el);
-      });
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        );
+        document.querySelectorAll('[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"]').forEach((el) => {
+          observer.observe(el);
+        });
+      } else {
+        document.querySelectorAll('[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"]').forEach((el) => {
+          el.classList.add('is-visible');
+        });
+      }
     </script>
   </body>
 </html>

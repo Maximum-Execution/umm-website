@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+---
+
+<BaseLayout
+  title="Hand-Painted Signs — Untitled Mixed Media | Richmond VA Sign Painter"
+  description="Hand-painted signs, gold leaf lettering, window lettering, and sign restoration in Richmond, Virginia. Craft that outlasts vinyl."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        Lettering that weathers into character instead of peeling off in three years.
+      </h1>
+
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        Vinyl signs start deteriorating the day they go up. Hand-painted lettering does the opposite — it ages into the building, developing the kind of patina that makes a business look established rather than temporary. Gold leaf, enamel, window gilding, and traditional sign-painting techniques that have lasted centuries. Every letter placed by hand.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Storefront Signs Richmond VA"
+            description="The first thing customers see. Painted lettering that gives your storefront real street presence."
+            href="/hand-painted-signs/storefront-signs-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Gold Leaf Signs"
+            description="23-karat gold leaf lettering. The highest standard in sign painting — catches light in ways no paint or vinyl can replicate."
+            href="/hand-painted-signs/gold-leaf-signs"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Window Lettering"
+            description="Reverse-glass lettering and window gilding for storefronts and doors. Classic technique, timeless result."
+            href="/hand-painted-signs/window-lettering"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Bar & Restaurant Signs"
+            description="Signage that builds atmosphere before guests walk in. Menus, chalkboards, and exterior identity for hospitality."
+            href="/hand-painted-signs/bar-and-restaurant-signs"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Interior Signs"
+            description="Lobby lettering, wayfinding, and branded interior walls. Painted signage for the spaces your customers see inside."
+            href="/hand-painted-signs/interior-signs"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Hand-Painted Menus"
+            description="Menu boards, specials boards, and price lists painted to last. Readable, durable, and built for daily use."
+            href="/hand-painted-signs/hand-painted-menus"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Hand-Painted vs Vinyl"
+            description="Why hand-painted signs outlast and outperform vinyl. A direct comparison of durability, appearance, and long-term cost."
+            href="/hand-painted-signs/hand-painted-vs-vinyl"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Cost Per Year Comparison"
+            description="The math on longevity. When you spread the cost over 10+ years, hand-painted signs cost less than vinyl."
+            href="/hand-painted-signs/cost-per-year-comparison"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Why Hand-Painted Signs Last Longer"
+            description="The materials science behind longevity. Enamel, gold leaf, and proper surface preparation explained."
+            href="/hand-painted-signs/why-hand-painted-signs-last-longer"
+          />
+        </div>
+      </div>
+
+      <!-- Sign Restoration -->
+      <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
+        <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Restoration
+        </h2>
+        <div class="max-w-lg">
+          <ServiceCard
+            title="Sign Restoration"
+            description="Restoring faded, damaged, and historic signs. Ghost signs, gilded lettering, and century-old painted advertisements brought back to life."
+            href="/hand-painted-signs/sign-restoration"
+          />
+        </div>
+      </section>
+
+      <!-- Cross-hub link -->
+      <p class="font-body text-shadow-gray mb-16" style="font-size: var(--text-fluid-lg);">
+        We also paint <a href="/murals" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">murals</a>.
+      </p>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

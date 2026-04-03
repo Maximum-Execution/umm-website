@@ -1,45 +1,84 @@
 ---
-import SectionWrapper from '../SectionWrapper.astro';
-
 const steps = [
   {
     number: '01',
     title: 'We visit your site',
     body: 'We come to your location and collect the raw data your project will be built from: photography from every angle and lighting condition, spectrometer color readings of your physical materials, historical documentation, and a full visual record of what your space already contains.',
+    image: '/images/process-visit.jpg',
+    imageAlt: 'Spencer photographing a wall during a site visit',
   },
   {
     number: '02',
     title: 'You see the design before we start',
     body: 'We develop the design from your data and deliver a photorealistic render showing the finished work on your specific wall. You see exactly what you are getting. You approve it or we revise it.',
+    image: '/images/process-render.jpg',
+    imageAlt: 'Photorealistic Blender render of a mural on a building wall',
   },
   {
     number: '03',
     title: 'We paint it and prove it',
     body: 'We execute the work and deliver your Certificate of Provenance: a document tracing every color, shape, and texture to its origin in your data. The work is installed, protected, and documented.',
+    image: '/images/process-paint.jpg',
+    imageAlt: 'Spencer painting a large-scale mural on an exterior wall',
   },
 ];
 ---
 
-<SectionWrapper id="process" background="elevated">
-  <div data-animate>
-    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-16 text-balance">
-      How it works
-    </h2>
-  </div>
+<section id="process" class="bg-midnight-graphite py-24 lg:py-32 px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto">
+    <p
+      class="font-mono text-smoke-gray uppercase mb-16 lg:mb-24"
+      style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+      data-animate="fade"
+    >
+      Process
+    </p>
 
-  <div class="grid md:grid-cols-3 gap-12">
-    {steps.map((step) => (
-      <div data-animate>
-        <span class="text-[var(--text-fluid-4xl)] font-heading text-slate-gray mb-4 block">
-          {step.number}
-        </span>
-        <h3 class="font-heading text-[var(--text-fluid-xl)] text-titanium-white mb-4">
-          {step.title}
-        </h3>
-        <p class="text-[var(--text-fluid-base)] text-shadow-gray">
-          {step.body}
-        </p>
-      </div>
-    ))}
+    <div class="space-y-24 lg:space-y-32">
+      {steps.map((step, i) => {
+        const isReversed = i % 2 === 1;
+        return (
+          <div
+            class={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${isReversed ? 'lg:[direction:rtl]' : ''}`}
+          >
+            {/* Image */}
+            <div class={`overflow-hidden ${isReversed ? 'lg:[direction:ltr]' : ''}`} data-animate="reveal">
+              <div class="aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
+                <img
+                  src={step.image}
+                  alt={step.imageAlt}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+            </div>
+
+            {/* Text */}
+            <div class={isReversed ? 'lg:[direction:ltr]' : ''} data-animate="fade">
+              <span
+                class="font-heading text-slate-gray block mb-4"
+                style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid);"
+                aria-hidden="true"
+              >
+                {step.number}
+              </span>
+              <h3
+                class="font-heading text-titanium-white mb-4"
+                style="font-size: var(--text-fluid-xl);"
+              >
+                {step.title}
+              </h3>
+              <p
+                class="font-body text-shadow-gray"
+                style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+              >
+                {step.body}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   </div>
-</SectionWrapper>
+</section>

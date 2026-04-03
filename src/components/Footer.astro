@@ -2,14 +2,75 @@
 
 ---
 
-<footer class="border-t border-slate-gray mt-auto">
-  <div class="mx-auto max-w-7xl px-6 py-16">
+<footer class="border-t border-slate-gray mt-auto" role="contentinfo">
+  <div class="mx-auto max-w-7xl px-6 lg:px-12 py-16">
+    <!-- Link Columns -->
+    <nav aria-label="Footer navigation" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Services -->
+      <div>
+        <p class="font-mono text-smoke-gray uppercase tracking-[0.08em] mb-6" style="font-size: var(--text-fluid-xs);">Services</p>
+        <ul>
+          <li class="mb-3"><a href="/murals" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Murals</a></li>
+          <li class="mb-3"><a href="/hand-painted-signs" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Hand-Painted Signs</a></li>
+          <li class="mb-3"><a href="/hand-painted-signs/sign-restoration" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Sign Restoration</a></li>
+          <li class="mb-3"><a href="/brand-mark" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Brand Mark</a></li>
+        </ul>
+      </div>
+
+      <!-- Learn More -->
+      <div>
+        <p class="font-mono text-smoke-gray uppercase tracking-[0.08em] mb-6" style="font-size: var(--text-fluid-xs);">Learn More</p>
+        <ul>
+          <li class="mb-3"><a href="/journal" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Journal</a></li>
+          <li class="mb-3"><a href="/murals/mural-cost-richmond-va" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Mural Cost Guide</a></li>
+          <li class="mb-3"><a href="/hand-painted-signs/hand-painted-vs-vinyl" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Hand-Painted vs Vinyl</a></li>
+          <li class="mb-3"><a href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Ghost Signs Richmond</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <p class="font-mono text-smoke-gray uppercase tracking-[0.08em] mb-6" style="font-size: var(--text-fluid-xs);">Company</p>
+        <ul>
+          <li class="mb-3"><a href="/about" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">About</a></li>
+          <li class="mb-3"><a href="/about/process" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Process</a></li>
+          <li class="mb-3"><a href="/about/philosophy" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Philosophy</a></li>
+          <li class="mb-3"><a href="/about/insurance-and-licensing" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Insurance & Licensing</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <p class="font-mono text-smoke-gray uppercase tracking-[0.08em] mb-6" style="font-size: var(--text-fluid-xs);">Stay Connected</p>
+        <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-sm);">
+          Updates on new projects and journal posts.
+        </p>
+        <form class="flex gap-2" action="#" method="POST" data-newsletter-form>
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+            class="flex-1 bg-transparent border border-slate-gray px-4 py-2.5 font-mono text-titanium-white placeholder:text-smoke-gray focus:border-soft-gray focus:outline-none transition-colors"
+            style="font-size: var(--text-fluid-xs);"
+          />
+          <button
+            type="submit"
+            class="bg-titanium-white text-bone-black font-sans px-4 py-2.5 text-sm font-medium tracking-[0.08em] uppercase hover:bg-light-ash transition-colors"
+          >
+            Join
+          </button>
+        </form>
+      </div>
+    </nav>
+
     <!-- Philosophy -->
     <div class="max-w-2xl mb-12">
-      <p class="font-heading text-[var(--text-fluid-lg)] text-titanium-white mb-4 italic">
+      <p class="font-heading text-titanium-white mb-4 italic" style="font-size: var(--text-fluid-lg);">
         Meaning discovered, not imposed.
       </p>
-      <p class="text-[var(--text-fluid-sm)] text-shadow-gray leading-relaxed">
+      <p class="font-body text-shadow-gray leading-relaxed" style="font-size: var(--text-fluid-sm);">
         Places become distinctive landmarks when meaning is discovered from them, not imposed on them.
         We discover the meaning already present in your place and transform it into distinctive public art.
       </p>
@@ -17,7 +78,7 @@
 
     <!-- Info Row -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pt-8 border-t border-slate-gray">
-      <div class="text-shadow-gray text-[var(--text-fluid-xs)]">
+      <div class="font-sans text-shadow-gray tracking-wide" style="font-size: var(--text-fluid-xs);">
         <p>Based in Richmond, Virginia</p>
         <p>
           <a href="mailto:hello@untitledmixedmedia.com" class="hover:text-titanium-white transition-colors">
@@ -33,17 +94,28 @@
           target="_blank"
           rel="noopener noreferrer"
           class="text-shadow-gray hover:text-titanium-white transition-colors"
-          aria-label="Instagram"
+          aria-label="Untitled Mixed Media on Instagram"
         >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+        <a
+          href="https://www.facebook.com/untitledmixedmedia"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-shadow-gray hover:text-titanium-white transition-colors"
+          aria-label="Untitled Mixed Media on Facebook"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
           </svg>
         </a>
       </div>
     </div>
 
     <!-- Copyright -->
-    <p class="text-smoke-gray text-[var(--text-fluid-xs)] mt-8">
+    <p class="font-sans text-smoke-gray tracking-wide mt-8" style="font-size: var(--text-fluid-xs);">
       &copy; 2026 Untitled Mixed Media LLC. All rights reserved.
     </p>
   </div>

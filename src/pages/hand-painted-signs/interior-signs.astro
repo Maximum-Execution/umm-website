@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Hand-Painted Interior Signs | Untitled Mixed Media" description="Hand-painted interior signage, wayfinding, and feature wall lettering in Richmond, Virginia. Branded environments that feel intentional.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Interior Signs' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Hand-Painted Signs
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Hand-Painted Interior Signs
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Once people walk through the door, the brand should not disappear. But too often the interior signage is an afterthought &mdash; printed paper taped to walls, mismatched vinyl decals, or nothing at all. Wayfinding is confusing. The space feels unfinished. If you care about the environment your customers and employees experience every day, generic sign solutions are not the answer.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We paint interior signs for offices, restaurants, retail stores, and event venues. We work with your existing finishes &mdash; exposed brick, drywall, wood paneling &mdash; and we know which paints and techniques perform best on each surface. Whether it is wayfinding, feature wall lettering, or a large-scale brand statement, everything is designed to match your brand and feel intentional.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We visit your space, assess the surfaces and layout, and show you the design before we start. Once approved, we paint it on site &mdash; working around your business hours when needed. The result is an interior that photographs well, guides people intuitively, and reinforces your brand at every turn.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo of hand-painted interior signage &mdash; a feature wall, wayfinding sign, or branded lettering inside a commercial space.</p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'What types of interior wayfinding can you paint?', answer: 'Room numbers, directional signs, restroom indicators, department labels, floor directories &mdash; anything that helps people navigate your space. We design these to match your brand instead of defaulting to generic signage.' },
+      { question: 'Can you paint feature walls and large-scale lettering?', answer: 'Yes. Feature walls with brand statements, mission text, or large-scale typography are one of our most requested interior projects. We work at any scale &mdash; from a single word to a full wall mural.' },
+      { question: 'Do you use low-VOC paint for interior work?', answer: 'Yes. For interior projects, we use low-VOC and zero-VOC paints whenever possible. We coordinate timing to minimize disruption &mdash; painting after hours or before a space opens when ventilation is a concern.' },
+      { question: 'How long does interior sign painting take?', answer: 'Most interior sign projects take 2 to 5 days on site, depending on scope. Simple wayfinding can be done in a day. Large feature walls or multi-room projects take longer. We work around your business hours.' },
+    ]} />
+
+    <RelatedPages heading="Related" pages={[
+      { title: 'Bar & Restaurant Signs', href: '/hand-painted-signs/bar-and-restaurant-signs', description: 'Signage that builds atmosphere before guests walk in.' },
+      { title: 'Window Lettering', href: '/hand-painted-signs/window-lettering', description: 'Hand-painted and gilded glass for storefronts and doors.' },
+      { title: 'Hand-Painted Menus', href: '/hand-painted-signs/hand-painted-menus', description: 'Menu boards and displays painted by hand.' },
+    ]} />
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

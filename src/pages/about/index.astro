@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+---
+
+<BaseLayout
+  title="About — Untitled Mixed Media"
+  description="Hand-painted murals and signs in Richmond, Virginia. We start with your building's story, not a template."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'About' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        About
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        We know what it looks like when a great business has a forgettable building.
+      </h1>
+
+      <div class="font-body text-shadow-gray mb-16 max-w-2xl space-y-6" style="font-size: var(--text-fluid-lg);" data-animate>
+        <p>
+          You've invested in the interior. The product is right. The team is right. But people drive past every day without a second look. The building doesn't match what happens inside it, and no amount of vinyl signage is going to change that.
+        </p>
+        <p>
+          Untitled Mixed Media is a hand-painting studio based in Richmond, Virginia. We paint murals and signs for businesses, property owners, and public institutions — work that starts with a site visit, not a template. We use mineral paints, gold leaf, and commercial-grade enamels because they weather into a building's character instead of peeling off it. We carry full liability insurance and work in historic districts.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Process"
+            description="How we discover the story your building already holds."
+            href="/about/process"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Philosophy"
+            description="Why we start with discovery, not design."
+            href="/about/philosophy"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Insurance & Licensing"
+            description="Credentials, coverage, and compliance."
+            href="/about/insurance-and-licensing"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

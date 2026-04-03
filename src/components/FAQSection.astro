@@ -1,0 +1,26 @@
+---
+interface Props {
+  items: { question: string; answer: string }[];
+  heading?: string;
+}
+
+const { items, heading = 'Frequently asked questions' } = Astro.props;
+---
+
+<section class="py-[var(--spacing-section)] px-6 lg:px-12">
+  <h2 class="font-heading text-titanium-white mb-12" style={`font-size: var(--text-fluid-2xl);`}>
+    {heading}
+  </h2>
+  <dl class="max-w-3xl divide-y divide-slate-gray">
+    {items.map((item) => (
+      <div class="py-8 first:pt-0 last:pb-0">
+        <dt class="font-heading text-titanium-white mb-3" style={`font-size: var(--text-fluid-lg);`}>
+          {item.question}
+        </dt>
+        <dd class="font-body text-shadow-gray" style={`font-size: var(--text-fluid-base);`}>
+          {item.answer}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>

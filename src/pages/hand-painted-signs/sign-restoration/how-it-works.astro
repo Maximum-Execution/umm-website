@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import RelatedPages from '../../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="How Sign Restoration Works | Untitled Mixed Media" description="The sign restoration process from assessment to protective coating. Five steps that bring a deteriorating historic sign back to life.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration' },
+        { label: 'How It Works' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Sign Restoration
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        How Sign Restoration Works
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          You have a painted sign that is fading, peeling, or barely legible, and you want to know what bringing it back actually involves before you commit to anything. Restoration is not just repainting — it is a process with distinct phases, each one designed to protect the original work and ensure the result lasts.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We walk you through each phase with clarity and zero jargon. It starts with a site visit and condition assessment — we document the sign's current state, test paint adhesion, identify the original materials, and photograph everything. From there, we stabilize what is deteriorating, match original colors and materials, restore the letterforms faithfully, and apply a protective sealant system appropriate to the substrate and exposure.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          Every step has a purpose, and you understand each one before we proceed. The result is a sign that looks the way it was meant to look, protected against further deterioration, with full documentation of the work performed and materials used. Without proper restoration, the original letterforms and design are lost a little more each year — and once they are gone, they cannot be recovered.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add process photos showing different stages of restoration: assessment documentation, stabilization work, color matching, and the completed result. A multi-image series works well here. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How long does the full restoration process take?', answer: 'From initial assessment to completed protective coating, most sign restorations take 4-8 weeks. The assessment and material analysis phase takes 1-2 weeks. Stabilization and restoration timelines vary based on the sign\'s size and condition. We provide a detailed timeline in the assessment report so you can plan around the work.' },
+      { question: 'Can all signs be saved?', answer: 'Not always. Some signs have deteriorated beyond the point where responsible restoration is possible. The substrate may be too damaged, too much original material may be lost, or the cost of restoration may exceed the value of the result. The assessment is honest about what is feasible. If a sign cannot be saved, we document it thoroughly before it is lost.' },
+      { question: 'What if the sign is too damaged to restore?', answer: 'If the original sign is beyond saving, we discuss alternatives: full documentation and archival photography of the remaining elements, creation of a historically informed reproduction, or a new sign designed in the spirit of the original. The assessment report lays out the options clearly.' },
+      { question: 'What maintenance is needed after restoration?', answer: 'Every completed restoration includes a maintenance guide specific to the sign\'s materials, exposure, and protective coating system. Typical recommendations include annual inspection for coating integrity, gentle cleaning as needed, and reapplication of protective coating every 5-10 years depending on exposure.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Ghost Signs in Richmond', href: '/hand-painted-signs/sign-restoration/ghost-signs-richmond-va', description: 'A guide to Richmond\'s fading painted advertisements.' },
+      { title: 'Historic Sign Restoration', href: '/hand-painted-signs/sign-restoration/historic-sign-restoration', description: 'Full restoration for deteriorating historic signs.' },
+      { title: 'Sign Restoration Cost', href: '/hand-painted-signs/sign-restoration/sign-restoration-cost', description: 'What drives the cost of restoring a sign.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

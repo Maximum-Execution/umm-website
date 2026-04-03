@@ -1,0 +1,31 @@
+---
+interface Props {
+  pages: { title: string; href: string; description?: string }[];
+  heading?: string;
+}
+
+const { pages, heading = 'Related' } = Astro.props;
+---
+
+<section class="py-[var(--spacing-section)] px-6 lg:px-12 border-t border-slate-gray">
+  <h2 class="font-mono text-smoke-gray uppercase mb-8" style={`font-size: var(--text-fluid-xs);`}>
+    {heading}
+  </h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
+    {pages.map((page) => (
+      <a
+        href={page.href}
+        class="group block border border-slate-gray p-6 hover:border-soft-gray transition-colors duration-200"
+      >
+        <h3 class="font-heading text-titanium-white mb-2" style={`font-size: var(--text-fluid-lg);`}>
+          {page.title}
+        </h3>
+        {page.description && (
+          <p class="font-body text-smoke-gray" style={`font-size: var(--text-fluid-sm);`}>
+            {page.description}
+          </p>
+        )}
+      </a>
+    ))}
+  </div>
+</section>

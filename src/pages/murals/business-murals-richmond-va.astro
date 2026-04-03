@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Business Murals in Richmond, VA | Untitled Mixed Media" description="Hand-painted business murals in Richmond, VA. Custom exterior and interior murals that drive foot traffic, build brand identity, and transform commercial spaces.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals', href: '/murals' },
+        { label: 'Business Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Business Murals in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          You put real work into your restaurant, brewery, or retail space. The food is dialed in, the product is strong, the team is solid. But from the street, your building looks like every other storefront on the block. Pedestrians walk past without slowing down. Drivers never glance twice. The exterior does not reflect what you have built inside, and that gap costs you foot traffic every single day.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We know how hard it is to stand out in a crowded market when your physical space is working against you. We have painted murals on restaurants, breweries, and storefronts across Richmond, and we use commercial-grade paint systems that hold up to weather, sun, and heavy foot traffic. Before any paint hits your wall, we build a photorealistic 3D mockup of the design on your actual building so you can see exactly what you are getting.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          The process is straightforward. We visit your site and assess the wall. We create the design and show it to you for approval. Then we paint it. The result is a landmark that draws people in, gives customers something to photograph and share, and becomes part of your brand identity. A well-executed mural pays for itself in visibility alone.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a project photo here showing a completed commercial mural on a business exterior — restaurant, brewery, or retail storefront. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'How much does a business mural cost?', answer: 'Commercial mural pricing depends on wall size, complexity, surface condition, and access requirements. Simple brand murals start around $18-28 per square foot, while detailed illustrative work ranges from $45-70 per square foot. Visit our pricing page for a detailed breakdown or use our free price estimator.' },
+      { question: 'How long does it take to paint a business mural?', answer: 'Most commercial murals take 1-3 weeks from first paint to final seal, depending on scale and complexity. We schedule around your business hours when possible to minimize disruption. The full process — from site visit through design approval to completed mural — typically runs 4-8 weeks.' },
+      { question: 'Will the mural process disrupt my business?', answer: 'We coordinate scheduling to minimize impact on your operations. Exterior murals rarely affect interior business at all. For interior murals, we can work during off-hours or closed days. We handle all equipment setup and cleanup so your team can focus on running the business.' },
+      { question: 'How does the design process work?', answer: 'After a site visit and discovery conversation, we create a photorealistic 3D mockup showing the mural on your actual wall using our Blender pre-visualization process. You see exactly what the finished piece will look like before we start painting. Revisions happen in the digital phase, not on the wall.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Outdoor Murals', href: '/murals/outdoor-murals-richmond-va', description: 'Weather-durable exterior murals built to last.' },
+      { title: 'Indoor Murals', href: '/murals/indoor-murals-richmond-va', description: 'Interior murals for restaurants, offices, and retail.' },
+      { title: 'Mural Cost', href: '/murals/mural-cost-richmond-va', description: 'Transparent pricing for every scale and style.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

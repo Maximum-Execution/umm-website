@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const muralProjects = (await getCollection('projects'))
+  .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('mural')))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Murals — Untitled Mixed Media | Richmond VA Mural Painter"
+  description="Hand-painted murals for businesses, property owners, and public spaces in Richmond, Virginia. Every mural starts with your building's story."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Murals' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Murals
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        Your building becomes a landmark people photograph, remember, and use to give directions.
+      </h1>
+
+      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
+        A mural that could go on any wall isn't worth painting. We start with a site visit — photographing your building, reading its materials, researching its neighborhood and history — and discover a design that can only exist in that one place. You see a photorealistic render on your actual wall before we ever pick up a brush.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Business Murals Richmond VA"
+            description="Exterior and interior murals that turn storefronts into destinations. Restaurants, breweries, retail, and offices."
+            href="/murals/business-murals-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Outdoor Murals Richmond VA"
+            description="Weather-resistant exterior murals built for Virginia's four-season climate. Commercial-grade paints and UV-protective sealants."
+            href="/murals/outdoor-murals-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Property Owner Murals"
+            description="Murals that increase property value and attract quality tenants. Turn blank walls into neighborhood assets."
+            href="/murals/property-owner-murals-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Mural Cost Richmond VA"
+            description="Transparent pricing. What determines cost, what to budget, and what you get at every price point."
+            href="/murals/mural-cost-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Indoor Murals Richmond VA"
+            description="Interior murals for restaurants, offices, lobbies, and retail spaces. Controlled conditions, zero weather risk."
+            href="/murals/indoor-murals-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Real Estate Developer Murals"
+            description="Large-scale murals for mixed-use, multifamily, and commercial developments. Amenity art that differentiates properties."
+            href="/murals/real-estate-developer-murals"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Public Art Murals Richmond VA"
+            description="Community murals, percent-for-art commissions, and civic installations. Heritage projects with documented provenance."
+            href="/murals/public-art-murals-richmond-va"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Mural Maintenance"
+            description="How to protect your investment. Cleaning schedules, sealant reapplication, and touch-up protocols."
+            href="/murals/mural-maintenance"
+          />
+        </div>
+      </div>
+
+      <!-- Featured Projects -->
+      {muralProjects.length > 0 && (
+        <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
+          <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Featured Projects
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {muralProjects.map((project) => (
+              <a href={`/murals/${project.id}`} class="group block overflow-hidden" data-animate>
+                <div class="aspect-[4/3] overflow-hidden bg-midnight-graphite">
+                  <img
+                    src={project.data.cover}
+                    alt={project.data.title}
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-4 mb-8">
+                  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors" style="font-size: var(--text-fluid-xl);">
+                    {project.data.title}
+                  </h3>
+                  <div class="flex gap-2 mt-1">
+                    {project.data.tags.map((tag: string) => (
+                      <span class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Cross-hub link -->
+      <p class="font-body text-shadow-gray mb-16" style="font-size: var(--text-fluid-lg);">
+        We also paint <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">hand-painted signs</a>.
+      </p>
+    </div>
+  </main>
+
+  <CTABlock />
+
+  <Footer />
+</BaseLayout>

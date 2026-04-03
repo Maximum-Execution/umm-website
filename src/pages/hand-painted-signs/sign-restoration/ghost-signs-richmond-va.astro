@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABlock from '../../../components/CTABlock.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import RelatedPages from '../../../components/RelatedPages.astro';
+---
+
+<BaseLayout title="Ghost Signs in Richmond, VA | Untitled Mixed Media" description="A guide to Richmond's ghost signs — fading hand-painted advertisements from the 19th and 20th centuries. Documenting, preserving, and restoring Richmond's painted history.">
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Work', href: '/work' },
+        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+        { label: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration' },
+        { label: 'Ghost Signs' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+        Sign Restoration
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+        Ghost Signs in Richmond, VA
+      </h1>
+
+      <div class="space-y-6 mb-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Across Richmond, fading hand-painted advertisements are disappearing from brick walls. These ghost signs &mdash; remnants of businesses from the late 1800s through the mid-1900s &mdash; are part of the city's visual history. If you own a building with one, or if you have noticed them in your neighborhood, you may be wondering whether anything can be done before they vanish entirely. A city's painted past should not disappear through indifference.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We study Richmond's ghost signs because we understand the techniques and materials that made them. Lead-based paints, hand-ground pigments, brush lettering applied directly to brick &mdash; these signs were built to advertise, and the craft that went into them is exactly what has kept them visible a century later. That knowledge informs how we approach preservation: documenting what exists, stabilizing what can be saved, and advising property owners on responsible stewardship. We do not paint over the past.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          If you have a ghost sign on your building, the first step is a professional assessment. We photograph and document the sign, evaluate its condition and historical significance, and recommend an approach &mdash; whether that is stabilization, careful restoration, or simply a protective coating to slow further deterioration. The result is a property with documented character, historical credibility, and a story worth telling.
+        </p>
+      </div>
+
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+          Add a high-quality photograph of a notable Richmond ghost sign. This page will eventually feature a curated gallery of ghost signs across the city with locations, dates, and historical context. Use Astro Image component when real photos are available.
+        </p>
+      </div>
+    </div>
+
+    <FAQSection items={[
+      { question: 'What is a ghost sign?', answer: 'A ghost sign is a hand-painted advertisement — typically on a brick building exterior — that has survived from an earlier era. Most date from the late 1800s through the mid-1900s, before vinyl signage and digital printing replaced brush-and-paint lettering. They are called ghost signs because they appear to fade in and out of visibility depending on light and weather conditions.' },
+      { question: 'Can ghost signs be restored?', answer: 'Many can, but the approach depends on the sign\'s condition, the paint layers involved, and the building owner\'s goals. Some signs respond well to careful stabilization and inpainting. Others are better left alone with a protective coating to slow further deterioration. A professional assessment determines what is possible and responsible.' },
+      { question: 'What is the difference between preservation and restoration?', answer: 'Preservation focuses on stopping further damage — stabilizing the surface, applying protective coatings, and documenting the sign as it exists. Restoration goes further, matching original colors and repainting faded areas to bring the sign closer to its original appearance. The right approach depends on the sign\'s historical significance and the owner\'s intent.' },
+      { question: 'How much does ghost sign restoration cost?', answer: 'Cost varies based on sign size, wall condition, accessibility, and the level of intervention required. A condition assessment is the first step — it identifies what is feasible and provides a clear scope of work and pricing. Visit our sign restoration cost page for a detailed breakdown of factors that influence pricing.' },
+    ]} />
+    <RelatedPages heading="Related" pages={[
+      { title: 'Historic Sign Restoration', href: '/hand-painted-signs/sign-restoration/historic-sign-restoration', description: 'Full restoration for deteriorating historic signs.' },
+      { title: 'Secretary of the Interior Standards', href: '/hand-painted-signs/sign-restoration/secretary-of-interior-standards', description: 'Federal standards for historic sign restoration.' },
+      { title: 'Sign Restoration Cost', href: '/hand-painted-signs/sign-restoration/sign-restoration-cost', description: 'What drives the cost of restoring a sign.' },
+    ]} />
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>

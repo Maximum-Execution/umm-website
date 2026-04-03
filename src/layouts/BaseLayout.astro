@@ -53,6 +53,39 @@ import '../styles/global.css';
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- LocalBusiness JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Untitled Mixed Media",
+      "description": "Hand-painted murals and signs for businesses in Richmond, Virginia. Landmarks, not lookalikes.",
+      "url": "https://untitledmixedmedia.com",
+      "email": "hello@untitledmixedmedia.com",
+      "image": "https://untitledmixedmedia.com/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Richmond",
+        "addressRegion": "VA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.5407,
+        "longitude": -77.4360
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.5407, "longitude": -77.4360 },
+        "geoRadius": "80000"
+      },
+      "priceRange": "$500 - $100,000+",
+      "knowsAbout": ["Murals", "Hand-Painted Signs", "Gold Leaf Lettering", "Sign Restoration", "Public Art"],
+      "sameAs": [
+        "https://www.instagram.com/untitledmixedmedia/",
+        "https://www.facebook.com/untitledmixedmedia"
+      ]
+    })} />
+
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col" id="main-content">

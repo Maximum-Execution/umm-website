@@ -74,11 +74,23 @@ import RelatedPages from '../../components/RelatedPages.astro';
         </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a photo or rendering showing the Blender pre-visualization process alongside the finished painted wall. The before/after comparison is the visual proof of the methodology. Use Astro Image component when real photos are available.
-        </p>
+      <div class="grid md:grid-cols-2 gap-1 mb-16">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img
+            src="/images/process-render.jpg"
+            alt="Photorealistic 3D render of a mural mockup on a real building wall"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img
+            src="/images/process-paint.jpg"
+            alt="Finished hand-painted mural on a building exterior"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
 

@@ -61,11 +61,13 @@ import RelatedPages from '../../components/RelatedPages.astro';
         </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a photo that captures the relationship between a finished piece and its surroundings. The image should show context, not just the mural in isolation. Use Astro Image component when real photos are available.
-        </p>
+      <div class="aspect-[16/9] overflow-hidden mb-16">
+        <img
+          src="/images/service-murals.jpg"
+          alt="Hand-painted mural in context with its surrounding neighborhood"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
     </div>
 

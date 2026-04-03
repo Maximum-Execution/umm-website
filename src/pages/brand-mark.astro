@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CTABlock from '../components/CTABlock.astro';
+---
+
+<BaseLayout
+  title="Brand Mark — Untitled Mixed Media | $500 Hand-Painted Identity"
+  description="A hand-painted brand mark designed from your building's own materials, history, and architecture. $500, delivered in two weeks. Richmond, VA."
+>
+  <Nav />
+  <main class="pt-24 pb-16 px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto">
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Brand Mark' },
+      ]} />
+
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Brand Mark
+      </p>
+
+      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
+        A hand-painted identity built from your building.
+      </h1>
+
+      <div class="font-body text-shadow-gray mb-16 max-w-2xl space-y-6" style="font-size: var(--text-fluid-lg);" data-animate>
+        <p>
+          Every building has materials, textures, and history that make it unlike any other building on the block. The Brand Mark takes those raw ingredients and distills them into a single hand-painted identity element — a mark that could only belong to your place.
+        </p>
+        <p>
+          This is the fastest way to work with Untitled Mixed Media. No large-scale commission required. You get a hand-painted piece rooted in your building's own story, delivered in two weeks.
+        </p>
+      </div>
+
+      <!-- What you get -->
+      <section class="border-t border-slate-gray pt-16 mb-16">
+        <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);" data-animate="fade">
+          What you get
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12" data-animate="fade" data-animate-delay="1">
+          <div>
+            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Site Visit & Discovery</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              We visit your location, photograph your building from every angle, collect color readings from your physical materials, and document the architectural details that make your space distinct.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Hand-Painted Brand Mark</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              A single hand-painted identity element — a monogram, wordmark, or symbol — designed from your building's own palette and character. Delivered as a physical piece and a high-resolution digital scan.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Certificate of Provenance</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              A document tracing every color and design decision back to its origin in your building's data. The mark isn't arbitrary — every choice has a documented reason.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Two-Week Delivery</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              From site visit to delivered mark: two weeks. You see a digital render before we paint. One round of revisions is included.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="bg-midnight-graphite border border-slate-gray p-8 lg:p-12 mb-16" data-animate="fade">
+        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4 mb-6">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl);">$500</h2>
+          <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Flat rate · No hidden fees
+          </p>
+        </div>
+        <ul class="space-y-3 font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <li class="flex gap-3">
+            <span class="text-titanium-white shrink-0">—</span>
+            <span>On-site visit and discovery session</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-titanium-white shrink-0">—</span>
+            <span>One hand-painted brand mark (physical + digital)</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-titanium-white shrink-0">—</span>
+            <span>Certificate of Provenance</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-titanium-white shrink-0">—</span>
+            <span>One round of revisions</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-titanium-white shrink-0">—</span>
+            <span>Two-week turnaround from site visit to delivery</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- How it leads to more -->
+      <section class="mb-16" data-animate="fade">
+        <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">
+          Start here. Scale when you're ready.
+        </h2>
+        <p class="font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          The Brand Mark is the discovery phase of a larger relationship. The site visit, the color data, and the provenance research — all of it feeds directly into a mural or sign commission if you decide to go further. Nothing is wasted. You're not starting over; you're building on what we already know about your building.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <CTABlock
+    headline="Ready to see what your building holds?"
+    description="Schedule a free discovery session. We'll visit your site, walk the space, and tell you what we see."
+  />
+
+  <Footer />
+</BaseLayout>

@@ -3,120 +3,370 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import CTABlock from '../components/CTABlock.astro';
+import FAQSection from '../components/FAQSection.astro';
 ---
 
 <BaseLayout
-  title="Brand Mark — Untitled Mixed Media | $500 Hand-Painted Identity"
-  description="A hand-painted brand mark designed from your building's own materials, history, and architecture. $500, delivered in two weeks. Richmond, VA."
+  title="The Brand Mark — Your Logo, Hand-Painted, One Day, $500 | Untitled Mixed Media"
+  description="Your logo, hand-painted on your wall or on a wood panel with a weathered ghost-sign finish. One day. $500. Richmond, VA. First 12 businesses at launch price."
 >
   <Nav />
-  <main class="pt-24 pb-16 px-6 lg:px-12">
-    <div class="max-w-4xl mx-auto">
+  <main class="pt-24 pb-16">
+
+    <!-- Hero -->
+    <div class="px-6 lg:px-12 max-w-4xl mb-16">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Brand Mark' },
       ]} />
 
       <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Brand Mark
+        The Brand Mark
       </p>
 
-      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
-        A hand-painted identity built from your building.
+      <h1 class="font-heading text-titanium-white mb-6" data-animate>
+        Your logo. Hand-painted. One day. $500.
       </h1>
 
-      <div class="font-body text-shadow-gray mb-16 max-w-2xl space-y-6" style="font-size: var(--text-fluid-lg);" data-animate>
-        <p>
-          Every building has materials, textures, and history that make it unlike any other building on the block. The Brand Mark takes those raw ingredients and distills them into a single hand-painted identity element — a mark that could only belong to your place.
+      <div class="space-y-6 mb-10" data-animate data-animate-delay="1">
+        <p class="font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          A vinyl decal tells your customers you ordered your sign from a catalog. A Brand Mark tells them you hired a craftsperson.
         </p>
-        <p>
-          This is the fastest way to work with Untitled Mixed Media. No large-scale commission required. You get a hand-painted piece rooted in your building's own story, delivered in two weeks.
+        <p class="font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          The Brand Mark is your logo, hand-painted by Spencer Bennett on your wall or on a wood panel. One day, done. It looks like it has been on your wall since the day you opened.
         </p>
       </div>
 
-      <!-- What you get -->
-      <section class="border-t border-slate-gray pt-16 mb-16">
-        <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);" data-animate="fade">
-          What you get
-        </h2>
-        <div class="grid md:grid-cols-2 gap-12" data-animate="fade" data-animate-delay="1">
-          <div>
-            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Site Visit & Discovery</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-              We visit your location, photograph your building from every angle, collect color readings from your physical materials, and document the architectural details that make your space distinct.
-            </p>
-          </div>
-          <div>
-            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Hand-Painted Brand Mark</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-              A single hand-painted identity element — a monogram, wordmark, or symbol — designed from your building's own palette and character. Delivered as a physical piece and a high-resolution digital scan.
-            </p>
-          </div>
-          <div>
-            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Certificate of Provenance</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-              A document tracing every color and design decision back to its origin in your building's data. The mark isn't arbitrary — every choice has a documented reason.
-            </p>
-          </div>
-          <div>
-            <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">Two-Week Delivery</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-              From site visit to delivered mark: two weeks. You see a digital render before we paint. One round of revisions is included.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="2">
+        <a
+          href="/contact"
+          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+        >
+          Send Your Logo
+        </a>
+        <a
+          href="#how-it-works"
+          class="font-sans inline-block border border-titanium-white text-titanium-white px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors duration-200"
+        >
+          See How It Works
+        </a>
+      </div>
+    </div>
 
-      <!-- Pricing -->
-      <section class="bg-midnight-graphite border border-slate-gray p-8 lg:p-12 mb-16" data-animate="fade">
-        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4 mb-6">
-          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl);">$500</h2>
-          <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            Flat rate · No hidden fees
+    <!-- Format Options -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16">
+      <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);" data-animate="fade">
+        Choose Your Format
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8" data-animate="fade" data-animate-delay="1">
+        <div class="border border-slate-gray p-8">
+          <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">
+            Painted on Your Wall
+          </h3>
+          <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Your logo painted directly on your interior or exterior wall. Up to 16 square feet, single color of your choice. Clean edges, consistent coverage, no shortcuts.
+          </p>
+          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">
+            Best for: permanent locations, storefronts, feature walls.
           </p>
         </div>
-        <ul class="space-y-3 font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          <li class="flex gap-3">
-            <span class="text-titanium-white shrink-0">—</span>
-            <span>On-site visit and discovery session</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="text-titanium-white shrink-0">—</span>
-            <span>One hand-painted brand mark (physical + digital)</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="text-titanium-white shrink-0">—</span>
-            <span>Certificate of Provenance</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="text-titanium-white shrink-0">—</span>
-            <span>One round of revisions</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="text-titanium-white shrink-0">—</span>
-            <span>Two-week turnaround from site visit to delivery</span>
-          </li>
-        </ul>
-      </section>
+        <div class="border border-slate-gray p-8">
+          <h3 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-xl);">
+            Painted on Wood Panel
+          </h3>
+          <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Your logo painted on a wood panel with a weathered ghost-sign finish — it looks like it has been there for decades. Hangs like a frame. Comes down without a mark. Goes wherever you go.
+          </p>
+          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">
+            Best for: renters, pop-ups, multi-location, landlord restrictions, exposed brick.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <!-- How it leads to more -->
-      <section class="mb-16" data-animate="fade">
-        <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">
-          Start here. Scale when you're ready.
+    <!-- Three Sizes -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16" data-animate="fade">
+      <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Pick the shape that fits your logo
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="border border-slate-gray p-6 text-center">
+          <div class="aspect-square w-20 mx-auto mb-4 border border-smoke-gray flex items-center justify-center">
+            <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">4' × 4'</span>
+          </div>
+          <h3 class="font-heading text-titanium-white mb-1" style="font-size: var(--text-fluid-base);">Square</h3>
+          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">16 sq ft. Square logos, circular logos, stacked designs.</p>
+        </div>
+        <div class="border border-slate-gray p-6 text-center">
+          <div class="aspect-[5/3] w-24 mx-auto mb-4 border border-smoke-gray flex items-center justify-center">
+            <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">3' × 5'</span>
+          </div>
+          <h3 class="font-heading text-titanium-white mb-1" style="font-size: var(--text-fluid-base);">Rectangle</h3>
+          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">15 sq ft. Horizontal logos and logo-plus-tagline combos.</p>
+        </div>
+        <div class="border border-slate-gray p-6 text-center">
+          <div class="aspect-[4/1] w-32 mx-auto mb-4 border border-smoke-gray flex items-center justify-center">
+            <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">2' × 8'</span>
+          </div>
+          <h3 class="font-heading text-titanium-white mb-1" style="font-size: var(--text-fluid-base);">Banner</h3>
+          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">16 sq ft. Single-word names, long wordmarks. Above a bar or along a wall.</p>
+        </div>
+      </div>
+      <p class="font-body text-smoke-gray mt-6" style="font-size: var(--text-fluid-sm);">
+        Not sure which shape fits your logo? Send it over. I will tell you which one works best.
+      </p>
+    </section>
+
+    <!-- Value Stack -->
+    <section class="bg-midnight-graphite border-y border-slate-gray py-16 px-6 lg:px-12 mb-16">
+      <div class="max-w-4xl">
+        <h2 class="font-mono text-smoke-gray uppercase mb-12" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);" data-animate="fade">
+          Everything you get
         </h2>
-        <p class="font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
-          The Brand Mark is the discovery phase of a larger relationship. The site visit, the color data, and the provenance research — all of it feeds directly into a mural or sign commission if you decide to go further. Nothing is wasted. You're not starting over; you're building on what we already know about your building.
+        <div class="space-y-10" data-animate="fade" data-animate-delay="1">
+
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">Your Logo, Hand-Painted</h3>
+              <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">$500 value</span>
+            </div>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Your logo transferred and painted on your wall or on a wood panel, up to 16 square feet, in a single color of your choice. The panel comes with a weathered ghost-sign finish: your logo looks like it has been there for decades.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The Opening Day Reel</h3>
+              <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">$150 value</span>
+            </div>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              A full time-lapse of the painting from blank surface to finished work. Shot during the session, delivered to your phone the same day. Post it to Instagram, TikTok, your Google Business listing. It is yours.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The GBP Photo Set</h3>
+              <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">$100 value</span>
+            </div>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Professional before-and-after photos, cropped and sized for Instagram, Facebook, and Google Business Profile. Ready to post the same day.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The Forever Kit</h3>
+              <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">$75 value</span>
+            </div>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              A jar of the exact paint used on your Brand Mark, plus a detail brush. Scuffs happen. Chairs bump walls. When they do, you fix it in 30 seconds instead of calling someone.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">Install or Care Plan</h3>
+              <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">$75 value</span>
+            </div>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Panel: French cleat hardware installed before I leave. Wall: A care guide covering cleaning, products to avoid, and when to schedule a refresh. Written for your specific surface and paint type.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">$100 Toward Your Next Project</h3>
+              <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">$100 value</span>
+            </div>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Good toward any future Untitled Mixed Media project: a full custom sign, a mural, a restoration, a second Brand Mark. If you ever want more hand-painted work, you are already $100 ahead.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Total -->
+        <div class="border-t border-slate-gray mt-12 pt-8 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4" data-animate="fade" data-animate-delay="2">
+          <div>
+            <p class="font-mono text-smoke-gray uppercase mb-1" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">Total value</p>
+            <p class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl);">$1,000+</p>
+          </div>
+          <div class="sm:text-right">
+            <p class="font-mono text-smoke-gray uppercase mb-1" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">Your investment</p>
+            <p class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl);">$500</p>
+            <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">Launch price for the first 12 businesses. Then the price goes up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vinyl vs Hand-Painted -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16" data-animate="fade">
+      <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-xl);">
+        The real cost of vinyl vs. hand-painted
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="border border-slate-gray p-8">
+          <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">Vinyl</p>
+          <p class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">$200</p>
+          <ul class="space-y-2 font-body text-shadow-gray" style="font-size: var(--text-fluid-base);">
+            <li>Lasts 3 years</li>
+            <li>Peels, fades, bubbles</li>
+            <li>Replace 3 times in 12 years = $600+</li>
+            <li>Looks worse every year</li>
+          </ul>
+        </div>
+        <div class="border border-titanium-white p-8">
+          <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">Brand Mark</p>
+          <p class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">$500</p>
+          <ul class="space-y-2 font-body text-shadow-gray" style="font-size: var(--text-fluid-base);">
+            <li>Lasts 20+ years</li>
+            <li>Ages with character</li>
+            <li>Gets better over time</li>
+            <li>Costs less over 12 years</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Guarantee -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16" data-animate="fade">
+      <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-xl);">
+        The guarantee
+      </h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-base);">Panel format</h3>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            If you look at the finished panel and you are not happy, I take it home with me. You owe nothing. You never see a bill.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-base);">Wall format</h3>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            If any line is not clean, any coverage is not consistent, or the finished work does not match your logo file, I keep working until it does. If you are not happy, I paint over it myself. No charge. No excuses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="bg-midnight-graphite border-y border-slate-gray py-16 px-6 lg:px-12 mb-16">
+      <div class="max-w-4xl">
+        <h2 class="font-mono text-smoke-gray uppercase mb-12" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);" data-animate="fade">
+          How it works
+        </h2>
+        <div class="space-y-12">
+          <div data-animate="fade">
+            <span class="font-heading text-slate-gray block mb-2" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);" aria-hidden="true">01</span>
+            <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Send your logo file and pick your format</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Wall or wood panel. I confirm everything works and lock in your date. Do not have a clean logo file? Send whatever you have — a photo of your old sign, a screenshot from your website, even a business card. I can work with almost anything.
+            </p>
+          </div>
+          <div data-animate="fade" data-animate-delay="1">
+            <span class="font-heading text-slate-gray block mb-2" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);" aria-hidden="true">02</span>
+            <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Pay $250 to reserve your spot</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Your date is held. I show up with everything needed. No supplies for you to buy. No prep for you to do.
+            </p>
+          </div>
+          <div data-animate="fade" data-animate-delay="2">
+            <span class="font-heading text-slate-gray block mb-2" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);" aria-hidden="true">03</span>
+            <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Pay the balance when you approve it</h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              The remaining $250 is due only after you have seen the finished work and signed off. Then I hand you your time-lapse, your photos, your touch-up kit, and your $100 project credit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div data-animate="fade">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">Who this is for</h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Small businesses and storefronts in Richmond, Virginia who want their name on their wall without a six-month timeline or a $5,000 quote. Breweries, barbershops, coffee shops, studios, gyms, boutiques, restaurants, bakeries, tattoo shops, coworking spaces. If you have a logo and a wall, this is for you.
+          </p>
+        </div>
+        <div data-animate="fade" data-animate-delay="1">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">Who this is not for</h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            If you want a full custom mural, a multi-color design, gold leaf lettering, or something larger than 16 square feet, that is a different conversation. <a href="/contact" class="text-titanium-white underline hover:no-underline">Reach out</a> and we will scope a custom project for you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scarcity / Neighborhood Launch -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16" data-animate="fade">
+      <div class="border border-slate-gray p-8 lg:p-12">
+        <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">
+          Available by neighborhood
+        </h2>
+        <p class="font-body text-shadow-gray mb-6" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          I paint 3 Brand Marks per neighborhood, then move to the next. Each one takes a full day, and I reserve the rest of my week for larger mural and sign projects. When the 3 spots in your neighborhood are filled, the next round is a few months out.
         </p>
-      </section>
+        <p class="font-body text-shadow-gray mb-6" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          The launch price of $500 is available for the first 12 businesses. After that, the price increases to reflect demand.
+        </p>
+        <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base);">
+          If your neighborhood is not open yet, <a href="/contact" class="underline hover:no-underline">join the waitlist</a>. You get first priority when I come to your area.
+        </p>
+      </div>
+    </section>
 
-    </div>
+    <!-- Closing -->
+    <section class="px-6 lg:px-12 max-w-4xl mb-16" data-animate="fade">
+      <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-2xl);">
+        This is not signage. It is an original.
+      </h2>
+      <div class="space-y-4 font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <p>
+          A vinyl banner says "we ordered this from a catalog." A Brand Mark says "someone painted this by hand, and it has been here ever since."
+        </p>
+        <p>
+          Your customers can feel the difference. They just cannot always name it. But they trust places that look established. They walk into businesses that look like they care. And they remember the ones that stand out.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FAQSection heading="Questions people ask" items={[
+      { question: 'I don\'t have a good logo file.', answer: 'Send me whatever you have. A photo of your old sign, a screenshot from your website, even a business card. I can work with almost anything. If your logo needs a full redesign, that is a different conversation, but for the Brand Mark, I can work from what you have.' },
+      { question: 'My wall is in bad shape.', answer: 'That is what the panel format is for. I paint on wood in my studio and hang it on your wall. Bad surfaces are not a problem.' },
+      { question: 'What if I move?', answer: 'Panel: take it with you. It is yours. Wall: this is one of the reasons the panel format exists. If there is a chance you will move, the panel is the smarter choice.' },
+      { question: 'Can I pick the color?', answer: 'Yes. One color of your choice. If you want full multi-color, that is a custom sign project at a different price.' },
+      { question: 'Do I need to be there?', answer: 'Wall format: yes, someone needs to let me in. Panel format: no. I paint it in my studio and deliver it.' },
+      { question: 'How long does it take?', answer: 'One day. I paint it, you see it, you approve it, done.' },
+      { question: 'What if I don\'t like it?', answer: 'Panel: I take it home with me. You owe nothing. Wall: I keep working until it matches your logo file. If you are not happy, I paint over it myself. No charge.' },
+    ]} />
+
+    <!-- Final CTA -->
+    <section class="border-t border-slate-gray py-24 lg:py-32 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-2xl);">
+          Ready to get your logo on your wall?
+        </h2>
+        <p class="font-body text-shadow-gray mb-10 max-w-xl mx-auto" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          Send your logo file and a photo of your wall. I will confirm your surface, pick the right format, and get you on the calendar within 24 hours.
+        </p>
+        <a
+          href="/contact"
+          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+        >
+          Send Your Logo
+        </a>
+        <p class="font-body text-smoke-gray mt-6" style="font-size: var(--text-fluid-sm);">
+          $500 launch price · First 12 businesses · $250 deposit, balance on approval
+        </p>
+      </div>
+    </section>
+
   </main>
-
-  <CTABlock
-    headline="Ready to see what your building holds?"
-    description="Schedule a free discovery session. We'll visit your site, walk the space, and tell you what we see."
-  />
-
   <Footer />
 </BaseLayout>

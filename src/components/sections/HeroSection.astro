@@ -19,18 +19,14 @@ const {
 ---
 
 <section class="relative min-h-screen flex items-end overflow-hidden">
-  <!-- Video Background -->
-  <video
+  <!-- Background Image (video removed — too large for Cloudflare Pages 25MB limit. Re-add when compressed to <20MB) -->
+  <img
+    src={posterSrc}
+    alt=""
     class="absolute inset-0 w-full h-full object-cover"
-    autoplay
-    muted
-    loop
-    playsinline
-    poster={posterSrc}
-    preload="metadata"
-  >
-    <source src={videoSrc} type="video/mp4" />
-  </video>
+    loading="eager"
+    fetchpriority="high"
+  />
 
   <!-- Gradient Overlay -->
   <div class="absolute inset-0 bg-gradient-to-t from-bone-black via-bone-black/60 to-bone-black/10" aria-hidden="true"></div>

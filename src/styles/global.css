@@ -366,13 +366,6 @@ body {
   clip-path: inset(0);
 }
 
-/* ─── Scroll Indicator Pulse ──────────────────────────── */
-
-@keyframes scroll-pulse {
-  0%, 100% { opacity: 1; transform: scaleY(1); }
-  50% { opacity: 0.4; transform: scaleY(0.6); }
-}
-
 /* ─── Noise Overlay ─────────────────────────────────────── */
 
 body::before {

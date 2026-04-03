@@ -24,7 +24,6 @@ const journal = defineCollection({
     description: z.string(),
     date: z.date(),
     tags: z.array(z.string()),
-    cover: z.string().optional(),
     author: z.string().default('Spencer Bennett'),
     featured: z.boolean().default(false),
   }),

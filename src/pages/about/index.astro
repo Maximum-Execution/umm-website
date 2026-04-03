@@ -50,23 +50,28 @@ import ServiceCard from '../../components/ServiceCard.astro';
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6" data-animate>
-        <ServiceCard
-          title="Process"
-          description="How we discover the story your building already holds."
-          href="/about/process"
-        />
-        <ServiceCard
-          title="Philosophy"
-          description="Why we start with discovery, not design."
-          href="/about/philosophy"
-        />
-        <ServiceCard
-          title="Insurance & Licensing"
-          description="Credentials, coverage, and compliance."
-          href="/about/insurance-and-licensing"
-        />
-
+      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Process"
+            description="How we discover the story your building already holds."
+            href="/about/process"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Philosophy"
+            description="Why we start with discovery, not design."
+            href="/about/philosophy"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="3">
+          <ServiceCard
+            title="Insurance & Licensing"
+            description="Credentials, coverage, and compliance."
+            href="/about/insurance-and-licensing"
+          />
+        </div>
       </div>
     </div>
   </main>

@@ -42,17 +42,21 @@ import ServiceCard from '../../components/ServiceCard.astro';
         murals that transform identity and signs that outlast vinyl.]
       </p>
 
-      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6" data-animate>
-        <ServiceCard
-          title="Murals"
-          description="[Placeholder: Write 1-2 sentences about murals as identity transformation, not decoration. The mural is discovered from the building's own story — its neighborhood, its history, its architecture. It can only exist in that one place.]"
-          href="/murals"
-        />
-        <ServiceCard
-          title="Hand-Painted Signs"
-          description="[Placeholder: Write 1-2 sentences about signs as craft that outlasts vinyl. Hand-painted lettering weathers into a building's character instead of peeling off in three years. Gold leaf, window lettering, menu boards — every letter placed by hand.]"
-          href="/hand-painted-signs"
-        />
+      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+        <div data-animate="fade" data-animate-delay="1">
+          <ServiceCard
+            title="Murals"
+            description="[Placeholder: Write 1-2 sentences about murals as identity transformation, not decoration. The mural is discovered from the building's own story — its neighborhood, its history, its architecture. It can only exist in that one place.]"
+            href="/murals"
+          />
+        </div>
+        <div data-animate="fade" data-animate-delay="2">
+          <ServiceCard
+            title="Hand-Painted Signs"
+            description="[Placeholder: Write 1-2 sentences about signs as craft that outlasts vinyl. Hand-painted lettering weathers into a building's character instead of peeling off in three years. Gold leaf, window lettering, menu boards — every letter placed by hand.]"
+            href="/hand-painted-signs"
+          />
+        </div>
       </div>
     </div>
   </main>

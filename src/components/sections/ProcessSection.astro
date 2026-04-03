@@ -40,11 +40,9 @@ const steps = [
         return (
           <div
             class={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${isReversed ? 'lg:[direction:rtl]' : ''}`}
-            data-animate
-            data-animate-delay={String(i + 1)}
           >
             {/* Image */}
-            <div class={`overflow-hidden ${isReversed ? 'lg:[direction:ltr]' : ''}`}>
+            <div class={`overflow-hidden ${isReversed ? 'lg:[direction:ltr]' : ''}`} data-animate="reveal">
               <div class="aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
                 <img
                   src={step.image}
@@ -57,7 +55,7 @@ const steps = [
             </div>
 
             {/* Text */}
-            <div class={isReversed ? 'lg:[direction:ltr]' : ''}>
+            <div class={isReversed ? 'lg:[direction:ltr]' : ''} data-animate="fade">
               <span
                 class="font-heading text-slate-gray block mb-4"
                 style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid);"

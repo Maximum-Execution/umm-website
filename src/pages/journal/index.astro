@@ -40,9 +40,9 @@ const posts = (await getCollection('journal'))
       </p>
 
       {posts.length > 0 ? (
-        <div class="space-y-12" data-animate>
-          {posts.map((post) => (
-            <div class="border-b border-slate-gray pb-12">
+        <div class="space-y-12">
+          {posts.map((post, i) => (
+            <div class="border-b border-slate-gray pb-12" data-animate="fade" data-animate-delay={String(Math.min(i + 1, 5))}>
               <JournalCard
                 title={post.data.title}
                 description={post.data.description}

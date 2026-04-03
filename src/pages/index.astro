@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import HeroSection from '../components/sections/HeroSection.astro';
 import FeaturedGrid from '../components/sections/FeaturedGrid.astro';
+import BrandMarquee from '../components/sections/BrandMarquee.astro';
 import CredibilityStrip from '../components/sections/CredibilityStrip.astro';
 import ProcessSection from '../components/sections/ProcessSection.astro';
 import TestimonialSection from '../components/sections/TestimonialSection.astro';
@@ -26,21 +27,24 @@ const journalPosts = (await getCollection('journal'))
     {/* 2. Featured Projects — asymmetric full-bleed grid */}
     <FeaturedGrid />
 
-    {/* 3. Credibility Strip — hard numbers */}
+    {/* 3. Brand Marquee — scrolling text rhythm break (Colossal Media pattern) */}
+    <BrandMarquee />
+
+    {/* 4. Credibility Strip — hard numbers */}
     <CredibilityStrip />
 
-    {/* 4. Process — 3 steps with imagery */}
+    {/* 5. Process — 3 steps with imagery */}
     <ProcessSection />
 
-    {/* 5. Testimonial — full-width pull quote */}
+    {/* 6. Testimonial — full-width pull quote */}
     <TestimonialSection />
 
-    {/* 6. Services — image-backed showcase cards */}
+    {/* 7. Services — image-backed showcase cards */}
     <ServiceShowcase />
 
-    {/* 7. Journal Preview — 3 recent posts with images */}
+    {/* 8. Journal Preview — 3 recent posts, text-forward */}
     {journalPosts.length > 0 && (
-      <section class="py-24 px-6 lg:px-12">
+      <section class="py-24 lg:py-32 px-6 lg:px-12 border-t border-slate-gray">
         <div class="max-w-7xl mx-auto">
           <div class="flex items-baseline justify-between mb-12">
             <p
@@ -59,14 +63,13 @@ const journalPosts = (await getCollection('journal'))
           </div>
           <div class="grid md:grid-cols-3 gap-8">
             {journalPosts.map((post, i) => (
-              <div data-animate="scale" data-animate-delay={String(i + 1)}>
+              <div data-animate="fade" data-animate-delay={String(i + 1)}>
                 <JournalCard
                   title={post.data.title}
                   description={post.data.description}
                   href={`/journal/${post.id}`}
                   date={post.data.date}
                   tags={post.data.tags}
-                  cover={post.data.cover}
                 />
               </div>
             ))}
@@ -75,10 +78,10 @@ const journalPosts = (await getCollection('journal'))
       </section>
     )}
 
-    {/* 8. CTA Block — final conversion section */}
+    {/* 9. CTA Block — question-format final conversion */}
     <CTABlock
-      headline="See what your wall could become."
-      description="Get a free estimate for your mural or sign project. We'll visit your site, show you the design before we start, and paint it right."
+      headline="Have a wall that needs a story?"
+      description="We'll visit your site, show you the design before we start, and paint it by hand. Free estimates, no obligation."
     />
   </main>
   <Footer />

@@ -33,7 +33,7 @@ const {
   </video>
 
   <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-bone-black via-bone-black/50 to-bone-black/20" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-bone-black via-bone-black/60 to-bone-black/10" aria-hidden="true"></div>
 
   <!-- Content -->
   <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
@@ -65,19 +65,10 @@ const {
       </a>
     </div>
   </div>
-
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
-    <div
-      class="w-px h-12 bg-titanium-white/60 origin-top"
-      style="animation: scroll-pulse 2s ease-in-out infinite;"
-    ></div>
-  </div>
 </section>
 
 <style>
   @media (prefers-reduced-motion: reduce) {
     video { display: none; }
-    [style*="scroll-pulse"] { animation: none !important; opacity: 0.6; }
   }
 </style>

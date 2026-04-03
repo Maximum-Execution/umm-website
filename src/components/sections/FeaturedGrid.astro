@@ -21,7 +21,7 @@ const projects = (await getCollection('projects'))
       class="font-mono text-smoke-gray uppercase hover:text-titanium-white transition-colors"
       style="font-size: var(--text-fluid-xs);"
     >
-      View all &rarr;
+      View all <span aria-hidden="true">&rarr;</span>
     </a>
   </div>
 
@@ -61,8 +61,8 @@ const projects = (await getCollection('projects'))
             />
           </div>
           <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-bone-black/0 group-hover:bg-bone-black/60 transition-colors duration-300 flex flex-col justify-end p-6 lg:p-8">
-            <div class="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+          <div class="absolute inset-0 bg-bone-black/0 group-hover:bg-bone-black/60 group-focus-within:bg-bone-black/60 transition-colors duration-300 flex flex-col justify-end p-6 lg:p-8">
+            <div class="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 transition-all duration-300">
               <h3
                 class="font-heading text-titanium-white mb-1"
                 style="font-size: var(--text-fluid-xl);"

@@ -57,7 +57,7 @@ const journalPosts = (await getCollection('journal'))
           href="/brand-mark"
           class="font-sans shrink-0 inline-block border border-titanium-white text-titanium-white px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors duration-200"
         >
-          See The Brand Mark &rarr;
+          See The Brand Mark <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </section>
@@ -78,7 +78,7 @@ const journalPosts = (await getCollection('journal'))
               class="font-mono text-smoke-gray uppercase hover:text-titanium-white transition-colors"
               style="font-size: var(--text-fluid-xs);"
             >
-              View all &rarr;
+              View all <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
           <div class="grid md:grid-cols-3 gap-8">

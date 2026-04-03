@@ -10,7 +10,7 @@ interface Props {
 
 const {
   headline = 'Landmarks, not lookalikes.',
-  subline = 'Hand-painted murals and signs for businesses in Richmond, Virginia. We start with your building — its history, its neighborhood, its architecture — and paint something that can only exist in that one place.',
+  subline = 'Hand-painted murals, signs, and restorations in Richmond, Virginia. Your story on your walls, not a template.',
   videoSrc = '/video/hero-reel.mp4',
   posterSrc = '/images/hero-poster.jpg',
   ctaLabel = 'Schedule Your Free Discovery Session',
@@ -51,14 +51,20 @@ const {
           {subline}
         </p>
       )}
-      <a
-        href={ctaHref}
-        class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
-        data-animate
-        data-animate-delay="2"
-      >
-        {ctaLabel}
-      </a>
+      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="2">
+        <a
+          href={ctaHref}
+          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+        >
+          {ctaLabel}
+        </a>
+        <a
+          href="/work"
+          class="font-sans inline-block border border-titanium-white text-titanium-white px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors duration-200"
+        >
+          See Our Work
+        </a>
+      </div>
     </div>
   </div>
 </section>

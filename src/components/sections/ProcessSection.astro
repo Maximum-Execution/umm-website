@@ -2,22 +2,25 @@
 const steps = [
   {
     number: '01',
-    title: 'We visit your site',
-    body: 'We come to your location and collect the raw data your project will be built from: photography from every angle and lighting condition, spectrometer color readings of your physical materials, historical documentation, and a full visual record of what your space already contains.',
+    label: 'Discover',
+    title: 'We listen to your story and figure out what makes you different.',
+    body: 'Every project starts with a conversation. Not a template. Not a questionnaire. We sit down, we listen, and we identify what makes your place unlike anything else on the block. Then we visit your site and collect the raw materials: photography from every angle, spectrometer color readings from your physical surfaces, and a full record of what your space already holds.',
     image: '/images/process-visit.jpg',
     imageAlt: 'Spencer photographing a wall during a site visit',
   },
   {
     number: '02',
-    title: 'You see the design before we start',
-    body: 'We develop the design from your data and deliver a photorealistic render showing the finished work on your specific wall. You see exactly what you are getting. You approve it or we revise it.',
+    label: 'Collect',
+    title: 'We gather the real colors, textures, and details from your story.',
+    body: "We don't pick colors from a screen. We collect them from the source. Every color in the finished work was measured from your actual materials. Every shape was derived from what we found on-site. You see a photorealistic render of the design on your specific wall before we pick up a brush. You approve it or we revise it.",
     image: '/images/process-render.jpg',
     imageAlt: 'Photorealistic Blender render of a mural on a building wall',
   },
   {
     number: '03',
-    title: 'We paint it and prove it',
-    body: 'We execute the work and deliver your Certificate of Provenance: a document tracing every color, shape, and texture to its origin in your data. The work is installed, protected, and documented.',
+    label: 'Create',
+    title: 'We paint it by hand. You approve it before it\'s final.',
+    body: "Nothing goes on the wall that you haven't already seen. We hand-paint the approved design using professional-grade materials matched to your surface and climate. Every project includes documentation of where every color and material came from. The work is sealed, protected, and built to last 20+ years.",
     image: '/images/process-paint.jpg',
     imageAlt: 'Spencer painting a large-scale mural on an exterior wall',
   },
@@ -31,7 +34,7 @@ const steps = [
       style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
       data-animate="fade"
     >
-      Process
+      How It Works
     </p>
 
     <div class="space-y-24 lg:space-y-32">
@@ -57,11 +60,11 @@ const steps = [
             {/* Text */}
             <div class={isReversed ? 'lg:[direction:ltr]' : ''} data-animate="fade">
               <span
-                class="font-heading text-slate-gray block mb-4"
-                style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid);"
+                class="font-mono text-slate-gray block mb-4"
+                style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
                 aria-hidden="true"
               >
-                {step.number}
+                {step.number} / {step.label}
               </span>
               <h3
                 class="font-heading text-titanium-white mb-4"

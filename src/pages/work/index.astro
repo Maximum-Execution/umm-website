@@ -1,56 +1,144 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
+
+const projects = (await getCollection('projects'))
+  .filter(p => p.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout
-  title="Work — Untitled Mixed Media"
-  description="Hand-painted murals and signs for businesses across Richmond, Virginia. Two service lines, one craft — built from your actual location."
+  title="Gallery | Hand-Painted Murals & Signs | Untitled Mixed Media"
+  description="Hand-painted murals, signs, and restorations in Richmond, Virginia. See our work."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Gallery' }
+  ]}
 >
   <Nav />
-  <main class="pt-24 pb-16 px-6 lg:px-12">
-    <div class="max-w-7xl mx-auto">
+  <main id="main-content" class="pt-24">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
-        { label: 'Work' },
+        { label: 'Gallery' },
       ]} />
-
-      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        What we do
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
-        Murals and hand-painted signs built from your actual location.
-      </h1>
-
-      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
-        Your building already has a story — its materials, its neighborhood, its history. We discover it, design from it, and paint it by hand. Two service lines, one craft: murals that transform identity and signs that outlast anything vinyl can do.
-      </p>
-
-      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
-        <div data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Murals"
-            description="Hand-painted murals discovered from your building's own story. Site visit, photorealistic render, then paint. The result is a landmark."
-            href="/murals"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="Hand-Painted Signs"
-            description="Gold leaf, window lettering, storefront signs, and menu boards. Hand-painted lettering that weathers into character instead of peeling off in three years."
-            href="/hand-painted-signs"
-          />
-        </div>
-      </div>
     </div>
+
+    <!-- Hero headline -->
+    <section class="px-6 lg:px-12 max-w-7xl mx-auto pt-8 pb-16">
+      <h1 class="font-heading text-titanium-white text-balance" style="font-size: var(--text-fluid-4xl);" data-animate>
+        The work speaks.
+      </h1>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
+      <div class="flex items-center justify-between mb-8">
+        <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Featured Projects
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {projects.map((project, i) => (
+          <a
+            href={`/work/${project.id}`}
+            class:list={[
+              'group relative block overflow-hidden',
+              i === 0 ? 'md:col-span-2 aspect-[21/9]' : 'aspect-[4/3]'
+            ]}
+            data-animate
+            data-animate-delay={String(Math.min(i + 1, 5))}
+          >
+            <img
+              src={project.data.cover}
+              alt={project.data.title}
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-bone-black/80 via-bone-black/20 to-transparent" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+              <h3 class="font-heading text-titanium-white mb-1" style="font-size: var(--text-fluid-xl);">
+                {project.data.title}
+              </h3>
+              <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
+                {project.data.location}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Category Sections -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <!-- Murals -->
+      <a href="/murals" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
+        <img
+          src="/images/projects/trolley-barn/finished-full.jpg"
+          alt="Hand-painted exterior mural on a commercial building in Richmond, Virginia"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-bone-black/50 group-hover:bg-bone-black/40 transition-colors" />
+        <div class="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
+          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-3xl);">
+            Murals
+          </h2>
+          <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
+            Most murals could be anywhere. Ours could only be here.
+          </p>
+          <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
+            Explore &rarr;
+          </span>
+        </div>
+      </a>
+
+      <!-- Hand-Painted Signs -->
+      <a href="/hand-painted-signs" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
+        <img
+          src="/images/signs/signs-cover.jpg"
+          alt="Hand-painted gold leaf lettering on a storefront window in Richmond, Virginia"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-bone-black/50 group-hover:bg-bone-black/40 transition-colors" />
+        <div class="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
+          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-3xl);">
+            Hand-Painted Signs
+          </h2>
+          <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
+            Gold leaf, window lettering, and storefront signs built to last 20+ years.
+          </p>
+          <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
+            Explore &rarr;
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <!-- Brand Mark Callout -->
+    <section class="px-6 lg:px-12 py-20 bg-midnight-graphite" data-animate>
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Starting at $500
+        </p>
+        <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">
+          The Brand Mark: your logo, hand-painted.
+        </h2>
+        <p class="font-body text-shadow-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
+          Wall or wood panel. Three shapes. The fastest way to get hand-painted work on your wall.
+        </p>
+        <a href="/brand-mark" class="inline-block border border-titanium-white text-titanium-white font-sans px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors">
+          See The Brand Mark
+        </a>
+      </div>
+    </section>
+
+    <CTABlock />
   </main>
-
-  <CTABlock />
-
   <Footer />
 </BaseLayout>

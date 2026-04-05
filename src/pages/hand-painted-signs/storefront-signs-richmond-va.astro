@@ -6,9 +6,31 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'What size options are available for storefront signs?', answer: 'Every storefront is different. We design to your specific facade, whether that is a 2-foot transom window or a 20-foot brick wall. The site visit determines what the building can support and what will read best from the street.' },
+  { question: 'Is gold leaf available for storefront lettering?', answer: 'Yes. We offer 23-karat gold leaf, 12-karat white gold, and imitation gold depending on your budget and the look you want. Gold leaf catches light in a way no paint or vinyl can replicate.' },
+  { question: 'How long does a storefront sign take?', answer: 'Most storefront signs take 1 to 3 weeks from design approval to completion, depending on size, detail level, and weather. We will give you a specific timeline after the site visit.' },
+  { question: 'Can you paint double-sided or projecting signs?', answer: 'Yes. We paint hanging blade signs, projecting signs, and A-frame sidewalk boards. If it has a paintable surface, we can letter it.' },
+];
 ---
 
-<BaseLayout title="Hand-Painted Storefront Signs in Richmond, VA | Untitled Mixed Media" description="Custom hand-painted storefront signs in Richmond, Virginia. Gold leaf, reverse glass, and traditional lettering that gives your business real street presence.">
+<BaseLayout
+  title="Hand-Painted Storefront Signs in Richmond, VA | Untitled Mixed Media"
+  description="Custom hand-painted storefront signs in Richmond, Virginia. Gold leaf, reverse glass, and traditional lettering that gives your business real street presence."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
+    { name: 'Storefront Signs' },
+  ]}
+  service={{
+    name: 'Storefront Signs',
+    description: 'Custom hand-painted storefront signs in Richmond, Virginia.',
+    priceRange: '$500 - $5,000',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -45,12 +67,7 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'What size options are available for storefront signs?', answer: 'Every storefront is different. We design to your specific facade, whether that is a 2-foot transom window or a 20-foot brick wall. The site visit determines what the building can support and what will read best from the street.' },
-      { question: 'Is gold leaf available for storefront lettering?', answer: 'Yes. We offer 23-karat gold leaf, 12-karat white gold, and imitation gold depending on your budget and the look you want. Gold leaf catches light in a way no paint or vinyl can replicate.' },
-      { question: 'How long does a storefront sign take?', answer: 'Most storefront signs take 1 to 3 weeks from design approval to completion, depending on size, detail level, and weather. We will give you a specific timeline after the site visit.' },
-      { question: 'Can you paint double-sided or projecting signs?', answer: 'Yes. We paint hanging blade signs, projecting signs, and A-frame sidewalk boards. If it has a paintable surface, we can letter it.' },
-    ]} />
+    <FAQSection items={faqItems} />
 
     <RelatedPages heading="Related" pages={[
       { title: 'Bar & Restaurant Signs', href: '/hand-painted-signs/bar-and-restaurant-signs', description: 'Signage that builds atmosphere before guests walk in.' },

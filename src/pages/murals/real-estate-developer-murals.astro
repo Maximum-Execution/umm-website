@@ -6,9 +6,31 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'What is the ROI on a mural for a development project?', answer: 'Murals drive measurable value for developments: faster lease-up through increased visibility and social media exposure, premium positioning that supports higher rental rates, and long-term neighborhood identity that anchors the property. The cost of a mural is a fraction of a typical marketing budget and generates organic, ongoing attention that paid advertising cannot replicate.' },
+  { question: 'Can you coordinate with our construction timeline?', answer: 'Yes. We are experienced working within construction schedules and can phase our work around other trades. We need the wall surface to be complete and cured — typically 28 days for new concrete or masonry. We can begin design development while construction is in progress so the mural is ready to paint as soon as the surface is available.' },
+  { question: 'Do you offer volume pricing for multi-building projects?', answer: 'For developments with multiple mural locations, we offer project-rate pricing that accounts for the efficiencies of working across a single site. We can scope and quote the full package or phase deliverables across the development timeline. Contact us to discuss your specific project.' },
+  { question: 'What about VARA compliance?', answer: 'The Visual Artists Rights Act (VARA) gives muralists certain rights over their work, including the right to prevent destruction or modification. We address VARA proactively in every contract — defining ownership, modification rights, and removal procedures upfront so there are no legal surprises down the road.' },
+];
 ---
 
-<BaseLayout title="Murals for Real Estate Developers | Untitled Mixed Media" description="Hand-painted murals for real estate developers. Differentiate new developments, increase property value, and create visual anchors that attract tenants and buyers.">
+<BaseLayout
+  title="Murals for Real Estate Developers | Untitled Mixed Media"
+  description="Hand-painted murals for real estate developers. Differentiate new developments, increase property value, and create visual anchors that attract tenants and buyers."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Murals', url: '/murals' },
+    { name: 'Real Estate Developer Murals' },
+  ]}
+  service={{
+    name: 'Real Estate Developer Murals',
+    description: 'Large-scale hand-painted murals for real estate developments in Richmond, Virginia.',
+    priceRange: '$3,000 - $25,000',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -47,12 +69,7 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'What is the ROI on a mural for a development project?', answer: 'Murals drive measurable value for developments: faster lease-up through increased visibility and social media exposure, premium positioning that supports higher rental rates, and long-term neighborhood identity that anchors the property. The cost of a mural is a fraction of a typical marketing budget and generates organic, ongoing attention that paid advertising cannot replicate.' },
-      { question: 'Can you coordinate with our construction timeline?', answer: 'Yes. We are experienced working within construction schedules and can phase our work around other trades. We need the wall surface to be complete and cured — typically 28 days for new concrete or masonry. We can begin design development while construction is in progress so the mural is ready to paint as soon as the surface is available.' },
-      { question: 'Do you offer volume pricing for multi-building projects?', answer: 'For developments with multiple mural locations, we offer project-rate pricing that accounts for the efficiencies of working across a single site. We can scope and quote the full package or phase deliverables across the development timeline. Contact us to discuss your specific project.' },
-      { question: 'What about VARA compliance?', answer: 'The Visual Artists Rights Act (VARA) gives muralists certain rights over their work, including the right to prevent destruction or modification. We address VARA proactively in every contract — defining ownership, modification rights, and removal procedures upfront so there are no legal surprises down the road.' },
-    ]} />
+    <FAQSection items={faqItems} />
     <RelatedPages heading="Related" pages={[
       { title: 'Property Owner Murals', href: '/murals/property-owner-murals-richmond-va', description: 'Murals that increase property value and tenant demand.' },
       { title: 'Public Art Murals', href: '/murals/public-art-murals-richmond-va', description: 'Community-scale public art and heritage murals.' },

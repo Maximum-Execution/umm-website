@@ -6,9 +6,33 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'Do you respond to RFPs for public art commissions?', answer: 'Yes. We are experienced with the RFP process for public art commissions at the municipal, county, and state levels. We can provide proposals with detailed design concepts, material specifications, timelines, budgets, community engagement plans, and maintenance schedules. We are familiar with Virginia Commission for the Arts and percent-for-art program requirements.' },
+  { question: 'How do you incorporate community input into mural design?', answer: 'Our community engagement process is tailored to each project. It can include stakeholder interviews, community meetings, design presentations with feedback rounds, and historical research. For the Short Pump Park project, we researched Native American heritage, local growth patterns, and educational themes through community input and historical documentation. The goal is art that the community recognizes as theirs.' },
+  { question: 'Can public art murals be funded through grants?', answer: 'Many public murals are funded through grants from organizations like the Virginia Commission for the Arts, NEA Our Town grants, local arts councils, and percent-for-art programs tied to development projects. We can help identify applicable funding sources and provide the documentation and project plans that grant applications require.' },
+  { question: 'What is your approach to long-term maintenance of public murals?', answer: 'Every public art project includes a written maintenance plan specifying inspection intervals, cleaning procedures, touch-up protocols, and expected material lifespan. We use KEIM mineral paint for heritage projects. It bonds chemically with masonry and can last 50+ years. We also offer maintenance service agreements for ongoing care.' },
+  { question: "We're a community group, not a government agency. Can we still commission a mural?", answer: "Yes. We work with neighborhood associations, churches, schools, civic organizations, and families. You don't need an RFP or a procurement process. If you have a wall, a story, and a way to fund the project, we can work together. We'll help you think through site selection, community input, and what the mural should communicate." },
+  { question: 'We want to commemorate a specific moment or milestone. How does that work?', answer: "Some of our strongest projects start with a moment, not a building. A founding. An anniversary. A loss. A turning point. We sit down with the people who lived it, listen to what it meant, and find the visual story that captures it. The process is the same as any project: discovery, design approval, hand-painting, and documentation. The difference is that the research starts with the people and the moment, not just the architecture." },
+];
 ---
 
-<BaseLayout title="Public Art and Community Murals in Richmond, VA | Untitled Mixed Media" description="Community murals, heritage projects, and public art commissions in Richmond, VA. For neighborhoods, churches, schools, and civic institutions. RFP-experienced with archival paint systems.">
+<BaseLayout
+  title="Public Art and Community Murals in Richmond, VA | Untitled Mixed Media"
+  description="Community murals, heritage projects, and public art commissions in Richmond, VA. For neighborhoods, churches, schools, and civic institutions. RFP-experienced with archival paint systems."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Murals', url: '/murals' },
+    { name: 'Public Art Murals' },
+  ]}
+  service={{
+    name: 'Public Art Murals',
+    description: 'Community murals, heritage projects, and public art commissions in Richmond, Virginia.',
+    priceRange: '$10,000 - $100,000+',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -59,14 +83,7 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'Do you respond to RFPs for public art commissions?', answer: 'Yes. We are experienced with the RFP process for public art commissions at the municipal, county, and state levels. We can provide proposals with detailed design concepts, material specifications, timelines, budgets, community engagement plans, and maintenance schedules. We are familiar with Virginia Commission for the Arts and percent-for-art program requirements.' },
-      { question: 'How do you incorporate community input into mural design?', answer: 'Our community engagement process is tailored to each project. It can include stakeholder interviews, community meetings, design presentations with feedback rounds, and historical research. For the Short Pump Park project, we researched Native American heritage, local growth patterns, and educational themes through community input and historical documentation. The goal is art that the community recognizes as theirs.' },
-      { question: 'Can public art murals be funded through grants?', answer: 'Many public murals are funded through grants from organizations like the Virginia Commission for the Arts, NEA Our Town grants, local arts councils, and percent-for-art programs tied to development projects. We can help identify applicable funding sources and provide the documentation and project plans that grant applications require.' },
-      { question: 'What is your approach to long-term maintenance of public murals?', answer: 'Every public art project includes a written maintenance plan specifying inspection intervals, cleaning procedures, touch-up protocols, and expected material lifespan. We use KEIM mineral paint for heritage projects. It bonds chemically with masonry and can last 50+ years. We also offer maintenance service agreements for ongoing care.' },
-      { question: "We're a community group, not a government agency. Can we still commission a mural?", answer: "Yes. We work with neighborhood associations, churches, schools, civic organizations, and families. You don't need an RFP or a procurement process. If you have a wall, a story, and a way to fund the project, we can work together. We'll help you think through site selection, community input, and what the mural should communicate." },
-      { question: 'We want to commemorate a specific moment or milestone. How does that work?', answer: "Some of our strongest projects start with a moment, not a building. A founding. An anniversary. A loss. A turning point. We sit down with the people who lived it, listen to what it meant, and find the visual story that captures it. The process is the same as any project: discovery, design approval, hand-painting, and documentation. The difference is that the research starts with the people and the moment, not just the architecture." },
-    ]} />
+    <FAQSection items={faqItems} />
     <RelatedPages heading="Related" pages={[
       { title: 'Community Murals', href: '/contact', description: 'Murals for neighborhood associations, churches, schools, and civic groups.' },
       { title: 'Mural Maintenance', href: '/murals/mural-maintenance', description: 'How to protect your public art investment for decades.' },

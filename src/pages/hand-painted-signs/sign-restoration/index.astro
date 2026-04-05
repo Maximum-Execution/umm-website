@@ -10,6 +10,17 @@ import ServiceCard from '../../../components/ServiceCard.astro';
 <BaseLayout
   title="Sign Restoration — Untitled Mixed Media | Richmond VA"
   description="Restoring faded, damaged, and historic hand-painted signs in Richmond, Virginia. Ghost signs, gilded lettering, and century-old advertisements brought back to life."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
+    { name: 'Sign Restoration' },
+  ]}
+  service={{
+    name: 'Sign Restoration',
+    description: 'Restoring faded, damaged, and historic hand-painted signs in Richmond, Virginia.',
+    priceRange: '$1,500 - $15,000',
+  }}
 >
   <Nav />
   <main class="pt-24 pb-16 px-6 lg:px-12">

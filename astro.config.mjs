@@ -8,6 +8,9 @@ export default defineConfig({
   output: 'static',
   vite: {
     plugins: [tailwindcss()],
+    cacheDir: process.env.LOCALAPPDATA
+      ? `${process.env.LOCALAPPDATA}/vite-cache/umm-website`
+      : 'node_modules/.vite',
   },
   integrations: [sitemap()],
 });

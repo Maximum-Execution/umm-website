@@ -6,9 +6,30 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'How long do vinyl signs actually last?', answer: 'Most exterior vinyl lettering lasts 3 to 7 years depending on sun exposure, temperature swings, and surface prep. Premium cast vinyl can last longer, but adhesive failure and edge lifting are inevitable on most surfaces.' },
+  { question: 'How long do hand-painted signs last?', answer: 'A properly painted sign on a well-prepared surface lasts 15 to 25 years or more. Marine-grade enamel bonds into the surface rather than sitting on top of it, which is why hand-painted signs weather rather than peel.' },
+  { question: 'What about maintenance?', answer: 'Vinyl cannot be repaired. Once it starts peeling, the whole sign needs replacing. Hand-painted signs can be touched up in place. A minor touch-up at year 8 or 10 costs a fraction of a full replacement.' },
+  { question: 'How do they compare in different weather?', answer: 'Vinyl adhesive weakens in heat and becomes brittle in cold. Hand-painted enamel flexes with temperature changes because it is bonded to the substrate. In Richmond hot summers and occasional ice storms, paint outlasts adhesive every time.' },
+];
 ---
 
-<BaseLayout title="Hand-Painted Signs vs Vinyl: Which Lasts Longer? | Untitled Mixed Media" description="An honest comparison of hand-painted signs versus vinyl lettering. Lifespan, maintenance, weather resistance, and long-term appearance.">
+<BaseLayout
+  title="Hand-Painted Signs vs Vinyl: Which Lasts Longer? | Untitled Mixed Media"
+  description="An honest comparison of hand-painted signs versus vinyl lettering. Lifespan, maintenance, weather resistance, and long-term appearance."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
+    { name: 'Hand-Painted vs Vinyl' },
+  ]}
+  service={{
+    name: 'Hand-Painted vs Vinyl Signs',
+    description: 'An honest comparison of hand-painted signs versus vinyl lettering for businesses in Richmond, Virginia.',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -55,12 +76,7 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'How long do vinyl signs actually last?', answer: 'Most exterior vinyl lettering lasts 3 to 7 years depending on sun exposure, temperature swings, and surface prep. Premium cast vinyl can last longer, but adhesive failure and edge lifting are inevitable on most surfaces.' },
-      { question: 'How long do hand-painted signs last?', answer: 'A properly painted sign on a well-prepared surface lasts 15 to 25 years or more. Marine-grade enamel bonds into the surface rather than sitting on top of it, which is why hand-painted signs weather rather than peel.' },
-      { question: 'What about maintenance?', answer: 'Vinyl cannot be repaired. Once it starts peeling, the whole sign needs replacing. Hand-painted signs can be touched up in place. A minor touch-up at year 8 or 10 costs a fraction of a full replacement.' },
-      { question: 'How do they compare in different weather?', answer: 'Vinyl adhesive weakens in heat and becomes brittle in cold. Hand-painted enamel flexes with temperature changes because it is bonded to the substrate. In Richmond hot summers and occasional ice storms, paint outlasts adhesive every time.' },
-    ]} />
+    <FAQSection items={faqItems} />
 
     <RelatedPages heading="Related" pages={[
       { title: 'Cost Per Year Comparison', href: '/hand-painted-signs/cost-per-year-comparison', description: 'The real numbers behind hand-painted vs vinyl pricing.' },

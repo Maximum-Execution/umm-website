@@ -6,9 +6,30 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'How does paint bond differently than vinyl adhesive?', answer: 'Paint penetrates the surface and forms a chemical bond as it cures, becoming part of the substrate. Vinyl sits on top of the surface held by pressure-sensitive adhesive. When that adhesive weakens from heat, UV, or moisture, the vinyl lifts. Paint does not lift because there is no adhesive layer to fail.' },
+  { question: 'How does UV light affect each material?', answer: 'UV radiation breaks down vinyl polymers and adhesive bonds over time, causing yellowing, brittleness, and edge failure. Sign-grade enamel paint contains UV-stabilizing pigments that resist fading for decades. Marine-grade enamel, the type we use, is formulated specifically for years of direct sun exposure.' },
+  { question: 'Can a hand-painted sign be repaired instead of replaced?', answer: 'Yes. A damaged section of a hand-painted sign can be sanded, primed, and repainted in place without redoing the entire sign. Vinyl cannot be partially repaired. Once a section fails, the whole sign comes off because you cannot match the faded color of the remaining vinyl.' },
+  { question: 'Does climate affect which option lasts longer?', answer: 'Climate amplifies the difference. Richmond gets hot, humid summers and occasional ice. Heat softens vinyl adhesive. Cold makes vinyl brittle. Moisture gets under lifted edges and accelerates failure. Paint handles all of these because it is bonded to the surface, not stuck on top of it.' },
+];
 ---
 
-<BaseLayout title="Why Hand-Painted Signs Last Longer | Untitled Mixed Media" description="The science behind hand-painted sign durability. How paint bonding, UV resistance, and repairability make hand-painted signs outlast vinyl by decades.">
+<BaseLayout
+  title="Why Hand-Painted Signs Last Longer | Untitled Mixed Media"
+  description="The science behind hand-painted sign durability. How paint bonding, UV resistance, and repairability make hand-painted signs outlast vinyl by decades."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
+    { name: 'Why Hand-Painted Signs Last Longer' },
+  ]}
+  service={{
+    name: 'Sign Durability Guide',
+    description: 'The science behind hand-painted sign durability compared to vinyl in Richmond, Virginia.',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -45,12 +66,7 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'How does paint bond differently than vinyl adhesive?', answer: 'Paint penetrates the surface and forms a chemical bond as it cures, becoming part of the substrate. Vinyl sits on top of the surface held by pressure-sensitive adhesive. When that adhesive weakens from heat, UV, or moisture, the vinyl lifts. Paint does not lift because there is no adhesive layer to fail.' },
-      { question: 'How does UV light affect each material?', answer: 'UV radiation breaks down vinyl polymers and adhesive bonds over time, causing yellowing, brittleness, and edge failure. Sign-grade enamel paint contains UV-stabilizing pigments that resist fading for decades. Marine-grade enamel, the type we use, is formulated specifically for years of direct sun exposure.' },
-      { question: 'Can a hand-painted sign be repaired instead of replaced?', answer: 'Yes. A damaged section of a hand-painted sign can be sanded, primed, and repainted in place without redoing the entire sign. Vinyl cannot be partially repaired. Once a section fails, the whole sign comes off because you cannot match the faded color of the remaining vinyl.' },
-      { question: 'Does climate affect which option lasts longer?', answer: 'Climate amplifies the difference. Richmond gets hot, humid summers and occasional ice. Heat softens vinyl adhesive. Cold makes vinyl brittle. Moisture gets under lifted edges and accelerates failure. Paint handles all of these because it is bonded to the surface, not stuck on top of it.' },
-    ]} />
+    <FAQSection items={faqItems} />
 
     <RelatedPages heading="Related" pages={[
       { title: 'Hand-Painted vs Vinyl', href: '/hand-painted-signs/hand-painted-vs-vinyl', description: 'The full comparison: lifespan, maintenance, and appearance.' },

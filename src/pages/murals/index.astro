@@ -15,6 +15,16 @@ const muralProjects = (await getCollection('projects'))
 <BaseLayout
   title="Murals — Untitled Mixed Media | Richmond VA Mural Painter"
   description="Hand-painted murals for businesses, property owners, and public spaces in Richmond, Virginia. Every mural starts with your building's story."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Murals' },
+  ]}
+  service={{
+    name: 'Hand-Painted Murals',
+    description: 'Custom hand-painted murals for businesses, property owners, and public spaces in Richmond, Virginia.',
+    priceRange: '$3,000 - $100,000+',
+  }}
 >
   <Nav />
   <main class="pt-24 pb-16 px-6 lg:px-12">

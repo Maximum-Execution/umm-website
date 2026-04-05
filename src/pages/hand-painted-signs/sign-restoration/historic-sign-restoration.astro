@@ -6,9 +6,32 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import CTABlock from '../../../components/CTABlock.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import RelatedPages from '../../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'How do you assess a historic sign before restoration?', answer: 'The assessment begins with a site visit to examine the sign\'s condition, substrate integrity, paint layers, and structural attachment. We photograph the sign in detail, take paint samples for color analysis, and document any areas of loss or damage. The assessment report includes a condition summary, recommended scope of work, and cost estimate.' },
+  { question: 'How do you match original colors on a historic sign?', answer: 'We use spectrophotometer readings on surviving paint to identify the original pigments and color values. Where original paint is too deteriorated, we cross-reference with historical paint catalogs and period-appropriate color systems. The goal is an accurate match to the original — not a modern reinterpretation.' },
+  { question: 'Can you repair structural damage to historic signs?', answer: 'Yes. Structural issues — cracked substrates, detached mounting hardware, water-damaged wood panels — are addressed before any paint restoration begins. We stabilize the physical structure using period-appropriate materials and techniques whenever possible, ensuring the repair is durable without compromising the sign\'s historic character.' },
+  { question: 'Do you document the restoration process?', answer: 'Every restoration is documented with before, during, and after photography. We record material analysis, color matching data, and the methods used at each stage. The final documentation package serves as a permanent record for the property owner, preservation boards, and future maintenance planning.' },
+];
 ---
 
-<BaseLayout title="Historic Sign Restoration | Untitled Mixed Media" description="Professional historic sign restoration in Richmond, VA. Color matching, structural repair, and documentation for deteriorating hand-painted signs on historic buildings.">
+<BaseLayout
+  title="Historic Sign Restoration | Untitled Mixed Media"
+  description="Professional historic sign restoration in Richmond, VA. Color matching, structural repair, and documentation for deteriorating hand-painted signs on historic buildings."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
+    { name: 'Sign Restoration', url: '/hand-painted-signs/sign-restoration' },
+    { name: 'Historic Sign Restoration' },
+  ]}
+  service={{
+    name: 'Historic Sign Restoration',
+    description: 'Professional historic sign restoration with color matching and documentation in Richmond, Virginia.',
+    priceRange: '$1,500 - $15,000',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -48,12 +71,7 @@ import RelatedPages from '../../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'How do you assess a historic sign before restoration?', answer: 'The assessment begins with a site visit to examine the sign\'s condition, substrate integrity, paint layers, and structural attachment. We photograph the sign in detail, take paint samples for color analysis, and document any areas of loss or damage. The assessment report includes a condition summary, recommended scope of work, and cost estimate.' },
-      { question: 'How do you match original colors on a historic sign?', answer: 'We use spectrophotometer readings on surviving paint to identify the original pigments and color values. Where original paint is too deteriorated, we cross-reference with historical paint catalogs and period-appropriate color systems. The goal is an accurate match to the original — not a modern reinterpretation.' },
-      { question: 'Can you repair structural damage to historic signs?', answer: 'Yes. Structural issues — cracked substrates, detached mounting hardware, water-damaged wood panels — are addressed before any paint restoration begins. We stabilize the physical structure using period-appropriate materials and techniques whenever possible, ensuring the repair is durable without compromising the sign\'s historic character.' },
-      { question: 'Do you document the restoration process?', answer: 'Every restoration is documented with before, during, and after photography. We record material analysis, color matching data, and the methods used at each stage. The final documentation package serves as a permanent record for the property owner, preservation boards, and future maintenance planning.' },
-    ]} />
+    <FAQSection items={faqItems} />
     <RelatedPages heading="Related" pages={[
       { title: 'Ghost Signs in Richmond', href: '/hand-painted-signs/sign-restoration/ghost-signs-richmond-va', description: 'A guide to Richmond\'s fading painted advertisements.' },
       { title: 'Secretary of the Interior Standards', href: '/hand-painted-signs/sign-restoration/secretary-of-interior-standards', description: 'Federal standards for historic sign restoration.' },

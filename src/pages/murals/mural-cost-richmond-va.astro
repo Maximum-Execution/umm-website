@@ -7,9 +7,31 @@ import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
 import Button from '../../components/Button.astro';
+
+const faqItems = [
+  { question: 'What factors affect mural pricing?', answer: 'The main cost drivers are wall size (square footage), design complexity, surface condition (does it need repair or priming), access requirements (scaffolding, lifts, or ladder-accessible), paint system (standard acrylic vs. archival mineral paint), and timeline. A simple 200 sq ft logo mural on a clean, accessible wall costs far less than a 2,000 sq ft photorealistic mural on damaged brick requiring scaffolding.' },
+  { question: 'Do you require a deposit?', answer: 'Yes. We require a 50% deposit before work begins, with the remaining balance due upon completion. For large-scale projects over $10,000, we can arrange milestone-based payment schedules. The deposit covers materials, surface preparation, and design development.' },
+  { question: 'What is the payment schedule?', answer: 'Standard projects: 50% deposit to start, 50% upon completion. Large projects ($10K+): we can structure payments around milestones — deposit, design approval, mid-project, and completion. We send invoices through our standard billing system with clear payment terms.' },
+  { question: 'Are there hidden costs I should know about?', answer: 'We quote all-inclusive pricing that covers design, materials, paint, surface prep, equipment rental, and labor. The only variables that can change a quote are scope changes you request after approval, or unexpected surface damage discovered during prep (we document and discuss before proceeding). No hidden fees. The price we quote is the price you pay.' },
+];
 ---
 
-<BaseLayout title="How Much Does a Mural Cost in Richmond, VA? | Untitled Mixed Media" description="Transparent mural pricing in Richmond, VA. From simple graphics at $18/sqft to archival heritage murals at $110/sqft. Get a free estimate with our price calculator.">
+<BaseLayout
+  title="How Much Does a Mural Cost in Richmond, VA? | Untitled Mixed Media"
+  description="Transparent mural pricing in Richmond, VA. From simple graphics at $18/sqft to archival heritage murals at $110/sqft. Get a free estimate with our price calculator."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Murals', url: '/murals' },
+    { name: 'Mural Cost' },
+  ]}
+  service={{
+    name: 'Mural Cost Guide',
+    description: 'Transparent mural pricing and cost guide for projects in Richmond, Virginia.',
+    priceRange: '$500 - $100,000+',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -96,12 +118,7 @@ import Button from '../../components/Button.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'What factors affect mural pricing?', answer: 'The main cost drivers are wall size (square footage), design complexity, surface condition (does it need repair or priming), access requirements (scaffolding, lifts, or ladder-accessible), paint system (standard acrylic vs. archival mineral paint), and timeline. A simple 200 sq ft logo mural on a clean, accessible wall costs far less than a 2,000 sq ft photorealistic mural on damaged brick requiring scaffolding.' },
-      { question: 'Do you require a deposit?', answer: 'Yes. We require a 50% deposit before work begins, with the remaining balance due upon completion. For large-scale projects over $10,000, we can arrange milestone-based payment schedules. The deposit covers materials, surface preparation, and design development.' },
-      { question: 'What is the payment schedule?', answer: 'Standard projects: 50% deposit to start, 50% upon completion. Large projects ($10K+): we can structure payments around milestones — deposit, design approval, mid-project, and completion. We send invoices through our standard billing system with clear payment terms.' },
-      { question: 'Are there hidden costs I should know about?', answer: 'We quote all-inclusive pricing that covers design, materials, paint, surface prep, equipment rental, and labor. The only variables that can change a quote are scope changes you request after approval, or unexpected surface damage discovered during prep (we document and discuss before proceeding). No hidden fees. The price we quote is the price you pay.' },
-    ]} />
+    <FAQSection items={faqItems} />
     <RelatedPages heading="Related" pages={[
       { title: 'Business Murals', href: '/murals/business-murals-richmond-va', description: 'Commercial murals that drive foot traffic and identity.' },
       { title: 'Outdoor Murals', href: '/murals/outdoor-murals-richmond-va', description: 'Weather-durable exterior murals built to last.' },

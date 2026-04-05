@@ -10,6 +10,16 @@ import ServiceCard from '../../components/ServiceCard.astro';
 <BaseLayout
   title="Hand-Painted Signs — Untitled Mixed Media | Richmond VA Sign Painter"
   description="Hand-painted signs, gold leaf lettering, window lettering, and sign restoration in Richmond, Virginia. Craft that outlasts vinyl."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs' },
+  ]}
+  service={{
+    name: 'Hand-Painted Signs',
+    description: 'Hand-painted signs, gold leaf lettering, window lettering, and sign restoration in Richmond, Virginia.',
+    priceRange: '$500 - $10,000+',
+  }}
 >
   <Nav />
   <main class="pt-24 pb-16 px-6 lg:px-12">

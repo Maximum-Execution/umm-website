@@ -6,9 +6,31 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+
+const faqItems = [
+  { question: 'What is the difference between real gold leaf and imitation gold?', answer: '23-karat gold leaf is real gold, and it will never tarnish or oxidize. Imitation gold (composition leaf) is a brass alloy that costs less but can darken over time without a clear coat. We recommend real gold for exterior applications and high-visibility locations.' },
+  { question: 'How long does gold leaf lettering last?', answer: 'Properly applied and sealed gold leaf on glass can last 50 years or more. On exterior wood or metal surfaces, expect 15 to 25 years depending on weather exposure. Both far outlast any vinyl alternative.' },
+  { question: 'How much more does gold leaf cost than painted lettering?', answer: 'Gold leaf typically adds 30 to 50 percent to the cost of a painted sign, depending on the amount of gilding. The material cost is real, because gold is gold, but the visual impact and longevity justify it for businesses that want to project permanence.' },
+  { question: 'Can gold leaf be used outdoors?', answer: 'Yes. Real 23-karat gold leaf is naturally weather-resistant because gold does not oxidize. We seal exterior gold leaf work with UV-resistant clear coats for additional protection against physical wear.' },
+];
 ---
 
-<BaseLayout title="Gold Leaf Signs | Untitled Mixed Media" description="Hand-applied gold leaf signs and gilded lettering in Richmond, Virginia. 23-karat gold leaf that catches light like nothing else.">
+<BaseLayout
+  title="Gold Leaf Signs | Untitled Mixed Media"
+  description="Hand-applied gold leaf signs and gilded lettering in Richmond, Virginia. 23-karat gold leaf that catches light like nothing else."
+  faqItems={faqItems}
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Work', url: '/work' },
+    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
+    { name: 'Gold Leaf Signs' },
+  ]}
+  service={{
+    name: 'Gold Leaf Signs',
+    description: 'Hand-applied gold leaf signs and gilded lettering in Richmond, Virginia.',
+    priceRange: '$500 - $5,000',
+  }}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
@@ -45,12 +67,7 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
     </div>
 
-    <FAQSection items={[
-      { question: 'What is the difference between real gold leaf and imitation gold?', answer: '23-karat gold leaf is real gold, and it will never tarnish or oxidize. Imitation gold (composition leaf) is a brass alloy that costs less but can darken over time without a clear coat. We recommend real gold for exterior applications and high-visibility locations.' },
-      { question: 'How long does gold leaf lettering last?', answer: 'Properly applied and sealed gold leaf on glass can last 50 years or more. On exterior wood or metal surfaces, expect 15 to 25 years depending on weather exposure. Both far outlast any vinyl alternative.' },
-      { question: 'How much more does gold leaf cost than painted lettering?', answer: 'Gold leaf typically adds 30 to 50 percent to the cost of a painted sign, depending on the amount of gilding. The material cost is real, because gold is gold, but the visual impact and longevity justify it for businesses that want to project permanence.' },
-      { question: 'Can gold leaf be used outdoors?', answer: 'Yes. Real 23-karat gold leaf is naturally weather-resistant because gold does not oxidize. We seal exterior gold leaf work with UV-resistant clear coats for additional protection against physical wear.' },
-    ]} />
+    <FAQSection items={faqItems} />
 
     <RelatedPages heading="Related" pages={[
       { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },

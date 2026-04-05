@@ -118,7 +118,7 @@ const muralProjects = (await getCollection('projects'))
           </h2>
           <div class="grid sm:grid-cols-2 gap-6">
             {muralProjects.map((project) => (
-              <a href={`/murals/${project.id}`} class="group block overflow-hidden" data-animate>
+              <a href={`/work/${project.id}`} class="group block overflow-hidden" data-animate>
                 <div class="aspect-[4/3] overflow-hidden bg-midnight-graphite">
                   <img
                     src={project.data.cover}

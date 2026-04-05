@@ -1,0 +1,381 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faqItems = [
+  { question: "How much does a mural cost per square foot?", answer: "In the Richmond market, mural pricing typically ranges from $15 to $65 per square foot depending on complexity, surface type, and whether the mural is interior or exterior. Simple graphics and lettering run $15-25/sqft. Moderate detail runs $25-40/sqft. Highly detailed or photorealistic work runs $40-65/sqft." },
+  { question: "What is the minimum cost for a mural?", answer: "Our minimum project cost is $500. This covers The Brand Mark: a 16-square-foot hand-painted logo on wall or wood panel." },
+  { question: "What factors affect mural pricing?", answer: "Four main factors: wall size (square footage), surface type (brick costs more than drywall due to prep), complexity of the design, and whether the mural is indoor or outdoor. Outdoor murals require UV-resistant materials and protective sealant." },
+  { question: "Does the estimate include design?", answer: "Yes. Every project includes a discovery session, site visit, and photorealistic 3D render showing the design on your actual wall. You approve the design before any painting begins." },
+  { question: "How long does a mural take?", answer: "Most murals take 4-12 weeks from discovery to completion. The timeline depends on wall size, design complexity, weather (for exteriors), and scheduling. The painting phase itself typically runs 1-3 weeks." },
+];
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Mural Cost Estimator" },
+];
+
+const breadcrumbNav = [
+  { label: "Home", href: "/" },
+  { label: "Mural Cost Estimator" },
+];
+---
+
+<BaseLayout
+  title="Mural Cost Estimator | Untitled Mixed Media"
+  description="Estimate the cost of a hand-painted mural in Richmond, Virginia. Enter your wall size, surface type, and design complexity for an instant ballpark figure."
+  faqItems={faqItems}
+  breadcrumbItems={breadcrumbItems}
+  service={{ name: "Mural Cost Estimator", description: "Interactive tool to estimate the cost of a hand-painted mural in Richmond, Virginia." }}
+>
+  <Nav />
+  <main class="pt-32 pb-16">
+    <div class="px-6 lg:px-12 max-w-4xl">
+
+      <!-- Breadcrumb -->
+      <Breadcrumb items={breadcrumbNav} />
+
+      <!-- Hero -->
+      <div data-animate="fade">
+        <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+          How much does a mural cost?
+        </h1>
+        <p class="font-body text-shadow-gray mb-12" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+          Every mural is different, but the pricing follows a pattern. Wall size, surface condition, location, and design complexity are the primary drivers. Use the calculator below for an instant ballpark estimate. No commitment, no sales pitch.
+        </p>
+      </div>
+
+      <!-- Interactive Calculator -->
+      <div class="max-w-xl mb-16" data-animate="fade">
+
+        <!-- Wall Dimensions -->
+        <fieldset class="mb-6">
+          <legend class="block font-sans text-soft-gray mb-3" style="font-size: var(--text-fluid-sm);">Wall Dimensions</legend>
+
+          <!-- Preset Size Buttons -->
+          <div class="flex flex-wrap gap-2 mb-4" id="preset-sizes" role="group" aria-label="Preset wall sizes">
+            <button type="button" data-width="4" data-height="8" class="preset-btn border border-slate-gray text-soft-gray font-sans tracking-[0.15em] uppercase px-4 py-2 hover:border-titanium-white hover:text-titanium-white transition-colors" style="font-size: var(--text-fluid-xs);">
+              Small 4&times;8
+            </button>
+            <button type="button" data-width="8" data-height="10" class="preset-btn border border-slate-gray text-soft-gray font-sans tracking-[0.15em] uppercase px-4 py-2 hover:border-titanium-white hover:text-titanium-white transition-colors" style="font-size: var(--text-fluid-xs);">
+              Medium 8&times;10
+            </button>
+            <button type="button" data-width="10" data-height="20" class="preset-btn border border-slate-gray text-soft-gray font-sans tracking-[0.15em] uppercase px-4 py-2 hover:border-titanium-white hover:text-titanium-white transition-colors" style="font-size: var(--text-fluid-xs);">
+              Large 10&times;20
+            </button>
+            <button type="button" data-width="20" data-height="40" class="preset-btn border border-slate-gray text-soft-gray font-sans tracking-[0.15em] uppercase px-4 py-2 hover:border-titanium-white hover:text-titanium-white transition-colors" style="font-size: var(--text-fluid-xs);">
+              XL 20&times;40
+            </button>
+          </div>
+
+          <!-- Custom Dimensions -->
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label for="calc-width" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Width (ft)</label>
+              <input type="number" id="calc-width" min="1" max="200" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="20" />
+            </div>
+            <div>
+              <label for="calc-height" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Height (ft)</label>
+              <input type="number" id="calc-height" min="1" max="200" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="12" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Surface Type -->
+        <div class="mb-6">
+          <label for="calc-surface" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Surface Type</label>
+          <select id="calc-surface" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
+            <option value="" disabled selected>Select surface type</option>
+            <option value="drywall">Drywall</option>
+            <option value="wood">Wood</option>
+            <option value="stucco">Stucco</option>
+            <option value="concrete">Concrete</option>
+            <option value="brick">Brick</option>
+          </select>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-6">
+          <label for="calc-location" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Location</label>
+          <select id="calc-location" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
+            <option value="" disabled selected>Select location</option>
+            <option value="interior">Interior</option>
+            <option value="exterior">Exterior</option>
+          </select>
+        </div>
+
+        <!-- Complexity -->
+        <div class="mb-8">
+          <label for="calc-complexity" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Design Complexity</label>
+          <select id="calc-complexity" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
+            <option value="" disabled selected>Select complexity level</option>
+            <option value="simple">Simple graphics / lettering</option>
+            <option value="moderate">Moderate detail</option>
+            <option value="complex">Highly detailed / photorealistic</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Live Estimate Display -->
+      <div id="estimate-display" class="max-w-xl mb-16 p-8 border border-slate-gray bg-midnight-graphite hidden" data-animate="fade">
+        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+          Estimated Cost
+        </p>
+        <p id="estimate-range" class="font-heading text-titanium-white" style="font-size: var(--text-fluid-3xl); line-height: 1.1;">
+        </p>
+        <p id="estimate-sqft" class="font-body text-shadow-gray mt-3" style="font-size: var(--text-fluid-sm);">
+        </p>
+      </div>
+
+      <!-- Lead Capture Form -->
+      <div id="lead-form-wrapper" class="max-w-xl mb-16 hidden">
+        <div class="border-t border-slate-gray pt-8">
+          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl);">
+            Get your detailed estimate
+          </h2>
+          <p class="font-body text-shadow-gray mb-8" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+            We will review your project details and send a detailed estimate within one business day. No commitment.
+          </p>
+
+          <form id="lead-form" class="space-y-6" action="https://formspree.io/f/xpwrzqkl" method="POST">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <!-- Hidden estimate fields -->
+            <input type="hidden" name="estimated_low" id="hidden-low" />
+            <input type="hidden" name="estimated_high" id="hidden-high" />
+            <input type="hidden" name="wall_sqft" id="hidden-sqft" />
+            <input type="hidden" name="surface" id="hidden-surface" />
+            <input type="hidden" name="location" id="hidden-location" />
+            <input type="hidden" name="complexity" id="hidden-complexity" />
+            <input type="hidden" name="_subject" value="Mural Cost Estimator Submission" />
+
+            <div>
+              <label for="lead-name" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Name</label>
+              <input type="text" id="lead-name" name="name" required autocomplete="name" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="lead-email" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Email</label>
+              <input type="email" id="lead-email" name="email" required autocomplete="email" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="lead-phone" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Phone <span class="text-smoke-gray">(optional)</span></label>
+              <input type="tel" id="lead-phone" name="phone" autocomplete="tel" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="(804) 555-0100" />
+            </div>
+            <div>
+              <label for="lead-notes" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Project Notes <span class="text-smoke-gray">(optional)</span></label>
+              <textarea id="lead-notes" name="project_notes" rows="4" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Tell us about the wall, the location, the idea."></textarea>
+            </div>
+            <button type="submit" id="lead-submit" class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-bone-black" style="font-size: var(--text-fluid-sm);">
+              Get My Detailed Estimate
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Thank You (hidden by default) -->
+      <div id="thank-you" class="max-w-xl mb-16 p-8 border border-slate-gray bg-midnight-graphite hidden">
+        <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl);">
+          Thank you.
+        </h2>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          We received your project details and will send a detailed estimate within one business day. If the project is a good fit, the next step is a free site visit.
+        </p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray max-w-xl" data-animate="fade">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <strong class="text-titanium-white">Estimates are approximate.</strong> Wall condition, access requirements (scaffolding, lift rental), surface preparation, and design revisions all affect the final price. A site visit confirms the scope and produces a firm quote. There is no charge for the initial consultation.
+        </p>
+      </div>
+
+      <!-- Link to detailed guide -->
+      <p class="font-body text-shadow-gray mb-16 max-w-xl" style="font-size: var(--text-fluid-base); line-height: 1.6;" data-animate="fade">
+        Want a deeper breakdown of what drives mural pricing? Read our detailed guide: <a href="/murals/mural-cost-richmond-va" class="text-titanium-white underline hover:text-soft-gray transition-colors duration-200">Mural Cost in Richmond, VA</a>.
+      </p>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <div data-animate="fade">
+      <FAQSection items={faqItems} />
+    </div>
+
+    <CTABlock />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  #estimate-display {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .estimate-updating {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+</style>
+
+<script>
+  // Pricing logic
+  const RATES: Record<string, [number, number]> = {
+    simple: [15, 25],
+    moderate: [25, 40],
+    complex: [40, 65]
+  };
+
+  const SURFACE: Record<string, number> = {
+    drywall: 1.0,
+    wood: 1.0,
+    stucco: 1.1,
+    concrete: 1.15,
+    brick: 1.2
+  };
+
+  const LOCATION: Record<string, number> = {
+    interior: 1.0,
+    exterior: 1.1
+  };
+
+  const MIN_PROJECT = 500;
+
+  // Elements
+  const widthInput = document.getElementById('calc-width') as HTMLInputElement;
+  const heightInput = document.getElementById('calc-height') as HTMLInputElement;
+  const surfaceSelect = document.getElementById('calc-surface') as HTMLSelectElement;
+  const locationSelect = document.getElementById('calc-location') as HTMLSelectElement;
+  const complexitySelect = document.getElementById('calc-complexity') as HTMLSelectElement;
+  const estimateDisplay = document.getElementById('estimate-display') as HTMLDivElement;
+  const estimateRange = document.getElementById('estimate-range') as HTMLParagraphElement;
+  const estimateSqft = document.getElementById('estimate-sqft') as HTMLParagraphElement;
+  const leadFormWrapper = document.getElementById('lead-form-wrapper') as HTMLDivElement;
+  const leadForm = document.getElementById('lead-form') as HTMLFormElement;
+  const thankYou = document.getElementById('thank-you') as HTMLDivElement;
+  const presetBtns = document.querySelectorAll('.preset-btn');
+
+  // Hidden fields
+  const hiddenLow = document.getElementById('hidden-low') as HTMLInputElement;
+  const hiddenHigh = document.getElementById('hidden-high') as HTMLInputElement;
+  const hiddenSqft = document.getElementById('hidden-sqft') as HTMLInputElement;
+  const hiddenSurface = document.getElementById('hidden-surface') as HTMLInputElement;
+  const hiddenLocation = document.getElementById('hidden-location') as HTMLInputElement;
+  const hiddenComplexity = document.getElementById('hidden-complexity') as HTMLInputElement;
+
+  function formatCurrency(amount: number): string {
+    return '$' + amount.toLocaleString('en-US', { maximumFractionDigits: 0 });
+  }
+
+  function clearPresetActive(): void {
+    presetBtns.forEach(btn => {
+      btn.classList.remove('border-titanium-white', 'text-titanium-white', 'bg-midnight-graphite');
+    });
+  }
+
+  function calculate(): void {
+    const w = parseFloat(widthInput.value);
+    const h = parseFloat(heightInput.value);
+    const surface = surfaceSelect.value;
+    const location = locationSelect.value;
+    const complexity = complexitySelect.value;
+
+    // All fields required
+    if (!w || !h || !surface || !location || !complexity) {
+      estimateDisplay.classList.add('hidden');
+      leadFormWrapper.classList.add('hidden');
+      return;
+    }
+
+    const sqft = w * h;
+    const rates = RATES[complexity];
+    if (!rates) return;
+
+    const surfaceMult = SURFACE[surface] ?? 1.0;
+    const locationMult = LOCATION[location] ?? 1.0;
+
+    const rawLow = sqft * rates[0] * surfaceMult * locationMult;
+    const rawHigh = sqft * rates[1] * surfaceMult * locationMult;
+
+    const low = Math.max(MIN_PROJECT, Math.round(rawLow / 100) * 100);
+    const high = Math.max(MIN_PROJECT, Math.round(rawHigh / 100) * 100);
+
+    // Animate update
+    estimateDisplay.classList.add('estimate-updating');
+
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        estimateRange.textContent = formatCurrency(low) + ' \u2013 ' + formatCurrency(high);
+        estimateSqft.textContent = sqft.toLocaleString() + ' sqft \u00B7 ' + complexity + ' complexity \u00B7 ' + surface + ' \u00B7 ' + location;
+
+        // Update hidden fields
+        hiddenLow.value = String(low);
+        hiddenHigh.value = String(high);
+        hiddenSqft.value = String(sqft);
+        hiddenSurface.value = surface;
+        hiddenLocation.value = location;
+        hiddenComplexity.value = complexity;
+
+        estimateDisplay.classList.remove('hidden');
+        leadFormWrapper.classList.remove('hidden');
+        estimateDisplay.classList.remove('estimate-updating');
+      }, 150);
+    });
+  }
+
+  // Preset buttons
+  presetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn as HTMLButtonElement;
+      const w = target.dataset.width;
+      const h = target.dataset.height;
+      if (w && h) {
+        widthInput.value = w;
+        heightInput.value = h;
+        clearPresetActive();
+        target.classList.add('border-titanium-white', 'text-titanium-white', 'bg-midnight-graphite');
+        calculate();
+      }
+    });
+  });
+
+  // Clear preset active state when user types custom dimensions
+  widthInput.addEventListener('input', () => { clearPresetActive(); calculate(); });
+  heightInput.addEventListener('input', () => { clearPresetActive(); calculate(); });
+  surfaceSelect.addEventListener('change', calculate);
+  locationSelect.addEventListener('change', calculate);
+  complexitySelect.addEventListener('change', calculate);
+
+  // Form submission via fetch
+  leadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = document.getElementById('lead-submit') as HTMLButtonElement;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const formData = new FormData(leadForm);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xpwrzqkl', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        leadFormWrapper.classList.add('hidden');
+        thankYou.classList.remove('hidden');
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get My Detailed Estimate';
+        alert('Something went wrong. Please try again or email us at hello@untitledmixedmedia.com.');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Get My Detailed Estimate';
+      alert('Something went wrong. Please try again or email us at hello@untitledmixedmedia.com.');
+    }
+  });
+</script>

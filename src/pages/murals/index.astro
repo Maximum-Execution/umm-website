@@ -6,6 +6,7 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import SlideInCTA from '../../components/SlideInCTA.astro';
 
 const muralProjects = (await getCollection('projects'))
   .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('mural')))
@@ -154,5 +155,6 @@ const muralProjects = (await getCollection('projects'))
 
   <CTABlock />
 
+  <SlideInCTA />
   <Footer />
 </BaseLayout>

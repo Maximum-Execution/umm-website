@@ -1,0 +1,122 @@
+---
+interface Props {
+  headline?: string;
+  subhead?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  headline = 'Not ready for a full mural?',
+  subhead = 'The Brand Mark starts at $500. Your logo, hand-painted. Done in a day.',
+  ctaLabel = 'See the Brand Mark',
+  ctaHref = '/brand-mark',
+} = Astro.props;
+---
+
+<!-- Slide-In CTA -->
+<div
+  id="slidein-cta"
+  class="fixed bottom-6 right-6 z-[998] w-full max-w-sm border border-slate-gray bg-bone-black p-6 translate-y-[120%] opacity-0 transition-all duration-500 ease-out hidden"
+  role="complementary"
+  aria-label="Brand Mark offer"
+>
+  <!-- Close button -->
+  <button
+    id="slidein-close"
+    class="absolute top-3 right-3 text-smoke-gray hover:text-titanium-white transition-colors p-1"
+    aria-label="Dismiss"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+    Starting at $500
+  </p>
+  <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg); line-height: var(--leading-tight);">
+    {headline}
+  </h3>
+  <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-sm); line-height: 1.5;">
+    {subhead}
+  </p>
+  <a
+    href={ctaHref}
+    class="inline-block bg-titanium-white text-bone-black font-sans px-6 py-2.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
+    id="slidein-cta-link"
+  >
+    {ctaLabel} &rarr;
+  </a>
+</div>
+
+<script>
+  (function () {
+    const STORAGE_KEY = 'umm_slidein_dismissed';
+    const VISITED_KEY = 'umm_visited_brandmark';
+    const COOLDOWN_DAYS = 7;
+    const SCROLL_TRIGGER = 0.6; // 60% scroll depth
+
+    const el = document.getElementById('slidein-cta');
+    const closeBtn = document.getElementById('slidein-close');
+    const ctaLink = document.getElementById('slidein-cta-link');
+
+    if (!el) return;
+
+    // Don't show if user already visited /brand-mark this session
+    if (sessionStorage.getItem(VISITED_KEY)) return;
+
+    // Check cooldown
+    const dismissed = localStorage.getItem(STORAGE_KEY);
+    if (dismissed) {
+      const dismissedAt = parseInt(dismissed, 10);
+      const daysSince = (Date.now() - dismissedAt) / (1000 * 60 * 60 * 24);
+      if (daysSince < COOLDOWN_DAYS) return;
+    }
+
+    // Track /brand-mark visits
+    if (window.location.pathname === '/brand-mark' || window.location.pathname === '/brand-mark/') {
+      sessionStorage.setItem(VISITED_KEY, '1');
+      return;
+    }
+
+    let shown = false;
+
+    function showSlideIn() {
+      if (shown) return;
+      shown = true;
+
+      el.classList.remove('hidden');
+      void el.offsetHeight;
+      el.classList.remove('translate-y-[120%]', 'opacity-0');
+      el.classList.add('translate-y-0', 'opacity-100');
+    }
+
+    function hideSlideIn() {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+      el.classList.remove('translate-y-0', 'opacity-100');
+      el.classList.add('translate-y-[120%]', 'opacity-0');
+
+      setTimeout(() => {
+        el.classList.add('hidden');
+      }, 500);
+    }
+
+    // Trigger on 60% scroll
+    window.addEventListener('scroll', () => {
+      if (shown) return;
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollPercent >= SCROLL_TRIGGER) {
+        showSlideIn();
+      }
+    }, { passive: true });
+
+    // Close handler
+    closeBtn?.addEventListener('click', hideSlideIn);
+
+    // CTA click tracks dismissal
+    ctaLink?.addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    });
+  })();
+</script>

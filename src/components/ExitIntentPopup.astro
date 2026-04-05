@@ -1,0 +1,170 @@
+---
+interface Props {
+  headline?: string;
+  subhead?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  declineLabel?: string;
+}
+
+const {
+  headline = 'Starting at $500. One day. Yours for good.',
+  subhead = 'The Brand Mark is how most clients start. Your logo, hand-painted on wall or panel. Request yours before you go.',
+  ctaLabel = 'Request My Brand Mark',
+  ctaHref = '/contact',
+  declineLabel = 'Maybe later',
+} = Astro.props;
+---
+
+<!-- Exit Intent Popup -->
+<div
+  id="exit-popup-overlay"
+  class="fixed inset-0 z-[999] bg-bone-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="exit-popup-heading"
+>
+  <div class="flex items-center justify-center min-h-screen px-6">
+    <div
+      id="exit-popup-panel"
+      class="relative w-full max-w-lg border border-slate-gray bg-bone-black p-8 lg:p-12 translate-y-4 opacity-0 transition-all duration-300"
+    >
+      <!-- Close button -->
+      <button
+        id="exit-popup-close"
+        class="absolute top-4 right-4 text-smoke-gray hover:text-titanium-white transition-colors p-2"
+        aria-label="Close popup"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Content -->
+      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Starting at $500
+      </p>
+      <h2 id="exit-popup-heading" class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
+        {headline}
+      </h2>
+      <p class="font-body text-shadow-gray mb-8" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+        {subhead}
+      </p>
+
+      <!-- CTA -->
+      <div class="flex flex-col sm:flex-row items-start gap-4">
+        <a
+          href={ctaHref}
+          class="bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
+          id="exit-popup-cta"
+        >
+          {ctaLabel}
+        </a>
+        <button
+          id="exit-popup-decline"
+          class="font-sans text-smoke-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors py-3.5"
+        >
+          {declineLabel}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const STORAGE_KEY = 'umm_exit_popup_dismissed';
+    const COOLDOWN_DAYS = 30;
+    const overlay = document.getElementById('exit-popup-overlay');
+    const panel = document.getElementById('exit-popup-panel');
+    const closeBtn = document.getElementById('exit-popup-close');
+    const declineBtn = document.getElementById('exit-popup-decline');
+    const ctaBtn = document.getElementById('exit-popup-cta');
+
+    if (!overlay || !panel) return;
+
+    // Check cooldown
+    const dismissed = localStorage.getItem(STORAGE_KEY);
+    if (dismissed) {
+      const dismissedAt = parseInt(dismissed, 10);
+      const daysSince = (Date.now() - dismissedAt) / (1000 * 60 * 60 * 24);
+      if (daysSince < COOLDOWN_DAYS) return;
+    }
+
+    let shown = false;
+
+    function showPopup() {
+      if (shown) return;
+      shown = true;
+
+      overlay.classList.remove('hidden');
+      // Trigger reflow before adding visible classes
+      void overlay.offsetHeight;
+      overlay.classList.add('opacity-100');
+      overlay.classList.remove('opacity-0');
+      panel.classList.add('opacity-100', 'translate-y-0');
+      panel.classList.remove('opacity-0', 'translate-y-4');
+
+      // Focus trap
+      closeBtn?.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hidePopup() {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+      overlay.classList.remove('opacity-100');
+      overlay.classList.add('opacity-0');
+      panel.classList.remove('opacity-100', 'translate-y-0');
+      panel.classList.add('opacity-0', 'translate-y-4');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+      }, 300);
+    }
+
+    // Desktop: exit intent (mouse leaves viewport top)
+    document.addEventListener('mouseout', (e: MouseEvent) => {
+      if (e.clientY <= 0 && !shown) {
+        showPopup();
+      }
+    });
+
+    // Mobile fallback: scroll up quickly after 70% scroll depth
+    let maxScroll = 0;
+    let hasReached70 = false;
+    window.addEventListener('scroll', () => {
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollPercent > maxScroll) maxScroll = scrollPercent;
+      if (maxScroll >= 0.7) hasReached70 = true;
+
+      // If they've scrolled 70%+ and are now scrolling back up significantly
+      if (hasReached70 && scrollPercent < maxScroll - 0.15 && !shown) {
+        showPopup();
+      }
+    }, { passive: true });
+
+    // Close handlers
+    closeBtn?.addEventListener('click', hidePopup);
+    declineBtn?.addEventListener('click', hidePopup);
+
+    // Click outside to close
+    overlay.addEventListener('click', (e: Event) => {
+      if (e.target === overlay || (e.target as Element)?.closest('#exit-popup-panel') === null) {
+        hidePopup();
+      }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+        hidePopup();
+      }
+    });
+
+    // CTA click also dismisses (they're navigating away)
+    ctaBtn?.addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    });
+  })();
+</script>

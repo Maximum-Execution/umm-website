@@ -60,6 +60,23 @@ const journalPosts = (await getCollection('journal'))
       </div>
     </section>
 
+    {/* 7c. Estimator Callout — drives to mural cost estimator */}
+    <section class="px-6 lg:px-12 py-20" data-animate>
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-gray p-8 lg:p-12">
+        <div>
+          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-2xl);">
+            Wondering what your mural will cost?
+          </h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base);">
+            Get an instant estimate based on your wall size, surface, and design complexity.
+          </p>
+        </div>
+        <a href="/mural-cost-estimator" class="shrink-0 bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+          Get a Price Estimate
+        </a>
+      </div>
+    </section>
+
     {/* 8. Journal Preview — 3 recent posts, text-forward */}
     {journalPosts.length > 0 && (
       <section class="py-24 lg:py-32 px-6 lg:px-12 border-t border-slate-gray">

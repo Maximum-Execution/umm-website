@@ -68,11 +68,11 @@ const steps = [
             {/* Text */}
             <div class={isReversed ? 'lg:[direction:ltr]' : ''} data-animate="fade">
               <span
-                class="font-mono text-slate-gray block mb-4"
-                style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+                class="font-mono block mb-4"
+                style="font-size: var(--text-fluid-sm); letter-spacing: var(--tracking-wider);"
                 aria-hidden="true"
               >
-                {step.number} / {step.label}
+                <span class="text-cobalt-blue">{step.number}</span><span class="text-slate-gray"> / {step.label}</span>
               </span>
               <h3
                 class="font-heading text-titanium-white mb-4"

@@ -5,6 +5,13 @@ interface Props {
   ogImage?: string;
   ogType?: 'website' | 'article';
   noindex?: boolean;
+  faqItems?: { question: string; answer: string }[];
+  breadcrumbItems?: { name: string; url?: string }[];
+  service?: {
+    name: string;
+    description: string;
+    priceRange?: string;
+  };
 }
 
 const {
@@ -13,6 +20,9 @@ const {
   ogImage = '/og-image.png',
   ogType = 'website',
   noindex = false,
+  faqItems,
+  breadcrumbItems,
+  service,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -85,6 +95,54 @@ import '../styles/global.css';
         "https://www.facebook.com/untitledmixedmedia"
       ]
     })} />
+
+    {faqItems && faqItems.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      })} />
+    )}
+
+    {breadcrumbItems && breadcrumbItems.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems.map((item, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": item.name,
+          ...(item.url ? { "item": new URL(item.url, 'https://untitledmixedmedia.com').href } : {})
+        }))
+      })} />
+    )}
+
+    {service && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": service.name,
+        "description": service.description,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Untitled Mixed Media",
+          "url": "https://untitledmixedmedia.com"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Richmond",
+          "addressRegion": "VA"
+        },
+        ...(service.priceRange ? { "priceRange": service.priceRange } : {})
+      })} />
+    )}
 
     <slot name="head" />
   </head>

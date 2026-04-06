@@ -1,26 +1,35 @@
 ---
-import SectionWrapper from '../SectionWrapper.astro';
 ---
 
-<SectionWrapper id="stakes" narrow>
-  <div data-animate>
-    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-8 text-balance">
-      Your space is telling a story right now. Is it the right one?
-    </h2>
+<section id="stakes" class="py-[var(--spacing-section)] border-t border-slate-gray">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+      <!-- Left: dramatic question -->
+      <div class="lg:col-span-7" data-animate="headline">
+        <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;">
+          Your space is telling a story right now.
+          <span class="block text-smoke-gray mt-2">Is it the right one?</span>
+        </h2>
+      </div>
 
-    <div class="text-[var(--text-fluid-base)] text-shadow-gray space-y-6">
-      <p>
-        Blank walls signal vacancy. Faded signs suggest decline. Generic murals feel like they
-        were ordered from a catalog and bolted on.
-      </p>
-      <p>
-        In neighborhoods that are changing fast, the buildings that fail to show their history
-        and character get overlooked, undervalued, and eventually replaced.
-      </p>
-      <p>
-        Your space has a story worth telling. If you do not tell it, someone else will decide
-        what your building means.
-      </p>
+      <!-- Right: three pointed statements -->
+      <div class="lg:col-span-5 lg:pt-4 flex flex-col justify-center gap-8" data-animate="fade" data-animate-delay="1">
+        <div class="pl-6 border-l-2 border-slate-gray">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Blank walls signal vacancy. Every day your building says nothing, it says something about your business.
+          </p>
+        </div>
+        <div class="pl-6 border-l-2 border-slate-gray">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Generic murals feel like they were ordered from a catalog. Technically skilled and completely interchangeable.
+          </p>
+        </div>
+        <div class="pl-6 border-l-2 border-titanium-white">
+          <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Your space has a story worth telling. If you do not tell it, someone else will decide what your building means.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</SectionWrapper>
+</section>

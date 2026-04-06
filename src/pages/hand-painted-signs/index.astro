@@ -28,34 +28,41 @@ const signProjects = (await getCollection('projects'))
   }}
 >
   <Nav />
-  <main class="pt-24 pb-16 px-6 lg:px-12">
-    <div class="max-w-7xl mx-auto">
+  <main class="pt-24 pb-16">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
         { label: 'Hand-Painted Signs' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Hand-Painted Signs
-      </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-12">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Hand-Painted Signs
+          </p>
+          <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
+            If you can order your sign online, so can your competitor.
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+            Vinyl signs start deteriorating the day they go up. Hand-painted lettering does the opposite. It ages into the building, developing the kind of patina that makes a business look established rather than temporary. Gold leaf, enamel, window gilding, and traditional sign-painting techniques that have lasted centuries. Every letter placed by hand.
+          </p>
+        </div>
+      </div>
 
-      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate="headline">
-        If you can order your sign online, so can your competitor.
-      </h1>
+      <!-- Centered pull quote -->
+      <div class="text-center py-12 mb-16" data-animate="settle">
+        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
+          A hand-painted sign doesn't just look different. It is different.
+        </p>
+      </div>
 
-      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
-        Vinyl signs start deteriorating the day they go up. Hand-painted lettering does the opposite. It ages into the building, developing the kind of patina that makes a business look established rather than temporary. Gold leaf, enamel, window gilding, and traditional sign-painting techniques that have lasted centuries. Every letter placed by hand.
-      </p>
-
-      <p class="font-heading text-titanium-white italic max-w-3xl my-12"
-         style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);"
-         data-animate="settle">
-        A hand-painted sign doesn't just look different. It is different.
-      </p>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]">
-        <div data-animate="fade" data-animate-delay="1">
+      <!-- Service cards: asymmetric grid -->
+      <div class="grid lg:grid-cols-3 gap-8 mb-8">
+        <div class="lg:col-span-2" data-animate="fade" data-animate-delay="1">
           <ServiceCard
             title="Storefront Signs Richmond VA"
             description="The first thing customers see. Painted lettering that makes your storefront impossible to walk past without noticing."
@@ -69,28 +76,34 @@ const signProjects = (await getCollection('projects'))
             href="/hand-painted-signs/gold-leaf-signs"
           />
         </div>
-        <div data-animate="fade" data-animate-delay="3">
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 mb-8">
+        <div data-animate="fade" data-animate-delay="1">
           <ServiceCard
             title="Window Lettering"
             description="Lettering painted on the interior face of glass so it reads from the street. The sign is part of the window, not stuck to it."
             href="/hand-painted-signs/window-lettering"
           />
         </div>
-        <div data-animate="fade" data-animate-delay="1">
+        <div class="lg:col-span-2" data-animate="fade" data-animate-delay="2">
           <ServiceCard
             title="Bar & Restaurant Signs"
             description="Your sign sets the atmosphere before anyone walks in. Exterior identity, chalkboards, and menu systems for bars and restaurants."
             href="/hand-painted-signs/bar-and-restaurant-signs"
           />
         </div>
-        <div data-animate="fade" data-animate-delay="2">
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-8 mb-[var(--spacing-section)]">
+        <div data-animate="fade" data-animate-delay="1">
           <ServiceCard
             title="Interior Signs"
             description="Lobby lettering, wayfinding, and branded walls. The spaces your customers see inside deserve the same craft as the ones they see outside."
             href="/hand-painted-signs/interior-signs"
           />
         </div>
-        <div data-animate="fade" data-animate-delay="3">
+        <div data-animate="fade" data-animate-delay="2">
           <ServiceCard
             title="Hand-Painted Menus"
             description="Menu boards and specials boards painted once and built for years of daily use. No peeling, no reprinting, no replacement."
@@ -99,57 +112,67 @@ const signProjects = (await getCollection('projects'))
         </div>
       </div>
 
-      <!-- Why Hand-Painted -->
+      <!-- Why Hand-Painted: horizontal layout with left label -->
       <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
-        <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          Why Hand-Painted
-        </h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div data-animate="fade" data-animate-delay="1" class="border-l-2 border-titanium-white pl-4">
-            <ServiceCard
-              title="Hand-Painted vs Vinyl"
-              description="Vinyl starts failing the day it goes up. Hand-painted lettering does the opposite. A direct comparison of durability, appearance, and long-term cost."
-              href="/hand-painted-signs/hand-painted-vs-vinyl"
-            />
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+          <div class="lg:col-span-4">
+            <h2 class="font-mono text-smoke-gray uppercase mb-4 lg:mb-0 lg:sticky lg:top-32" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              Why Hand-Painted
+            </h2>
           </div>
-          <div data-animate="fade" data-animate-delay="2" class="border-l-2 border-titanium-white pl-4">
-            <ServiceCard
-              title="Cost Per Year Comparison"
-              description="Spread over 10+ years, hand-painted signs cost less than vinyl. The math behind longevity, laid out plainly."
-              href="/hand-painted-signs/cost-per-year-comparison"
-            />
-          </div>
-          <div data-animate="fade" data-animate-delay="3" class="border-l-2 border-titanium-white pl-4">
-            <ServiceCard
-              title="Why Hand-Painted Signs Last Longer"
-              description="The materials science behind longevity. What enamel, gold leaf, and proper surface preparation actually do, and why vinyl cannot compete."
-              href="/hand-painted-signs/why-hand-painted-signs-last-longer"
-            />
+          <div class="lg:col-span-8 space-y-8">
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="1">
+              <ServiceCard
+                title="Hand-Painted vs Vinyl"
+                description="Vinyl starts failing the day it goes up. Hand-painted lettering does the opposite. A direct comparison of durability, appearance, and long-term cost."
+                href="/hand-painted-signs/hand-painted-vs-vinyl"
+              />
+            </div>
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="2">
+              <ServiceCard
+                title="Cost Per Year Comparison"
+                description="Spread over 10+ years, hand-painted signs cost less than vinyl. The math behind longevity, laid out plainly."
+                href="/hand-painted-signs/cost-per-year-comparison"
+              />
+            </div>
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="3">
+              <ServiceCard
+                title="Why Hand-Painted Signs Last Longer"
+                description="The materials science behind longevity. What enamel, gold leaf, and proper surface preparation actually do, and why vinyl cannot compete."
+                href="/hand-painted-signs/why-hand-painted-signs-last-longer"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Pull Quote -->
-      <blockquote class="border-l-2 border-titanium-white pl-6 mb-[var(--spacing-section)]" data-animate="settle">
-        <p class="font-heading text-titanium-white italic mb-4" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
-          "Sign restoration requires more patience than any other part of a project. The letters have to sit in space the way the original sat in space. This isn't recreation. It's recovery."
-        </p>
-        <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          Church Hill Trolley Barn Restoration, Richmond VA
-        </cite>
+      <blockquote class="grid lg:grid-cols-12 gap-8 mb-[var(--spacing-section)]" data-animate="settle">
+        <div class="lg:col-span-8 lg:col-start-3 border-l-2 border-titanium-white pl-6">
+          <p class="font-heading text-titanium-white italic mb-4" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
+            "Sign restoration requires more patience than any other part of a project. The letters have to sit in space the way the original sat in space. This isn't recreation. It's recovery."
+          </p>
+          <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Church Hill Trolley Barn Restoration, Richmond VA
+          </cite>
+        </div>
       </blockquote>
 
       <!-- Sign Restoration -->
       <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
-        <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          Restoration
-        </h2>
-        <div class="max-w-lg">
-          <ServiceCard
-            title="Sign Restoration"
-            description="Restoring faded, damaged, and historic signs. Ghost signs, gilded lettering, and century-old painted advertisements brought back to life."
-            href="/hand-painted-signs/sign-restoration"
-          />
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+          <div class="lg:col-span-4">
+            <h2 class="font-mono text-smoke-gray uppercase mb-4 lg:mb-0" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              Restoration
+            </h2>
+          </div>
+          <div class="lg:col-span-6">
+            <ServiceCard
+              title="Sign Restoration"
+              description="Restoring faded, damaged, and historic signs. Ghost signs, gilded lettering, and century-old painted advertisements brought back to life."
+              href="/hand-painted-signs/sign-restoration"
+            />
+          </div>
         </div>
       </section>
 

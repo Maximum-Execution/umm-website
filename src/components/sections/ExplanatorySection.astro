@@ -1,58 +1,64 @@
 ---
-import SectionWrapper from '../SectionWrapper.astro';
 import Button from '../Button.astro';
 ---
 
-<SectionWrapper id="about" narrow>
-  <div data-animate>
-    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-8 text-balance">
-      Most murals could be anywhere. Ours could only be here.
-    </h2>
+<section id="about" class="py-[var(--spacing-section)] border-t border-slate-gray">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <!-- Full-width opening statement -->
+    <div class="max-w-4xl mb-20" data-animate="headline">
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Our Philosophy
+      </p>
+      <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;">
+        Most murals could be anywhere.
+        <span class="block mt-1">Ours could only be here.</span>
+      </h2>
+    </div>
 
-    <div class="text-[var(--text-fluid-base)] text-shadow-gray space-y-6">
-      <p>
-        There is a problem with most public art and commercial signage. It is generic.
-      </p>
-      <p>
-        Walk through any commercial district in any city and you will find murals that could have
-        been painted anywhere. Technically skilled, visually appealing, and completely interchangeable.
-        The same is true of signs that get replaced with mass-produced vinyl or LED imitations of
-        what was once hand-crafted and specific to a building's character.
-      </p>
-      <p>
-        We built Untitled Mixed Media to solve that problem.
-      </p>
-      <p>
-        Before we design anything, we go to the source. For a building, that means a full data
-        collection session: photography from every angle and lighting condition, spectrometer
-        readings measuring the actual color values of the physical materials, and a documented
-        record of everything the space already contains. For a sign restoration, it means studying
-        the original craftsmanship, matching the exact colors and letterforms, and bringing the
-        sign back to what it was, not replacing it with something that looks close enough.
-      </p>
-      <p>
-        Every color in the finished work was measured from the actual source. Every shape was
-        derived from the data we collected. The design is built from the bottom up, not sketched
-        and then applied.
-      </p>
-      <p>
-        At the end of every project, you receive a Certificate of Provenance: a document tracing
-        every element of the commission to its origin. It is the proof that what you commissioned
-        could not have been made for any other wall, any other building, or any other story.
-      </p>
-      <p>
-        We have delivered this process on commercial murals, sign restorations, and public art
-        installations across Richmond, Virginia. The methodology is documented. The results are permanent.
-      </p>
-      <p class="text-titanium-white font-heading italic text-[var(--text-fluid-lg)]">
+    <!-- Two-column editorial body -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+      <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          There is a problem with most public art and commercial signage. It is generic.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          Walk through any commercial district in any city and you will find murals that could have been painted anywhere. Technically skilled, visually appealing, and completely interchangeable. The same is true of signs that get replaced with mass-produced vinyl or LED imitations of what was once hand-crafted and specific to a building's character.
+        </p>
+        <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We built Untitled Mixed Media to solve that problem.
+        </p>
+      </div>
+
+      <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          Before we design anything, we go to the source. For a building, that means a full data collection session: photography from every angle and lighting condition, spectrometer readings measuring the actual color values of the physical materials, and a documented record of everything the space already contains.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          For a sign restoration, it means studying the original craftsmanship, matching the exact colors and letterforms, and bringing the sign back to what it was, not replacing it with something that looks close enough.
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          Every color in the finished work was measured from the actual source. Every shape was derived from the data we collected. The design is built from the bottom up, not sketched and then applied.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pull quote — full width, centered -->
+    <div class="text-center py-16 border-t border-b border-slate-gray mb-20" data-animate="settle">
+      <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
         The finished work is not applied to the building. It emerges from it.
       </p>
     </div>
 
-    <div class="mt-12">
-      <Button href="mailto:hello@untitledmixedmedia.com">
-        Request Your Site Visit
-      </Button>
+    <!-- CTA — right-aligned on desktop for asymmetry -->
+    <div class="lg:flex lg:justify-end" data-animate="fade">
+      <div class="lg:max-w-md">
+        <p class="font-body text-shadow-gray mb-6" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We have delivered this process on commercial murals, sign restorations, and public art installations across Richmond. The methodology is documented. The results are permanent.
+        </p>
+        <Button href="mailto:hello@untitledmixedmedia.com">
+          Request Your Site Visit
+        </Button>
+      </div>
     </div>
   </div>
-</SectionWrapper>
+</section>

@@ -1,28 +1,43 @@
 ---
-import SectionWrapper from '../SectionWrapper.astro';
 ---
 
-<SectionWrapper id="guide" narrow>
-  <div data-animate>
-    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-8 text-balance">
-      We understand what is at stake.
-    </h2>
+<section id="guide" class="py-[var(--spacing-section)]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <!-- Centered empathy statement -->
+    <div class="text-center max-w-3xl mx-auto mb-20" data-animate="settle">
+      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Your Guide
+      </p>
+      <h2 class="font-heading text-titanium-white italic" style="font-size: var(--text-fluid-3xl); line-height: var(--leading-snug);">
+        We understand what is at stake.
+      </h2>
+    </div>
 
-    <div class="text-[var(--text-fluid-base)] text-shadow-gray space-y-6">
-      <p>
-        Commissioning a mural or restoring a sign is a significant investment. You need to know
-        that the finished work will belong to your specific place in a way that cannot be
-        replicated anywhere else.
-      </p>
-      <p>
-        We have watched property owners spend real money on work that looks beautiful in a
-        portfolio but feels wrong on their wall. We built our process to solve that problem.
-      </p>
-      <p>
-        Untitled Mixed Media has delivered murals and sign work for commercial buildings, historic
-        properties, and public spaces across Richmond. Our methodology is documented. Our results
-        are permanent.
-      </p>
+    <!-- Two-column authority grid -->
+    <div class="grid md:grid-cols-2 gap-16 lg:gap-24">
+      <div data-animate="fade" data-animate-delay="1">
+        <p class="font-mono text-cobalt-blue uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Empathy
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          Commissioning a mural or restoring a sign is a significant investment. You need to know that the finished work will belong to your specific place in a way that cannot be replicated anywhere else.
+        </p>
+        <p class="font-body text-shadow-gray mt-6" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We have watched property owners spend real money on work that looks beautiful in a portfolio but feels wrong on their wall. We built our process to solve that problem.
+        </p>
+      </div>
+
+      <div data-animate="fade" data-animate-delay="2">
+        <p class="font-mono text-cobalt-blue uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Authority
+        </p>
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          Untitled Mixed Media has delivered murals and sign work for commercial buildings, historic properties, and public spaces across Richmond.
+        </p>
+        <p class="font-body text-shadow-gray mt-6" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          Our methodology is documented. Our results are permanent. Every project comes with a Certificate of Provenance tracing each design decision to its origin.
+        </p>
+      </div>
     </div>
   </div>
-</SectionWrapper>
+</section>

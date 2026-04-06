@@ -1,45 +1,57 @@
 ---
-import SectionWrapper from '../SectionWrapper.astro';
 ---
 
-<SectionWrapper id="value" background="elevated">
-  <div data-animate>
-    <h2 class="font-heading text-[var(--text-fluid-3xl)] text-titanium-white mb-12 text-balance">
-      What you get when you work with us
-    </h2>
+<section id="value" class="bg-midnight-graphite py-[var(--spacing-section)] border-y border-slate-gray">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+      <!-- Left: heading spanning columns -->
+      <div class="lg:col-span-5" data-animate>
+        <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          What You Get
+        </p>
+        <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);">
+          Every project delivers three things no one else offers.
+        </h2>
+      </div>
+
+      <!-- Right: three stacked value props with large numbers -->
+      <div class="lg:col-span-7 lg:col-start-6 space-y-12">
+        <div class="grid grid-cols-[auto_1fr] gap-6 items-start" data-animate="fade" data-animate-delay="1">
+          <span class="font-heading text-slate-gray select-none" style="font-size: var(--text-fluid-4xl); line-height: 1;" aria-hidden="true">1</span>
+          <div class="pt-2">
+            <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-xl);">
+              Built from your actual location
+            </h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Every color is measured from your physical materials. Every shape is derived from data collected at your address. The design belongs to your space and could not be recreated for any other building.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[auto_1fr] gap-6 items-start" data-animate="fade" data-animate-delay="2">
+          <span class="font-heading text-slate-gray select-none" style="font-size: var(--text-fluid-4xl); line-height: 1;" aria-hidden="true">2</span>
+          <div class="pt-2">
+            <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-xl);">
+              You see it before we paint it
+            </h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              We deliver a photorealistic render showing the finished work on your specific wall before a brush touches the surface. You approve it or we revise it. No surprises.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[auto_1fr] gap-6 items-start" data-animate="fade" data-animate-delay="3">
+          <span class="font-heading text-slate-gray select-none" style="font-size: var(--text-fluid-4xl); line-height: 1;" aria-hidden="true">3</span>
+          <div class="pt-2">
+            <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-xl);">
+              Documented provenance
+            </h3>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Every commission includes a Certificate of Provenance tracing each element to its origin. When someone asks about the mural or sign on your wall, you can prove exactly where every detail came from.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="grid md:grid-cols-3 gap-12">
-    <div data-animate>
-      <h3 class="font-heading text-[var(--text-fluid-xl)] text-titanium-white mb-4">
-        Built from your actual location
-      </h3>
-      <p class="text-[var(--text-fluid-base)] text-shadow-gray">
-        Every color is measured from your physical materials. Every shape is derived from data
-        collected at your address. The design belongs to your space and could not be recreated
-        for any other building.
-      </p>
-    </div>
-
-    <div data-animate>
-      <h3 class="font-heading text-[var(--text-fluid-xl)] text-titanium-white mb-4">
-        You see it before we paint it
-      </h3>
-      <p class="text-[var(--text-fluid-base)] text-shadow-gray">
-        We deliver a photorealistic render showing the finished work on your specific wall
-        before a brush touches the surface. You approve it or we revise it. No surprises.
-      </p>
-    </div>
-
-    <div data-animate>
-      <h3 class="font-heading text-[var(--text-fluid-xl)] text-titanium-white mb-4">
-        Documented provenance
-      </h3>
-      <p class="text-[var(--text-fluid-base)] text-shadow-gray">
-        Every commission includes a Certificate of Provenance tracing each element to its origin.
-        When someone asks about the mural or sign on your wall, you can prove exactly where
-        every detail came from.
-      </p>
-    </div>
-  </div>
-</SectionWrapper>
+</section>

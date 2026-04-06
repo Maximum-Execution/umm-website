@@ -8,11 +8,11 @@ interface Props {
 }
 
 const {
-  headline = 'Starting at $500. One day. Yours for good.',
-  subhead = 'The Brand Mark is how most clients start. Your logo, hand-painted on wall or panel. Request yours before you go.',
+  headline = 'Your logo deserves better than vinyl.',
+  subhead = "Send your logo file and I'll hand-paint it on wood or on your wall. One day. One original. Yours to keep.",
   ctaLabel = 'Request My Brand Mark',
   ctaHref = '/contact',
-  declineLabel = 'Maybe later',
+  declineLabel = "I'll keep the sticker.",
 } = Astro.props;
 ---
 
@@ -92,22 +92,53 @@ const {
     }
 
     let shown = false;
+    let previouslyFocused: HTMLElement | null = null;
+
+    function getFocusableElements(): HTMLElement[] {
+      if (!panel) return [];
+      return Array.from(
+        panel.querySelectorAll<HTMLElement>('a[href], button, [tabindex]:not([tabindex="-1"])')
+      );
+    }
+
+    function trapFocus(e: KeyboardEvent): void {
+      if (e.key !== 'Tab') return;
+      const focusable = getFocusableElements();
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
 
     function showPopup() {
       if (shown) return;
       shown = true;
+      previouslyFocused = document.activeElement as HTMLElement;
 
       overlay.classList.remove('hidden');
-      // Trigger reflow before adding visible classes
       void overlay.offsetHeight;
       overlay.classList.add('opacity-100');
       overlay.classList.remove('opacity-0');
       panel.classList.add('opacity-100', 'translate-y-0');
       panel.classList.remove('opacity-0', 'translate-y-4');
 
-      // Focus trap
-      closeBtn?.focus();
       document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', trapFocus);
+
+      // Focus the close button
+      requestAnimationFrame(() => closeBtn?.focus());
     }
 
     function hidePopup() {
@@ -117,10 +148,14 @@ const {
       panel.classList.remove('opacity-100', 'translate-y-0');
       panel.classList.add('opacity-0', 'translate-y-4');
       document.body.style.overflow = '';
+      document.removeEventListener('keydown', trapFocus);
 
       setTimeout(() => {
         overlay.classList.add('hidden');
       }, 300);
+
+      // Restore focus
+      previouslyFocused?.focus();
     }
 
     // Desktop: exit intent (mouse leaves viewport top)
@@ -138,7 +173,6 @@ const {
       if (scrollPercent > maxScroll) maxScroll = scrollPercent;
       if (maxScroll >= 0.7) hasReached70 = true;
 
-      // If they've scrolled 70%+ and are now scrolling back up significantly
       if (hasReached70 && scrollPercent < maxScroll - 0.15 && !shown) {
         showPopup();
       }
@@ -162,7 +196,7 @@ const {
       }
     });
 
-    // CTA click also dismisses (they're navigating away)
+    // CTA click also dismisses
     ctaBtn?.addEventListener('click', () => {
       localStorage.setItem(STORAGE_KEY, String(Date.now()));
     });

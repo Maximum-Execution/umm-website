@@ -111,6 +111,26 @@ const muralProjects = (await getCollection('projects'))
         </div>
       </div>
 
+      <!-- Project Pull Quotes -->
+      <div class="grid sm:grid-cols-2 gap-8 mb-[var(--spacing-section)] border-t border-slate-gray pt-[var(--spacing-section)]">
+        <blockquote class="border-l-2 border-titanium-white pl-6" data-animate="fade">
+          <p class="font-heading text-titanium-white italic mb-4" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
+            "The walls and the ground now tell the same story. You don't read Short Pump's history here. You stand inside it."
+          </p>
+          <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Short Pump Park Heritage Mural, Henrico County VA
+          </cite>
+        </blockquote>
+        <blockquote class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="1">
+          <p class="font-heading text-titanium-white italic mb-4" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
+            "The workers who spent their careers here now look out from these walls permanently."
+          </p>
+          <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Church Hill Trolley Barn, Richmond VA
+          </cite>
+        </blockquote>
+      </div>
+
       <!-- Featured Projects -->
       {muralProjects.length > 0 && (
         <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">

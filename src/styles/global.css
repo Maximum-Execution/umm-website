@@ -111,15 +111,9 @@
   --color-light-ash: #D0CFCD;
   --color-titanium-white: #EEECE9;
 
-  /* Artist Primaries */
-  --color-pyrrole-red: #e41a1c;
-  --color-cobalt-blue: #377eb8;
-  --color-sap-green: #4daf4a;
-  --color-dioxazine-mauve: #984ea3;
-  --color-cadmium-orange: #ff7f00;
-  --color-lemon-yellow: #ffff33;
-  --color-burnt-sienna: #a65628;
-  --color-dusty-rose: #f781bf;
+  /* Artist Primaries — reserved for portfolio/case study imagery, not UI */
+  /* These exist in the brand guide but are not used in the site interface. */
+  /* The site uses only the neutral grayscale above. */
 
   /* Typography — 5-font brand hierarchy */
   --font-blackletter: 'Canela Blackletter', Georgia, serif;
@@ -199,18 +193,18 @@
 }
 
 [data-theme="umm"] {
-  --p: 207 70% 47%;       /* Cobalt Blue */
-  --pf: 207 70% 37%;
-  --pc: 36 2% 93%;        /* Titanium White */
-  --s: 292 52% 47%;       /* Dioxazine Mauve */
-  --sf: 292 52% 37%;
-  --sc: 36 2% 93%;
-  --a: 30 100% 50%;       /* Cadmium Orange */
-  --af: 30 100% 40%;
-  --ac: 210 100% 1%;
+  --p: 36 2% 93%;         /* Titanium White — primary actions */
+  --pf: 40 1% 82%;        /* Light Ash — primary focus */
+  --pc: 210 100% 1%;      /* Bone Black — text on primary */
+  --s: 0 0% 47%;          /* Middle Grey — secondary */
+  --sf: 210 3% 24%;       /* Slate Gray — secondary focus */
+  --sc: 36 2% 93%;        /* Titanium White */
+  --a: 40 2% 70%;         /* Soft Gray — accent */
+  --af: 0 1% 58%;         /* Shadow Gray — accent focus */
+  --ac: 210 100% 1%;      /* Bone Black */
   --n: 220 12% 13%;       /* Midnight Graphite */
   --nf: 210 100% 1%;      /* Bone Black */
-  --nc: 36 2% 93%;
+  --nc: 36 2% 93%;        /* Titanium White */
   --b1: 210 100% 1%;      /* Bone Black */
   --b2: 220 12% 13%;      /* Midnight Graphite */
   --b3: 210 3% 24%;       /* Slate Gray */
@@ -435,7 +429,7 @@ body::before {
 }
 
 ::selection {
-  background-color: var(--color-cobalt-blue);
+  background-color: var(--color-slate-gray);
   color: var(--color-titanium-white);
 }
 
@@ -467,7 +461,7 @@ body::before {
 }
 
 .case-study-prose a {
-  color: var(--color-cobalt-blue);
+  color: var(--color-light-ash);
   text-underline-offset: 4px;
   text-decoration: underline;
   transition: color 0.2s;

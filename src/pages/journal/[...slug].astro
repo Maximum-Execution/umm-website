@@ -44,6 +44,13 @@ const relatedPosts = allPosts
   description={description}
   ogImage={cover}
   ogType="article"
+  blogPosting={{
+    headline: title,
+    description: description,
+    datePublished: date.toISOString().split('T')[0],
+    author: author || 'Spencer Bennett',
+    image: cover,
+  }}
 >
   <Nav />
   <main class="pt-24 pb-16">

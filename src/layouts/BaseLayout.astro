@@ -12,6 +12,13 @@ interface Props {
     description: string;
     priceRange?: string;
   };
+  blogPosting?: {
+    headline: string;
+    description: string;
+    datePublished: string;
+    author: string;
+    image?: string;
+  };
 }
 
 const {
@@ -23,6 +30,7 @@ const {
   faqItems,
   breadcrumbItems,
   service,
+  blogPosting,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -141,6 +149,26 @@ import '../styles/global.css';
           "addressRegion": "VA"
         },
         ...(service.priceRange ? { "priceRange": service.priceRange } : {})
+      })} />
+    )}
+
+    {blogPosting && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blogPosting.headline,
+        "description": blogPosting.description,
+        "datePublished": blogPosting.datePublished,
+        "author": {
+          "@type": "Person",
+          "name": blogPosting.author
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Untitled Mixed Media",
+          "url": "https://untitledmixedmedia.com"
+        },
+        ...(blogPosting.image ? { "image": new URL(blogPosting.image, 'https://untitledmixedmedia.com').href } : {})
       })} />
     )}
 

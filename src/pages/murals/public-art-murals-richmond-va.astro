@@ -35,7 +35,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -43,43 +43,58 @@ const faqItems = [
         { label: 'Public Art Murals' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        Murals
-      </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            Murals
+          </p>
+          <h1 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.03em;" data-animate="headline">
+            Public Art and Community Murals in Richmond, VA
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Some stories are too important for a blank wall.
+          </p>
+        </div>
+      </div>
 
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Public Art and Community Murals in Richmond, VA
-      </h1>
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            A neighborhood that fought to preserve a historic block. A church celebrating a century of service. A school honoring its founders. A community marking a turning point that changed what it means to live here. These are landmark moments, and they deserve something more permanent than a plaque or a Facebook post.
+          </p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We work with community groups, neighborhood associations, churches, schools, and public institutions to turn these moments into murals that last. Not generic beautification. Specific, researched, hand-painted work that tells the story the community actually wants told.
+          </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We also handle the complicated parts. RFP responses, community engagement facilitation, grant documentation, permit coordination, and long-term maintenance planning. We've navigated public commissions at the municipal, county, and state level. Our Short Pump Park murals for Henrico County were developed through community input and historical research, painted with KEIM mineral paint that bonds chemically with masonry and lasts decades.
+          </p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            You see a photorealistic render of the design before any paint goes on the wall. The finished mural is built to serve future generations.
+          </p>
+        </div>
+      </div>
 
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          Some stories are too important for a blank wall.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          A neighborhood that fought to preserve a historic block. A church celebrating a century of service. A school honoring its founders. A community marking a turning point that changed what it means to live here. These are landmark moments, and they deserve something more permanent than a plaque or a Facebook post.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We work with community groups, neighborhood associations, churches, schools, and public institutions to turn these moments into murals that last. Not generic beautification. Specific, researched, hand-painted work that tells the story the community actually wants told.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We also handle the complicated parts. RFP responses, community engagement facilitation, grant documentation, permit coordination, and long-term maintenance planning. We've navigated public commissions at the municipal, county, and state level. Our Short Pump Park murals for Henrico County were developed through community input and historical research, painted with KEIM mineral paint that bonds chemically with masonry and lasts decades.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          You see a photorealistic render of the design before any paint goes on the wall. The finished mural is built to serve future generations.
+      <!-- Pull quote -->
+      <div class="text-center py-12 mb-20 border-t border-b border-slate-gray" data-animate="settle">
+        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
+          Your story deserves to be permanent.
         </p>
       </div>
 
-      <p class="font-heading text-titanium-white italic max-w-3xl my-12"
-         style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);"
-         data-animate="fade">
-        Your story deserves to be permanent.
-      </p>
-
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a project photo here showing a public art mural — ideally the Short Pump Park heritage mural or a similar community-scale project. Use Astro Image component when real photos are available.
-        </p>
+      <!-- Image placeholder — full width -->
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20">
+        <div class="p-8">
+          <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+            Add a project photo here showing a public art mural — ideally the Short Pump Park heritage mural or a similar community-scale project. Use Astro Image component when real photos are available.
+          </p>
+        </div>
       </div>
     </div>
 

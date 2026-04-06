@@ -10,74 +10,93 @@ import RelatedPages from '../../components/RelatedPages.astro';
 <BaseLayout title="Our Process — The Provenance Method | Untitled Mixed Media" description="Discovery, design, execution, completion. The four phases of every Untitled Mixed Media project, from site visit to Certificate of Provenance.">
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
         { label: 'Process' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        About
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Our Process — The Provenance Method
-      </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          Every project begins with the place itself. We do not start with a mood board or a Pinterest collection. We start with your building, your neighborhood, your story. Sometimes that story comes from the architecture. Sometimes it comes from a moment that happened there: a milestone, a turning point, a beginning worth remembering. The design comes from what we find, not from a template. This is the Provenance Method: discovery first, design second, execution third, proof always.
-        </p>
-      </div>
-
-      <!-- Phase 1: Discovery -->
-      <div class="space-y-10 mb-16">
-        <div>
-          <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 1</p>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Discovery
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-            We visit the site in person. This is not a quick measurement trip. We photograph the wall, study the neighborhood context, the building materials, the light at different times of day. But we also sit down and listen. What happened here? What does this place mean to the people who use it? What's the moment that defines it?
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            About
           </p>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-            Sometimes the answer is in the architecture. Sometimes it's in a story the owner tells us about the day they opened the doors. Sometimes it's a community milestone that deserves to be visible on the street, not just remembered in conversation. We find the right one. The design starts here.
-          </p>
+          <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
+            Our Process — The Provenance Method
+          </h1>
         </div>
-
-        <div>
-          <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 2</p>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Design — Blender Pre-Visualization
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-            Using the photogrammetry data from the site visit, we build a photorealistic 3D render of the mural or sign on your actual wall. Camera matching with fSpy, dual UV paint system in Blender, Magnific upscaling, and DaVinci Resolve color grading produce an image that shows you exactly what the finished piece will look like on your building. You approve the design before any paint is mixed.
-          </p>
-        </div>
-
-        <div>
-          <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 3</p>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Execution — Hand-Painting
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-            The approved design is transferred to the wall and painted by hand. Professional-grade materials selected for the specific surface and exposure conditions. Every phase is documented with process photography. No shortcuts, no vinyl wraps, no projector tracing of stock images. The work is done the way it was done for a hundred years, with better materials.
-          </p>
-        </div>
-
-        <div>
-          <p class="font-mono text-smoke-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 4</p>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Completion
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-            The finished work receives a protective clear coat system appropriate to the surface and exposure. You receive a Certificate of Provenance documenting the work's origin, materials, creation timeline, GPS-stamped photographs, spectrophotometer color readings, and signed artist authentication. The certificate supports insurance documentation, preservation board requirements, and creates a permanent historical record.
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+            Every project begins with the place itself. We do not start with a mood board or a Pinterest collection. We start with your building, your neighborhood, your story. Sometimes that story comes from the architecture. Sometimes it comes from a moment that happened there: a milestone, a turning point, a beginning worth remembering. The design comes from what we find, not from a template. This is the Provenance Method: discovery first, design second, execution third, proof always.
           </p>
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-1 mb-16">
+      <!-- Phases: alternating left-label / right-content grid -->
+      <section class="border-t border-slate-gray pt-20 mb-20">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-16" data-animate="fade">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-cobalt-blue uppercase mb-2 lg:sticky lg:top-32" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 1</p>
+          </div>
+          <div class="lg:col-span-8 lg:col-start-5 space-y-4">
+            <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+              Discovery
+            </h2>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              We visit the site in person. This is not a quick measurement trip. We photograph the wall, study the neighborhood context, the building materials, the light at different times of day. But we also sit down and listen. What happened here? What does this place mean to the people who use it? What's the moment that defines it?
+            </p>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Sometimes the answer is in the architecture. Sometimes it's in a story the owner tells us about the day they opened the doors. Sometimes it's a community milestone that deserves to be visible on the street, not just remembered in conversation. We find the right one. The design starts here.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-16" data-animate="fade" data-animate-delay="1">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-cobalt-blue uppercase mb-2 lg:sticky lg:top-32" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 2</p>
+          </div>
+          <div class="lg:col-span-8 lg:col-start-5">
+            <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+              Design — Blender Pre-Visualization
+            </h2>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Using the photogrammetry data from the site visit, we build a photorealistic 3D render of the mural or sign on your actual wall. Camera matching with fSpy, dual UV paint system in Blender, Magnific upscaling, and DaVinci Resolve color grading produce an image that shows you exactly what the finished piece will look like on your building. You approve the design before any paint is mixed.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-16" data-animate="fade" data-animate-delay="2">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-cobalt-blue uppercase mb-2 lg:sticky lg:top-32" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 3</p>
+          </div>
+          <div class="lg:col-span-8 lg:col-start-5">
+            <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+              Execution — Hand-Painting
+            </h2>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              The approved design is transferred to the wall and painted by hand. Professional-grade materials selected for the specific surface and exposure conditions. Every phase is documented with process photography. No shortcuts, no vinyl wraps, no projector tracing of stock images. The work is done the way it was done for a hundred years, with better materials.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-16" data-animate="fade" data-animate-delay="3">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-cobalt-blue uppercase mb-2 lg:sticky lg:top-32" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Phase 4</p>
+          </div>
+          <div class="lg:col-span-8 lg:col-start-5">
+            <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+              Completion
+            </h2>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              The finished work receives a protective clear coat system appropriate to the surface and exposure. You receive a Certificate of Provenance documenting the work's origin, materials, creation timeline, GPS-stamped photographs, spectrophotometer color readings, and signed artist authentication. The certificate supports insurance documentation, preservation board requirements, and creates a permanent historical record.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-1 mb-20">
         <div class="aspect-[4/3] overflow-hidden">
           <img
             src="/images/process-render.jpg"

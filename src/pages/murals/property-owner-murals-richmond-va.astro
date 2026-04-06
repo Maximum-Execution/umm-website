@@ -33,7 +33,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -41,31 +41,45 @@ const faqItems = [
         { label: 'Property Owner Murals' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        Murals
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Murals for Property Owners in Richmond, VA
-      </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          You own a building with blank or deteriorating walls, and from the street it reads as neglected. In a competitive rental market, that first impression matters. Prospective tenants and buyers form opinions before they walk through the door, and a tired exterior signals problems they do not want to inherit. The property is not living up to its potential, and you know it.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We understand that every property improvement has to justify its cost. A mural is not decoration. It is a capital improvement that increases curb appeal, attracts better tenants, and shifts how the neighborhood perceives your building. Properties with well-executed murals in Richmond draw more foot traffic and generate organic visibility that no sign or banner can match. Before you commit to anything, we create a photorealistic 3D render showing exactly what the mural will look like on your actual wall so you can make a confident decision.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We visit your property, evaluate the walls, and present a design for your approval. Then we paint it. The building that was blending into the block becomes a recognized landmark, the kind of place tenants seek out and the community takes notice of.
-        </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            Murals
+          </p>
+          <h1 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.03em;" data-animate="headline">
+            Murals for Property Owners in Richmond, VA
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            You own a building with blank or deteriorating walls, and from the street it reads as neglected. In a competitive rental market, that first impression matters. Prospective tenants and buyers form opinions before they walk through the door, and a tired exterior signals problems they do not want to inherit. The property is not living up to its potential, and you know it.
+          </p>
+        </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a project photo here showing a mural on a commercial or mixed-use property — ideally a before/after or a shot that conveys the property improvement angle. Use Astro Image component when real photos are available.
-        </p>
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We understand that every property improvement has to justify its cost. A mural is not decoration. It is a capital improvement that increases curb appeal, attracts better tenants, and shifts how the neighborhood perceives your building. Properties with well-executed murals in Richmond draw more foot traffic and generate organic visibility that no sign or banner can match. Before you commit to anything, we create a photorealistic 3D render showing exactly what the mural will look like on your actual wall so you can make a confident decision.
+          </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We visit your property, evaluate the walls, and present a design for your approval. Then we paint it. The building that was blending into the block becomes a recognized landmark, the kind of place tenants seek out and the community takes notice of.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image placeholder — full width -->
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20">
+        <div class="p-8">
+          <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+            Add a project photo here showing a mural on a commercial or mixed-use property — ideally a before/after or a shot that conveys the property improvement angle. Use Astro Image component when real photos are available.
+          </p>
+        </div>
       </div>
     </div>
 

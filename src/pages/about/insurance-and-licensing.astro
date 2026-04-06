@@ -10,75 +10,96 @@ import RelatedPages from '../../components/RelatedPages.astro';
 <BaseLayout title="Insurance & Licensing | Untitled Mixed Media" description="General liability insurance, commercial auto coverage, Virginia contractor licensing, and workers compensation. The professional credentials behind every project.">
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
         { label: 'Insurance & Licensing' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        About
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Insurance & Licensing
-      </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          Hiring someone to work on your building is a liability decision as much as a creative one. You need to know the person on the scaffolding is insured, licensed, and operating legally. Here is what we carry and why it matters.
-        </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            About
+          </p>
+          <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
+            Insurance & Licensing
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+            Hiring someone to work on your building is a liability decision as much as a creative one. You need to know the person on the scaffolding is insured, licensed, and operating legally. Here is what we carry and why it matters.
+          </p>
+        </div>
       </div>
 
-      <!-- Why It Matters -->
-      <div class="space-y-10 mb-16">
-        <div>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+      <!-- Why It Matters + What We Carry: two-column -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div data-animate="fade" data-animate-delay="1">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
             Why It Matters
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Mural and sign work happens on other people's property, often at height, often in public spaces. If the painter is uninsured and something goes wrong, the property owner absorbs the liability. An unlicensed contractor can void your building's insurance coverage entirely. These are not edge cases. Property managers, commercial landlords, and municipal clients require proof of coverage before work begins, and they should.
           </p>
         </div>
-
-        <!-- What We Carry -->
-        <div>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            What We Carry
-          </h2>
-          <div class="space-y-4">
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-              <strong class="text-titanium-white">General Liability Insurance</strong> — Covers property damage, bodily injury, and completed operations. If paint drips on a car, if a passerby is injured near the work site, if a completed mural causes damage after the project is done, the policy responds. Certificates of insurance are provided to every client before work begins.
-            </p>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-              <strong class="text-titanium-white">Commercial Auto Insurance</strong> — Covers the vehicle used to transport equipment, scaffolding, and materials to job sites. Standard personal auto policies exclude commercial use.
-            </p>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-              <strong class="text-titanium-white">Virginia Contractor License</strong> — Untitled Mixed Media LLC is a registered Virginia contractor. This matters for commercial and government projects where licensing is a prerequisite for bidding.
-            </p>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-              <strong class="text-titanium-white">Workers Compensation</strong> — Carried when subcontractors are engaged on a project. Required by Virginia law for employers, and required by most commercial property managers regardless.
-            </p>
-          </div>
-        </div>
-
-        <!-- Working With Property Managers -->
-        <div>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+        <div data-animate="fade" data-animate-delay="2">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
             Working With Property Managers
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             If you manage commercial property, you already know the drill. We provide certificates of insurance naming your entity as additional insured. We carry the coverage limits your management company requires. We coordinate access schedules, comply with site safety requirements, and maintain clean work areas. The administrative side of the project should be as professional as the creative side.
           </p>
         </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a photo of professional site setup: scaffolding, drop cloths, safety equipment. The image should communicate professionalism and preparedness. Use Astro Image component when real photos are available.
-        </p>
+      <!-- What We Carry: left label + right content -->
+      <section class="border-t border-slate-gray pt-20 mb-20">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+          <div class="lg:col-span-4">
+            <h2 class="font-mono text-smoke-gray uppercase mb-4 lg:mb-0 lg:sticky lg:top-32" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              What We Carry
+            </h2>
+          </div>
+          <div class="lg:col-span-8 space-y-8">
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="1">
+              <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">General Liability Insurance</h3>
+              <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+                Covers property damage, bodily injury, and completed operations. If paint drips on a car, if a passerby is injured near the work site, if a completed mural causes damage after the project is done, the policy responds. Certificates of insurance are provided to every client before work begins.
+              </p>
+            </div>
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="2">
+              <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Commercial Auto Insurance</h3>
+              <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+                Covers the vehicle used to transport equipment, scaffolding, and materials to job sites. Standard personal auto policies exclude commercial use.
+              </p>
+            </div>
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="3">
+              <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Virginia Contractor License</h3>
+              <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+                Untitled Mixed Media LLC is a registered Virginia contractor. This matters for commercial and government projects where licensing is a prerequisite for bidding.
+              </p>
+            </div>
+            <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="4">
+              <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Workers Compensation</h3>
+              <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+                Carried when subcontractors are engaged on a project. Required by Virginia law for employers, and required by most commercial property managers regardless.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20">
+        <div class="flex items-center justify-center h-full p-8">
+          <div>
+            <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+              Add a photo of professional site setup: scaffolding, drop cloths, safety equipment. The image should communicate professionalism and preparedness. Use Astro Image component when real photos are available.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 

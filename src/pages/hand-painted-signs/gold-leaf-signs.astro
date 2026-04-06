@@ -33,7 +33,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -45,23 +45,35 @@ const faqItems = [
         Hand-Painted Signs
       </p>
 
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <h1 class="font-heading text-titanium-white mb-6" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
         Gold Leaf Signs
       </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
           Printed or vinyl gold looks flat. It does not catch light. It peels within a few seasons and leaves your business looking like it cut corners. If you have built something worth noticing, whether a law firm, an upscale restaurant, or a heritage brand, your signage should reflect that, not undermine it.
         </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We hand-apply gold leaf using traditional oil-size and water-size gilding techniques. We have gilded glass, wood, and metal across Richmond, and we know which approach matches your surface, your environment, and your budget. Real gold reflects light in a way no print or metallic vinyl can replicate. There is no shortcut to that effect.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We start with a site visit to evaluate the surface and lighting conditions. You see the design before we begin, and we apply the gold leaf by hand on site. The result is lettering that glows at golden hour, ages with dignity, and gives your business the kind of first impression that makes people assume you have been there for decades.
-        </p>
+        </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We hand-apply gold leaf using traditional oil-size and water-size gilding techniques. We have gilded glass, wood, and metal across Richmond, and we know which approach matches your surface, your environment, and your budget. Real gold reflects light in a way no print or metallic vinyl can replicate. There is no shortcut to that effect.
+        </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We start with a site visit to evaluate the surface and lighting conditions. You see the design before we begin, and we apply the gold leaf by hand on site. The result is lettering that glows at golden hour, ages with dignity, and gives your business the kind of first impression that makes people assume you have been there for decades.
+        </p>
+        </div>
+      </div>
+
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
         <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
         <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo showing gold leaf lettering catching light. A close-up detail shot showing the texture and reflectivity that distinguishes real gold from printed metallic.</p>
       </div>

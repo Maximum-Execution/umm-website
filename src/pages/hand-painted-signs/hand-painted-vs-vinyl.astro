@@ -32,7 +32,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -44,33 +44,45 @@ const faqItems = [
         Hand-Painted Signs
       </p>
 
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <h1 class="font-heading text-titanium-white mb-6" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
         Hand-Painted Signs vs Vinyl: Which Lasts Longer?
       </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
           You are trying to decide between hand-painted signage and vinyl lettering, and you want the honest answer, not a sales pitch. Vinyl is cheaper upfront, but it fails within 3 to 7 years. You have seen it on other buildings: peeling edges, UV fading, adhesive residue on the wall. You should not have to choose between looking good now and looking good in ten years.
         </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We have seen both sides. We have painted over peeling vinyl and we have maintained hand-painted signs that are 15 years old and still sharp. The difference comes down to how each material bonds to the surface. Vinyl sits on top, held by adhesive that weakens in heat and becomes brittle in cold. Paint penetrates the substrate and becomes part of it. This page lays out the facts so you can decide for yourself.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          If you choose hand-painted, the process is straightforward: we visit your site, show you the design, and paint it. The result is a sign that looks better at year 10 than vinyl looks at year 3. A single investment instead of a recurring replacement cost.
-        </p>
+        </div>
       </div>
 
-      <blockquote class="font-heading text-titanium-white italic my-12 max-w-2xl" style="font-size: var(--text-fluid-2xl);" data-animate="fade">
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We have seen both sides. We have painted over peeling vinyl and we have maintained hand-painted signs that are 15 years old and still sharp. The difference comes down to how each material bonds to the surface. Vinyl sits on top, held by adhesive that weakens in heat and becomes brittle in cold. Paint penetrates the substrate and becomes part of it. This page lays out the facts so you can decide for yourself.
+        </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          If you choose hand-painted, the process is straightforward: we visit your site, show you the design, and paint it. The result is a sign that looks better at year 10 than vinyl looks at year 3. A single investment instead of a recurring replacement cost.
+        </p>
+        </div>
+      </div>
+
+      <blockquote class="text-center py-12 mb-20 border-t border-b border-slate-gray" data-animate="settle"><p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl);" data-animate="fade">
         <p>Vinyl signs tell your customers you cut corners.</p>
       </blockquote>
 
       <!-- 12-Year Cost Breakdown Table Placeholder -->
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
         <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Table placeholder: 12-Year Cost Breakdown</p>
         <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Build a comparison table with columns for: Year (1 through 12), Vinyl cumulative cost (initial install plus replacements every 3 to 5 years plus removal labor), Hand-painted cumulative cost (initial install plus minor touch-ups at year 7 to 8), and Appearance rating (vinyl degrades while hand-painted weathers gracefully). Show the crossover point where hand-painted becomes cheaper per year.</p>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
         <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
         <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add side-by-side comparison photo: a 5-year-old vinyl sign showing edge peeling and UV fade next to a 10-year-old hand-painted sign still holding its color and edges.</p>
       </div>

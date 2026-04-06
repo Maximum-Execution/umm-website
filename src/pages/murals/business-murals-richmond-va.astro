@@ -33,7 +33,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -41,35 +41,52 @@ const faqItems = [
         { label: 'Business Murals' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        Murals
-      </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            Murals
+          </p>
+          <h1 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.03em;" data-animate="headline">
+            Business Murals in Richmond, VA
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            You put real work into your restaurant, brewery, or retail space. The food is dialed in, the product is strong, the team is solid. But from the street, your building looks like every other storefront on the block. Pedestrians walk past without slowing down. Drivers never glance twice. The exterior does not reflect what you have built inside, and that gap costs you foot traffic every single day.
+          </p>
+        </div>
+      </div>
 
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Business Murals in Richmond, VA
-      </h1>
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We know how hard it is to stand out in a crowded market when your physical space is working against you. We have painted murals on restaurants, breweries, and storefronts across Richmond, and we use commercial-grade paint systems that hold up to weather, sun, and heavy foot traffic. Before any paint hits your wall, we build a photorealistic 3D mockup of the design on your actual building so you can see exactly what you are getting.
+          </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            The process is straightforward. We visit your site and assess the wall. We create the design and show it to you for approval. Then we paint it. The result is a landmark that draws people in, gives customers something to photograph and share, and becomes part of your brand identity. A well-executed mural pays for itself in visibility alone.
+          </p>
+        </div>
+      </div>
 
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          You put real work into your restaurant, brewery, or retail space. The food is dialed in, the product is strong, the team is solid. But from the street, your building looks like every other storefront on the block. Pedestrians walk past without slowing down. Drivers never glance twice. The exterior does not reflect what you have built inside, and that gap costs you foot traffic every single day.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We know how hard it is to stand out in a crowded market when your physical space is working against you. We have painted murals on restaurants, breweries, and storefronts across Richmond, and we use commercial-grade paint systems that hold up to weather, sun, and heavy foot traffic. Before any paint hits your wall, we build a photorealistic 3D mockup of the design on your actual building so you can see exactly what you are getting.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          The process is straightforward. We visit your site and assess the wall. We create the design and show it to you for approval. Then we paint it. The result is a landmark that draws people in, gives customers something to photograph and share, and becomes part of your brand identity. A well-executed mural pays for itself in visibility alone.
+      <!-- Pull quote -->
+      <div class="text-center py-12 mb-20 border-t border-b border-slate-gray" data-animate="settle">
+        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
+          Your storefront looks exactly like your competitor's Pinterest board.
         </p>
       </div>
 
-      <blockquote class="font-heading text-titanium-white italic my-12 max-w-2xl" style="font-size: var(--text-fluid-2xl);" data-animate="fade">
-        <p>Your storefront looks exactly like your competitor's Pinterest board.</p>
-      </blockquote>
-
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a project photo here showing a completed commercial mural on a business exterior — restaurant, brewery, or retail storefront. Use Astro Image component when real photos are available.
-        </p>
+      <!-- Image placeholder — full width -->
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20">
+        <div class="p-8">
+          <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+            Add a project photo here showing a completed commercial mural on a business exterior — restaurant, brewery, or retail storefront. Use Astro Image component when real photos are available.
+          </p>
+        </div>
       </div>
     </div>
 

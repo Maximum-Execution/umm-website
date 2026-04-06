@@ -33,7 +33,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -45,23 +45,35 @@ const faqItems = [
         Hand-Painted Signs
       </p>
 
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <h1 class="font-heading text-titanium-white mb-6" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
         Hand-Painted Interior Signs
       </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
           Once people walk through the door, the brand should not disappear. But too often the interior signage is an afterthought: printed paper taped to walls, mismatched vinyl decals, or nothing at all. Wayfinding is confusing. The space feels unfinished. If you care about the environment your customers and employees experience every day, generic sign solutions are not the answer.
         </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We paint interior signs for offices, restaurants, retail stores, and event venues. We work with your existing finishes, including exposed brick, drywall, and wood paneling, and we know which paints and techniques perform best on each surface. Whether it is wayfinding, feature wall lettering, or a large-scale brand statement, everything is designed to match your brand and feel intentional.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We visit your space, assess the surfaces and layout, and show you the design before we start. Once approved, we paint it on site, working around your business hours when needed. The result is an interior that photographs well, guides people intuitively, and reinforces your brand at every turn.
-        </p>
+        </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We paint interior signs for offices, restaurants, retail stores, and event venues. We work with your existing finishes, including exposed brick, drywall, and wood paneling, and we know which paints and techniques perform best on each surface. Whether it is wayfinding, feature wall lettering, or a large-scale brand statement, everything is designed to match your brand and feel intentional.
+        </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          We visit your space, assess the surfaces and layout, and show you the design before we start. Once approved, we paint it on site, working around your business hours when needed. The result is an interior that photographs well, guides people intuitively, and reinforces your brand at every turn.
+        </p>
+        </div>
+      </div>
+
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
         <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
         <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add photo of hand-painted interior signage, such as a feature wall, wayfinding sign, or branded lettering inside a commercial space.</p>
       </div>

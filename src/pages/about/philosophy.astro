@@ -10,74 +10,82 @@ import RelatedPages from '../../components/RelatedPages.astro';
 <BaseLayout title="Philosophy — Meaning Discovered, Not Imposed | Untitled Mixed Media" description="Places become distinctive when meaning is discovered from them, not imposed on them. The philosophy behind every Untitled Mixed Media project.">
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
         { label: 'Philosophy' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        About
-      </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            About
+          </p>
+          <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
+            Meaning Discovered, Not Imposed
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+            Every building has a story it is already telling. The brickwork, the neighborhood, the light, the people who pass by every day. And sometimes the most important story isn't in the building at all. It's in what happened there: a moment that defined the people or the place. Most muralists arrive with a portfolio of designs and look for a wall to put them on. We arrive with questions and look for the answers the place already holds.
+          </p>
+        </div>
+      </div>
 
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Meaning Discovered, Not Imposed
-      </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          Every building has a story it is already telling. The brickwork, the neighborhood, the light, the people who pass by every day. And sometimes the most important story isn't in the building at all. It's in what happened there: a moment that defined the people or the place. Most muralists arrive with a portfolio of designs and look for a wall to put them on. We arrive with questions and look for the answers the place already holds.
+      <!-- Pull quote -->
+      <div class="text-center py-12 mb-20 border-t border-b border-slate-gray" data-animate="settle">
+        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
+          Can you still stand out authentically when everyone has access to the same templates, the same printers, the same vinyl?
         </p>
       </div>
 
-      <blockquote class="font-heading text-titanium-white italic my-12 max-w-2xl" style="font-size: var(--text-fluid-2xl);" data-animate="fade">
-        <p>Can you still stand out authentically when everyone has access to the same templates, the same printers, the same vinyl?</p>
-      </blockquote>
-
-      <!-- Discovery Over Imposition -->
-      <div class="space-y-10 mb-16">
-        <div>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+      <!-- Two-column: Discovery + Craft -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div data-animate="fade" data-animate-delay="1">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
             Discovery Over Imposition
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             The difference between a mural that belongs and one that merely occupies space is where the idea came from. When the concept is discovered from the site itself, from the history of the building, the character of the street, the materials underfoot, the work becomes inseparable from its location. It could not exist anywhere else. That specificity is what makes public art meaningful rather than decorative.
           </p>
         </div>
-
-        <div>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+        <div data-animate="fade" data-animate-delay="2">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
             Craft Over Production
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Hand-painting is slower than printing. It is more expensive than vinyl. It requires years of training that cannot be automated or outsourced. That is exactly the point. A hand-painted sign or mural carries evidence of human decision-making in every brushstroke. The slight variations in letterforms, the way pigment sits differently on textured brick versus smooth plaster, the subtle shifts in density where the painter adjusted pressure. These are not imperfections. They are proof that a human being made this, here, for this place.
           </p>
-          <p class="font-heading text-titanium-white italic max-w-3xl mt-8"
-             style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);"
-             data-animate="fade">
-            When technology makes perfection cheap, human error becomes the premium feature.
-          </p>
         </div>
-
       </div>
 
-      <blockquote class="font-heading text-titanium-white italic my-12 max-w-2xl" style="font-size: var(--text-fluid-2xl);" data-animate="fade">
-        <p>You cannot download authenticity.</p>
-      </blockquote>
+      <!-- Inline pull quote -->
+      <div class="text-center py-12 mb-20" data-animate="settle">
+        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
+          When technology makes perfection cheap, human error becomes the premium feature.
+        </p>
+      </div>
 
-      <div class="space-y-10 mb-16">
-        <div>
-          <h2 class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
+      <!-- Landmarks section: offset layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20 border-t border-slate-gray pt-20">
+        <div class="lg:col-span-4" data-animate="fade">
+          <p class="font-heading text-titanium-white italic" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
+            You cannot download authenticity.
+          </p>
+        </div>
+        <div class="lg:col-span-7 lg:col-start-6" data-animate="fade" data-animate-delay="1">
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
             Landmarks, Not Lookalikes
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             A landmark is something people navigate by. It is the mural on the corner that tells you where to turn, the sign that has been there so long it has become part of the neighborhood's identity. A lookalike is something you scroll past because you have seen it in every other city. We build landmarks. Work that is so rooted in its location that removing it would leave a visible gap in the streetscape.
           </p>
         </div>
       </div>
 
-      <div class="aspect-[16/9] overflow-hidden mb-16">
+      <div class="aspect-[16/9] overflow-hidden mb-20">
         <img
           src="/images/service-murals.jpg"
           alt="Hand-painted mural in context with its surrounding neighborhood"

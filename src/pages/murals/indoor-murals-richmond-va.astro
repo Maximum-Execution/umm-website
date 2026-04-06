@@ -33,7 +33,7 @@ const faqItems = [
 >
   <Nav />
   <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-4xl">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
@@ -41,31 +41,45 @@ const faqItems = [
         { label: 'Indoor Murals' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        Murals
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.1; letter-spacing: -0.03em;">
-        Indoor Murals in Richmond, VA
-      </h1>
-
-      <div class="space-y-6 mb-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: 1.6;">
-          Your interior does not match the experience you are creating. The dining room feels flat, the lobby makes no impression, or the retail floor just blends into the background. You know a great space creates an emotional response the moment someone walks in, but paint swatches and framed prints are not getting you there. The walls are the largest surfaces in the room and they are doing nothing.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          Interior mural work comes with its own set of challenges. Ventilation matters. Paint fumes in an occupied restaurant or office are not acceptable. Furniture, fixtures, and foot traffic have to be accounted for. We use low-VOC and zero-VOC paint systems for all indoor projects, schedule around your operating hours, and handle all setup and cleanup so your business keeps running. We have painted interiors in restaurants, offices, and homes across Richmond and understand how lighting, wall texture, and room geometry affect the finished piece.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: 1.6;">
-          We visit your space, evaluate the walls and lighting, and build a photorealistic mockup so you see the design in context before we start. Then we paint it. The result is a room that stops people in their tracks, gives visitors something to photograph, and turns your interior into an experience people remember.
-        </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+            Murals
+          </p>
+          <h1 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.03em;" data-animate="headline">
+            Indoor Murals in Richmond, VA
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Your interior does not match the experience you are creating. The dining room feels flat, the lobby makes no impression, or the retail floor just blends into the background. You know a great space creates an emotional response the moment someone walks in, but paint swatches and framed prints are not getting you there. The walls are the largest surfaces in the room and they are doing nothing.
+          </p>
+        </div>
       </div>
 
-      <div class="bg-midnight-graphite p-8 mb-16 border border-slate-gray">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a project photo here showing a completed indoor mural — restaurant interior, office lobby, or residential feature wall. Use Astro Image component when real photos are available.
-        </p>
+      <!-- Body: two-column editorial -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Interior mural work comes with its own set of challenges. Ventilation matters. Paint fumes in an occupied restaurant or office are not acceptable. Furniture, fixtures, and foot traffic have to be accounted for. We use low-VOC and zero-VOC paint systems for all indoor projects, schedule around your operating hours, and handle all setup and cleanup so your business keeps running. We have painted interiors in restaurants, offices, and homes across Richmond and understand how lighting, wall texture, and room geometry affect the finished piece.
+          </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We visit your space, evaluate the walls and lighting, and build a photorealistic mockup so you see the design in context before we start. Then we paint it. The result is a room that stops people in their tracks, gives visitors something to photograph, and turns your interior into an experience people remember.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image placeholder — full width -->
+      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20">
+        <div class="p-8">
+          <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
+            Add a project photo here showing a completed indoor mural — restaurant interior, office lobby, or residential feature wall. Use Astro Image component when real photos are available.
+          </p>
+        </div>
       </div>
     </div>
 

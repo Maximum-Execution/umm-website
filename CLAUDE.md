@@ -105,3 +105,32 @@ Production target: `untitledmixedmedia.com`
 
 Mailto only: `hello@untitledmixedmedia.com`
 CTA: "Request a Site Visit"
+
+## Messaging Rules
+
+The V4 BrandScript governs all copy on this site. Governing document: `BRAND/Messaging/UMM-StoryBrand-BrandScript-V4.md` (relative to the UMM project root).
+
+### Villain Boundaries
+
+- "Indifference" as the villain belongs to the UMM umbrella ONLY.
+- "The generic mural" as the villain belongs to Murals & Public Art ONLY. The Landmark Moment concept (the specific human experience, event, memory, or community truth that a mural is built around) belongs to murals ONLY.
+- "Visual pollution" as a villain belongs to signs ONLY.
+- "The catalog sign" / "fine art for your brand identity" angle belongs to Brand Mark ONLY.
+
+### Copy Rules
+
+- Customer is always the hero. Spencer/UMM is always the guide.
+- Lead with the customer's problem, not Spencer's credentials.
+- Never use em dashes. Replace with periods, colons, commas, semicolons, or parentheses.
+- Core belief (use as a section anchor or pull quote, not as body copy): "How you do anything is how you do everything."
+
+### Key Lines by Page
+
+| Page | Key Line |
+|------|----------|
+| Homepage hero | Most murals and signs are made on autopilot. We bring creative strategy, original research, and hand-painting craft to every project, so your building gets public art with real thought behind it: work that means something, lasts, and stops people. |
+| Murals | Every mural we paint is built around a Landmark Moment: the instant when something changed forever for the people, the place, or the story behind it. |
+| Signs | How your sign is made tells the world what kind of business you run. We hand-paint signs the way they were meant to be made: by a craftsman, with real materials, on real surfaces. |
+| Brand Mark | This is not signage. It is an original. Your brand identity, painted by hand, treated like fine art. |
+
+The Compressed One-Liner ("Most public art is made without thinking. We bring the thinking. Then we bring the paint.") is available for shorter placements: subheads, mobile hero, social captions.

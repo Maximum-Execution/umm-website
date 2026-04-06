@@ -23,17 +23,22 @@ const posts = (await getCollection('journal'))
         { label: 'Journal' },
       ]} />
 
-      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Journal
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
-        Writing about murals, signs, and the buildings that wear them.
-      </h1>
-
-      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
-        Process notes, materials research, and the stories behind completed projects. We write about what we know — how murals are made, why certain paints outlast others, and what it takes to turn a blank wall into something worth remembering.
-      </p>
+      <!-- Hero: split layout -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-16">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Journal
+          </p>
+          <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
+            Writing about murals, signs, and the buildings that wear them.
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:flex lg:items-end">
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+            Process notes, materials research, and the stories behind completed projects. We write about what we know: how murals are made, why certain paints outlast others, and what it takes to turn a blank wall into something worth remembering.
+          </p>
+        </div>
+      </div>
 
       {posts.length > 0 ? (
         <div class="space-y-12">

@@ -57,40 +57,46 @@ const relatedPosts = allPosts
   <ScrollProgress />
   <main class="pt-24 pb-16">
     <article class="px-6 lg:px-12">
-      <div class="max-w-3xl mx-auto">
+      <!-- Wide header area -->
+      <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
           { label: 'Journal', href: '/journal' },
           { label: title },
         ]} />
 
-        <!-- Date + Tags -->
-        <div class="flex flex-wrap items-center gap-4 mb-6">
-          <time
-            datetime={date.toISOString().split('T')[0]}
-            class="font-mono text-smoke-gray uppercase"
-            style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-          >
-            {formattedDate}
-          </time>
-          {tags.length > 0 && (
-            <div class="flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <span class="font-mono text-smoke-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider" style="font-size: var(--text-fluid-xs);">
-                  {tag}
-                </span>
-              ))}
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-12">
+          <div class="lg:col-span-8">
+            <!-- Date + Tags -->
+            <div class="flex flex-wrap items-center gap-4 mb-6">
+              <time
+                datetime={date.toISOString().split('T')[0]}
+                class="font-mono text-smoke-gray uppercase"
+                style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+              >
+                {formattedDate}
+              </time>
+              {tags.length > 0 && (
+                <div class="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span class="font-mono text-smoke-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider" style="font-size: var(--text-fluid-xs);">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+
+            <h1 class="font-heading text-titanium-white mb-4 text-balance" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
+              {title}
+            </h1>
+          </div>
+          <div class="lg:col-span-4 lg:flex lg:items-end">
+            <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              By {author}
+            </p>
+          </div>
         </div>
-
-        <h1 class="font-heading text-titanium-white mb-4 text-balance">
-          {title}
-        </h1>
-
-        <p class="font-mono text-smoke-gray uppercase mb-12" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          By {author}
-        </p>
 
         {cover && (
           <div class="aspect-[16/9] overflow-hidden mb-16">
@@ -104,8 +110,10 @@ const relatedPosts = allPosts
             />
           </div>
         )}
+      </div>
 
-        <!-- Rendered markdown body -->
+      <!-- Narrow prose body for readability -->
+      <div class="max-w-3xl mx-auto">
         <div class="case-study-prose">
           <Content />
         </div>

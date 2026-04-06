@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQSection from '../components/FAQSection.astro';
@@ -33,6 +34,7 @@ const breadcrumbNav = [
   service={{ name: "Mural Cost Estimator", description: "Interactive tool to estimate the cost of a hand-painted mural in Richmond, Virginia." }}
 >
   <Nav />
+  <ScrollProgress />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-4xl">
 
@@ -272,6 +274,34 @@ const breadcrumbNav = [
     return '$' + amount.toLocaleString('en-US', { maximumFractionDigits: 0 });
   }
 
+  function animateCounter(element: HTMLElement, low: number, high: number, duration: number = 800): void {
+    const start = performance.now();
+
+    function update(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      const currentLow = Math.round(eased * low);
+      const currentHigh = Math.round(eased * high);
+
+      element.textContent = formatCurrency(currentLow) + ' \u2013 ' + formatCurrency(currentHigh);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      element.textContent = formatCurrency(low) + ' \u2013 ' + formatCurrency(high);
+      return;
+    }
+
+    requestAnimationFrame(update);
+  }
+
   function clearPresetActive(): void {
     presetBtns.forEach(btn => {
       btn.classList.remove('border-titanium-white', 'text-titanium-white', 'bg-midnight-graphite');
@@ -310,7 +340,7 @@ const breadcrumbNav = [
 
     requestAnimationFrame(() => {
       setTimeout(() => {
-        estimateRange.textContent = formatCurrency(low) + ' \u2013 ' + formatCurrency(high);
+        animateCounter(estimateRange, low, high);
         estimateSqft.textContent = sqft.toLocaleString() + ' sqft \u00B7 ' + complexity + ' complexity \u00B7 ' + surface + ' \u00B7 ' + location;
 
         // Update hidden fields

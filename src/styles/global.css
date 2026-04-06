@@ -312,10 +312,17 @@ body {
   [data-animate],
   [data-animate="scale"],
   [data-animate="fade"],
-  [data-animate="reveal"] {
+  [data-animate="reveal"],
+  [data-animate="headline"],
+  [data-animate="settle"] {
     opacity: 1;
     transform: none;
     clip-path: none;
+    transition: none;
+  }
+  [data-animate="headline"] .word {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
   [data-animate-delay="1"],
@@ -364,6 +371,47 @@ body {
 }
 [data-animate="reveal"].is-visible {
   clip-path: inset(0);
+}
+
+/* Word-by-word headline reveal */
+[data-animate="headline"] .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.5em);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+[data-animate="headline"].is-visible .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger words: each word gets 60ms more delay */
+[data-animate="headline"].is-visible .word:nth-child(1)  { transition-delay: 0ms; }
+[data-animate="headline"].is-visible .word:nth-child(2)  { transition-delay: 60ms; }
+[data-animate="headline"].is-visible .word:nth-child(3)  { transition-delay: 120ms; }
+[data-animate="headline"].is-visible .word:nth-child(4)  { transition-delay: 180ms; }
+[data-animate="headline"].is-visible .word:nth-child(5)  { transition-delay: 240ms; }
+[data-animate="headline"].is-visible .word:nth-child(6)  { transition-delay: 300ms; }
+[data-animate="headline"].is-visible .word:nth-child(7)  { transition-delay: 360ms; }
+[data-animate="headline"].is-visible .word:nth-child(8)  { transition-delay: 420ms; }
+[data-animate="headline"].is-visible .word:nth-child(9)  { transition-delay: 480ms; }
+[data-animate="headline"].is-visible .word:nth-child(10) { transition-delay: 540ms; }
+[data-animate="headline"].is-visible .word:nth-child(11) { transition-delay: 600ms; }
+[data-animate="headline"].is-visible .word:nth-child(12) { transition-delay: 660ms; }
+[data-animate="headline"].is-visible .word:nth-child(13) { transition-delay: 720ms; }
+[data-animate="headline"].is-visible .word:nth-child(14) { transition-delay: 780ms; }
+[data-animate="headline"].is-visible .word:nth-child(15) { transition-delay: 840ms; }
+
+/* Pull quote settle — subtle scale + fade */
+[data-animate="settle"] {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+[data-animate="settle"].is-visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* ─── Noise Overlay ─────────────────────────────────────── */

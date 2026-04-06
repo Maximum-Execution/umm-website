@@ -178,6 +178,23 @@ import '../styles/global.css';
     <slot />
 
     <script>
+      // Wrap words in spans for headline reveal (source: server-rendered author content only)
+      document.querySelectorAll('[data-animate="headline"]').forEach((el) => {
+        const words = (el.textContent || '').split(/\s+/).filter(Boolean);
+        while (el.firstChild) el.removeChild(el.firstChild);
+        words.forEach((word, i) => {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = word;
+          el.appendChild(span);
+          if (i < words.length - 1) {
+            el.appendChild(document.createTextNode(' '));
+          }
+        });
+      });
+
+      const animateSelector = '[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"], [data-animate="headline"], [data-animate="settle"]';
+
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -190,11 +207,11 @@ import '../styles/global.css';
           },
           { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
         );
-        document.querySelectorAll('[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"]').forEach((el) => {
+        document.querySelectorAll(animateSelector).forEach((el) => {
           observer.observe(el);
         });
       } else {
-        document.querySelectorAll('[data-animate], [data-animate="scale"], [data-animate="fade"], [data-animate="reveal"]').forEach((el) => {
+        document.querySelectorAll(animateSelector).forEach((el) => {
           el.classList.add('is-visible');
         });
       }

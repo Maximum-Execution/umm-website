@@ -249,21 +249,18 @@ body {
   font-size: var(--text-fluid-4xl);
   letter-spacing: var(--tracking-tight);   /* -0.03em */
   line-height: var(--leading-tight);       /* 1.1 */
-  max-width: 25ch;
 }
 
 :where(h2) {
   font-size: var(--text-fluid-3xl);
   letter-spacing: var(--tracking-snug);    /* -0.02em */
   line-height: var(--leading-tight);       /* 1.1 */
-  max-width: 30ch;
 }
 
 :where(h3) {
   font-size: var(--text-fluid-xl);
   letter-spacing: calc(var(--tracking-snug) / 2);  /* -0.01em */
   line-height: var(--leading-snug);        /* 1.2 */
-  max-width: 40ch;
 }
 
 /* ─── Font Utility Classes ─────────────────────────────── */

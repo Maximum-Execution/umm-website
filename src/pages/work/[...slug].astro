@@ -191,5 +191,60 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
       </div>
     </nav>
   </main>
+
+  <!-- Section scroll indicators — populated by JS after load -->
+  <div
+    id="section-dots"
+    class="hidden lg:flex flex-col fixed right-6 top-1/2 -translate-y-1/2 z-40"
+    style="gap: 12px;"
+    aria-hidden="true"
+  ></div>
+
   <Footer />
 </BaseLayout>
+
+<script>
+  (function () {
+    const container = document.getElementById('section-dots');
+    if (!container) return;
+
+    const headings = Array.from(document.querySelectorAll('main h2')) as HTMLElement[];
+    if (headings.length < 2) return;
+
+    const COLOR_ACTIVE = '#EEECE9';
+    const COLOR_INACTIVE = '#4A4A4C';
+
+    headings.forEach((heading) => {
+      const dot = document.createElement('button');
+      dot.style.cssText = `width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;transition:background-color 300ms;background-color:${COLOR_INACTIVE};`;
+      dot.setAttribute('aria-label', `Scroll to: ${heading.textContent?.trim() ?? ''}`);
+      dot.addEventListener('click', () => {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        heading.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+      });
+      container.appendChild(dot);
+    });
+
+    const dots = Array.from(container.querySelectorAll('button')) as HTMLButtonElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = headings.indexOf(entry.target as HTMLElement);
+            dots.forEach((d, i) => {
+              d.style.backgroundColor = i === idx ? COLOR_ACTIVE : COLOR_INACTIVE;
+            });
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' }
+    );
+
+    headings.forEach((h) => observer.observe(h));
+
+    // Show the container now that dots are ready
+    container.classList.remove('hidden');
+    container.classList.add('flex');
+  })();
+</script>

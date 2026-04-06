@@ -7,49 +7,77 @@ author: "Spencer Bennett"
 featured: false
 ---
 
-## COPYWRITING GUIDE — This is a placeholder post
+Public art projects that look expensive often are not — because the money comes from several places at once and most of it is already allocated before anyone calls an artist. Understanding the funding landscape makes the difference between a project that happens and a project that stays on a wishlist.
 
-**Target keyword:** "public art funding Virginia" / "how to fund a mural" / "Virginia arts grants"
-**Search intent:** Informational / transactional — someone exploring how to make a public art project happen (municipal staff, nonprofit directors, community organizers, or artists)
-**Word count target:** 1,400–1,800 words
+Here is a practical overview of how public murals and installations get funded in Virginia.
 
-### What this post covers
+## Percent-for-art programs
 
-A practical overview of how public art gets funded in Virginia, written for the people who actually need to figure out the money: municipal arts coordinators, nonprofit leaders, business improvement districts, community groups, and property owners. This is not an art theory post — it is a funding mechanics post. The reader should finish it knowing exactly which funding sources to pursue and how to combine them. Tone: knowledgeable, practical, encouraging. Untitled Mixed Media has experience with publicly funded projects (Short Pump Mural, Henrico County) and this post demonstrates that expertise.
+Percent-for-art is the most reliable source of public art funding for large projects. The mechanism is simple: a municipality requires that a percentage of the budget for public construction projects — typically 1 to 2 percent — be set aside for public art. For a $10 million library renovation, that is $100,000 to $200,000 allocated to art before the project breaks ground.
+
+Virginia does not have a statewide percent-for-art law, but several localities have adopted their own programs. Arlington County, Alexandria, and the City of Richmond have active public art programs with their own commissions and allocation processes. Henrico County has funded public art through capital improvement projects. Other localities fund public art case by case through parks and recreation departments or economic development initiatives.
+
+Access to percent-for-art funding typically happens through an RFQ or RFP process — the municipality publishes a call, artists or artist teams submit qualifications or proposals, and a committee selects the project. Getting on the radar of local arts commissions before calls are published helps. Attending public arts commission meetings as an observer is a useful first step.
+
+## Virginia Commission for the Arts grants
+
+The Virginia Commission for the Arts (VCA) distributes state and federal funding to arts organizations and projects across Virginia. Several VCA programs are relevant to public art:
+
+**Project grants for organizations** support discrete arts projects, including public murals and installations, undertaken by 501(c)(3) nonprofits. These are competitive grants that require a strong narrative about community impact and typically award $5,000 to $25,000. Organizations that do not have a 501(c)(3) can sometimes access these grants through fiscal sponsorship from a qualifying organization.
+
+**Local government challenge grants** fund arts activities organized or supported by local governments. If a county parks department, a library system, or a municipal arts office is involved in a mural project, this is the right mechanism to explore.
+
+**Individual artist grants** exist in some VCA cycles and support artist development, which can include the research and design phase of a public art project.
+
+VCA grant applications have specific deadlines, typically in fall for the following fiscal year, and require detailed project narratives, budgets, and evidence of community support. The VCA website publishes current guidelines and deadlines. Allow 6 to 12 months from application to funding decision.
+
+## NEA direct funding
+
+The National Endowment for the Arts offers several programs that fund public art directly:
+
+**Our Town** is the NEA's creative placemaking grant program. It funds projects that integrate arts and culture into community development — which includes large-scale murals with community engagement components. Our Town grants typically range from $25,000 to $100,000 and require a local government partner. Applications are competitive and reviewed nationally.
+
+**Art Works** supports a broader range of arts projects with grants typically ranging from $10,000 to $100,000. Public art falls within scope when the project has clear artistic merit and community benefit.
+
+**Challenge America** supports underserved communities with grants up to $10,000. Simpler application process than Art Works or Our Town.
+
+NEA applications require partnerships between artists, nonprofits, and often local governments. The application process is substantial — expect to invest significant time in proposal writing. The NEA's website publishes current guidelines, deadlines, and sample funded applications from previous cycles.
+
+## Community fundraising and business sponsorship
+
+Many community murals are funded entirely outside of government programs, through local business sponsorship and community fundraising.
+
+A typical community-funded mural project looks like this: a neighborhood association or community group wants a mural. They identify 3 to 5 local businesses willing to contribute $500 to $2,000 each as naming sponsors. They run a community crowdfunding campaign that raises the remainder. The mural gets painted with acknowledgment to sponsors on or near the installation.
+
+What makes community funding work: a compelling story about why the mural belongs in this specific place, visible support from community leaders and neighbors, a clear and honest budget, and a named artist whose work the community can evaluate.
+
+Matching arrangements significantly boost campaign momentum. If a business or foundation agrees to match community donations dollar-for-dollar up to a set amount, it creates urgency and increases total contributions.
+
+## Municipal budgets and capital improvement plans
+
+Not all public art goes through arts-specific funding programs. Streetscape improvements, park renovations, transit station upgrades, and library buildouts often include art as a line item in the capital improvement plan — funded through the general capital budget, not an arts commission.
+
+Getting art written into these plans requires involvement at the planning stage, before budgets are finalized. Municipal budget hearings are public. Capital improvement plan drafts are typically available for comment. Advocates for public art in a specific project need to be present in those conversations before the budget is locked.
+
+## Combining funding sources
+
+Most substantial public art projects combine two or three funding sources. A typical funding stack for a $25,000 mural project in Virginia might look like:
+
+- 40 percent from a percent-for-art allocation ($10,000)
+- 30 percent from a VCA project grant ($7,500)
+- 20 percent from local business sponsorships ($5,000)
+- 10 percent from community fundraising ($2,500)
+
+The funding sources are not mutually exclusive. Government grants do not preclude private sponsorship. VCA grants can supplement percent-for-art funding.
+
+The practical implication: start the funding process early, because government grant cycles often run 6 to 12 months and business sponsorships need time to secure. A mural project with a target installation date needs to start its funding work 12 to 18 months in advance if government funding is part of the plan.
+
+## Working with funded projects
+
+Publicly funded mural projects have specific requirements that privately commissioned work does not: community engagement processes, documentation requirements, committee review at multiple stages, and in some cases prevailing wage requirements. Working with an artist who has navigated these processes before shortens the timeline and reduces surprises.
+
+Untitled Mixed Media has worked on publicly funded projects in the Richmond area, including large-scale heritage installations for Henrico County. If your organization has secured funding for a public art project and is looking for a muralist to submit a proposal, [start a conversation here](mailto:hello@untitledmixedmedia.com).
 
 ---
 
-## Percent-for-Art Programs
-
-Explain how percent-for-art ordinances work. A municipality requires that a percentage (typically 1–2%) of the construction budget for public buildings or capital projects be allocated to public art. Virginia does not have a statewide percent-for-art law, but several Virginia localities have adopted their own. List the ones that apply (research needed: Arlington County, Alexandria, Charlottesville, and others). Explain how artists and organizations can access these funds — usually through an RFQ/RFP process managed by the locality's arts commission.
-
-## Virginia Commission for the Arts (VCA) Grants
-
-Detail the VCA's grant programs relevant to public art. The VCA distributes state and federal (NEA pass-through) funds to arts organizations and projects across Virginia. Cover the main grant categories: Project Grants for Organizations, Local Government Challenge Grants, and any individual artist grants that apply to mural or public art work. Include practical details: typical grant amounts, application timelines, matching requirements. Note that VCA grants are competitive and require a strong narrative about community impact.
-
-## National Endowment for the Arts (NEA) Direct Funding
-
-Explain NEA grant programs that fund public art directly: Our Town (creative placemaking), Art Works, and Challenge America. These are federal grants with larger award amounts but also more competitive application processes. Mention that NEA funding often requires partnerships between artists, nonprofits, and local governments. Provide context on typical award sizes and timelines.
-
-## Community Fundraising and Crowdfunding
-
-Cover the grassroots approach. Many community murals are funded through a combination of local business sponsorship, individual donations, and crowdfunding platforms (GoFundMe, Kickstarter). Discuss what makes community-funded projects successful: a compelling story, visible community support, clear budgets, and named artists. Mention that matching donations from local businesses or foundations can significantly boost campaign momentum.
-
-## Municipal Budgets and Capital Improvement Plans
-
-Explain that some public art is funded directly through municipal budgets, parks and recreation departments, or capital improvement plans — not through arts-specific programs. This is how projects like streetscape improvements, park installations, and community center murals often get funded. The key is getting public art written into the budget during the planning phase. Encourage readers to attend budget hearings and advocate for arts line items.
-
-## Combining Funding Sources
-
-The practical reality: most public art projects are funded from multiple sources. A typical funding stack might look like: 40% percent-for-art allocation + 30% VCA grant + 20% local business sponsorship + 10% community fundraising. Walk through how to assemble a funding plan and sequence the applications (government grants often take 6–12 months). Emphasize that this is normal and expected — public art projects are rarely single-source funded.
-
-## How Untitled Mixed Media Works with Funded Projects
-
-Brief section explaining that UMM has experience navigating public funding processes, including RFP responses, community engagement requirements, and the documentation that government-funded projects require. This is not a sales pitch — it is a statement of capability. For organizations with approved funding looking for a muralist, link to the contact page.
-
----
-
-### Key internal links to include
-
-- [Public Art Murals in Richmond](/murals/public-art-murals-richmond-va) — primary service page for public and community art
-- [Contact](/contact) — CTA for organizations ready to discuss a funded project
+*Untitled Mixed Media paints public art murals for municipalities, nonprofits, and community organizations in Virginia. [Learn about our public art work](/murals/public-art-murals-richmond-va).*

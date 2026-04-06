@@ -7,45 +7,64 @@ author: "Spencer Bennett"
 featured: false
 ---
 
-## COPYWRITING GUIDE — This is a placeholder post
+Gold leaf lettering is the highest standard in sign painting. It has been for several hundred years. The reason is not tradition for tradition's sake: real gold leaf catches light in a way that no paint, ink, foil, or vinyl simulation can replicate. It moves with the light as you walk past it. It appears dimensional on a flat surface. At certain angles it seems to glow.
 
-**Target keyword:** "gold leaf lettering" / "gold leaf signs"
-**Search intent:** Informational with commercial undertone — someone curious about gold leaf who may become a buyer
-**Word count target:** 1,200–1,600 words
+Here is how it works, and why it matters.
 
-### What this post covers
+## The materials
 
-A craftsman's explanation of gold leaf lettering: what it actually is, how it differs from gold paint, the different types of gold leaf, the two main application methods, and why the result is worth the premium. Written to educate and quietly sell — by the end, the reader should understand why gold leaf costs more and why it is worth it.
+Gold leaf comes in books of 25 sheets. Each sheet is gold beaten to a thickness of roughly 0.1 microns, or about 400 times thinner than a human hair. At that thickness, the gold is translucent: held up to light, you can see through it. On a dark background, it appears rich and warm. On glass, it catches and reflects everything.
+
+**23-karat gold leaf** is the standard for exterior sign painting. Twenty-three karats means 23 parts gold and 1 part alloy. The alloy is typically silver or copper, added to give the leaf enough durability to handle outdoors. Pure 24-karat gold is too soft and reacts with sulfur compounds in the air over time.
+
+**12-karat gold leaf** is paler, with a more greenish-gold tone. Some sign painters use it for contrast or to achieve specific period looks. It is less common for commercial work.
+
+**Imitation gold leaf** (Dutch metal) is copper and zinc alloy, not gold. It is significantly cheaper and tarnishes within months without protective coating. You can use it for interior work where the coating is controlled, but it should not be used for exterior or window gilding where it will be exposed to air.
+
+## Oil gilding vs water gilding
+
+**Oil gilding** is the standard for commercial sign painting. A slow-drying oil size (adhesive) is brushed onto the prepared surface. The sign painter waits for the size to reach the right tack: not wet enough to move, not dry enough to reject the leaf. At the right moment, the gold leaf is applied and gently pressed into the size. It adheres. The excess is removed with a soft brush.
+
+The result is a matte gold surface. For glass gilding, a protective backing coat is applied over the gold on the interior face of the glass. This "backing" coat is what you are seeing from the outside, with the gold sandwiched between the glass and the backing. It produces a surface that is protected from handling and weather indefinitely.
+
+**Water gilding** is the technique used in fine art and furniture restoration. It involves multiple layers of clay-based gesso and bole, burnished and wetted, then the leaf is applied to the wet surface and adhered by surface tension. The surface can then be burnished to an extremely high, mirror-like shine. Water gilding is more labor-intensive and unsuitable for outdoor environments. It is occasionally used for interior display signs or framed work.
+
+For storefront lettering, oil gilding on glass is the correct method.
+
+## How window gilding works
+
+Reverse glass gilding is the technique behind the gold-letter storefronts you see on older commercial buildings. The process works on the interior face of the glass and is viewed from the exterior.
+
+The letter forms are drawn, transferred, or projected onto the glass in reverse (mirror image). A slow-dry oil size is painted within the letter outlines. When the size reaches the correct tack, 23-karat leaf is laid down and pressed gently into contact with the glass. The excess is cleared away.
+
+A protective coat of backing paint (typically japan black, red ochre, or an opaque color) is applied over the gold on the glass interior. This backing coat protects the gold from the air, from cleaning, and from handling. From the street, the observer sees gold through the glass, illuminated by whatever light hits the exterior. The effect changes dramatically with the time of day and the season.
+
+Done correctly, a reverse glass gilded sign protected by a proper backing coat will last for decades without any deterioration of the gold itself. The glass protects the leaf. The backing protects it from the other side.
+
+## Why real gold looks different
+
+Vinyl gold lettering, gold paint, and gold foil all simulate gold through color. They match the hue but not the behavior.
+
+Real gold leaf has a metallic crystalline structure. Light reflects off its surface differently at different angles, because the microscopic surface of the leaf is not flat. It scatters light rather than reflecting it uniformly. This produces the characteristic movement of gold leaf: the apparent shimmer and depth that changes as you walk past it.
+
+Gold paint achieves similar effects with metallic powder suspended in binder, but the particles are suspended in a film rather than being a continuous metal surface. The effect is close but not identical, and it degrades as the binder ages.
+
+Vinyl gold foil is a printed simulation. At close range, the angle-dependent behavior of real gold is simply absent. The surface appears flat regardless of the viewing angle.
+
+## When to use it
+
+Gold leaf lettering makes sense for:
+
+- **Storefront identification** where the business wants to signal permanence, craft, and establishment
+- **Law firms, accountants, and professional services** where the gold standard is literally a professional tradition
+- **Restaurants and bars** wanting to evoke the quality of classic establishments
+- **Historic buildings** where the architectural character calls for period-appropriate signage
+- **Any business** that wants its sign to be distinctly different from every other sign on the block
+
+It does not make sense for temporary signage, frequently changed promotional copy, or situations where the cost premium cannot be justified by the longevity of the content.
+
+The price premium over painted lettering is real. For storefront identification that does not change, it is usually worth it.
 
 ---
 
-## What Gold Leaf Actually Is
-
-Explain that gold leaf is real gold hammered into sheets thinner than a human hair (roughly 0.1 microns). It is not paint, not foil, not metallic vinyl. It is the same material used in illuminated manuscripts and gilded architecture for centuries. This matters because real gold does not tarnish, does not fade, and reflects light in a way no synthetic material can replicate.
-
-## Types of Gold Leaf: 23k, 12k, and Imitation
-
-Break down the three main options. 23-karat (nearly pure gold, deepest warm tone, highest cost, never tarnishes). 12-karat white gold (silver-gold alloy, cooler tone, slightly less expensive). Imitation gold leaf (brass alloy, called composition leaf or Dutch metal — much cheaper, but tarnishes without a protective clear coat). Be honest about when imitation is acceptable (interior applications, budget projects) and when real gold is the right call (exterior signs, high-end storefronts, anything meant to last decades).
-
-## Water Gilding vs. Oil Gilding
-
-Explain the two primary methods. Water gilding: the traditional technique using gesso, bole (colored clay), and water-activated sizing. Produces a brilliant, burnishable finish. Primarily used for frames, architectural details, and interior work. Oil gilding: uses oil-based sizing (adhesive) applied directly to the surface. The gold cannot be burnished but adheres well to exterior surfaces, glass, and wood. This is the method used for most sign work. Keep this accessible — the reader is not a gilder, they just want to understand what they are paying for.
-
-## The Sizing Step: Why Timing Is Everything
-
-A short section on the adhesive layer (sizing) that makes gold leaf stick. Explain that the sizing must reach the right tack — too wet and the gold wrinkles, too dry and it will not adhere. This window can be as short as 15 minutes depending on temperature and humidity. This is where skill and experience matter most. It is not a process that can be rushed or automated.
-
-## Why Gold Catches Light Differently Than Paint
-
-Explain the physics briefly: gold leaf is a continuous metallic surface that reflects light specularly (like a mirror), while gold paint contains suspended particles that scatter light diffusely. The result is that gold leaf appears to glow from within, especially in changing light conditions — morning sun, evening light, streetlamps. This is why gold leaf storefronts stop people on the sidewalk.
-
-## Where Gold Leaf Works Best
-
-Practical applications: window lettering (reverse gilding on glass), wooden sign boards, door transoms, address numbers, interior feature walls. Mention that gold leaf on glass is one of the most traditional and enduring forms of commercial signage — many century-old examples survive. Link to the gold leaf signs and window lettering service pages.
-
----
-
-### Key internal links to include
-
-- [Gold Leaf Signs](/hand-painted-signs/gold-leaf-signs) — primary service page for gold leaf work
-- [Window Lettering](/hand-painted-signs/window-lettering) — link when discussing reverse gilding on glass
+*Untitled Mixed Media applies gold leaf lettering to storefronts, windows, and interior spaces in Richmond, Virginia. [See our sign work](/hand-painted-signs) or [request a quote.](mailto:hello@untitledmixedmedia.com)*

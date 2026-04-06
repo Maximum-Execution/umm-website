@@ -6,6 +6,11 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import SlideInCTA from '../../components/SlideInCTA.astro';
+import { getCollection } from 'astro:content';
+
+const signProjects = (await getCollection('projects'))
+  .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('sign')))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout
@@ -137,6 +142,37 @@ import SlideInCTA from '../../components/SlideInCTA.astro';
           />
         </div>
       </section>
+
+      {/* Featured Work */}
+      {signProjects.length > 0 && (
+        <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
+          <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Featured Sign Work
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-8">
+            {signProjects.slice(0, 4).map((project) => (
+              <a href={`/work/${project.id}`} class="group block overflow-hidden" data-animate>
+                <div class="aspect-[16/10] overflow-hidden bg-midnight-graphite">
+                  <img
+                    src={project.data.cover}
+                    alt={project.data.title}
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="mt-4 mb-8">
+                  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors mb-2" style="font-size: var(--text-fluid-xl);">
+                    {project.data.title}
+                  </h3>
+                  <p class="font-body text-shadow-gray line-clamp-2" style="font-size: var(--text-fluid-sm);">
+                    {project.data.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <!-- Cross-hub link -->
       <p class="font-body text-shadow-gray mb-16" style="font-size: var(--text-fluid-lg);">

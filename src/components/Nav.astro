@@ -82,20 +82,64 @@ const navLinks = [
   const closeIcon = document.getElementById('close-icon');
   const nav = document.getElementById('main-nav');
 
-  btn?.addEventListener('click', () => {
-    const isOpen = menu?.classList.toggle('hidden') === false;
-    menuIcon?.classList.toggle('hidden', isOpen);
-    closeIcon?.classList.toggle('hidden', !isOpen);
-    btn.setAttribute('aria-expanded', String(isOpen));
-  });
+  function getFocusableElements(): HTMLElement[] {
+    if (!menu) return [];
+    return Array.from(
+      menu.querySelectorAll<HTMLElement>('a[href], button, [tabindex]:not([tabindex="-1"])')
+    );
+  }
 
-  function closeMenu() {
+  function trapFocus(e: KeyboardEvent): void {
+    if (e.key !== 'Tab') return;
+    const focusable = getFocusableElements();
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  function openMenu(): void {
+    menu?.classList.remove('hidden');
+    menuIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    btn?.setAttribute('aria-expanded', 'true');
+    document.addEventListener('keydown', trapFocus);
+    // Focus first link after menu opens
+    requestAnimationFrame(() => {
+      const focusable = getFocusableElements();
+      if (focusable.length > 0) focusable[0].focus();
+    });
+  }
+
+  function closeMenu(): void {
     menu?.classList.add('hidden');
     menuIcon?.classList.remove('hidden');
     closeIcon?.classList.add('hidden');
     btn?.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('keydown', trapFocus);
     btn?.focus();
   }
+
+  btn?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('hidden') === false;
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
   // Close mobile menu on link click
   menu?.querySelectorAll('a').forEach((link) => {
@@ -109,7 +153,7 @@ const navLinks = [
     }
   });
 
-  // Nav background on scroll — passive listener, classList toggle is compositor-friendly
+  // Nav background on scroll
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {

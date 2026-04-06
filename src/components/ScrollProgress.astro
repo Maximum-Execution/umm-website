@@ -1,0 +1,44 @@
+---
+// ScrollProgress — thin bar at top of viewport showing scroll depth
+// Uses CSS scroll-timeline where supported, JS fallback otherwise
+---
+
+<div
+  id="scroll-progress"
+  class="fixed top-0 left-0 h-[3px] bg-titanium-white/30 z-[60] origin-left"
+  style="transform: scaleX(0); will-change: transform;"
+  aria-hidden="true"
+></div>
+
+<script>
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) throw new Error('scroll-progress element not found');
+
+  // Check for CSS scroll-timeline support
+  if (CSS.supports('animation-timeline', 'scroll()')) {
+    bar.style.animation = 'scroll-progress linear';
+    bar.style.animationTimeline = 'scroll()';
+    bar.style.transform = '';
+  } else {
+    // JS fallback
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = scrollMax > 0 ? window.scrollY / scrollMax : 0;
+          bar.style.transform = `scaleX(${progress})`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+</script>
+
+<style>
+  @keyframes scroll-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+</style>

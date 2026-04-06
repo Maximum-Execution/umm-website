@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
+import ScrollProgress from '../../components/ScrollProgress.astro';
 import Footer from '../../components/Footer.astro';
 import Button from '../../components/Button.astro';
 
@@ -24,6 +25,12 @@ const allProjects = (await getCollection('projects'))
 const currentIndex = allProjects.findIndex((p) => p.id === project.id);
 const prevProject = allProjects[currentIndex - 1] ?? allProjects[allProjects.length - 1];
 const nextProject = allProjects[currentIndex + 1] ?? allProjects[0];
+
+// Determine hub link based on tags
+const isMural = tags.some((t: string) => t.toLowerCase().includes('mural'));
+const isSign = tags.some((t: string) => t.toLowerCase().includes('sign'));
+const hubLink = isMural ? '/murals' : isSign ? '/hand-painted-signs' : null;
+const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign work' : '';
 ---
 
 <BaseLayout
@@ -32,6 +39,7 @@ const nextProject = allProjects[currentIndex + 1] ?? allProjects[0];
   ogImage={cover}
 >
   <Nav />
+  <ScrollProgress />
   <main class="pt-24">
     <!-- Title + metadata line -->
     <div class="px-6 lg:px-12 mb-8">
@@ -120,6 +128,18 @@ const nextProject = allProjects[currentIndex + 1] ?? allProjects[0];
       </div>
     </div>
 
+    {/* Full-bleed image break */}
+    {project.data.images && project.data.images.length > 0 && (
+      <div class="w-full my-16" data-animate="fade">
+        <img
+          src={project.data.images[0]}
+          alt={`${title} — detail`}
+          class="w-full h-auto object-cover"
+          loading="lazy"
+        />
+      </div>
+    )}
+
     <!-- CTA block -->
     <div class="px-6 lg:px-12 py-20 border-t border-slate-gray">
       <div class="max-w-7xl mx-auto text-center">
@@ -131,6 +151,17 @@ const nextProject = allProjects[currentIndex + 1] ?? allProjects[0];
         </Button>
       </div>
     </div>
+
+    {/* Cross-link back to hub */}
+    {hubLink && (
+      <div class="px-6 lg:px-12 pb-12">
+        <div class="max-w-7xl mx-auto">
+          <a href={hubLink} class="font-sans text-smoke-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors">
+            &larr; {hubLabel}
+          </a>
+        </div>
+      </div>
+    )}
 
     <!-- Prev / Next Navigation -->
     <nav class="px-6 lg:px-12 border-t border-slate-gray">

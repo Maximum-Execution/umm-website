@@ -5,10 +5,13 @@ import Footer from '../components/Footer.astro';
 import HeroSection from '../components/sections/HeroSection.astro';
 import FeaturedGrid from '../components/sections/FeaturedGrid.astro';
 import BrandMarquee from '../components/sections/BrandMarquee.astro';
-// CredibilityStrip removed — stats were placeholder/unverified. Re-add when real numbers are available.
+import StakesSection from '../components/sections/StakesSection.astro';
+import GuideSection from '../components/sections/GuideSection.astro';
 import ProcessSection from '../components/sections/ProcessSection.astro';
+import ValuePropSection from '../components/sections/ValuePropSection.astro';
 import TestimonialSection from '../components/sections/TestimonialSection.astro';
 import ServiceShowcase from '../components/sections/ServiceShowcase.astro';
+import ExplanatorySection from '../components/sections/ExplanatorySection.astro';
 import JournalCard from '../components/JournalCard.astro';
 import CTABlock from '../components/CTABlock.astro';
 import { getCollection } from 'astro:content';
@@ -30,14 +33,26 @@ const journalPosts = (await getCollection('journal'))
     {/* 3. Brand Marquee — scrolling text rhythm break (Colossal Media pattern) */}
     <BrandMarquee />
 
-    {/* 4. Process — 3 steps with imagery */}
+    {/* 4. Stakes — what's at stake if they don't act */}
+    <StakesSection />
+
+    {/* 5. Guide — empathy + authority */}
+    <GuideSection />
+
+    {/* 6. Process — 3 steps with imagery */}
     <ProcessSection />
 
-    {/* 6. Testimonial — full-width pull quote */}
+    {/* 7. Value Prop — what you get */}
+    <ValuePropSection />
+
+    {/* 8. Testimonial — full-width pull quote */}
     <TestimonialSection />
 
-    {/* 7. Services — image-backed showcase cards */}
+    {/* 9. Services — image-backed showcase cards */}
     <ServiceShowcase />
+
+    {/* 10. Explanatory — full brand story */}
+    <ExplanatorySection />
 
     {/* 7b. Brand Mark Callout — $500 entry point */}
     <section class="bg-midnight-graphite border-y border-slate-gray py-16 lg:py-20 px-6 lg:px-12">

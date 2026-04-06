@@ -84,9 +84,12 @@ const navLinks = [
 
   function getFocusableElements(): HTMLElement[] {
     if (!menu) return [];
-    return Array.from(
+    const menuItems = Array.from(
       menu.querySelectorAll<HTMLElement>('a[href], button, [tabindex]:not([tabindex="-1"])')
     );
+    // Include the close/toggle button (outside #mobile-menu) in the trap cycle
+    if (btn) menuItems.unshift(btn as HTMLElement);
+    return menuItems;
   }
 
   function trapFocus(e: KeyboardEvent): void {

@@ -117,10 +117,10 @@ const muralProjects = (await getCollection('projects'))
           <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
             Featured Projects
           </h2>
-          <div class="grid sm:grid-cols-2 gap-6">
-            {muralProjects.map((project) => (
+          <div class="grid sm:grid-cols-2 gap-8">
+            {muralProjects.slice(0, 4).map((project) => (
               <a href={`/work/${project.id}`} class="group block overflow-hidden" data-animate>
-                <div class="aspect-[4/3] overflow-hidden bg-midnight-graphite">
+                <div class="aspect-[16/10] overflow-hidden bg-midnight-graphite">
                   <img
                     src={project.data.cover}
                     alt={project.data.title}
@@ -129,11 +129,14 @@ const muralProjects = (await getCollection('projects'))
                   />
                 </div>
                 <div class="mt-4 mb-8">
-                  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors" style="font-size: var(--text-fluid-xl);">
+                  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors mb-2" style="font-size: var(--text-fluid-xl);">
                     {project.data.title}
                   </h3>
-                  <div class="flex gap-2 mt-1">
-                    {project.data.tags.map((tag: string) => (
+                  <p class="font-body text-shadow-gray line-clamp-2" style="font-size: var(--text-fluid-sm);">
+                    {project.data.description}
+                  </p>
+                  <div class="flex gap-2 mt-2">
+                    {project.data.tags.slice(0, 3).map((tag: string) => (
                       <span class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
                         {tag}
                       </span>

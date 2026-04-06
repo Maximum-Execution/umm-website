@@ -157,6 +157,21 @@ const breadcrumbNav = [
         </p>
       </div>
 
+      <!-- Trust Signal -->
+      <p class="font-mono text-smoke-gray uppercase text-center mt-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        50+ murals painted across Richmond, VA
+      </p>
+
+      <!-- Testimonial Pull Quote -->
+      <blockquote class="border-l-2 border-slate-gray pl-6 my-8" data-animate="fade">
+        <p class="font-heading text-titanium-white italic mb-3" style="font-size: var(--text-fluid-lg);">
+          "Spencer painted our restaurant mural and we get compliments on it every single day."
+        </p>
+        <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Past client, Richmond VA
+        </cite>
+      </blockquote>
+
       <!-- Lead Capture Form -->
       <div id="lead-form-wrapper" class="max-w-xl mb-16 hidden">
         <div class="border-t border-slate-gray pt-8">
@@ -376,8 +391,11 @@ const breadcrumbNav = [
         hiddenComplexity.value = complexity;
 
         estimateDisplay.classList.remove('hidden');
-        leadFormWrapper.classList.remove('hidden');
         estimateDisplay.classList.remove('estimate-updating');
+        // Delay form reveal so user reads the estimate first
+        setTimeout(() => {
+          leadFormWrapper.classList.remove('hidden');
+        }, 1500);
       }, 150);
     });
   }

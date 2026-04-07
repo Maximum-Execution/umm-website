@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import heroPoster from '../../assets/images/hero-poster.jpg';
+
 interface Props {
   headline?: string;
   subline?: string;
   videoSrc?: string;
-  posterSrc?: string;
   ctaLabel?: string;
   ctaHref?: string;
 }
@@ -12,7 +14,6 @@ const {
   headline = 'Landmarks, not lookalikes.',
   subline = 'Hand-painted murals, signs, and restorations in Richmond, Virginia. We help you build your idea into something worth painting.',
   videoSrc = '/video/hero-reel.mp4',
-  posterSrc = '/images/hero-poster.jpg',
   ctaLabel = 'Schedule Your Free Discovery Session',
   ctaHref = '/contact',
 } = Astro.props;
@@ -20,8 +21,8 @@ const {
 
 <section class="relative min-h-screen flex items-end overflow-hidden">
   <!-- Background Image (video removed — too large for Cloudflare Pages 25MB limit. Re-add when compressed to <20MB) -->
-  <img
-    src={posterSrc}
+  <Image
+    src={heroPoster}
     alt="Hand-painted mural and sign work by Untitled Mixed Media in Richmond, Virginia"
     class="absolute inset-0 w-full h-full object-cover"
     loading="eager"

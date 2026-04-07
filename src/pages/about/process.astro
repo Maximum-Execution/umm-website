@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+import processRender from '../../assets/images/process-render.jpg';
+import processPaint from '../../assets/images/process-paint.jpg';
 ---
 
 <BaseLayout title="Our Process — The Provenance Method | Untitled Mixed Media" description="Discovery, design, execution, completion. The four phases of every Untitled Mixed Media project, from site visit to Certificate of Provenance.">
@@ -98,16 +101,16 @@ import RelatedPages from '../../components/RelatedPages.astro';
 
       <div class="grid md:grid-cols-2 gap-1 mb-20">
         <div class="aspect-[4/3] overflow-hidden">
-          <img
-            src="/images/process-render.jpg"
+          <Image
+            src={processRender}
             alt="Photorealistic 3D render of a mural mockup on a real building wall"
             class="w-full h-full object-cover"
             loading="lazy"
           />
         </div>
         <div class="aspect-[4/3] overflow-hidden">
-          <img
-            src="/images/process-paint.jpg"
+          <Image
+            src={processPaint}
             alt="Finished hand-painted mural on a building exterior"
             class="w-full h-full object-cover"
             loading="lazy"

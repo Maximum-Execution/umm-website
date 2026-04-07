@@ -90,12 +90,16 @@ const {
       void el.offsetHeight;
       el.classList.remove('translate-y-[120%]', 'opacity-0');
       el.classList.add('translate-y-0', 'opacity-100');
+
+      // Announce to screen readers
+      el.setAttribute('aria-live', 'polite');
     }
 
     function hideSlideIn() {
       localStorage.setItem(STORAGE_KEY, String(Date.now()));
       el.classList.remove('translate-y-0', 'opacity-100');
       el.classList.add('translate-y-[120%]', 'opacity-0');
+      el.removeAttribute('aria-live');
 
       setTimeout(() => {
         el.classList.add('hidden');
@@ -113,6 +117,13 @@ const {
 
     // Close handler
     closeBtn?.addEventListener('click', hideSlideIn);
+
+    // Escape key dismisses
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && shown && !el.classList.contains('hidden')) {
+        hideSlideIn();
+      }
+    });
 
     // CTA click tracks dismissal
     ctaLink?.addEventListener('click', () => {

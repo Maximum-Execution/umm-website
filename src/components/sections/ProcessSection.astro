@@ -1,11 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+import processVisit from '../../assets/images/process-visit.jpg';
+import processRender from '../../assets/images/process-render.jpg';
+import processPaint from '../../assets/images/process-paint.jpg';
+
 const steps = [
   {
     number: '01',
     label: 'Discover',
     title: 'We help you build your idea into something worth painting.',
     body: "Most people don't walk in with a finished concept. That's the point. We sit down, listen to your ideas, your stories, and your goals for the space. Then we visit your building and study what's already there: the materials, the architecture, the neighborhood, the history. Sometimes the most important thing isn't in the building. It's in a moment that happened there, a story the place holds. Our process helps us think about your project in a way most muralists never would. We don't follow the traditional path. We help you take what you have and turn it into something more meaningful than what you started with.",
-    image: '/images/process-visit.jpg',
+    image: processVisit,
     imageAlt: 'Spencer in conversation with a client during a discovery session',
   },
   {
@@ -13,7 +18,7 @@ const steps = [
     label: 'Design',
     title: 'We turn everything we learned into a design that could only belong to your building.',
     body: "All the ideas, stories, and details from discovery feed into the design. We create a photorealistic render showing the finished work on your actual wall. Not a sketch on paper. A picture of what your building will look like when we're done. You review it. You request changes. Nothing moves forward until you say \"that's it.\"",
-    image: '/images/process-render.jpg',
+    image: processRender,
     imageAlt: 'Photorealistic Blender render showing a mural design on a real building',
   },
   {
@@ -21,7 +26,7 @@ const steps = [
     label: 'Install',
     title: 'We paint it by hand and build it to last.',
     body: "The approved design goes on the wall. Professional-grade paints matched to your surface and Richmond's climate. UV-protective sealant. Anti-graffiti coating where needed. Hand-painted, sealed, and protected. Built to hold up for 20+ years.",
-    image: '/images/process-paint.jpg',
+    image: processPaint,
     imageAlt: 'Spencer hand-painting a mural on an exterior wall',
   },
 ];
@@ -55,12 +60,11 @@ const steps = [
             {/* Image */}
             <div class={`overflow-hidden ${isReversed ? 'lg:[direction:ltr]' : ''}`} data-animate="scale">
               <div class="aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
-                <img
+                <Image
                   src={step.image}
                   alt={step.imageAlt}
                   class="w-full h-full object-cover"
                   loading="lazy"
-                  onerror="this.style.display='none'"
                 />
               </div>
             </div>

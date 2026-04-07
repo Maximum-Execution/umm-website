@@ -60,6 +60,9 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
           <img
             src={cover}
             alt={title}
+            width="2100"
+            height="900"
+            decoding="async"
             class="w-full h-full object-cover"
             loading="eager"
           />
@@ -134,6 +137,9 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
         <img
           src={project.data.images[0]}
           alt={`${title} — detail`}
+          width="1920"
+          height="1080"
+          decoding="async"
           class="w-full h-auto object-cover"
           loading="lazy"
         />

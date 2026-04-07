@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+import serviceMurals from '../../assets/images/service-murals.jpg';
 ---
 
 <BaseLayout title="Philosophy — Meaning Discovered, Not Imposed | Untitled Mixed Media" description="Places become distinctive when meaning is discovered from them, not imposed on them. The philosophy behind every Untitled Mixed Media project.">
@@ -86,8 +88,8 @@ import RelatedPages from '../../components/RelatedPages.astro';
       </div>
 
       <div class="aspect-[16/9] overflow-hidden mb-20">
-        <img
-          src="/images/service-murals.jpg"
+        <Image
+          src={serviceMurals}
           alt="Hand-painted mural in context with its surrounding neighborhood"
           class="w-full h-full object-cover"
           loading="lazy"

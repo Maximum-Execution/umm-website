@@ -9,7 +9,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
 
 <BaseLayout
   title="About | Untitled Mixed Media | Hand-Painted Murals and Signs in Richmond, VA"
-  description="We don't start with a sketch. We start with research. Hand-painted murals and signs in Richmond, Virginia. Fully insured. No templates. No signature style."
+  description="We don't start with a sketch. We start with questions. Hand-painted murals and signs in Richmond, Virginia. Fully insured. No templates. No signature style."
 >
   <Nav />
   <main class="pt-24 pb-16">
@@ -19,52 +19,74 @@ import ServiceCard from '../../components/ServiceCard.astro';
         { label: 'About' },
       ]} />
 
-      <!-- Hero: split layout -->
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
-        <div class="lg:col-span-7">
-          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            About
-          </p>
-          <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
-            Most artists want everyone to know their name. We want everyone to know yours.
-          </h1>
-        </div>
-        <div class="lg:col-span-5 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
-            Your building is doing the talking whether you want it to or not. Right now it's saying the same thing as every other storefront on the block: nothing. You've put real work into your business. The product is right. The team is solid. But people drive past every day without slowing down. The outside doesn't match what's inside.
-          </p>
-        </div>
+      <!-- Hero -->
+      <div class="max-w-4xl mb-20">
+        <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          About
+        </p>
+        <h1 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
+          Most artists want everyone to know their name. We want everyone to know yours.
+        </h1>
       </div>
 
       <!-- Pull quote — full width -->
       <div class="text-center py-12 mb-20" data-animate="settle">
         <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
-          We don't start with a sketch. We start with research.
+          We don't start with a sketch. We start with questions.
         </p>
       </div>
 
       <!-- Two-column editorial body -->
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
         <div class="space-y-6" data-animate="fade" data-animate-delay="1">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
+            Why I care about this
+          </h2>
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
-            Most muralists show up with a portfolio and ask what you want on your wall. I show up with questions.
+            I've seen what happens when nobody thinks about what a mural or sign should be about before they start making it. The client gets something that looks fine. Technically competent. Completely forgettable. It fills a wall but it doesn't say anything. Six months later, nobody stops for it. A year later, the client wishes they'd done something different. I've watched it happen to good people with good businesses, and it bothered me enough to build a studio around solving it.
           </p>
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            What's the story behind this building? What does the neighborhood look like at 7 AM versus 7 PM? What do your customers notice when they walk up? What do they miss? I spend time in the space before I ever think about a design. I study the materials, the architecture, the light, the history. The answers are already in the building. My job is to find them and paint them.
+            That's why Untitled Mixed Media exists. Not because I wanted to be a muralist. Because I kept seeing the gap between what people imagined their space could be and what the industry was actually giving them. Muralists who paint their own style on your wall and call it custom. Sign shops that print your logo on vinyl and call it a sign. Nobody sitting down and asking the harder questions: what is this project really about? What should people feel when they see it? What makes this place different from the one next door?
           </p>
           <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            When the design comes from what's already there, the result is different. The mural doesn't look like it was applied to the building. It looks like it was always part of it.
+            I ask those questions. That's where every project starts.
           </p>
         </div>
         <div class="space-y-6" data-animate="fade" data-animate-delay="2">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
+            How I work
+          </h2>
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            The name says it. "Untitled" because every project starts blank. No templates loaded. No predetermined style to impose. We don't have a signature look, and that's the point. The work should look like it belongs to your building, not to us. "Mixed media" because the question is never "what medium do we work in." The question is "what does this specific place, this specific story, this specific moment need?" Whatever that answer requires, that's what we use.
+            I'm Spencer Bennett. I run Untitled Mixed Media out of Richmond, Virginia. I paint murals and signs by hand for businesses, property owners, and public institutions.
           </p>
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            I'm Spencer Bennett. I run Untitled Mixed Media out of Richmond, Virginia. I paint murals and signs for businesses, property owners, and public institutions. Mineral paints, gold leaf, commercial-grade enamels. Materials that weather into a building's character instead of peeling off it. Fully insured. Licensed in Virginia. Experienced in historic districts.
+            Before I design anything, I spend time in the space. I study the building, the block, the materials, the light. For murals, I'm looking for what I call the Landmark Moment: the one specific thing the mural should be about. For signs, I'm figuring out what the name stands for and how the sign should carry it. The way your sign is made tells people everything about how you run your business.
           </p>
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            If you have a wall, a building, or even just an idea you haven't figured out yet, that's enough. I'll help you build it into something worth painting.
+            I use professional-grade paints matched to the surface and the climate. UV-protective sealants. Anti-graffiti coatings when the location calls for it. Weather protection systems built for Virginia humidity. I paint on walls, wood, concrete, metal, glass, and ground surfaces that most muralists won't touch. Whatever the project needs to hold up for 20+ years, that's what I use. Fully insured. Licensed in Virginia. Experienced in historic districts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Second editorial row -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
+        <div class="space-y-6" data-animate="fade" data-animate-delay="3">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
+            The name
+          </h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            "Untitled" because every project starts blank. No templates loaded. No predetermined style to impose. We don't have a signature look, and that's the point. The work should look like it belongs to your building, not to us.
+          </p>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            "Mixed media" because the question is never "what medium do we work in." The question is "what does this specific place need?" Whatever the answer requires, that's what we use.
+          </p>
+        </div>
+        <div class="space-y-6" data-animate="fade" data-animate-delay="4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
+            If you're not sure what you want yet
+          </h2>
+          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            That's fine. Most people aren't. You don't need a finished concept to reach out. You don't need a mood board or a Pinterest folder or a detailed brief. If you have a wall, a building, or even just an idea you haven't figured out yet, that's enough. I'll help you build it into something worth painting.
           </p>
         </div>
       </div>
@@ -74,8 +96,9 @@ import ServiceCard from '../../components/ServiceCard.astro';
         <div class="lg:col-span-2" data-animate="fade" data-animate-delay="1">
           <ServiceCard
             title="Process"
-            description="How we discover the story your building already holds."
+            description="How we go from your first call to finished work on the wall."
             href="/about/process"
+            linkText="See the process"
           />
         </div>
         <div data-animate="fade" data-animate-delay="2">
@@ -83,6 +106,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
             title="Philosophy"
             description="Why we start with discovery, not design."
             href="/about/philosophy"
+            linkText="Read the philosophy"
           />
         </div>
       </div>
@@ -90,8 +114,9 @@ import ServiceCard from '../../components/ServiceCard.astro';
         <div data-animate="fade" data-animate-delay="3">
           <ServiceCard
             title="Insurance & Licensing"
-            description="Credentials, coverage, and compliance."
+            description="$1M general liability. Licensed in Virginia. Experienced in historic districts."
             href="/about/insurance-and-licensing"
+            linkText="See credentials"
           />
         </div>
       </div>

@@ -6,9 +6,7 @@ import HeroSection from '../components/sections/HeroSection.astro';
 import FeaturedGrid from '../components/sections/FeaturedGrid.astro';
 import BrandMarquee from '../components/sections/BrandMarquee.astro';
 import StakesSection from '../components/sections/StakesSection.astro';
-import GuideSection from '../components/sections/GuideSection.astro';
 import ProcessSection from '../components/sections/ProcessSection.astro';
-import ValuePropSection from '../components/sections/ValuePropSection.astro';
 import TestimonialSection from '../components/sections/TestimonialSection.astro';
 import ServiceShowcase from '../components/sections/ServiceShowcase.astro';
 import ExplanatorySection from '../components/sections/ExplanatorySection.astro';
@@ -24,47 +22,41 @@ const journalPosts = (await getCollection('journal'))
 <BaseLayout>
   <Nav />
   <main>
-    {/* 1. Hero — full-screen video with headline */}
+    {/* 1. Hero */}
     <HeroSection />
 
-    {/* 2. Featured Projects — asymmetric full-bleed grid */}
+    {/* 2. Selected Work */}
     <FeaturedGrid />
 
-    {/* 3. Brand Marquee — scrolling text rhythm break (Colossal Media pattern) */}
+    {/* 3. Marquee */}
     <BrandMarquee />
 
-    {/* 4. Stakes — what's at stake if they don't act */}
+    {/* 4. Problem */}
     <StakesSection />
 
-    {/* 5. Guide — empathy + authority */}
-    <GuideSection />
-
-    {/* 6. Process — 3 steps with imagery */}
+    {/* 5. How It Works */}
     <ProcessSection />
 
-    {/* 7. Value Prop — what you get */}
-    <ValuePropSection />
-
-    {/* 8. Testimonial — full-width pull quote */}
+    {/* 6. Spencer Quote */}
     <TestimonialSection />
 
-    {/* 9. Services — image-backed showcase cards */}
+    {/* 7. Services */}
     <ServiceShowcase />
 
-    {/* 10. Explanatory — full brand story */}
+    {/* 8. Landmarks, Not Lookalikes */}
     <ExplanatorySection />
 
-    {/* 7b. Brand Mark Callout — $500 entry point */}
+    {/* 9. Brand Mark */}
     <section class="bg-midnight-graphite border-y border-slate-gray py-16 lg:py-20 px-6 lg:px-12">
       <div class="max-w-4xl mx-auto text-center" data-animate="fade">
         <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
           Starting at $500
         </p>
         <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
-          The Brand Mark: your logo, hand-painted in one day.
+          Your logo, hand-painted.
         </h2>
         <p class="font-body text-shadow-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
-          Wall or wood panel. Three shapes. Ghost-sign weathered finish. The fastest way to get hand-painted work on your wall.
+          Most people start here. You send your logo, we paint it by hand on wood or directly on your wall. No design meetings. No weeks of waiting. Just your name, painted with care, on a surface that lasts.
         </p>
         <a
           href="/brand-mark"
@@ -75,24 +67,7 @@ const journalPosts = (await getCollection('journal'))
       </div>
     </section>
 
-    {/* 7c. Estimator Callout — drives to mural cost estimator */}
-    <section class="px-6 lg:px-12 py-20" data-animate>
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-gray p-8 lg:p-12">
-        <div>
-          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-2xl);">
-            Wondering what your mural will cost?
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base);">
-            Get an instant estimate based on your wall size, surface, and design complexity.
-          </p>
-        </div>
-        <a href="/mural-cost-estimator" class="shrink-0 bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
-          Get a Price Estimate
-        </a>
-      </div>
-    </section>
-
-    {/* 8. Journal Preview — 3 recent posts, text-forward */}
+    {/* 10. Journal */}
     {journalPosts.length > 0 && (
       <section class="py-24 lg:py-32 px-6 lg:px-12 border-t border-slate-gray">
         <div class="max-w-7xl mx-auto">
@@ -128,7 +103,7 @@ const journalPosts = (await getCollection('journal'))
       </section>
     )}
 
-    {/* 9. CTA Block — question-format final conversion */}
+    {/* 11. Footer CTA */}
     <CTABlock />
   </main>
   <Footer />

@@ -8,24 +8,34 @@ const steps = [
   {
     number: '01',
     label: 'Discover',
-    title: 'We help you build your idea into something worth painting.',
-    body: "Most people don't walk in with a finished concept. That's the point. We sit down, listen to your ideas, your stories, and your goals for the space. Then we visit your building and study what's already there: the materials, the architecture, the neighborhood, the history. Sometimes the most important thing isn't in the building. It's in a moment that happened there, a story the place holds. Our process helps us think about your project in a way most muralists never would. We don't follow the traditional path. We help you take what you have and turn it into something more meaningful than what you started with.",
+    title: 'We start with questions, not sketches.',
+    body: [
+      "Most people reach out with a feeling, not a finished concept. That's normal. We sit down together and talk about what you're trying to do, what the space means to you, and what the people who walk past it should notice.",
+      "Then we visit the building. We study the materials, the architecture, the block, the light.",
+      "For murals, we're looking for what we call the Landmark Moment: the one specific thing your mural should be about. For signs, we're figuring out what your name stands for and how the sign should carry it. The way your sign is made tells people everything about how you run your business, before they ever walk through the door.",
+    ],
     image: processVisit,
     imageAlt: 'Spencer in conversation with a client during a discovery session',
   },
   {
     number: '02',
     label: 'Design',
-    title: 'We turn everything we learned into a design that could only belong to your building.',
-    body: "All the ideas, stories, and details from discovery feed into the design. We create a photorealistic render showing the finished work on your actual wall. Not a sketch on paper. A picture of what your building will look like when we're done. You review it. You request changes. Nothing moves forward until you say \"that's it.\"",
+    title: 'You see it on your actual wall before we paint anything.',
+    body: [
+      "We take everything from discovery and build a photorealistic render showing the finished work on your specific building. Not a sketch on paper. A picture of what your wall will actually look like when we're done.",
+      "You review it. You tell us what to change. We revise it. Nothing moves forward until you look at it and say \"that's it.\"",
+    ],
     image: processRender,
     imageAlt: 'Photorealistic Blender render showing a mural design on a real building',
   },
   {
     number: '03',
     label: 'Install',
-    title: 'We paint it by hand and build it to last.',
-    body: "The approved design goes on the wall. Professional-grade paints matched to your surface and Richmond's climate. UV-protective sealant. Anti-graffiti coating where needed. Hand-painted, sealed, and protected. Built to hold up for 20+ years.",
+    title: 'We paint it by hand. Built to last 20+ years.',
+    body: [
+      "The approved design goes on the wall. Professional-grade paints matched to your surface and Richmond's climate. UV-protective sealant. Anti-graffiti coating where needed.",
+      "When it's done, you get a Certificate of Provenance documenting where every visual element came from. So when someone asks about the work on your wall, you can tell them exactly why it looks the way it does.",
+    ],
     image: processPaint,
     imageAlt: 'Spencer hand-painting a mural on an exterior wall',
   },
@@ -84,12 +94,16 @@ const steps = [
               >
                 {step.title}
               </h3>
-              <p
-                class="font-body text-shadow-gray"
-                style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
-              >
-                {step.body}
-              </p>
+              <div class="space-y-4">
+                {step.body.map((paragraph: string) => (
+                  <p
+                    class="font-body text-shadow-gray"
+                    style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         );

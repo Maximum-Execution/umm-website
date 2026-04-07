@@ -5,22 +5,19 @@ import heroPoster from '../../assets/images/hero-poster.jpg';
 interface Props {
   headline?: string;
   subline?: string;
-  videoSrc?: string;
   ctaLabel?: string;
   ctaHref?: string;
 }
 
 const {
-  headline = 'Landmarks, not lookalikes.',
-  subline = 'Hand-painted murals, signs, and restorations in Richmond, Virginia. We help you build your idea into something worth painting.',
-  videoSrc = '/video/hero-reel.mp4',
+  headline = 'We help you build your idea into something worth painting.',
+  subline = 'Hand-painted murals and signs in Richmond, Virginia. We sit down with you, figure out what your project is really about, and paint it by hand.',
   ctaLabel = 'Schedule Your Free Discovery Session',
   ctaHref = '/contact',
 } = Astro.props;
 ---
 
 <section class="relative min-h-screen flex items-end overflow-hidden">
-  <!-- Background Image (video removed — too large for Cloudflare Pages 25MB limit. Re-add when compressed to <20MB) -->
   <Image
     src={heroPoster}
     alt="Hand-painted mural and sign work by Untitled Mixed Media in Richmond, Virginia"
@@ -35,10 +32,18 @@ const {
   <!-- Content -->
   <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
     <div class="max-w-5xl">
+      <p
+        class="font-mono text-smoke-gray uppercase mb-6"
+        style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+        data-animate
+      >
+        Richmond, Virginia
+      </p>
       <h1
         class="font-blackletter text-titanium-white mb-4"
         style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid); letter-spacing: 0;"
         data-animate
+        data-animate-delay="1"
       >
         {headline}
       </h1>
@@ -47,12 +52,12 @@ const {
           class="font-body text-soft-gray mb-10 max-w-2xl"
           style="font-size: var(--text-fluid-lg);"
           data-animate
-          data-animate-delay="1"
+          data-animate-delay="2"
         >
           {subline}
         </p>
       )}
-      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="2">
+      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="3">
         <a
           href={ctaHref}
           class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"

@@ -1,64 +1,24 @@
 ---
-import Button from '../Button.astro';
 ---
 
 <section id="about" class="py-[var(--spacing-section)] border-t border-slate-gray">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <!-- Full-width opening statement -->
-    <div class="max-w-4xl mb-20" data-animate="headline">
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Our Philosophy
-      </p>
-      <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;">
-        Most murals could be anywhere.
-        <span class="block mt-1">Ours could only be here.</span>
+    <div class="max-w-3xl" data-animate="headline">
+      <h2 class="font-heading text-titanium-white mb-12" style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;">
+        Landmarks, not lookalikes.
       </h2>
     </div>
 
-    <!-- Two-column editorial body -->
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
-      <div class="space-y-6" data-animate="fade" data-animate-delay="1">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
-          There is a problem with most public art and commercial signage. It is generic.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          Walk through any commercial district in any city and you will find murals that could have been painted anywhere. Technically skilled, visually appealing, and completely interchangeable. The same is true of signs that get replaced with mass-produced vinyl or LED imitations of what was once hand-crafted and specific to a building's character.
-        </p>
-        <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          We built Untitled Mixed Media to solve that problem.
-        </p>
-      </div>
-
-      <div class="space-y-6" data-animate="fade" data-animate-delay="2">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          Before we design anything, we go to the source. For a building, that means a full data collection session: photography from every angle and lighting condition, spectrometer readings measuring the actual color values of the physical materials, and a documented record of everything the space already contains.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          For a sign restoration, it means studying the original craftsmanship, matching the exact colors and letterforms, and bringing the sign back to what it was, not replacing it with something that looks close enough.
-        </p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          Every color in the finished work was measured from the actual source. Every shape was derived from the data we collected. The design is built from the bottom up, not sketched and then applied.
-        </p>
-      </div>
-    </div>
-
-    <!-- Pull quote — full width, centered -->
-    <div class="text-center py-16 border-t border-b border-slate-gray mb-20" data-animate="settle">
-      <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
-        The finished work is not applied to the building. It emerges from it.
+    <div class="max-w-3xl space-y-6" data-animate="fade" data-animate-delay="1">
+      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        A landmark is the building people use to give directions. "Turn left at the place with the mural." "Park across from the one with the hand-painted sign." It is the building people photograph without being asked, the one they walk into because the outside told them something worth hearing.
       </p>
-    </div>
-
-    <!-- CTA — right-aligned on desktop for asymmetry -->
-    <div class="lg:flex lg:justify-end" data-animate="fade">
-      <div class="lg:max-w-md">
-        <p class="font-body text-shadow-gray mb-6" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          We have delivered this process on commercial murals, sign restorations, and public art installations across Richmond. The methodology is documented. The results are permanent.
-        </p>
-        <Button href="mailto:hello@untitledmixedmedia.com">
-          Request Your Site Visit
-        </Button>
-      </div>
+      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        A lookalike is everything else. The vinyl banner that could be on any storefront in any city. The template mural that looks like the one in Denver, the one in Austin, and the one in Brooklyn. The blank wall that says nothing about the people behind it. Lookalikes blend in. They get walked past. They disappear.
+      </p>
+      <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        We paint landmarks. Murals built from real moments. Signs painted by hand with real intention. Work that belongs to your building, your block, and your story. It could not be copied onto anyone else's.
+      </p>
     </div>
   </div>
 </section>

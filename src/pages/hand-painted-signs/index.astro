@@ -15,7 +15,7 @@ const signProjects = (await getCollection('projects'))
 
 <BaseLayout
   title="Hand-Painted Signs — Untitled Mixed Media | Richmond VA Sign Painter"
-  description="Hand-painted signs, gold leaf lettering, window lettering, and sign restoration in Richmond, Virginia. Craft that outlasts vinyl."
+  description="Hand-painted signs, window lettering, and sign restoration in Richmond, Virginia. Craft that outlasts vinyl."
   breadcrumbItems={[
     { name: 'Home', url: '/' },
     { name: 'Work', url: '/work' },
@@ -23,7 +23,7 @@ const signProjects = (await getCollection('projects'))
   ]}
   service={{
     name: 'Hand-Painted Signs',
-    description: 'Hand-painted signs, gold leaf lettering, window lettering, and sign restoration in Richmond, Virginia.',
+    description: 'Hand-painted signs, window lettering, and sign restoration in Richmond, Virginia.',
     priceRange: '$500 - $10,000+',
   }}
 >
@@ -48,7 +48,7 @@ const signProjects = (await getCollection('projects'))
         </div>
         <div class="lg:col-span-5 lg:flex lg:items-end">
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
-            Vinyl signs start deteriorating the day they go up. Hand-painted lettering does the opposite. It ages into the building, developing the kind of patina that makes a business look established rather than temporary. Gold leaf, enamel, window gilding, and traditional sign-painting techniques that have lasted centuries. Every letter placed by hand.
+            Vinyl signs start deteriorating the day they go up. Hand-painted lettering does the opposite. It ages into the building, developing the kind of patina that makes a business look established rather than temporary. Enamel and traditional sign-painting techniques that have lasted centuries. Every letter placed by hand.
           </p>
         </div>
       </div>
@@ -61,21 +61,12 @@ const signProjects = (await getCollection('projects'))
       </div>
 
       <!-- Service cards: asymmetric grid -->
-      <div class="grid lg:grid-cols-3 gap-8 mb-8">
-        <div class="lg:col-span-2" data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Storefront Signs Richmond VA"
-            description="The first thing customers see. Painted lettering that makes your storefront impossible to walk past without noticing."
-            href="/hand-painted-signs/storefront-signs-richmond-va"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="Gold Leaf Signs"
-            description="23-karat gold leaf lettering applied by hand. Catches light in a way no paint, print, or vinyl can replicate. The highest standard in sign craft."
-            href="/hand-painted-signs/gold-leaf-signs"
-          />
-        </div>
+      <div class="mb-8" data-animate="fade" data-animate-delay="1">
+        <ServiceCard
+          title="Storefront Signs Richmond VA"
+          description="The first thing customers see. Painted lettering that makes your storefront impossible to walk past without noticing."
+          href="/hand-painted-signs/storefront-signs-richmond-va"
+        />
       </div>
 
       <div class="grid lg:grid-cols-3 gap-8 mb-8">
@@ -138,7 +129,7 @@ const signProjects = (await getCollection('projects'))
             <div class="border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="3">
               <ServiceCard
                 title="Why Hand-Painted Signs Last Longer"
-                description="The materials science behind longevity. What enamel, gold leaf, and proper surface preparation actually do, and why vinyl cannot compete."
+                description="The materials science behind longevity. What enamel and proper surface preparation actually do, and why vinyl cannot compete."
                 href="/hand-painted-signs/why-hand-painted-signs-last-longer"
               />
             </div>

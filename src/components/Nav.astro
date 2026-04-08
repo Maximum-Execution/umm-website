@@ -1,7 +1,17 @@
 ---
-const navLinks = [
+type NavChild = { label: string; href: string };
+type NavLink = { label: string; href: string; children?: NavChild[] };
+
+const navLinks: NavLink[] = [
   { label: 'About', href: '/about' },
-  { label: 'Gallery', href: '/work' },
+  {
+    label: 'Work',
+    href: '/work',
+    children: [
+      { label: 'Murals', href: '/murals' },
+      { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+    ],
+  },
   { label: 'Journal', href: '/journal' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -20,13 +30,38 @@ const navLinks = [
     <!-- Desktop Nav -->
     <ul class="hidden md:flex items-center gap-8">
       {navLinks.map((link) => (
-        <li>
+        <li class="relative group">
           <a
             href={link.href}
-            class="font-sans text-soft-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors"
+            class="font-sans text-soft-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors inline-flex items-center gap-1.5"
+            aria-haspopup={link.children ? 'true' : undefined}
           >
             {link.label}
+            {link.children && (
+              <svg class="w-2.5 h-2.5 opacity-70 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            )}
           </a>
+          {link.children && (
+            <ul
+              class="absolute top-full left-0 min-w-[13rem] bg-bone-black/95 backdrop-blur-md border border-slate-gray py-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-opacity duration-200"
+              role="menu"
+              aria-label={`${link.label} submenu`}
+            >
+              {link.children.map((child) => (
+                <li role="none">
+                  <a
+                    href={child.href}
+                    role="menuitem"
+                    class="block px-5 py-2.5 font-sans text-soft-gray text-xs tracking-[0.15em] uppercase hover:text-titanium-white hover:bg-midnight-graphite transition-colors whitespace-nowrap"
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ul>
@@ -57,13 +92,27 @@ const navLinks = [
   <div class="hidden md:hidden bg-bone-black/95 backdrop-blur-md border-t border-slate-gray" id="mobile-menu" role="region" aria-label="Mobile navigation">
     <ul class="flex flex-col items-center gap-6 py-8">
       {navLinks.map((link) => (
-        <li>
+        <li class="flex flex-col items-center gap-4">
           <a
             href={link.href}
             class="font-sans text-soft-gray text-base tracking-[0.15em] uppercase hover:text-titanium-white transition-colors"
           >
             {link.label}
           </a>
+          {link.children && (
+            <ul class="flex flex-col items-center gap-3" aria-label={`${link.label} submenu`}>
+              {link.children.map((child) => (
+                <li>
+                  <a
+                    href={child.href}
+                    class="font-sans text-smoke-gray text-xs tracking-[0.2em] uppercase hover:text-titanium-white transition-colors"
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ul>

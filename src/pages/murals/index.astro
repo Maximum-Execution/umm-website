@@ -5,8 +5,6 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import SlideInCTA from '../../components/SlideInCTA.astro';
 
 const muralProjects = (await getCollection('projects'))
   .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('mural')))
@@ -14,8 +12,8 @@ const muralProjects = (await getCollection('projects'))
 ---
 
 <BaseLayout
-  title="Murals — Untitled Mixed Media | Richmond VA Mural Painter"
-  description="Hand-painted murals for businesses, property owners, and public spaces in Richmond, Virginia. Every mural starts with your building's story."
+  title="Murals | Untitled Mixed Media | Richmond VA Mural Painter"
+  description="Hand-painted murals in Richmond, Virginia. Every mural starts with real discovery, so the finished work means something from the first day and lasts for decades."
   breadcrumbItems={[
     { name: 'Home', url: '/' },
     { name: 'Work', url: '/work' },
@@ -28,194 +26,280 @@ const muralProjects = (await getCollection('projects'))
   }}
 >
   <Nav />
-  <main class="pt-24 pb-16">
-    <!-- Hero: full-width split -->
+  <main class="pt-24">
     <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Work', href: '/work' },
         { label: 'Murals' },
       ]} />
-
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
-        <div class="lg:col-span-8">
-          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            Murals
-          </p>
-          <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
-            Your building becomes a landmark people photograph, remember, and use to give directions.
-          </h1>
-        </div>
-        <div class="lg:col-span-4 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
-            A mural that could go on any wall isn't worth painting. We start with a site visit: photographing your building, reading its materials, researching its neighborhood and history. You see a photorealistic render on your actual wall before we ever pick up a brush.
-          </p>
-        </div>
-      </div>
     </div>
 
-    <!-- Pull quote — full bleed -->
-    <div class="border-y border-slate-gray py-12 lg:py-16 mb-20">
-      <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center" data-animate="settle">
-        <p class="font-heading text-titanium-white italic" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
-          A mural is not a decoration. It is a declaration.
-        </p>
-      </div>
-    </div>
-
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
-      <!-- Featured service: hero card -->
-      <div class="mb-8" data-animate="fade">
-        <a href="/murals/business-murals-richmond-va" class="group block border border-slate-gray p-8 lg:p-12 hover:border-soft-gray transition-colors duration-200">
-          <div class="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">Featured</p>
-              <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200 mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
-                Business Murals Richmond VA
-              </h3>
-              <p class="font-body text-shadow-gray mb-6" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
-                Your storefront becomes the reason people stop, photograph, and come back. Painted for restaurants, breweries, retail, and offices.
-              </p>
-              <span class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs);">
-                Learn more <span aria-hidden="true">&rarr;</span>
-              </span>
-            </div>
-            <div class="hidden lg:block">
-              <p class="font-heading text-slate-gray text-right select-none" style="font-size: clamp(6rem, 12vw, 10rem); line-height: 1;" aria-hidden="true">01</p>
-            </div>
-          </div>
+    <!-- HERO -->
+    <section class="px-6 lg:px-12 max-w-7xl mx-auto pt-8 pb-24 lg:pb-32">
+      <p class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        Murals
+      </p>
+      <h1 class="font-heading text-titanium-white text-balance mb-10 max-w-5xl" data-animate="headline" style="font-size: var(--text-fluid-5xl); line-height: 1.02;">
+        Hand-painted murals in Richmond, Virginia.
+      </h1>
+      <p class="font-body text-shadow-gray max-w-2xl mb-12" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
+        We create murals with intention, care, and depth. The style changes with every project. The meaning is always there from the start.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4" data-animate data-animate-delay="1">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center bg-titanium-white text-bone-black font-sans px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
+        >
+          Schedule Your Free Discovery Session
+        </a>
+        <a
+          href="/murals/mural-cost-richmond-va"
+          class="inline-flex items-center justify-center border border-titanium-white text-titanium-white font-sans px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors"
+        >
+          See What It Costs
         </a>
       </div>
+    </section>
 
-      <!-- Service grid: 2+1 asymmetric -->
-      <div class="grid lg:grid-cols-3 gap-8 mb-8">
-        <div class="lg:col-span-2" data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Outdoor Murals Richmond VA"
-            description="Exterior murals that hold through Virginia summers, winters, and everything between. Built to last 10-15 years without fading."
-            href="/murals/outdoor-murals-richmond-va"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="Property Owner Murals"
-            description="A blank wall is a missed opportunity. Painted murals attract quality tenants, raise perceived value, and make your building easier to lease."
-            href="/murals/property-owner-murals-richmond-va"
-          />
+    <!-- THE PROBLEM -->
+    <section class="border-t border-slate-gray py-24 lg:py-32">
+      <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
+          <div class="lg:col-span-5">
+            <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              01 / The Problem
+            </p>
+            <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
+              The hardest part of a mural isn't the painting.
+            </h2>
+          </div>
+          <div class="lg:col-span-7 lg:pt-2 space-y-6">
+            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+              It's figuring out what the mural should be about. Most muralists skip that part entirely. They ask about wall dimensions, budget, and colors. They paint whatever is in their portfolio. When it's done, they write a paragraph about "community" and "connection" to make the work sound deeper than it is.
+            </p>
+            <p class="font-body text-titanium-white border-l border-titanium-white pl-6 py-1" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
+              That is performative meaning. It was never in the work. It was added after.
+            </p>
+            <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              We start from the other direction. We gather as much information as we can about your story, your place, and your project before we design anything. Sometimes that research leads to a deeper meaning nobody expected. Sometimes it reveals an unexpected creative direction you wouldn't have found on your own. Either way, the concept comes from real discovery, not from reverse-engineering a narrative after the paint dries.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid lg:grid-cols-3 gap-8 mb-8">
-        <div data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Mural Cost Richmond VA"
-            description="What a mural actually costs in Richmond, how the number breaks down, and what to expect at every price point. No surprises."
-            href="/murals/mural-cost-richmond-va"
-          />
-        </div>
-        <div class="lg:col-span-2" data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="Indoor Murals Richmond VA"
-            description="No weather. No permits. No scaffolding. Interior murals painted on your schedule, with zero disruption to your business."
-            href="/murals/indoor-murals-richmond-va"
-          />
+    <!-- LANDMARK MOMENT (feature section, tinted background) -->
+    <section class="border-t border-slate-gray bg-midnight-graphite py-28 lg:py-40">
+      <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+        <p class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          02 / The Landmark Moment
+        </p>
+        <h2 class="font-heading text-titanium-white text-balance max-w-5xl mb-16 lg:mb-20" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.02;">
+          Your mural should be about something you can actually point to.
+        </h2>
+
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="lg:col-span-7 lg:col-start-3 space-y-8">
+            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
+              We created a process called the Landmark Moment to find that deeper meaning. It identifies the specific instant when something changed for you, your business, or your community. Not a theme. Not a vibe. A real scene you can close your eyes and see.
+            </p>
+            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              It might be the summer you spent in your grandmother's kitchen and realized food was how your family said everything they couldn't say out loud. The teacher who handed back your work and said, "You should be doing this for a living." The night you watched your parent lock up their shop for the last time and decided you'd do it differently.
+            </p>
+            <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              The Landmark Moment is the conceptual anchor. Everything in the mural grows from it. But the mural does not have to be a literal painting of that scene. It might be completely abstract. It might be a heritage piece, a branded wall, or a large-scale illustration. The style is shaped by the project. The Landmark Moment gives it the one thing most murals never have: a real reason to exist on your wall.
+            </p>
+            <p class="font-body text-titanium-white" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+              If you want your mural to carry real depth, this is how we find it.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-[var(--spacing-section)]">
-        <div data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Real Estate Developer Murals"
-            description="Amenity art for mixed-use, multifamily, and commercial developments. The kind of detail that makes a rendering look real and a building worth choosing."
-            href="/murals/real-estate-developer-murals"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="Public Art Murals Richmond VA"
-            description="Percent-for-art commissions, community murals, and heritage installations. Work that gives neighborhoods something worth keeping."
-            href="/murals/public-art-murals-richmond-va"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="3">
-          <ServiceCard
-            title="Mural Maintenance"
-            description="Your mural was a real investment. Cleaning protocols, sealant reapplication, and touch-up schedules to make it last decades."
-            href="/murals/mural-maintenance"
-          />
+    <!-- PROVENANCE -->
+    <section class="border-t border-slate-gray py-24 lg:py-32">
+      <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
+          <div class="lg:col-span-5">
+            <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              03 / Provenance
+            </p>
+            <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
+              Real meaning, documented from the first conversation.
+            </h2>
+          </div>
+          <div class="lg:col-span-7 lg:pt-2 space-y-6">
+            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+              In the art world, provenance means the documented history of where a piece came from and how it was made. Galleries use it to prove a painting is authentic. We use it to prove your mural's meaning is authentic.
+            </p>
+            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              When the mural is finished, you receive a Certificate of Provenance. It traces every visual element back to its source: where the colors were collected, what materials were gathered, and how the concept connects to the real story. This is not a plaque we write after the fact. It is proof that the meaning was built into the project from the very beginning.
+            </p>
+            <p class="font-body text-titanium-white" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              Most murals have no documentation at all. Yours will have a paper trail that connects every choice to something real.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Project Pull Quotes — asymmetric two-column -->
-      <div class="grid lg:grid-cols-12 gap-8 mb-[var(--spacing-section)] border-t border-slate-gray pt-[var(--spacing-section)]">
-        <blockquote class="lg:col-span-7 border-l-2 border-titanium-white pl-6" data-animate="fade">
-          <p class="font-heading text-titanium-white italic mb-4" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
-            "The walls and the ground now tell the same story. You don't read Short Pump's history here. You stand inside it."
-          </p>
-          <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            Short Pump Park Heritage Mural, Henrico County VA
-          </cite>
-        </blockquote>
-        <blockquote class="lg:col-span-5 lg:mt-16 border-l-2 border-titanium-white pl-6" data-animate="fade" data-animate-delay="1">
-          <p class="font-heading text-titanium-white italic mb-4" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
-            "The workers who spent their careers here now look out from these walls permanently."
-          </p>
-          <cite class="font-mono text-smoke-gray uppercase not-italic" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            Church Hill Trolley Barn, Richmond VA
-          </cite>
-        </blockquote>
+    <!-- MATERIALS & LONGEVITY -->
+    <section class="border-t border-slate-gray py-24 lg:py-32">
+      <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-20 mb-16">
+          <div class="lg:col-span-5">
+            <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              04 / Materials & Longevity
+            </p>
+            <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
+              Your mural is a real investment. I treat it like one.
+            </h2>
+          </div>
+          <div class="lg:col-span-7 lg:pt-2 space-y-6">
+            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+              Most murals fade sooner than they should because nobody researched the wall before painting it. They didn't check the substrate, the direction it faces, or what Richmond's humidity and UV exposure do to certain paints over a decade. Industry data shows 80% of all coatings failures trace back to one thing: bad surface preparation.
+            </p>
+            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              I research all of it before I pick up a brush. Every mural starts with three layers: substrate preparation, primer, and paint. Depending on the project, I add up to two more: an isolation coat that protects the artwork during future maintenance, and a UV-resistant clear coat that absorbs weather, pollution, and graffiti so the paint doesn't have to. That topcoat is sacrificial by design. Renew it every 5 to 8 years and the artwork underneath stays protected for decades.
+            </p>
+            <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+              I work on walls, wood, concrete, metal, glass, aluminum composite panels, and walkable ground surfaces that most muralists won't touch.
+            </p>
+          </div>
+        </div>
+
+        <!-- Lifespan data row -->
+        <div class="grid md:grid-cols-3 border-t border-slate-gray pt-12" data-animate="fade">
+          <div class="border-r-0 md:border-r md:border-slate-gray md:pr-10 mb-10 md:mb-0">
+            <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              Unprotected
+            </p>
+            <p class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-3xl); line-height: 1;">
+              5 to 10 <span class="text-smoke-gray">yrs</span>
+            </p>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm); line-height: var(--leading-snug);">
+              Fades visibly in Richmond's humidity and UV exposure.
+            </p>
+          </div>
+          <div class="border-r-0 md:border-r md:border-slate-gray md:px-10 mb-10 md:mb-0">
+            <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              Proper System
+            </p>
+            <p class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-3xl); line-height: 1;">
+              10 to 18 <span class="text-smoke-gray">yrs</span>
+            </p>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm); line-height: var(--leading-snug);">
+              Substrate prep, primer, paint, isolation coat, UV-resistant clear coat. No maintenance.
+            </p>
+          </div>
+          <div class="md:pl-10">
+            <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              With Maintenance
+            </p>
+            <p class="font-heading text-titanium-white mb-3" style="font-size: var(--text-fluid-3xl); line-height: 1;">
+              20 to 30+ <span class="text-smoke-gray">yrs</span>
+            </p>
+            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm); line-height: var(--leading-snug);">
+              Renew the sacrificial topcoat every 5 to 8 years. The artwork underneath stays protected for decades.
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Featured Projects -->
-      {muralProjects.length > 0 && (
-        <section class="border-t border-slate-gray pt-[var(--spacing-section)] mb-[var(--spacing-section)]">
-          <h2 class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+    <!-- FEATURED PROJECTS -->
+    {muralProjects.length > 0 && (
+      <section class="border-t border-slate-gray py-24 lg:py-32">
+        <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+          <p class="font-mono text-smoke-gray uppercase mb-12" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
             Featured Projects
-          </h2>
-          <div class="grid sm:grid-cols-2 gap-8">
-            {muralProjects.slice(0, 4).map((project) => (
-              <a href={`/work/${project.id}`} class="group block overflow-hidden" data-animate>
-                <div class="aspect-[16/10] overflow-hidden bg-midnight-graphite">
+          </p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {muralProjects.slice(0, 3).map((project) => (
+              <a href={`/work/${project.id}`} class="group block" data-animate>
+                <div class="aspect-[4/5] overflow-hidden bg-midnight-graphite mb-5">
                   <img
                     src={project.data.cover}
                     alt={project.data.title}
                     width="1600"
-                    height="1000"
+                    height="2000"
                     decoding="async"
                     class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                     loading="lazy"
                   />
                 </div>
-                <div class="mt-4 mb-8">
-                  <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors mb-2" style="font-size: var(--text-fluid-xl);">
-                    {project.data.title}
-                  </h3>
-                  <p class="font-body text-shadow-gray line-clamp-2" style="font-size: var(--text-fluid-sm);">
-                    {project.data.description}
+                <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors mb-2" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
+                  {project.data.title}
+                </h3>
+                {project.data.location && (
+                  <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+                    {project.data.location}
                   </p>
-                  <div class="flex gap-2 mt-2">
-                    {project.data.tags.slice(0, 3).map((tag: string) => (
-                      <span class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                )}
               </a>
             ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
+    )}
 
-      <!-- Cross-hub link -->
-      <p class="font-body text-shadow-gray mb-16" style="font-size: var(--text-fluid-lg);">
-        We also paint <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">hand-painted signs</a>.
-      </p>
+    <!-- EXPLANATORY PARAGRAPH -->
+    <section class="border-t border-slate-gray py-24 lg:py-32">
+      <div class="px-6 lg:px-12 max-w-4xl mx-auto">
+        <h2 class="font-heading text-titanium-white text-balance mb-12" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
+          Murals for businesses, property owners, developers, and public institutions.
+        </h2>
+        <div class="space-y-6">
+          <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+            You want your building to be the one people notice, talk about, and walk into. You want a mural that means something real, not decoration that blends in by next year. The problem is that most muralists treat your project like a canvas for their portfolio, and that leaves you choosing between generic work and no work at all.
+          </p>
+          <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We believe your mural should come from your story, not someone else's style. That's why we start every project with a discovery session to gather as much information as possible about your building, your business, and the people connected to it. We're looking for deeper meaning, but we're also looking for unexpected creative directions you might not find on your own. My creative process draws on everything we collect, and the results are often surprising, meaningful, or both.
+          </p>
+          <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We paint <a href="/murals/business-murals-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">murals for businesses</a> that want their storefront to become a destination. We work with <a href="/murals/property-owner-murals-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">property owners</a> who want to attract better tenants and raise perceived value. We partner with <a href="/murals/real-estate-developer-murals" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">real estate developers</a> on amenity art for mixed-use and multifamily projects. We handle <a href="/murals/public-art-murals-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">public art commissions</a>, percent-for-art programs, and community heritage installations. We paint <a href="/murals/outdoor-murals-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">outdoors</a> with materials built for Virginia weather, and <a href="/murals/indoor-murals-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">indoors</a> on your schedule with zero disruption.
+          </p>
+          <p class="font-body text-titanium-white" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Schedule your <a href="/contact" class="underline underline-offset-4 hover:text-soft-gray transition-colors">free discovery session</a> so you can stop wondering what belongs on your wall and start seeing a mural that actually means something to the people who pass it every day. See <a href="/murals/mural-cost-richmond-va" class="underline underline-offset-4 hover:text-soft-gray transition-colors">what a mural costs in Richmond</a> or read about <a href="/murals/mural-maintenance" class="underline underline-offset-4 hover:text-soft-gray transition-colors">mural maintenance</a> to protect your investment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND MARK CALLOUT -->
+    <section class="border-t border-slate-gray bg-midnight-graphite py-24 lg:py-28" data-animate>
+      <div class="max-w-2xl mx-auto text-center px-6 lg:px-12">
+        <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Starting at $500
+        </p>
+        <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
+          Not ready for a full mural?
+        </h2>
+        <p class="font-body text-shadow-gray mb-10" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          Start with a Brand Mark. Your logo, hand-painted on wood or directly on your wall. No design meetings. No weeks of waiting. Just your name, painted with care, on a surface that lasts.
+        </p>
+        <a
+          href="/brand-mark"
+          class="inline-flex items-center justify-center border border-titanium-white text-titanium-white font-sans px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors"
+        >
+          See The Brand Mark
+        </a>
+      </div>
+    </section>
+
+    <!-- CROSS-LINK -->
+    <div class="border-t border-slate-gray">
+      <div class="px-6 lg:px-12 max-w-7xl mx-auto py-16">
+        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg);">
+          We also paint <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">hand-painted signs</a>.
+        </p>
+      </div>
     </div>
   </main>
 
   <CTABlock />
 
-  <SlideInCTA />
   <Footer />
 </BaseLayout>

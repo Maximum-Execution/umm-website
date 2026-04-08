@@ -12,11 +12,11 @@ const projects = (await getCollection('projects'))
 ---
 
 <BaseLayout
-  title="Gallery | Hand-Painted Murals & Signs | Untitled Mixed Media"
-  description="Hand-painted murals, signs, and restorations in Richmond, Virginia. See our work."
+  title="Work | Hand-Painted Murals & Signs | Untitled Mixed Media"
+  description="Hand-painted murals and signs in Richmond, Virginia. Every project starts with questions about the building, the business, and what people should notice."
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Gallery' }
+    { name: 'Work' }
   ]}
 >
   <Nav />
@@ -24,15 +24,18 @@ const projects = (await getCollection('projects'))
     <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
-        { label: 'Gallery' },
+        { label: 'Work' },
       ]} />
     </div>
 
     <!-- Hero headline -->
     <section class="px-6 lg:px-12 max-w-7xl mx-auto pt-8 pb-16">
-      <h1 class="font-heading text-titanium-white text-balance" style="font-size: var(--text-fluid-4xl);" data-animate>
-        The work speaks.
+      <h1 class="font-heading text-titanium-white text-balance mb-6" style="font-size: var(--text-fluid-4xl);" data-animate>
+        Hand-painted murals and signs in Richmond, Virginia.
       </h1>
+      <p class="font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate data-animate-delay="1">
+        Every project below started with questions about the building, the business, and what the people who walk past it should notice.
+      </p>
     </section>
 
     <!-- Featured Projects -->
@@ -89,7 +92,7 @@ const projects = (await getCollection('projects'))
             Murals
           </h2>
           <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
-            Most murals could be anywhere. Ours could only be here.
+            We find the one thing your mural should be about, then we paint it by hand. For businesses, property owners, and public spaces.
           </p>
           <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
             Explore &rarr;
@@ -101,7 +104,7 @@ const projects = (await getCollection('projects'))
       <a href="/hand-painted-signs" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
         <img
           src="/images/signs/signs-cover.jpg"
-          alt="Hand-painted gold leaf lettering on a storefront window in Richmond, Virginia"
+          alt="Hand-painted storefront sign lettering in Richmond, Virginia"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
@@ -111,7 +114,7 @@ const projects = (await getCollection('projects'))
             Hand-Painted Signs
           </h2>
           <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
-            Gold leaf, window lettering, and storefront signs built to last 20+ years.
+            Window lettering, storefront signs, and ghost sign restorations. Built to last 20+ years.
           </p>
           <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
             Explore &rarr;
@@ -127,10 +130,10 @@ const projects = (await getCollection('projects'))
           Starting at $500
         </p>
         <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">
-          The Brand Mark: your logo, hand-painted.
+          Your logo, hand-painted.
         </h2>
         <p class="font-body text-shadow-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
-          Wall or wood panel. Three shapes. The fastest way to get hand-painted work on your wall.
+          Most people start here. You send your logo, we paint it by hand on wood or directly on your wall. No design meetings. No weeks of waiting. Just your name, painted with care, on a surface that lasts.
         </p>
         <a href="/brand-mark" class="inline-block border border-titanium-white text-titanium-white font-sans px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors">
           See The Brand Mark

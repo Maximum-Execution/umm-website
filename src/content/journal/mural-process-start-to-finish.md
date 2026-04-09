@@ -1,6 +1,6 @@
 ---
 title: "The Mural Process from Start to Finish"
-description: "From the first site visit to the final seal coat — a behind-the-scenes look at how Untitled Mixed Media plans, designs, and paints a mural using photogrammetry, 3D pre-visualization, and traditional painting techniques."
+description: "From the first site visit to the final seal coat: a behind-the-scenes look at how Untitled Mixed Media plans, designs, and paints a mural using photogrammetry, 3D pre-visualization, and traditional painting techniques."
 date: 2025-06-25
 tags: ["murals", "process", "behind the scenes"]
 author: "Spencer Bennett"

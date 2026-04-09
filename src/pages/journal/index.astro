@@ -13,7 +13,7 @@ const posts = (await getCollection('journal'))
 
 <BaseLayout
   title="Journal — Untitled Mixed Media"
-  description="Writing about murals, signs, and the buildings that wear them. Process, materials, and stories from the field."
+  description="Thoughts on public art, signs, buildings, and the people who care about them. Mural pricing, sign design, materials science, and Richmond history from Spencer Bennett."
 >
   <Nav />
   <main class="pt-24 pb-16 px-6 lg:px-12">
@@ -30,15 +30,92 @@ const posts = (await getCollection('journal'))
             Journal
           </p>
           <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
-            Writing about murals, signs, and the buildings that wear them.
+            Thoughts on public art, signs, buildings, and the people who care about them.
           </h1>
         </div>
         <div class="lg:col-span-5 lg:flex lg:items-end">
           <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
-            Process notes, materials research, and the stories behind completed projects. We write about what we know: how murals are made, why certain paints outlast others, and what it takes to turn a blank wall into something worth remembering.
+            I write about whatever I'm thinking about. Mural pricing, sign design, materials science, Richmond history, public art funding, the difference between a good sign and a bad one. If it's connected to the work, it ends up here.
           </p>
         </div>
       </div>
+
+      <!-- Email capture -->
+      <section class="bg-midnight-graphite border border-slate-gray p-8 md:p-12 mb-16" aria-labelledby="journal-newsletter-heading" data-animate="fade">
+        <div class="max-w-3xl">
+          <p class="font-mono text-smoke-gray uppercase tracking-[0.08em] mb-4" style="font-size: var(--text-fluid-xs);">
+            Richmond, by hand.
+          </p>
+          <h2 id="journal-newsletter-heading" class="font-heading text-titanium-white mb-4 text-balance" style="font-size: var(--text-fluid-xl); line-height: 1.2;">
+            New posts by email. No spam. No sales pitch.
+          </h2>
+          <p class="font-body text-shadow-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            I send updates when I publish something new. Projects, pricing breakdowns, Richmond history, sign design, materials research. Usually once or twice a month. Unsubscribe anytime.
+          </p>
+          <form id="journal-newsletter-form" class="flex flex-col sm:flex-row gap-3" action="#" method="POST" data-newsletter-form="journal" novalidate>
+            <label for="journal-newsletter-email" class="sr-only">Email address</label>
+            <input
+              type="email"
+              id="journal-newsletter-email"
+              name="email"
+              placeholder="Your email address"
+              required
+              autocomplete="email"
+              aria-describedby="journal-newsletter-error"
+              class="flex-1 bg-bone-black border border-slate-gray text-titanium-white px-4 py-3 font-body placeholder:text-smoke-gray focus:outline-none focus:border-titanium-white transition-colors"
+              style="font-size: var(--text-fluid-base);"
+            />
+            <button
+              type="submit"
+              class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-midnight-graphite whitespace-nowrap"
+              style="font-size: var(--text-fluid-sm);"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p id="journal-newsletter-error" class="hidden font-body text-red-400 mt-3" style="font-size: var(--text-fluid-xs);" role="alert">
+            Please enter a valid email address.
+          </p>
+          <p id="journal-newsletter-success" class="hidden font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" aria-live="polite">
+            You're in. You'll hear from me the next time I publish something.
+          </p>
+        </div>
+      </section>
+
+      <script>
+        const newsletterForm = document.getElementById('journal-newsletter-form') as HTMLFormElement | null;
+        const newsletterEmail = document.getElementById('journal-newsletter-email') as HTMLInputElement | null;
+        const newsletterError = document.getElementById('journal-newsletter-error') as HTMLElement | null;
+        const newsletterSuccess = document.getElementById('journal-newsletter-success') as HTMLElement | null;
+
+        newsletterForm?.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (!newsletterEmail || !newsletterError || !newsletterSuccess) return;
+
+          if (!newsletterEmail.value || !newsletterEmail.validity.valid) {
+            newsletterError.classList.remove('hidden');
+            newsletterEmail.classList.add('border-red-400');
+            newsletterEmail.classList.remove('border-slate-gray');
+            newsletterEmail.setAttribute('aria-invalid', 'true');
+            newsletterEmail.focus();
+            return;
+          }
+
+          // TODO: POST to MailerLite endpoint when connected
+          newsletterForm.classList.add('hidden');
+          newsletterError.classList.add('hidden');
+          newsletterSuccess.classList.remove('hidden');
+          newsletterSuccess.focus();
+        });
+
+        newsletterEmail?.addEventListener('input', () => {
+          if (!newsletterError) return;
+          newsletterError.classList.add('hidden');
+          newsletterEmail.classList.remove('border-red-400');
+          newsletterEmail.classList.add('border-slate-gray');
+          newsletterEmail.removeAttribute('aria-invalid');
+        });
+      </script>
 
       {posts.length > 0 ? (
         <div class="space-y-12">

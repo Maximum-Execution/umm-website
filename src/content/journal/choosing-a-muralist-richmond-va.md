@@ -1,6 +1,6 @@
 ---
 title: "How to Choose a Muralist in Richmond, VA"
-description: "What to look for when hiring a mural painter in Richmond — portfolio depth, insurance, process transparency, and materials knowledge. A practical guide for property owners and businesses."
+description: "What to look for when hiring a mural painter in Richmond: portfolio depth, insurance, process transparency, and materials knowledge. A practical guide for property owners and businesses."
 date: 2025-01-06
 tags: ["murals", "richmond", "hiring"]
 author: "Spencer Bennett"

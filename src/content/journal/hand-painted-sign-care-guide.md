@@ -1,6 +1,6 @@
 ---
 title: "How to Care for a Hand-Painted Sign"
-description: "A sign painter's guide to maintaining hand-painted signs — cleaning methods, resealing schedules, sun damage prevention, and the mistakes that shorten a sign's life."
+description: "A sign painter's guide to maintaining hand-painted signs: cleaning methods, resealing schedules, sun damage prevention, and the mistakes that shorten a sign's life."
 date: 2025-09-15
 tags: ["signs", "maintenance", "care"]
 author: "Spencer Bennett"

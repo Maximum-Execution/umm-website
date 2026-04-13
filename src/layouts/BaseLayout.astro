@@ -186,16 +186,19 @@ import '../styles/global.css';
 
     <script>
       // Wrap words in spans for headline reveal (source: server-rendered author content only)
+      // If data-animate="headline" is on a wrapper, find the heading inside and split that instead
       document.querySelectorAll('[data-animate="headline"]').forEach((el) => {
-        const words = (el.textContent || '').split(/\s+/).filter(Boolean);
-        while (el.firstChild) el.removeChild(el.firstChild);
+        const heading = el.querySelector('h1, h2, h3, h4, h5, h6');
+        const target = heading || el;
+        const words = (target.textContent || '').split(/\s+/).filter(Boolean);
+        while (target.firstChild) target.removeChild(target.firstChild);
         words.forEach((word, i) => {
           const span = document.createElement('span');
           span.className = 'word';
           span.textContent = word;
-          el.appendChild(span);
+          target.appendChild(span);
           if (i < words.length - 1) {
-            el.appendChild(document.createTextNode(' '));
+            target.appendChild(document.createTextNode(' '));
           }
         });
       });

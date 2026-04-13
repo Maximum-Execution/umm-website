@@ -154,8 +154,10 @@ const {
         overlay.classList.add('hidden');
       }, 300);
 
-      // Restore focus
-      previouslyFocused?.focus();
+      // Restore focus (verify element still in DOM)
+      if (previouslyFocused && document.body.contains(previouslyFocused)) {
+        previouslyFocused.focus();
+      }
     }
 
     // Desktop: exit intent (mouse leaves viewport top)

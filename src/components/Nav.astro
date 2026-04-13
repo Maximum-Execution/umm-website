@@ -207,6 +207,26 @@ const navLinks: NavLink[] = [
     }
   });
 
+  // Update aria-expanded on desktop Work dropdown
+  document.querySelectorAll<HTMLElement>('[aria-haspopup="true"]').forEach((trigger) => {
+    const li = trigger.closest('li');
+    if (!li) return;
+    const update = () => {
+      const submenu = li.querySelector('ul[role="menu"]');
+      if (!submenu) return;
+      const visible = window.getComputedStyle(submenu).opacity !== '0';
+      trigger.setAttribute('aria-expanded', String(visible));
+    };
+    li.addEventListener('mouseenter', () => { trigger.setAttribute('aria-expanded', 'true'); });
+    li.addEventListener('mouseleave', () => { trigger.setAttribute('aria-expanded', 'false'); });
+    li.addEventListener('focusin', () => { trigger.setAttribute('aria-expanded', 'true'); });
+    li.addEventListener('focusout', (e) => {
+      if (!li.contains((e as FocusEvent).relatedTarget as Node)) {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
   // Nav background on scroll. Hysteresis prevents class churn near
   // the threshold and limits DOM writes to true state transitions.
   // Engage backdrop at scrollY > 50, release at scrollY < 20.

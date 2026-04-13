@@ -88,7 +88,7 @@ const posts = (await getCollection('journal'))
           <p id="journal-newsletter-error" class="hidden font-body text-red-400 mt-3" style="font-size: var(--text-fluid-xs);" role="alert">
             Please enter a valid email address.
           </p>
-          <p id="journal-newsletter-success" class="hidden font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" aria-live="polite">
+          <p id="journal-newsletter-success" class="hidden font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" role="status" aria-live="polite" tabindex="-1">
             You're in. You'll hear from me the next time I publish something.
           </p>
         </div>

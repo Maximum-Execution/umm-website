@@ -8,10 +8,11 @@ const { items, heading = 'Frequently asked questions' } = Astro.props;
 ---
 
 <section class="py-[var(--spacing-section)] px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto">
   <h2 class="font-heading text-titanium-white mb-12" style={`font-size: var(--text-fluid-2xl);`}>
     {heading}
   </h2>
-  <dl class="max-w-3xl divide-y divide-slate-gray">
+  <dl class="max-w-3xl mx-auto divide-y divide-slate-gray">
     {items.map((item) => {
       const slug = item.question
         .toLowerCase()
@@ -30,4 +31,5 @@ const { items, heading = 'Frequently asked questions' } = Astro.props;
       );
     })}
   </dl>
+  </div>
 </section>

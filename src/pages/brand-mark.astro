@@ -5,17 +5,37 @@ import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQSection from '../components/FAQSection.astro';
 import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import ComparisonBar from '../components/patterns/ComparisonBar.astro';
 ---
 
 <BaseLayout
   title="The Brand Mark | Your Logo, Hand-Painted. $500. | Untitled Mixed Media"
-  description="Most business signs look like they came from a catalog. The Brand Mark is your logo, hand-painted on your wall or on wood in one day. Three shapes. $500 for the first 12 businesses in Richmond, VA."
+  description="Your logo, hand-painted on wall or wood panel. Three shapes, $500 each. One day on site. Richmond, VA."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Brand Mark' },
+  ]}
+  service={{
+    name: 'The Brand Mark',
+    description: 'Your logo, hand-painted on wall or wood panel. Three shapes, one day on site. Richmond, VA.',
+    priceRange: '$500',
+  }}
 >
   <Nav />
   <main class="pt-24 pb-16">
 
     <!-- Section 1: Hero -->
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto mb-24">
+    <div class="relative overflow-hidden px-6 lg:px-12 max-w-7xl mx-auto mb-24">
+      <div class="absolute inset-0" aria-hidden="true">
+        <img
+          src="/images/content-design/hand-painted-sign.jpg"
+          alt=""
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/90 via-bone-black/70 to-bone-black/50"></div>
+      </div>
+      <div class="relative z-10">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Brand Mark' },
@@ -30,7 +50,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
       </h1>
 
       <p
-        class="font-body text-shadow-gray max-w-xl mb-10"
+        class="font-body text-soft-gray max-w-xl mb-10"
         style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
         data-animate
         data-animate-delay="1"
@@ -52,6 +72,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
           See How It Works <span aria-hidden="true">&darr;</span>
         </a>
       </div>
+      </div>
     </div>
 
     <!-- Section 2: What You Get -->
@@ -64,7 +85,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
         Your logo, hand-painted on your wall or on a wood panel.
       </h2>
 
-      <div class="font-body text-shadow-gray max-w-2xl space-y-4 mb-12" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
+      <div class="font-body text-soft-gray max-w-2xl space-y-4 mb-12" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
         <p>Up to 16 square feet. Single color of your choice. Clean edges. Consistent coverage. No shortcuts.</p>
         <p>The panel comes with a weathered ghost-sign finish: your logo looks like it's been on your wall for decades. Want it clean and modern instead? Just ask.</p>
       </div>
@@ -75,28 +96,28 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
       </h3>
       <div class="grid sm:grid-cols-3 gap-6 mb-6" data-animate="fade" data-animate-delay="1">
         <div class="border border-slate-gray p-6 text-center">
-          <div class="aspect-square w-20 mx-auto mb-4 border border-smoke-gray flex items-center justify-center">
+          <div class="aspect-square w-20 mx-auto mb-4 border border-slate-gray flex items-center justify-center">
             <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">4' &times; 4'</span>
           </div>
           <h4 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-base);">Square</h4>
-          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">16 sq ft. Great for square logos, circular logos, and stacked designs.</p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">16 sq ft. Great for square logos, circular logos, and stacked designs.</p>
         </div>
         <div class="border border-slate-gray p-6 text-center">
-          <div class="aspect-[5/3] w-24 mx-auto mb-4 border border-smoke-gray flex items-center justify-center">
+          <div class="aspect-[5/3] w-24 mx-auto mb-4 border border-slate-gray flex items-center justify-center">
             <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">3' &times; 5'</span>
           </div>
           <h4 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-base);">Rectangle</h4>
-          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">15 sq ft. Great for most horizontal logos and logo-plus-tagline combos.</p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">15 sq ft. Great for most horizontal logos and logo-plus-tagline combos.</p>
         </div>
         <div class="border border-slate-gray p-6 text-center">
-          <div class="aspect-[4/1] w-32 mx-auto mb-4 border border-smoke-gray flex items-center justify-center">
+          <div class="aspect-[4/1] w-32 mx-auto mb-4 border border-slate-gray flex items-center justify-center">
             <span class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs);">2' &times; 8'</span>
           </div>
           <h4 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-base);">Banner</h4>
-          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">16 sq ft. Great for single-word names and long wordmarks. Perfect above a bar or along a wall.</p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">16 sq ft. Great for single-word names and long wordmarks. Perfect above a bar or along a wall.</p>
         </div>
       </div>
-      <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-sm);">
+      <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
         Not sure which shape fits your logo? Send it over. I'll tell you which one works best.
       </p>
     </section>
@@ -108,14 +129,24 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
           The math most sign shops don't want you to see.
         </h2>
 
-        <div class="font-body text-shadow-gray max-w-2xl space-y-4 mb-12" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
+        <div class="font-body text-soft-gray max-w-2xl space-y-4 mb-12" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
           <p>A vinyl sign costs $200 and lasts 3 years. It peels, fades, and bubbles. Replace it three times over 12 years: that's $600+ on signage that looks worse every year.</p>
           <p>A Brand Mark costs $500 and lasts 20+ years. It ages with character. It gets better over time.</p>
           <p>Over 12 years, vinyl costs more and looks cheaper. Hand-painted costs less and looks more valuable every day.</p>
         </div>
 
+        <ComparisonBar
+          title="Cost Comparison"
+          items={[
+            { label: 'Brand Mark (hand-painted, 20+ year life)', value: '$500', percent: 25, highlight: true },
+            { label: 'Vinyl sign (3-5 year life)', value: '$200', percent: 10 },
+            { label: 'Custom sign shop', value: '$2,000+', percent: 100 },
+          ]}
+          class="my-12 max-w-xl"
+        />
+
         <a
-          href="/journal/hand-painted-vs-vinyl"
+          href="/hand-painted-signs/hand-painted-vs-vinyl"
           class="font-sans inline-block border border-slate-gray text-smoke-gray px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:border-titanium-white hover:text-titanium-white transition-colors duration-200"
           data-animate="fade"
           data-animate-delay="2"
@@ -141,7 +172,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
             <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The Opening Day Reel</h3>
             <span class="font-mono text-smoke-gray shrink-0 ml-4" style="font-size: var(--text-fluid-xs);">$150 value</span>
           </div>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Full process time-lapse of the painting from blank surface to finished work. Shot during the session, delivered to your phone the same day. Post it to Instagram, TikTok, your Google listing. It's yours.
           </p>
         </div>
@@ -151,7 +182,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
             <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The GBP Photo Set</h3>
             <span class="font-mono text-smoke-gray shrink-0 ml-4" style="font-size: var(--text-fluid-xs);">$100 value</span>
           </div>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Professional before-and-after photos, cropped and sized for Instagram, Facebook, and Google Business Profile. Ready to post the same day.
           </p>
         </div>
@@ -161,7 +192,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
             <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The Forever Kit</h3>
             <span class="font-mono text-smoke-gray shrink-0 ml-4" style="font-size: var(--text-fluid-xs);">$75 value</span>
           </div>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             A jar of the exact paint used on your Brand Mark, plus a detail brush. Scuffs happen. You fix them in 30 seconds.
           </p>
         </div>
@@ -171,10 +202,10 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
             <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">The Done-For-You Install</h3>
             <span class="font-mono text-smoke-gray shrink-0 ml-4" style="font-size: var(--text-fluid-xs);">$75 value</span>
           </div>
-          <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray mb-4" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             <span class="font-heading text-titanium-white">Panel format:</span> French cleat or appropriate hardware for your wall type, installed before I leave. You don't go to the hardware store. You don't Google "how to hang a heavy sign." It's on the wall before I walk out the door.
           </p>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             <span class="font-heading text-titanium-white">Wall format, The Care Plan:</span> A one-page guide covering how to clean the surface, what products to avoid, and when to schedule a refresh. Written for your specific wall material and paint type.
           </p>
         </div>
@@ -184,7 +215,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
             <h3 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-lg);">$100 Credit Toward Your Next Project</h3>
             <span class="font-mono text-smoke-gray shrink-0 ml-4" style="font-size: var(--text-fluid-xs);">$100 value</span>
           </div>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Good toward any future Untitled Mixed Media project: a full custom sign, a mural, a restoration, a second Brand Mark. When you're ready for more, you're already $100 ahead.
           </p>
         </div>
@@ -200,11 +231,11 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
         >
           $500
         </p>
-        <p class="font-body text-shadow-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
           Launch price for the first 12 businesses. Then the price goes up.
         </p>
 
-        <ul class="space-y-3 mb-10 font-body text-shadow-gray" style="font-size: var(--text-fluid-base);">
+        <ul class="space-y-3 mb-10 font-body text-soft-gray" style="font-size: var(--text-fluid-base);">
           <li class="flex items-start gap-3">
             <span class="text-titanium-white mt-1 shrink-0" aria-hidden="true">&check;</span>
             Your logo, hand-painted (wall or panel, up to 16 sq ft)
@@ -253,13 +284,13 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
       <div class="space-y-6" data-animate="fade" data-animate-delay="1">
         <div>
           <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Panel format</h3>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             If you look at the finished panel and you're not happy, I take it home with me. You owe nothing. You never see a bill.
           </p>
         </div>
         <div>
           <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Wall format</h3>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             If any line isn't clean, any coverage isn't consistent, or the finished work doesn't match your logo file, I keep working until it does. If you're not happy, I paint over it myself. No charge.
           </p>
         </div>
@@ -276,21 +307,21 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
           <div data-animate="fade">
             <span class="font-heading text-slate-gray block mb-2" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);" aria-hidden="true">01</span>
             <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Send your logo file and pick your format.</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               Wall or wood panel. I'll confirm everything works and lock in your date.
             </p>
           </div>
           <div data-animate="fade" data-animate-delay="1">
             <span class="font-heading text-slate-gray block mb-2" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);" aria-hidden="true">02</span>
             <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Pay $250 to reserve your spot.</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               Your date is held. I show up with everything needed. No supplies for you to buy. No prep for you to do.
             </p>
           </div>
           <div data-animate="fade" data-animate-delay="2">
             <span class="font-heading text-slate-gray block mb-2" style="font-size: var(--text-fluid-4xl); line-height: var(--leading-solid);" aria-hidden="true">03</span>
             <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg);">Pay the balance when you approve it.</h3>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               The remaining $250 is due only after you've seen the finished work and signed off. Then I hand you your time-lapse, your photos, your touch-up kit, and your $100 project credit.
             </p>
           </div>
@@ -304,7 +335,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
         Can't paint your walls? The panel solves that.
       </h2>
 
-      <div class="font-body text-shadow-gray max-w-2xl space-y-4" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
+      <div class="font-body text-soft-gray max-w-2xl space-y-4" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
         <p>Some businesses can't paint their walls. Your landlord won't allow it. Your lease restricts alterations. Your walls are exposed brick and you don't want to cover them. You're in a pop-up space. You want something you can take with you when you grow into a bigger spot.</p>
         <p>The wood panel fixes all of it. It hangs like a frame. It comes down without a mark. And it goes wherever you go: behind the bar today, at the farmers market Saturday, on a different wall next year.</p>
         <p>The ghost-sign weathered finish is the real difference. A clean vinyl sign says "we just ordered this." A Brand Mark says "we've been here. This place has character."</p>
@@ -316,13 +347,13 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
       <div class="grid md:grid-cols-2 gap-12">
         <div data-animate="fade">
           <h3 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">Who this is for</h3>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Small businesses and storefronts in Richmond, Virginia who want their name on their wall without a six-month timeline or a $5,000 quote. Breweries, barbershops, coffee shops, studios, gyms, boutiques, restaurants, bakeries, tattoo shops, coworking spaces. If you have a logo and a wall (or want a panel), this is for you.
           </p>
         </div>
         <div data-animate="fade" data-animate-delay="1">
           <h3 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-xl);">Who this is NOT for</h3>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             If you want a full custom mural, a multi-color design, or something larger than 16 square feet, that's a different conversation. <a href="/contact" class="text-titanium-white underline hover:no-underline">Reach out</a> and we'll scope a custom project. (That's how you know this offer is real: I'm telling you exactly where it ends.)
           </p>
         </div>
@@ -336,7 +367,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
           The Brand Mark is available by neighborhood.
         </h2>
 
-        <div class="font-body text-shadow-gray max-w-2xl space-y-4 mb-10" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
+        <div class="font-body text-soft-gray max-w-2xl space-y-4 mb-10" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
           <p>I paint 3 Brand Marks per neighborhood, then move to the next. Each one takes a full day, and I reserve the rest of my week for larger mural and sign projects. When the 3 spots in your neighborhood are filled, the next round is a few months out.</p>
           <p>The $500 price is the launch price for the first 12 businesses. After that, the price increases to reflect demand.</p>
         </div>
@@ -354,7 +385,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
           </p>
         </div>
 
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
           If your neighborhood isn't open yet, <a href="/contact?type=brand-mark" class="text-titanium-white underline hover:no-underline">join the waitlist</a>. You'll get first priority when I come to your area.
         </p>
       </div>
@@ -382,7 +413,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup.astro';
           This isn't signage. It's an original.
         </h2>
         <p
-          class="font-body text-shadow-gray mb-10 max-w-xl mx-auto"
+          class="font-body text-soft-gray mb-10 max-w-xl mx-auto"
           style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
         >
           Your customers can feel the difference between something ordered from a catalog and something painted by hand. They trust places that look established. They walk into businesses that look like they care. And they remember the ones that stand out.

@@ -1,6 +1,6 @@
 ---
 interface Props {
-  pages: { title: string; href: string; description?: string }[];
+  pages: { title: string; href: string; description?: string; image?: string }[];
   heading?: string;
 }
 
@@ -17,11 +17,22 @@ const { pages, heading = 'Related' } = Astro.props;
         href={page.href}
         class="group block border border-slate-gray p-6 hover:border-soft-gray transition-colors duration-200"
       >
+        {page.image && (
+          <div class="aspect-[16/9] overflow-hidden mb-4 -mx-6 -mt-6">
+            <img
+              src={page.image}
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              aria-hidden="true"
+            />
+          </div>
+        )}
         <h3 class="font-heading text-titanium-white mb-2" style={`font-size: var(--text-fluid-lg);`}>
           {page.title}
         </h3>
         {page.description && (
-          <p class="font-body text-smoke-gray" style={`font-size: var(--text-fluid-sm);`}>
+          <p class="font-body text-soft-gray" style={`font-size: var(--text-fluid-sm);`}>
             {page.description}
           </p>
         )}

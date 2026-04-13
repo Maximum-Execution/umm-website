@@ -27,7 +27,7 @@ const {
   <div class="flex items-center justify-center min-h-screen px-6">
     <div
       id="exit-popup-panel"
-      class="relative w-full max-w-lg border border-slate-gray bg-bone-black p-8 lg:p-12 translate-y-4 opacity-0 transition-all duration-300"
+      class="relative w-full max-w-lg border border-slate-gray bg-bone-black p-8 lg:p-12 translate-y-4 opacity-0 transition-[transform,opacity] duration-300"
     >
       <!-- Close button -->
       <button
@@ -47,7 +47,7 @@ const {
       <h2 id="exit-popup-heading" class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
         {headline}
       </h2>
-      <p class="font-body text-shadow-gray mb-8" style="font-size: var(--text-fluid-base); line-height: 1.6;">
+      <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-base); line-height: 1.6;">
         {subhead}
       </p>
 

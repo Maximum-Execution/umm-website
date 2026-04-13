@@ -1,0 +1,38 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  source?: string;
+  class?: string;
+}
+
+const {
+  value,
+  label,
+  source,
+  class: className = '',
+} = Astro.props;
+---
+
+<div class:list={['text-center', className]} data-animate="fade" role="figure" aria-label={`${value} ${label}`}>
+  <span
+    class="block font-heading text-titanium-white"
+    style="font-size: var(--text-fluid-4xl); line-height: 1; letter-spacing: var(--tracking-tight);"
+  >
+    {value}
+  </span>
+  <span
+    class="block font-mono text-soft-gray mt-3 uppercase"
+    style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+  >
+    {label}
+  </span>
+  {source && (
+    <span
+      class="block font-mono text-smoke-gray mt-2"
+      style="font-size: 11px; letter-spacing: var(--tracking-wider);"
+    >
+      {source}
+    </span>
+  )}
+</div>

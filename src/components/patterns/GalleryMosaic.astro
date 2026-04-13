@@ -1,0 +1,54 @@
+---
+interface MosaicImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  images: MosaicImage[];
+  class?: string;
+}
+
+const {
+  images,
+  class: className = '',
+} = Astro.props;
+
+const count = images.length;
+---
+
+<div class:list={['w-full', className]} data-animate="fade">
+  {count === 2 && (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-1">
+      {images.map((img) => (
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+        </div>
+      ))}
+    </div>
+  )}
+
+  {count === 3 && (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-1" style="grid-template-rows: 1fr 1fr;">
+      <div class="sm:row-span-2 aspect-[3/4] sm:aspect-auto overflow-hidden">
+        <img src={images[0].src} alt={images[0].alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+      <div class="aspect-[4/3] overflow-hidden">
+        <img src={images[1].src} alt={images[1].alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+      <div class="aspect-[4/3] overflow-hidden">
+        <img src={images[2].src} alt={images[2].alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  )}
+
+  {count >= 4 && (
+    <div class="grid grid-cols-2 gap-1">
+      {images.slice(0, 4).map((img) => (
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+        </div>
+      ))}
+    </div>
+  )}
+</div>

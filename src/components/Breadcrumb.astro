@@ -7,16 +7,16 @@ const { items } = Astro.props;
 ---
 
 <nav aria-label="Breadcrumb" class="mb-8">
-  <ol class="flex items-center gap-2 font-mono uppercase" style={`font-size: var(--text-fluid-xs);`}>
+  <ol class="flex items-center gap-2 font-mono uppercase" style={`font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);`}>
     {items.map((item, i) => (
       <li class="flex items-center gap-2">
-        {i > 0 && <span class="text-smoke-gray" aria-hidden="true">/</span>}
+        {i > 0 && <span class="text-slate-gray" aria-hidden="true">/</span>}
         {item.href ? (
-          <a href={item.href} class="text-smoke-gray hover:text-soft-gray transition-colors duration-200">
+          <a href={item.href} class="text-soft-gray hover:text-titanium-white transition-colors duration-200">
             {item.label}
           </a>
         ) : (
-          <span class="text-soft-gray" aria-current="page">{item.label}</span>
+          <span class="text-titanium-white" aria-current="page">{item.label}</span>
         )}
       </li>
     ))}

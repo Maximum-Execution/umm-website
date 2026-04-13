@@ -10,6 +10,10 @@ import ServiceCard from '../../components/ServiceCard.astro';
 <BaseLayout
   title="About | Untitled Mixed Media | Hand-Painted Murals and Signs in Richmond, VA"
   description="We don't start with a sketch. We start with questions. Hand-painted murals and signs in Richmond, Virginia. Fully insured. No templates. No signature style."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'About' },
+  ]}
 >
   <Nav />
   <main class="pt-24 pb-16">
@@ -42,10 +46,10 @@ import ServiceCard from '../../components/ServiceCard.astro';
           <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
             Why I care about this
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
             I've seen what happens when nobody thinks about what a mural or sign should be about before they start making it. The client gets something that looks fine. Technically competent. Completely forgettable. It fills a wall but it doesn't say anything. Six months later, nobody stops for it. A year later, the client wishes they'd done something different. I've watched it happen to good people with good businesses, and it bothered me enough to build a studio around solving it.
           </p>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             That's why Untitled Mixed Media exists. Not because I wanted to be a muralist. Because I kept seeing the gap between what people imagined their space could be and what the industry was actually giving them. Muralists who paint their own style on your wall and call it custom. Sign shops that print your logo on vinyl and call it a sign. Nobody sitting down and asking the harder questions: what is this project really about? What should people feel when they see it? What makes this place different from the one next door?
           </p>
           <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
@@ -56,15 +60,28 @@ import ServiceCard from '../../components/ServiceCard.astro';
           <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
             How I work
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             I'm Spencer Bennett. I run Untitled Mixed Media out of Richmond, Virginia. I paint murals and signs by hand for businesses, property owners, and public institutions.
           </p>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             Before I design anything, I spend time in the space. I study the building, the block, the materials, the light. For murals, I'm looking for what I call the Landmark Moment: the one specific thing the mural should be about. For signs, I'm figuring out what the name stands for and how the sign should carry it. The way your sign is made tells people everything about how you run your business.
           </p>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             I use professional-grade paints matched to the surface and the climate. UV-protective sealants. Anti-graffiti coatings when the location calls for it. Weather protection systems built for Virginia humidity. I paint on walls, wood, concrete, metal, glass, and ground surfaces that most muralists won't touch. Whatever the project needs to hold up for 20+ years, that's what I use. Fully insured. Licensed in Virginia. Experienced in historic districts.
           </p>
+        </div>
+      </div>
+
+      <!-- Material specimen -->
+      <div class="mb-20">
+        <div class="max-w-3xl mx-auto">
+          <img
+            src="/images/content-design/texture-detail-2.jpg"
+            alt="Close-up of hand-painted surface texture"
+            class="w-full h-auto border border-slate-gray"
+            loading="lazy"
+            data-animate="fade"
+          />
         </div>
       </div>
 
@@ -74,10 +91,10 @@ import ServiceCard from '../../components/ServiceCard.astro';
           <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
             The name
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             "Untitled" because every project starts blank. No templates loaded. No predetermined style to impose. We don't have a signature look, and that's the point. The work should look like it belongs to your building, not to us.
           </p>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             "Mixed media" because the question is never "what medium do we work in." The question is "what does this specific place need?" Whatever the answer requires, that's what we use.
           </p>
         </div>
@@ -85,7 +102,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
           <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
             If you're not sure what you want yet
           </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             That's fine. Most people aren't. You don't need a finished concept to reach out. You don't need a mood board or a Pinterest folder or a detailed brief. If you have a wall, a building, or even just an idea you haven't figured out yet, that's enough. I'll help you build it into something worth painting.
           </p>
         </div>
@@ -99,6 +116,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
             description="How we go from your first call to finished work on the wall."
             href="/about/process"
             linkText="See the process"
+            image="/images/content-design/carytown-render.jpg"
           />
         </div>
         <div data-animate="fade" data-animate-delay="2">
@@ -107,6 +125,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
             description="Why we start with discovery, not design."
             href="/about/philosophy"
             linkText="Read the philosophy"
+            image="/images/content-design/trolley-vintage.jpg"
           />
         </div>
       </div>

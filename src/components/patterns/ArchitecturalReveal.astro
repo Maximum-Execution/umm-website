@@ -1,0 +1,32 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  aspect?: string;
+  overlay?: boolean;
+  class?: string;
+}
+
+const {
+  image,
+  alt,
+  aspect = 'aspect-[21/9]',
+  overlay = false,
+  class: className = '',
+} = Astro.props;
+---
+
+<div class:list={['w-full overflow-hidden', className]} data-animate="fade">
+  <div class={`relative ${aspect}`}>
+    <img
+      src={image}
+      alt={alt}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+      decoding="async"
+    />
+    {overlay && (
+      <div class="absolute inset-0 bg-bone-black/30" aria-hidden="true"></div>
+    )}
+  </div>
+</div>

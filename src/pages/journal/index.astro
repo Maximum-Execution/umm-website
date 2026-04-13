@@ -6,14 +6,19 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import JournalCard from '../../components/JournalCard.astro';
+import EditorialAside from '../../components/patterns/EditorialAside.astro';
 
 const posts = (await getCollection('journal'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout
-  title="Journal — Untitled Mixed Media"
-  description="Thoughts on public art, signs, buildings, and the people who care about them. Mural pricing, sign design, materials science, and Richmond history from Spencer Bennett."
+  title="Journal | Untitled Mixed Media"
+  description="Thoughts on public art, signs, buildings, and the people who care about them. Mural pricing, sign design, materials science, and Richmond history from Untitled Mixed Media."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Journal' },
+  ]}
 >
   <Nav />
   <main class="pt-24 pb-16 px-6 lg:px-12">
@@ -34,7 +39,7 @@ const posts = (await getCollection('journal'))
           </h1>
         </div>
         <div class="lg:col-span-5 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
             I write about whatever I'm thinking about. Mural pricing, sign design, materials science, Richmond history, public art funding, the difference between a good sign and a bad one. If it's connected to the work, it ends up here.
           </p>
         </div>
@@ -43,13 +48,20 @@ const posts = (await getCollection('journal'))
       <!-- Email capture -->
       <section class="bg-midnight-graphite border border-slate-gray p-8 md:p-12 mb-16" aria-labelledby="journal-newsletter-heading" data-animate="fade">
         <div class="max-w-3xl">
+          <EditorialAside
+            image="/images/content-design/texture-detail-1.jpg"
+            alt="Close-up of hand-painting technique"
+            position="right"
+            maxWidth="max-w-[120px]"
+            class="opacity-60"
+          />
           <p class="font-mono text-smoke-gray uppercase tracking-[0.08em] mb-4" style="font-size: var(--text-fluid-xs);">
             Richmond, by hand.
           </p>
           <h2 id="journal-newsletter-heading" class="font-heading text-titanium-white mb-4 text-balance" style="font-size: var(--text-fluid-xl); line-height: 1.2;">
             New posts by email. No spam. No sales pitch.
           </h2>
-          <p class="font-body text-shadow-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             I send updates when I publish something new. Projects, pricing breakdowns, Richmond history, sign design, materials research. Usually once or twice a month. Unsubscribe anytime.
           </p>
           <form id="journal-newsletter-form" class="flex flex-col sm:flex-row gap-3" action="#" method="POST" data-newsletter-form="journal" novalidate>
@@ -132,7 +144,7 @@ const posts = (await getCollection('journal'))
           ))}
         </div>
       ) : (
-        <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-lg);">
+        <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg);">
           No posts yet. Check back soon.
         </p>
       )}

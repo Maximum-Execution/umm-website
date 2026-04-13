@@ -23,9 +23,15 @@ const journal = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.date(),
+    dateModified: z.date().optional(),
     tags: z.array(z.string()),
-    author: z.string().default('Spencer Bennett'),
+    author: z.string().default('Untitled Mixed Media'),
     featured: z.boolean().default(false),
+    cover: z.string().optional(),
+    faqItems: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
   }),
 });
 

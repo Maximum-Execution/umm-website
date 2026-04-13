@@ -122,29 +122,28 @@
   --font-sans: 'Gotham', system-ui, sans-serif;
   --font-mono: 'Berkeley Mono', ui-monospace, monospace;
 
-  /* ─── Fluid Type Scale — Brutalist Two-Ramp ──────────────
-     UI Ramp: conservative growth, Apple-standard readability
-     Impact Ramp: aggressive jumps, brutalist tension
+  /* ─── Fluid Type Scale — Apple HIG Hierarchy ────────────
+     Mobile values from Apple's iOS text styles (pt = CSS px).
+     Desktop values scaled up for web readability (web convention).
+     Body: 17px (mobile) → 18px (desktop) matches Apple iOS base.
      Min: 375px (iPhone SE) → Max: 1920px (large desktop)
      ──────────────────────────────────────────────────────── */
 
-  /* UI Ramp — Conservative */
-  --text-fluid-xs:   clamp(0.75rem,   0.7045rem + 0.2045vw, 0.875rem);  /* 12→14px  Micro / metadata  */
-  --text-fluid-sm:   clamp(0.875rem,  0.8409rem + 0.1705vw, 0.9375rem); /* 14→15px  Labels / tags     */
-  --text-fluid-base: clamp(1.0625rem, 1.0511rem + 0.0568vw, 1.125rem);  /* 17→18px  Body              */
-  --text-fluid-lg:   clamp(1.125rem,  1.0739rem + 0.2557vw, 1.3125rem); /* 18→21px  Body large / lead */
-  --text-fluid-xl:   clamp(1.5rem,    1.4205rem + 0.3977vw, 1.75rem);   /* 24→28px  Subtitle / h3     */
+  /* Standard Ramp — Apple text styles */
+  --text-fluid-xs:   clamp(0.75rem,   0.735rem  + 0.065vw, 0.8125rem);  /* 12→13px  Caption 1 — tags, metadata    */
+  --text-fluid-sm:   clamp(0.9375rem, 0.922rem  + 0.065vw, 1rem);       /* 15→16px  Subhead — nav, UI labels      */
+  --text-fluid-base: clamp(1.0625rem, 1.047rem  + 0.065vw, 1.125rem);   /* 17→18px  Body — default reading text   */
+  --text-fluid-lg:   clamp(1.125rem,  1.08rem   + 0.194vw, 1.3125rem);  /* 18→21px  Callout — lead text, sidebar  */
+  --text-fluid-xl:   clamp(1.25rem,   1.189rem  + 0.259vw, 1.5rem);     /* 20→24px  Title 3 — h3, card titles     */
 
-  /* Gap here IS the brutalist tension: 28px → 36px intentional jump */
-
-  /* Impact Ramp — Aggressive */
-  --text-fluid-2xl:  clamp(1.75rem,   1.63rem   + 0.5178vw, 2.25rem);   /* 28→36px  Bridge / oversize sub */
-  --text-fluid-3xl:  clamp(2.25rem,   1.9659rem + 1.4205vw, 3.5rem);    /* 36→56px  Section title / h2    */
-  --text-fluid-4xl:  clamp(3rem,      2.5455rem + 2.2727vw, 4.5rem);    /* 48→72px  Page title / h1        */
-  --text-fluid-5xl:  clamp(3.5rem,    2.8409rem + 3.2955vw, 6rem);      /* 56→96px  Hero display            */
+  /* Display Ramp — larger headings scaled for web */
+  --text-fluid-2xl:  clamp(1.375rem,  1.284rem  + 0.388vw, 1.75rem);    /* 22→28px  Title 2 — h2 in content       */
+  --text-fluid-3xl:  clamp(1.75rem,   1.568rem  + 0.777vw, 2.5rem);     /* 28→40px  Title 1 — section title / h2  */
+  --text-fluid-4xl:  clamp(2.125rem,  1.791rem  + 1.424vw, 3.5rem);     /* 34→56px  Large Title — page title / h1 */
+  --text-fluid-5xl:  clamp(2.75rem,   2.325rem  + 1.812vw, 4.5rem);     /* 44→72px  Display — hero headline       */
 }
 
-/* ─── Brutalist Spacing & Rhythm Tokens ─────────────────── */
+/* ─── Spacing & Rhythm Tokens ──────────────────────────── */
 
 :root {
   /* Spacing — 4px base scale */
@@ -162,20 +161,24 @@
   --space-24:  96px;   /* Hero void, major break */
   --space-32:  128px;  /* Maximum void — brutalist anchor */
 
-  /* Leading (line-height) */
-  --leading-solid:   1.0;   /* Hero display — text as shape */
-  --leading-tight:   1.1;   /* Large brutalist titles */
-  --leading-snug:    1.2;   /* Section headers */
-  --leading-normal:  1.4;   /* UI labels, tags */
-  --leading-relaxed: 1.6;   /* Body copy — Apple standard */
+  /* Leading (line-height) — Apple HIG ratios, adapted for UMM fonts.
+     Smaller text gets more generous leading; larger text tightens.
+     Pattern: Caption 1.33 → Body 1.4 → Title 1.25 → Display 1.1 */
+  --leading-solid:   1.0;    /* Special: text-as-shape, decorative numbers */
+  --leading-tight:   1.1;    /* Display + Large Title (Canela 34px+) */
+  --leading-snug:    1.2;    /* Title 1 (Canela 28–40px) */
+  --leading-normal:  1.25;   /* Title 2, Title 3 (Canela 20–28px) */
+  --leading-relaxed: 1.4;    /* Body, Callout (Lyon Text reading) */
 
-  /* Tracking (letter-spacing) — tighter as size increases */
-  --tracking-tighter: -0.04em;  /* Hero display */
-  --tracking-tight:   -0.03em;  /* H1 display */
-  --tracking-snug:    -0.02em;  /* H2 section title */
-  --tracking-normal:   0em;     /* Body copy */
-  --tracking-wide:     0.01em;  /* Small labels */
-  --tracking-wider:    0.08em;  /* Micro / all-caps tags */
+  /* Tracking (letter-spacing) — Apple + New York serif conventions.
+     Serif faces (Canela) use gentler negative tracking than sans-serif.
+     Small text loosens for legibility; display text tightens for density. */
+  --tracking-tighter: -0.02em;  /* Display (44px+) */
+  --tracking-tight:   -0.015em; /* Large Title (34px+) */
+  --tracking-snug:    -0.01em;  /* Title 1, Title 2 (22–40px) */
+  --tracking-normal:   0em;     /* Body, Callout */
+  --tracking-wide:     0.01em;  /* Subhead, small UI */
+  --tracking-wider:    0.08em;  /* Caption all-caps tags */
 
   /* Measure (max-width for reading comfort) */
   --measure-narrow: 45ch;
@@ -234,7 +237,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bone-black);
   color: var(--color-titanium-white);
-  line-height: var(--leading-relaxed);  /* 1.6 — Apple reading standard */
+  line-height: var(--leading-relaxed);  /* 1.4 — Apple Body leading adapted for Lyon Text */
   font-size: var(--text-fluid-base);    /* 17→18px */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -242,25 +245,25 @@ body {
 
 :where(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-heading);
-  line-height: var(--leading-tight);  /* 1.1 */
+  line-height: var(--leading-normal);  /* 1.25 — safe default for all headings */
 }
 
 :where(h1) {
-  font-size: var(--text-fluid-4xl);
-  letter-spacing: var(--tracking-tight);   /* -0.03em */
-  line-height: var(--leading-tight);       /* 1.1 */
+  font-size: var(--text-fluid-4xl);          /* 34→56px  Large Title */
+  letter-spacing: var(--tracking-tight);     /* -0.015em */
+  line-height: var(--leading-tight);         /* 1.1 */
 }
 
 :where(h2) {
-  font-size: var(--text-fluid-3xl);
-  letter-spacing: var(--tracking-snug);    /* -0.02em */
-  line-height: var(--leading-tight);       /* 1.1 */
+  font-size: var(--text-fluid-3xl);          /* 28→40px  Title 1 */
+  letter-spacing: var(--tracking-snug);      /* -0.01em */
+  line-height: var(--leading-snug);          /* 1.2 */
 }
 
 :where(h3) {
-  font-size: var(--text-fluid-xl);
-  letter-spacing: calc(var(--tracking-snug) / 2);  /* -0.01em */
-  line-height: var(--leading-snug);        /* 1.2 */
+  font-size: var(--text-fluid-xl);           /* 20→24px  Title 3 */
+  letter-spacing: var(--tracking-snug);      /* -0.01em */
+  line-height: var(--leading-normal);        /* 1.25 */
 }
 
 /* ─── Font Utility Classes ─────────────────────────────── */
@@ -355,10 +358,16 @@ body {
   opacity: 1;
 }
 
-/* Clip-path wipe reveal (for images) */
+/* Clip-path wipe reveal (for image containers)
+   Applied to the wrapper element (figure, div), NEVER directly to an <img>.
+   will-change hints the browser to promote the layer before animation begins;
+   scoped to :not(.is-visible) so the hint releases after the one-shot reveal. */
 [data-animate="reveal"] {
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+[data-animate="reveal"]:not(.is-visible) {
+  will-change: clip-path;
 }
 [data-animate="reveal"].is-visible {
   clip-path: inset(0);
@@ -417,6 +426,11 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
+  /* Promote the overlay to its own compositor layer so page scroll
+     never invalidates or repaints the noise tile. Stable (not animated),
+     so translateZ(0) is preferred over a persistent will-change hint. */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* ─── Utility ───────────────────────────────────────────── */
@@ -437,17 +451,26 @@ body::before {
 }
 
 .case-study-prose h2 {
+  font-family: var(--font-heading);
+  color: var(--color-titanium-white);
+  font-size: var(--text-fluid-2xl);       /* 22→28px  Title 2 */
+  line-height: var(--leading-normal);     /* 1.25 */
+  letter-spacing: var(--tracking-snug);   /* -0.01em */
   margin-top: var(--space-20);
   margin-bottom: var(--space-6);
 }
 
 .case-study-prose h3 {
+  font-family: var(--font-heading);
+  color: var(--color-titanium-white);
+  font-size: var(--text-fluid-lg);        /* 18→21px  Callout */
+  line-height: var(--leading-normal);     /* 1.25 */
   margin-top: var(--space-12);
   margin-bottom: var(--space-4);
 }
 
 .case-study-prose p {
-  color: var(--color-shadow-gray);
+  color: var(--color-soft-gray);
   font-size: var(--text-fluid-base);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
@@ -476,13 +499,19 @@ body::before {
 
 .case-study-prose ul,
 .case-study-prose ol {
-  color: var(--color-shadow-gray);
+  color: var(--color-soft-gray);
+  font-size: var(--text-fluid-base);
+  line-height: var(--leading-relaxed);
   padding-left: 1.5em;
   margin-bottom: var(--space-6);
 }
 
 .case-study-prose li {
   margin-bottom: var(--space-3);
+}
+
+.case-study-prose li p {
+  margin-bottom: var(--space-2, 8px);
 }
 
 .case-study-prose li strong {
@@ -496,4 +525,77 @@ body::before {
   height: auto;
   margin: var(--space-12) 0;
   object-fit: cover;
+}
+
+.case-study-prose figure {
+  margin: var(--space-12) 0;
+}
+
+.case-study-prose figure img {
+  margin: 0;
+}
+
+.case-study-prose figcaption {
+  font-family: var(--font-mono);
+  font-size: var(--text-fluid-xs);
+  color: var(--color-smoke-gray);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-top: var(--space-3);
+}
+
+/* Tables */
+.case-study-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-8) 0 var(--space-12);
+  font-size: var(--text-fluid-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.case-study-prose thead th {
+  color: var(--color-titanium-white);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-smoke-gray);
+  font-size: var(--text-fluid-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.case-study-prose tbody td {
+  color: var(--color-soft-gray);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-slate-gray);
+  vertical-align: top;
+}
+
+.case-study-prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Scrollable table wrapper for mobile */
+.case-study-prose .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--space-8) 0 var(--space-12);
+}
+
+.case-study-prose .table-wrapper table {
+  margin: 0;
+  min-width: 480px;
+}
+
+/* Blockquotes */
+.case-study-prose blockquote {
+  border-left: 2px solid var(--color-slate-gray);
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.case-study-prose blockquote p {
+  color: var(--color-soft-gray);
+  font-style: italic;
 }

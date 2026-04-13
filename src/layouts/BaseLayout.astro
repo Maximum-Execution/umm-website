@@ -16,13 +16,14 @@ interface Props {
     headline: string;
     description: string;
     datePublished: string;
+    dateModified?: string;
     author: string;
     image?: string;
   };
 }
 
 const {
-  title = 'Untitled Mixed Media — Hand-Painted Murals & Signs | Richmond, VA',
+  title = 'Untitled Mixed Media | Hand-Painted Murals & Signs | Richmond, VA',
   description = 'Hand-painted murals and signs built from your actual location. Landmarks, not lookalikes. Richmond, Virginia.',
   ogImage = '/og-image.png',
   ogType = 'website',
@@ -161,9 +162,11 @@ import '../styles/global.css';
         "headline": blogPosting.headline,
         "description": blogPosting.description,
         "datePublished": blogPosting.datePublished,
+        "dateModified": blogPosting.dateModified || blogPosting.datePublished,
         "author": {
-          "@type": "Person",
-          "name": blogPosting.author
+          "@type": "Organization",
+          "name": blogPosting.author,
+          "url": "https://untitledmixedmedia.com"
         },
         "publisher": {
           "@type": "Organization",
@@ -176,8 +179,10 @@ import '../styles/global.css';
 
     <slot name="head" />
   </head>
-  <body class="min-h-screen flex flex-col" id="main-content">
-    <slot />
+  <body class="min-h-screen flex flex-col">
+    <div id="main-content" tabindex="-1" class="flex flex-col flex-1">
+      <slot />
+    </div>
 
     <script>
       // Wrap words in spans for headline reveal (source: server-rendered author content only)

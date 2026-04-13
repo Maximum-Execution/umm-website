@@ -9,6 +9,7 @@ interface Props {
   secondaryHref?: string;
   secondaryLabel?: string;
   trustLine?: string;
+  backgroundImage?: string;
 }
 
 const {
@@ -19,11 +20,23 @@ const {
   secondaryHref = '/work',
   secondaryLabel = 'See Our Work',
   trustLine = '',
+  backgroundImage,
 } = Astro.props;
 ---
 
-<section class="border-t border-slate-gray py-24 lg:py-32 px-6 lg:px-12">
-  <div class="max-w-4xl mx-auto text-center" data-animate="fade">
+<section class:list={["border-t border-slate-gray py-24 lg:py-32 px-6 lg:px-12", backgroundImage && "relative overflow-hidden"]}>
+  {backgroundImage && (
+    <div class="absolute inset-0" aria-hidden="true">
+      <img
+        src={backgroundImage}
+        alt=""
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-bone-black/80"></div>
+    </div>
+  )}
+  <div class="relative z-10 max-w-4xl mx-auto text-center" data-animate="fade">
     <h2
       class="font-heading text-titanium-white mb-6"
       style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);"
@@ -32,7 +45,7 @@ const {
     </h2>
     {description && (
       <p
-        class="font-body text-shadow-gray mb-10 max-w-2xl mx-auto"
+        class="font-body text-soft-gray mb-10 max-w-2xl mx-auto"
         style="font-size: var(--text-fluid-lg);"
       >
         {description}

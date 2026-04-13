@@ -1,0 +1,37 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  position?: 'left' | 'right';
+  maxWidth?: string;
+  class?: string;
+}
+
+const {
+  image,
+  alt,
+  position = 'right',
+  maxWidth = 'max-w-xs',
+  class: className = '',
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'hidden lg:block mb-6',
+    maxWidth,
+    position === 'right' ? 'float-right ml-8' : 'float-left mr-8',
+    className,
+  ]}
+  data-animate="fade"
+>
+  <div class="overflow-hidden border border-slate-gray">
+    <img
+      src={image}
+      alt={alt}
+      class="w-full h-auto object-cover opacity-80"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</div>

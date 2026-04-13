@@ -11,7 +11,7 @@ interface Props {
 
 const {
   headline = 'We help you build your idea into something worth painting.',
-  subline = 'Hand-painted murals and signs in Richmond, Virginia. We sit down with you, figure out what your project is really about, and paint it by hand.',
+  subline = 'Hand-painted murals and signs in Richmond, Virginia. Most artists paint for themselves. Most sign shops print for speed. I paint for you.',
   ctaLabel = 'Schedule Your Free Discovery Session',
   ctaHref = '/contact',
 } = Astro.props;
@@ -48,14 +48,24 @@ const {
         {headline}
       </h1>
       {subline && (
-        <p
-          class="font-body text-soft-gray mb-10 max-w-2xl"
-          style="font-size: var(--text-fluid-lg);"
+        <div
+          class="mb-10 max-w-2xl space-y-4"
           data-animate
           data-animate-delay="2"
         >
-          {subline}
-        </p>
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg);"
+          >
+            {subline}
+          </p>
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg);"
+          >
+            Your building, your story, your business.
+          </p>
+        </div>
       )}
       <div class="flex flex-wrap gap-4" data-animate data-animate-delay="3">
         <a
@@ -65,12 +75,20 @@ const {
           {ctaLabel}
         </a>
         <a
-          href="/work"
+          href="/mural-cost-estimator"
           class="font-sans inline-block border border-titanium-white text-titanium-white px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors duration-200"
         >
-          See Our Work <span aria-hidden="true">&rarr;</span>
+          Get a Price Estimate <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
+      <p
+        class="font-body text-smoke-gray italic mt-6"
+        style="font-size: var(--text-fluid-sm);"
+        data-animate
+        data-animate-delay="4"
+      >
+        You don't need a finished concept to get started.
+      </p>
     </div>
   </div>
 </section>

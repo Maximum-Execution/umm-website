@@ -4,7 +4,14 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Contact | Untitled Mixed Media" description="Get in touch about a mural, hand-painted sign, or sign restoration project in Richmond, Virginia. Tell us about your wall.">
+<BaseLayout
+  title="Contact | Untitled Mixed Media"
+  description="Get in touch about a mural, hand-painted sign, or sign restoration project in Richmond, Virginia. Tell us about your wall."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Contact' },
+  ]}
+>
   <Nav />
   <main class="pt-32 pb-16">
     <div class="px-6 lg:px-12 max-w-7xl mx-auto">
@@ -16,8 +23,16 @@ import Footer from '../components/Footer.astro';
             Tell us about your project. We'll take it from here.
           </h1>
         </div>
-        <div class="lg:col-span-5 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+        <div class="lg:col-span-5">
+          <div class="aspect-[4/3] overflow-hidden mb-6 border border-slate-gray">
+            <img
+              src="/images/content-design/carytown-finished.jpg"
+              alt="Finished hand-painted mural on a Richmond building"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
             Describe what you're thinking. It doesn't have to be finished or figured out yet. We respond within one business day, and if the project is a good fit, we'll schedule a free site visit to see the space in person before we design anything.
           </p>
         </div>
@@ -87,7 +102,7 @@ import Footer from '../components/Footer.astro';
             Send Your Project Details
           </button>
           <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">Spencer reads every message personally. No auto-replies. No sales team.</p>
-          <p id="form-status" class="font-body text-shadow-gray hidden" aria-live="polite" style="font-size: var(--text-fluid-sm);"></p>
+          <p id="form-status" class="font-body text-soft-gray hidden" aria-live="polite" style="font-size: var(--text-fluid-sm);"></p>
         </div>
       </form>
 
@@ -161,15 +176,15 @@ import Footer from '../components/Footer.astro';
             Direct Contact
           </h2>
           <div class="space-y-4">
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               <strong class="text-titanium-white block mb-1">Email</strong>
-              <a href="mailto:hello@untitledmixedmedia.com" class="text-shadow-gray hover:text-titanium-white transition-colors duration-200">hello@untitledmixedmedia.com</a>
+              <a href="mailto:hello@untitledmixedmedia.com" class="text-soft-gray hover:text-titanium-white transition-colors duration-200">hello@untitledmixedmedia.com</a>
             </p>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               <strong class="text-titanium-white block mb-1">Location</strong>
               Richmond, Virginia. We serve the greater Richmond metro area and travel for larger commissions.
             </p>
-            <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               We respond to every inquiry within one business day.
             </p>
           </div>

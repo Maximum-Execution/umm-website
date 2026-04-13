@@ -33,15 +33,16 @@ const projects = (await getCollection('projects'))
       <h1 class="font-heading text-titanium-white text-balance mb-6" style="font-size: var(--text-fluid-4xl);" data-animate>
         Hand-painted murals and signs in Richmond, Virginia.
       </h1>
-      <p class="font-body text-shadow-gray max-w-2xl" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate data-animate-delay="1">
+      <p class="font-body text-soft-gray max-w-2xl" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate data-animate-delay="1">
         Every project below started with questions about the building, the business, and what the people who walk past it should notice.
       </p>
     </section>
 
     <!-- Featured Projects -->
     <section class="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
+      <h2 class="sr-only">Featured Projects</h2>
       <div class="flex items-center justify-between mb-8">
-        <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        <p class="font-mono text-smoke-gray uppercase" aria-hidden="true" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
           Featured Projects
         </p>
       </div>
@@ -132,9 +133,17 @@ const projects = (await getCollection('projects'))
         <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">
           Your logo, hand-painted.
         </h2>
-        <p class="font-body text-shadow-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
+        <p class="font-body text-soft-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
           Most people start here. You send your logo, we paint it by hand on wood or directly on your wall. No design meetings. No weeks of waiting. Just your name, painted with care, on a surface that lasts.
         </p>
+        <div class="max-w-md mx-auto my-8">
+          <img
+            src="/images/content-design/hand-painted-sign.jpg"
+            alt="Hand-painted Brand Mark on wood panel"
+            class="w-full h-auto border border-slate-gray"
+            loading="lazy"
+          />
+        </div>
         <a href="/brand-mark" class="inline-block border border-titanium-white text-titanium-white font-sans px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors">
           See The Brand Mark
         </a>

@@ -27,6 +27,9 @@ const steps = [
     ],
     image: processRender,
     imageAlt: 'Photorealistic Blender render showing a mural design on a real building',
+    secondaryImage: processPaint,
+    secondaryImageAlt: 'Finished mural matching the render design',
+    imageLabels: ['Render', 'Reality'] as const,
   },
   {
     number: '03',
@@ -69,14 +72,45 @@ const steps = [
           >
             {/* Image */}
             <div class={`overflow-hidden ${isReversed ? 'lg:[direction:ltr]' : ''}`} data-animate="scale">
-              <div class="aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
-                <Image
-                  src={step.image}
-                  alt={step.imageAlt}
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+              {step.secondaryImage ? (
+                <div class="grid grid-cols-2 gap-1">
+                  <div class="relative aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
+                    <Image
+                      src={step.image}
+                      alt={step.imageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    {step.imageLabels && (
+                      <span class="absolute bottom-2 left-2 font-mono text-titanium-white uppercase bg-bone-black/60 px-2 py-0.5" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+                        {step.imageLabels[0]}
+                      </span>
+                    )}
+                  </div>
+                  <div class="relative aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
+                    <Image
+                      src={step.secondaryImage}
+                      alt={step.secondaryImageAlt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    {step.imageLabels && (
+                      <span class="absolute bottom-2 left-2 font-mono text-titanium-white uppercase bg-bone-black/60 px-2 py-0.5" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+                        {step.imageLabels[1]}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div class="aspect-[4/3] bg-midnight-graphite border border-slate-gray overflow-hidden">
+                  <Image
+                    src={step.image}
+                    alt={step.imageAlt}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              )}
             </div>
 
             {/* Text */}
@@ -97,7 +131,7 @@ const steps = [
               <div class="space-y-4">
                 {step.body.map((paragraph: string) => (
                   <p
-                    class="font-body text-shadow-gray"
+                    class="font-body text-soft-gray"
                     style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
                   >
                     {paragraph}

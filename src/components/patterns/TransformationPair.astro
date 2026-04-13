@@ -1,0 +1,50 @@
+---
+interface Props {
+  leftImage: string;
+  rightImage: string;
+  leftAlt: string;
+  rightAlt: string;
+  leftLabel?: string;
+  rightLabel?: string;
+  aspect?: string;
+  class?: string;
+}
+
+const {
+  leftImage,
+  rightImage,
+  leftAlt,
+  rightAlt,
+  leftLabel = 'Before',
+  rightLabel = 'After',
+  aspect = 'aspect-[4/3]',
+  class: className = '',
+} = Astro.props;
+---
+
+<div class:list={['grid grid-cols-1 sm:grid-cols-2 gap-1', className]} data-animate="fade">
+  <div class={`relative overflow-hidden ${aspect}`}>
+    <img
+      src={leftImage}
+      alt={leftAlt}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+      decoding="async"
+    />
+    <span class="absolute bottom-3 left-3 font-mono text-titanium-white uppercase bg-bone-black/60 px-2 py-1" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+      {leftLabel}
+    </span>
+  </div>
+  <div class={`relative overflow-hidden ${aspect}`}>
+    <img
+      src={rightImage}
+      alt={rightAlt}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+      decoding="async"
+    />
+    <span class="absolute bottom-3 left-3 font-mono text-titanium-white uppercase bg-bone-black/60 px-2 py-1" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+      {rightLabel}
+    </span>
+  </div>
+</div>

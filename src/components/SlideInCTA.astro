@@ -17,7 +17,7 @@ const {
 <!-- Slide-In CTA -->
 <div
   id="slidein-cta"
-  class="fixed bottom-6 right-6 z-[998] w-full max-w-sm border border-slate-gray bg-bone-black p-6 translate-y-[120%] opacity-0 transition-all duration-500 ease-out hidden"
+  class="fixed bottom-6 right-6 z-[998] w-full max-w-sm border border-slate-gray bg-bone-black p-6 translate-y-[120%] opacity-0 transition-[transform,opacity] duration-400 ease-out hidden"
   role="complementary"
   aria-label="Brand Mark offer"
 >
@@ -38,12 +38,12 @@ const {
   <h3 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-lg); line-height: var(--leading-tight);">
     {headline}
   </h3>
-  <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-sm); line-height: 1.5;">
+  <p class="font-body text-soft-gray mb-4" style="font-size: var(--text-fluid-sm); line-height: 1.5;">
     {subhead}
   </p>
   <a
     href={ctaHref}
-    class="inline-block bg-titanium-white text-bone-black font-sans px-6 py-2.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
+    class="inline-block bg-titanium-white text-bone-black font-sans px-6 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
     id="slidein-cta-link"
   >
     {ctaLabel} &rarr;

@@ -1,4 +1,5 @@
 ---
+import TransformationPair from '../patterns/TransformationPair.astro';
 ---
 
 <section id="about" class="py-[var(--spacing-section)] border-t border-slate-gray">
@@ -10,15 +11,26 @@
     </div>
 
     <div class="max-w-3xl space-y-6" data-animate="fade" data-animate-delay="1">
-      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+      <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
         A landmark is the building people use to give directions. "Turn left at the place with the mural." "Park across from the one with the hand-painted sign." It is the building people photograph without being asked, the one they walk into because the outside told them something worth hearing.
       </p>
-      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+      <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
         A lookalike is everything else. The vinyl banner that could be on any storefront in any city. The template mural that looks like the one in Denver, the one in Austin, and the one in Brooklyn. The blank wall that says nothing about the people behind it. Lookalikes blend in. They get walked past. They disappear.
       </p>
       <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-        We paint landmarks. Murals built from real moments. Signs painted by hand with real intention. Work that belongs to your building, your block, and your story. It could not be copied onto anyone else's.
+        We paint landmarks. Murals built from real moments. Signs painted by hand with real intention. Work that belongs to your building, your block, and your story. It could not be copied onto anyone else's, because nobody else went through the same process to find it.
       </p>
+    </div>
+
+    <div class="mt-16" data-animate="fade" data-animate-delay="2">
+      <TransformationPair
+        leftImage="/images/content-design/trolley-render.jpg"
+        rightImage="/images/content-design/trolley-full.jpg"
+        leftAlt="A generic building wall before mural work"
+        rightAlt="The same building transformed into a landmark with a hand-painted mural"
+        leftLabel="Before"
+        rightLabel="After"
+      />
     </div>
   </div>
 </section>

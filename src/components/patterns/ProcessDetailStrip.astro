@@ -1,0 +1,40 @@
+---
+interface StripImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  images: StripImage[];
+  aspect?: string;
+  class?: string;
+}
+
+const {
+  images,
+  aspect = 'aspect-[3/4]',
+  class: className = '',
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'flex gap-1 overflow-x-auto snap-x snap-mandatory lg:overflow-visible',
+    className,
+  ]}
+  data-animate="fade"
+  role="figure"
+  aria-label="Process sequence"
+>
+  {images.map((img) => (
+    <div class={`flex-shrink-0 w-48 lg:w-auto lg:flex-1 snap-center overflow-hidden ${aspect}`}>
+      <img
+        src={img.src}
+        alt={img.alt}
+        class="w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  ))}
+</div>

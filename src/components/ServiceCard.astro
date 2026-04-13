@@ -4,19 +4,30 @@ interface Props {
   description: string;
   href: string;
   linkText?: string;
+  image?: string;
 }
 
-const { title, description, href, linkText = 'Learn more' } = Astro.props;
+const { title, description, href, linkText = 'Learn more', image } = Astro.props;
 ---
 
 <a
   href={href}
   class="group block border border-slate-gray p-8 hover:border-soft-gray transition-colors duration-200"
 >
+  {image && (
+    <div class="aspect-[16/9] overflow-hidden mb-6 -mx-8 -mt-8 border-b border-slate-gray">
+      <img
+        src={image}
+        alt=""
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+  )}
   <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200 mb-3" style={`font-size: var(--text-fluid-xl);`}>
     {title}
   </h3>
-  <p class="font-body text-shadow-gray mb-6" style={`font-size: var(--text-fluid-base);`}>
+  <p class="font-body text-soft-gray mb-6" style={`font-size: var(--text-fluid-base);`}>
     {description}
   </p>
   <span class="font-mono text-smoke-gray uppercase" style={`font-size: var(--text-fluid-xs);`}>

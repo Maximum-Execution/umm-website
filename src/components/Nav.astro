@@ -10,6 +10,7 @@ const navLinks: NavLink[] = [
     children: [
       { label: 'Murals', href: '/murals' },
       { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+      { label: 'Brand Mark', href: '/brand-mark' },
     ],
   },
   { label: 'Journal', href: '/journal' },
@@ -35,6 +36,7 @@ const navLinks: NavLink[] = [
             href={link.href}
             class="font-sans text-soft-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors inline-flex items-center gap-1.5"
             aria-haspopup={link.children ? 'true' : undefined}
+            aria-expanded={link.children ? 'false' : undefined}
           >
             {link.label}
             {link.children && (
@@ -67,13 +69,13 @@ const navLinks: NavLink[] = [
     </ul>
 
     <!-- Desktop CTA -->
-    <a href="/mural-cost-estimator" class="hidden md:inline-block bg-titanium-white text-bone-black font-sans px-6 py-2.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+    <a href="/mural-cost-estimator" class="hidden md:inline-block bg-titanium-white text-bone-black font-sans px-6 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
       Get a Price Estimate
     </a>
 
     <!-- Mobile Menu Button -->
     <button
-      class="md:hidden text-titanium-white p-2"
+      class="md:hidden text-titanium-white p-2.5"
       id="mobile-menu-btn"
       aria-label="Toggle menu"
       aria-expanded="false"
@@ -205,19 +207,24 @@ const navLinks: NavLink[] = [
     }
   });
 
-  // Nav background on scroll
+  // Nav background on scroll. Hysteresis prevents class churn near
+  // the threshold and limits DOM writes to true state transitions.
+  // Engage backdrop at scrollY > 50, release at scrollY < 20.
   let ticking = false;
+  let isScrolled = false;
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (window.scrollY > 50) {
-          nav?.classList.add('bg-bone-black/90', 'backdrop-blur-md');
-        } else {
-          nav?.classList.remove('bg-bone-black/90', 'backdrop-blur-md');
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (!isScrolled && y > 50) {
+        nav?.classList.add('bg-bone-black/90', 'backdrop-blur-md');
+        isScrolled = true;
+      } else if (isScrolled && y < 20) {
+        nav?.classList.remove('bg-bone-black/90', 'backdrop-blur-md');
+        isScrolled = false;
+      }
+      ticking = false;
+    });
   }, { passive: true });
 </script>

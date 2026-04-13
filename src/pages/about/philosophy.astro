@@ -6,103 +6,277 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+import EditorialAside from '../../components/patterns/EditorialAside.astro';
 import serviceMurals from '../../assets/images/service-murals.jpg';
 ---
 
-<BaseLayout title="Philosophy — Meaning Discovered, Not Imposed | Untitled Mixed Media" description="Places become distinctive when meaning is discovered from them, not imposed on them. The philosophy behind every Untitled Mixed Media project.">
+<BaseLayout
+  title="Why We Start with Discovery, Not Design | Untitled Mixed Media"
+  description="Why we start with discovery, not design. Our philosophy on public art, hand-painted signs, and working with intention. Untitled Mixed Media, Richmond, VA."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+    { name: 'Philosophy' },
+  ]}
+>
   <Nav />
-  <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'About', href: '/about' },
-        { label: 'Philosophy' },
-      ]} />
+  <main class="pb-0">
 
-      <!-- Hero: split layout -->
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
-        <div class="lg:col-span-7">
-          <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-            About
-          </p>
-          <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
-            Meaning Discovered, Not Imposed
+    <!-- ─── I · HERO ─────────────────────────────────────── -->
+    <section class="pt-36 lg:pt-44 pb-20 lg:pb-28 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Philosophy' },
+        ]} />
+
+        <div class="mt-12 lg:mt-20">
+          <h1
+            class="font-heading text-titanium-white max-w-5xl"
+            style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+            data-animate="headline"
+          >
+            Your space should tell your story. Not someone else&rsquo;s.
           </h1>
         </div>
-        <div class="lg:col-span-5 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
-            Every building has a story it is already telling. The brickwork, the neighborhood, the light, the people who pass by every day. And sometimes the most important story isn't in the building at all. It's in what happened there: a moment that defined the people or the place. Most muralists arrive with a portfolio of designs and look for a wall to put them on. We arrive with questions and look for the answers the place already holds.
+
+        <div class="mt-20 lg:mt-32 max-w-3xl space-y-8">
+          <p
+            class="lede font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+          >
+            I believe every mural, sign, and restoration should mean something specific to the person who commissioned it. Not a theme pulled from Pinterest. Not a style borrowed from another city. Something that came from your story, your place, and the people connected to it.
+          </p>
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+            data-animate-delay="1"
+          >
+            A mural shouldn&rsquo;t exist because you have a blank wall. It should exist because there&rsquo;s something about your business, your community, or your history that needs to be visible. When the work arises from that kind of necessity, it carries a weight that decoration never will.
+          </p>
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+            data-animate-delay="2"
+          >
+            That belief shapes every decision I make. It&rsquo;s why I spend time on discovery before I design. It&rsquo;s why I paint by hand instead of printing on vinyl. It&rsquo;s why the finished work feels like it belongs to your building and nobody else&rsquo;s.
           </p>
         </div>
       </div>
+    </section>
 
-      <!-- Pull quote -->
-      <div class="text-center py-12 mb-20 border-t border-b border-slate-gray" data-animate="settle">
-        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
-          Can you still stand out authentically when everyone has access to the same templates, the same printers, the same vinyl?
-        </p>
-      </div>
+    <!-- hairline divider -->
+    <div class="border-t border-slate-gray" role="presentation"></div>
 
-      <!-- Two-column: Discovery + Craft -->
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
-        <div data-animate="fade" data-animate-delay="1">
-          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Discovery Over Imposition
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            The difference between a mural that belongs and one that merely occupies space is where the idea came from. When the concept is discovered from the site itself, from the history of the building, the character of the street, the materials underfoot, the work becomes inseparable from its location. It could not exist anywhere else. That specificity is what makes public art meaningful rather than decorative.
+    <!-- ─── II · WHAT'S WRONG ──────────────────────────── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 lg:gap-x-20">
+          <!-- Heading anchors the left column -->
+          <div class="lg:col-span-5">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              What I believe is wrong with most public art and signage.
+            </h2>
+          </div>
+
+          <!-- Body in right column -->
+          <div class="lg:col-span-7 space-y-8">
+            <EditorialAside
+              image="/images/content-design/trolley-vintage.jpg"
+              alt="A generic streetscape with unremarkable signage"
+              position="right"
+            />
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Your building shouldn&rsquo;t look like every other building on the block. Your sign shouldn&rsquo;t be the same vinyl sticker your competitor ordered from the same catalog. Your mural shouldn&rsquo;t be a template that could exist in any city in America.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              But that&rsquo;s what most of the industry produces. Generic murals designed to photograph well for a week and get forgotten by the end of the month. Vinyl signs cranked out by shops that treat your brand like an order number. Work that adds visual noise to the street instead of meaning. None of it arises from the specific life of the person who paid for it. It&rsquo;s ready-made, applied from the outside, and it shows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Emphasized closing statement — centered below the split -->
+        <div class="mt-16 lg:mt-24 pt-10 lg:pt-14 border-t border-slate-gray max-w-3xl mx-auto" data-animate="fade" data-animate-delay="2">
+          <p
+            class="font-heading italic text-titanium-white"
+            style="font-size: var(--text-fluid-2xl); line-height: 1.24; letter-spacing: var(--tracking-snug);"
+          >
+            I think public spaces ought to reflect the people behind them. A business owner who poured five years into building something real deserves a sign that carries the same weight. A community with a century of history on its block deserves a mural built from that history, not painted over it.
           </p>
         </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Craft Over Production
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            Hand-painting is slower than printing. It is more expensive than vinyl. It requires years of training that cannot be automated or outsourced. That is exactly the point. A hand-painted sign or mural carries evidence of human decision-making in every brushstroke. The slight variations in letterforms, the way pigment sits differently on textured brick versus smooth plaster, the subtle shifts in density where the painter adjusted pressure. These are not imperfections. They are proof that a human being made this, here, for this place.
+      </div>
+    </section>
+
+    <!-- ─── III · THE ZAG ────────────────────────────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto">
+
+        <h2
+          class="font-heading text-titanium-white mb-12 lg:mb-16"
+          style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+          data-animate="headline"
+        >
+          What I do differently and what I refuse to do.
+        </h2>
+
+        <div class="space-y-8">
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+          >
+            I start with questions, not sketches. Before I design anything, I sit down with you and look for what&rsquo;s underneath the surface of your idea. Not just what the project should look like, but what it should mean. I&rsquo;m looking for the thing that makes your project necessary: the moment, the story, the identity that deserves to be visible.
+          </p>
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+            data-animate-delay="1"
+          >
+            I look at every project from three angles: is it creative enough to surprise people, functional enough to work in the real world, and expressive enough to say something authentic about who you are.
+          </p>
+        </div>
+
+        <!-- The "I refuse" editorial statement -->
+        <div class="mt-20 lg:mt-28 relative py-8 lg:py-12" data-animate="fade">
+          <span aria-hidden="true" class="block h-px bg-titanium-white w-20 mb-10 lg:mb-14"></span>
+          <p
+            class="font-heading italic text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.12; letter-spacing: var(--tracking-snug);"
+          >
+            I refuse to paint someone else&rsquo;s idea on your wall. I refuse to print your logo on vinyl and call it a sign. I refuse to skip the thinking and jump straight to production. Those shortcuts produce work that could belong to anyone. I&rsquo;m interested in work that could only belong to you.
+          </p>
+        </div>
+
+        <!-- Closing paragraph -->
+        <div class="mt-12 lg:mt-16">
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+          >
+            What I sacrifice in speed, I gain in depth. I hold to the difficult parts of this process, the deep listening, the slow refinement, because that&rsquo;s where the truth of the project lives. Quality requires patience, and I&rsquo;d rather take the time to get it right than rush to get it done.
           </p>
         </div>
       </div>
+    </section>
 
-      <!-- Inline pull quote -->
-      <div class="text-center py-12 mb-20" data-animate="settle">
-        <p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
-          When technology makes perfection cheap, human error becomes the premium feature.
-        </p>
-      </div>
+    <!-- ─── Full-bleed image break ──────────────────────── -->
+    <figure class="aspect-[21/9] lg:aspect-[21/8] overflow-hidden border-t border-b border-slate-gray" data-animate="reveal">
+      <Image
+        src={serviceMurals}
+        alt="Hand-painted mural in context with its surrounding neighborhood"
+        class="w-full h-full object-cover"
+      />
+    </figure>
 
-      <!-- Landmarks section: offset layout -->
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20 border-t border-slate-gray pt-20">
-        <div class="lg:col-span-4" data-animate="fade">
-          <p class="font-heading text-titanium-white italic" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-snug);">
-            You cannot download authenticity.
+    <!-- ─── IV · WHO YOU BECOME ────────────────────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto">
+
+        <h2
+          class="font-heading text-titanium-white mb-12 lg:mb-16"
+          style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+          data-animate="headline"
+        >
+          This is what clients tell me after the work is finished.
+        </h2>
+
+        <div class="space-y-8">
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+          >
+            They walk past their building and feel pride instead of indifference. They watch strangers photograph their mural without being asked. They hear customers say, &ldquo;I had to see what this place was about.&rdquo; They stop explaining what their business does because the sign already said it.
+          </p>
+          <p
+            class="font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+            data-animate-delay="1"
+          >
+            The gap between who they are and how their space looked before is gone. The inside and the outside finally match. The environment becomes whole. Not decorated, not improved. Complete, in a way it wasn&rsquo;t before.
           </p>
         </div>
-        <div class="lg:col-span-7 lg:col-start-6" data-animate="fade" data-animate-delay="1">
-          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: 1.2;">
-            Landmarks, Not Lookalikes
-          </h2>
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            A landmark is something people navigate by. It is the mural on the corner that tells you where to turn, the sign that has been there so long it has become part of the neighborhood's identity. A lookalike is something you scroll past because you have seen it in every other city. We build landmarks. Work that is so rooted in its location that removing it would leave a visible gap in the streetscape.
+
+        <!-- Closing statement -->
+        <div class="mt-16 lg:mt-24 pt-10 lg:pt-14 border-t border-slate-gray" data-animate="fade">
+          <p
+            class="font-heading italic text-titanium-white"
+            style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+          >
+            That transformation is what I&rsquo;m building toward on every project. Not just a beautiful wall. A space that finally expresses who you are, built from the truth of your own story.
           </p>
         </div>
-      </div>
 
-      <div class="aspect-[16/9] overflow-hidden mb-20">
-        <Image
-          src={serviceMurals}
-          alt="Hand-painted mural in context with its surrounding neighborhood"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
+        <!-- Editorial text-link CTA -->
+        <div class="mt-16 lg:mt-20">
+          <a
+            href="/contact"
+            class="cta-link group inline-flex items-baseline gap-4 lg:gap-6 font-heading text-titanium-white pb-3 border-b border-titanium-white hover:border-soft-gray"
+            style="font-size: var(--text-fluid-xl); letter-spacing: var(--tracking-snug);"
+            data-animate="fade"
+          >
+            <span>Schedule Your Free Discovery Session</span>
+            <span aria-hidden="true" class="cta-arrow inline-block">&rarr;</span>
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
 
     <RelatedPages heading="Related" pages={[
-      { title: 'Our Process', href: '/about/process', description: 'The Provenance Method from discovery to completion.' },
-      { title: 'About', href: '/about', description: 'Untitled Mixed Media — hand-painted murals and signs in Richmond, VA.' },
-      { title: 'Murals', href: '/murals', description: 'Hand-painted murals in Richmond, VA.' },
+      { title: 'Our Process', href: '/about/process' },
+      { title: 'About', href: '/about' },
+      { title: 'Murals', href: '/murals' },
     ]} />
+
     <CTABlock />
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  /* Drop-cap lede: editorial opening mark */
+  .lede::first-letter {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 3.4em;
+    line-height: 0.84;
+    float: left;
+    padding: 0.08em 0.14em 0 0;
+    color: var(--color-titanium-white);
+  }
+
+  /* CTA arrow glide */
+  .cta-link .cta-arrow {
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-link:hover .cta-arrow,
+  .cta-link:focus-visible .cta-arrow {
+    transform: translateX(0.5rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-link .cta-arrow {
+      transition: none;
+    }
+  }
+</style>

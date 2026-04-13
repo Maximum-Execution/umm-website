@@ -4,92 +4,741 @@ import Nav from '../../../components/Nav.astro';
 import Footer from '../../../components/Footer.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import CTABlock from '../../../components/CTABlock.astro';
-import FAQSection from '../../../components/FAQSection.astro';
 import RelatedPages from '../../../components/RelatedPages.astro';
+import VideoEmbed from '../../../components/patterns/VideoEmbed.astro';
+import ArchitecturalReveal from '../../../components/patterns/ArchitecturalReveal.astro';
 
 const faqItems = [
-  { question: 'What is a ghost sign?', answer: 'A ghost sign is a hand-painted advertisement — typically on a brick building exterior — that has survived from an earlier era. Most date from the late 1800s through the mid-1900s, before vinyl signage and digital printing replaced brush-and-paint lettering. They are called ghost signs because they appear to fade in and out of visibility depending on light and weather conditions.' },
-  { question: 'Can ghost signs be restored?', answer: 'Many can, but the approach depends on the sign\'s condition, the paint layers involved, and the building owner\'s goals. Some signs respond well to careful stabilization and inpainting. Others are better left alone with a protective coating to slow further deterioration. A professional assessment determines what is possible and responsible.' },
-  { question: 'What is the difference between preservation and restoration?', answer: 'Preservation focuses on stopping further damage — stabilizing the surface, applying protective coatings, and documenting the sign as it exists. Restoration goes further, matching original colors and repainting faded areas to bring the sign closer to its original appearance. The right approach depends on the sign\'s historical significance and the owner\'s intent.' },
-  { question: 'How much does ghost sign restoration cost?', answer: 'Cost varies based on sign size, wall condition, accessibility, and the level of intervention required. A condition assessment is the first step — it identifies what is feasible and provides a clear scope of work and pricing. Visit our sign restoration cost page for a detailed breakdown of factors that influence pricing.' },
+  {
+    question: 'What is a ghost sign?',
+    answer: 'A ghost sign is a hand-painted commercial advertisement applied directly to a brick wall, typically between the 1880s and the 1960s. They advertised products and businesses that no longer exist. The name comes from their faded, apparition-like appearance and from the fact that they are advertising dead businesses: the words are still on the wall, but the companies behind them are gone.',
+  },
+  {
+    question: 'Why do ghost signs last so long?',
+    answer: 'The painters used lead-based paint mixed with linseed oil. This combination penetrated the porous brick and chemically bonded with the masonry through a process called lead soap formation. The paint became part of the brick itself, which is why it fades gradually rather than peeling like modern paint.',
+  },
+  {
+    question: 'Why do ghost signs appear after it rains?',
+    answer: "Rain darkens bare brick by filling surface pores with water. But where the original paint sealed those pores a century ago, the brick cannot absorb water the same way. The contrast between the wet, dark brick and the sealed, lighter paint makes the lettering visible.",
+  },
+  {
+    question: 'Can ghost signs be restored?',
+    answer: 'Most ghost signs can be partially or fully restored if paint survives on the surface. Restoration can range from stabilization (slowing further deterioration) to full repaint (bringing the sign back to original vibrancy). The right approach depends on the condition, the building, and what the owner wants.',
+  },
+  {
+    question: 'Where are the ghost signs in Richmond?',
+    answer: "Church Hill, Shockoe Bottom, Jackson Ward, and Oregon Hill have the highest concentrations. The Uneeda Biscuit sign at 25th and Broad in Church Hill is the most well-known. No complete map or walking tour currently exists.",
+  },
 ];
 ---
 
 <BaseLayout
   title="Ghost Signs in Richmond, VA | Untitled Mixed Media"
-  description="A guide to Richmond's ghost signs — fading hand-painted advertisements from the 19th and 20th centuries. Documenting, preserving, and restoring Richmond's painted history."
+  description="What ghost signs are, why they survive, and what makes Richmond one of the best cities to find them. A guide to the city's fading hand-painted history."
+  ogType="article"
   faqItems={faqItems}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Work', url: '/work' },
     { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
     { name: 'Sign Restoration', url: '/hand-painted-signs/sign-restoration' },
-    { name: 'Ghost Signs' },
+    { name: 'Ghost Signs in Richmond' },
   ]}
   service={{
     name: 'Ghost Sign Restoration',
     description: 'Documenting, preserving, and restoring ghost signs in Richmond, Virginia.',
     priceRange: '$1,500 - $15,000',
   }}
+  blogPosting={{
+    headline: "Ghost Signs in Richmond, VA: A Guide to the City's Fading Hand-Painted History",
+    description: "Richmond's brick walls hold over a century of hand-painted advertisements, business names, and commercial lettering.",
+    datePublished: '2026-04-10',
+    author: 'Untitled Mixed Media',
+  }}
 >
   <Nav />
-  <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Work', href: '/work' },
-        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
-        { label: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration' },
-        { label: 'Ghost Signs' },
-      ]} />
+  <main class="pb-0">
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        Sign Restoration
-      </p>
+    <!-- ─── I · HERO ─────────────────────────────────────── -->
+    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+          { label: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration' },
+          { label: 'Ghost Signs in Richmond' },
+        ]} />
 
-      <!-- Hero: split layout -->
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
-        <div class="lg:col-span-7">
-          <h1 class="font-heading text-titanium-white mb-6" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
-        Ghost Signs in Richmond, VA
-      </h1>
-        </div>
-        <div class="lg:col-span-5 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          Across Richmond, fading hand-painted advertisements are disappearing from brick walls. These ghost signs, remnants of businesses from the late 1800s through the mid-1900s, are part of the city's visual history. If you own a building with one, or if you have noticed them in your neighborhood, you may be wondering whether anything can be done before they vanish entirely. A city's painted past should not disappear through indifference.
-        </p>
-        </div>
-      </div>
+        <div class="mt-12 lg:mt-20 max-w-3xl mx-auto">
+          <h1
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+            data-animate="headline"
+          >
+            Richmond&rsquo;s walls are talking. Here is how to listen.
+          </h1>
 
-      <!-- Body: two-column editorial -->
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
-        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
-                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          We study Richmond's ghost signs because we understand the techniques and materials that made them. Lead-based paints, hand-ground pigments, brush lettering applied directly to brick. These signs were built to advertise, and the craft that went into them is exactly what has kept them visible a century later. That knowledge informs how we approach preservation: documenting what exists, stabilizing what can be saved, and advising property owners on responsible stewardship. We do not paint over the past.
-        </p>
-        </div>
-        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
-                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          If you have a ghost sign on your building, the first step is a professional assessment. We photograph and document the sign, evaluate its condition and historical significance, and recommend an approach, whether that is stabilization, careful restoration, or simply a protective coating to slow further deterioration. The result is a property with documented character, historical credibility, and a story worth telling.
-        </p>
+          <p
+            class="mt-16 lg:mt-24 font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            data-animate="fade"
+            data-animate-delay="1"
+          >
+            Those faded painted advertisements on old brick buildings across Church Hill, Shockoe Bottom, and Jackson Ward are called ghost signs. They are hand-painted commercial lettering from the 1880s through the 1960s, and Richmond has one of the richest collections of surviving examples in the country. This is what they are, why they last, and why they matter.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">
-          Add a high-quality photograph of a notable Richmond ghost sign. This page will eventually feature a curated gallery of ghost signs across the city with locations, dates, and historical context. Use Astro Image component when real photos are available.
-        </p>
+    <!-- ─── II · THE HISTORY YOU WALK PAST EVERY DAY ─────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            The history you walk past every day.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              You have probably passed one a thousand times without seeing it.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              A pale outline of letters on the side of a building. A product name nobody sells anymore. A business that closed before your grandparents were born. You see them in Church Hill, in the alleys of Shockoe Bottom, on the old commercial corridors of Jackson Ward and Oregon Hill. Most of the time, you walk right by.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Then one day you notice one. Maybe the light catches it at the right angle. Maybe a rainstorm darkens the brick and the letters suddenly stand out. And once you notice one, you start seeing them everywhere. The block you drive through every morning is suddenly full of information about who worked here before you, what they sold, and how long they stayed. A street that felt generic five minutes ago has a history you can read on the walls.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Ghost signs (also called fading ads, painted wall signs, or brick ads) are hand-painted commercial advertisements applied directly to brick walls between the 1880s and the 1960s. They advertised everything from tobacco and flour to patent medicine and broom companies. They have been on Richmond&rsquo;s walls for over a century. They turn a neighborhood into a place with memory.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <FAQSection items={faqItems} />
+    <!-- ─── III · WHY 100-YEAR-OLD PAINT OUTLASTS ANYTHING MADE TODAY ── -->
+    <!-- Split layout: H2 left (col-span-5), body right (col-span-7) -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 lg:gap-x-16">
+          <div class="lg:col-span-5">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Why 100-year-old paint outlasts anything made today.
+            </h2>
+          </div>
+
+          <div class="lg:col-span-7 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Most people assume these signs are just lucky. They survived because nobody got around to painting over them. That is wrong.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Ghost signs survive because of a specific chemical reaction between lead paint and porous brick. No modern paint can replicate it.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The painters mixed their own paint from lead compounds ground into linseed oil. When they brushed it onto porous brick, the mixture soaked deep into the tiny holes in the masonry.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The paint did not coat the brick. It soaked into it.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Inside those holes, the oil hardened and reacted with the lead. Scientists call this lead soap formation. The short version: the oil and the lead fused together and locked into the brick permanently. The bond gets stronger as it ages. Researchers have tracked lead white paint for over fourteen years and found it gaining both flexibility and strength over time.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Ghost sign researcher Dr. Ken Jones describes the result as working like a tattoo. The paint, the oil, and the brick become one material. You cannot scrape a ghost sign off a wall. It is part of the brick.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Modern acrylic and latex paints work differently. They form a thin film on the brick surface. As brick expands and contracts through temperature and moisture cycles, that film cracks. Water gets in, gets trapped, and the paint peels.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The old lead-and-oil paint was breathable and flexible. When it breaks down, it turns to powder slowly under sunlight. It fades rather than peels.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              This chemistry is the only reason Richmond&rsquo;s walls still carry a living record of the businesses that built this city a century ago. It is also why these signs behave so strangely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── IV · DEAD BUSINESSES, LIVING WALLS ───────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            Dead businesses, living walls.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              The name comes from two things. The first is what they look like: faded to translucent, pale, dissolving at the edges, apparition-like. William Stage, who popularized the term in his 1989 book, described signs that had &ldquo;faded to the point of illegibility,&rdquo; things that would &ldquo;eventually fade into apparitions.&rdquo; They look ghostly because they are halfway gone.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The second is what they represent. The businesses are dead. The products are discontinued. The brands are forgotten. But the words are still there on the wall, advertising something that no longer exists to a world that no longer recognizes it. The Milam Medicine Company has not sold a bottle in a century, but its sign still promises &ldquo;Pure Blood Guaranteed&rdquo; from a brick wall in Church Hill. The sign has not moved. Everything around it has. That is what makes it a ghost.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The term &ldquo;ghost sign&rdquo; first appeared in print in 1981. Nobody is entirely certain who coined it. By 1989, Stage used it as the title of his book, but he later said he had previously just called them &ldquo;wall signs.&rdquo; The name spread, became universal, and the person who invented it remains unknown.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              That chemistry also explains one more thing about how ghost signs earn their name. On a dry, bright afternoon, many are nearly invisible. The faded paint and the weathered brick have worn to the same tone. Then it rains, and the wall transforms.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Bare brick is porous. It soaks up rainwater and darkens several shades. But where a painter&rsquo;s lead-and-oil paint sealed the brick a century ago, the surface can&rsquo;t absorb water the same way. The painted areas stay lighter. Letters that were invisible an hour ago stand out against the darkened wall.
+            </p>
+          </div>
+
+          <!-- Rain description as editorial display statement -->
+          <div class="mt-20 lg:mt-28 relative pt-10 lg:pt-14" data-animate="fade">
+            <span aria-hidden="true" class="block h-px bg-titanium-white w-20 mb-10 lg:mb-14"></span>
+            <p
+              class="font-heading italic text-titanium-white max-w-[28ch]"
+              style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+            >
+              Walk through Shockoe Bottom after a November drizzle, and you will see words appear on walls you have passed a hundred times.
+            </p>
+          </div>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Overlapping signs from different decades emerge simultaneously, because paint from each era sealed the brick at different depths. It is like watching a photograph develop on the side of a building.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The best ghost sign hunting in Richmond happens on quiet, gray, wet afternoons, when the city&rsquo;s walls have the most to say.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ArchitecturalReveal
+      image="/images/content-design/trolley-vintage.jpg"
+      alt="A fading ghost sign on a Richmond building"
+      class="my-8"
+    />
+
+    <!-- ─── V · 50 TOBACCO FACTORIES AND THE RIGHT KIND OF NEGLECT ── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            50 tobacco factories and the right kind of neglect.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Richmond&rsquo;s ghost signs survive because Richmond built an extraordinary number of brick commercial and industrial buildings between the 1880s and the 1930s, then largely stopped tearing them down.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              By 1860, the city had fifty tobacco factories. Richmond held the position of the largest manufactured tobacco producer in the world.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Allen &amp; Ginter operated along East Cary Street in what is now called Tobacco Row. They sponsored the $75,000 prize competition that led to James Bonsack&rsquo;s cigarette-rolling machine, patented in 1881. Philip Morris, Larus &amp; Brother, P. Lorillard, and T.C. Williams all operated within blocks of each other.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Tobacco was not the only industry. Construction of the Gallego Mills flour operation began in 1854 and was completed around 1860. It stood twelve stories tall and was the largest flour mill in the world. Tredegar Iron Works was the third-largest ironworks in the United States and the largest in the South.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Richmond was an industrial powerhouse wrapped in brick. Every bare wall facing a street or rail line became advertising real estate.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              After World War II, white middle-class flight to the suburbs left Church Hill, Jackson Ward, Shockoe Bottom, and Manchester economically hollowed but physically intact. There was no money to renovate. No reason to sandblast, repaint, or demolish the old commercial buildings. The same neglect that drained these neighborhoods of economic life preserved their physical fabric.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              When preservation consciousness arrived, Richmond moved early. The Commission of Architectural Review was established in 1957, creating one of the first historic preservation frameworks in the country. Today, 122 historic districts encompassing nearly 28,000 properties require review before exterior alterations can proceed.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The formula is specific to Richmond. A massive industrial building boom during the peak advertising-on-walls era, followed by decades of precisely the right kind of neglect, followed by early and aggressive preservation protections. Other cities had the boom. Other cities had the neglect. Very few had all three in the right sequence.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              But the buildings were only half the equation. Someone had to paint them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ghost Signs Drone Flyover -->
+    <section class="py-16 lg:py-24 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Ghost Signs of Richmond
+        </p>
+        <VideoEmbed
+          placeholderText="Drone flyover video coming soon"
+        />
+      </div>
+    </section>
+
+    <!-- ─── VI · THE PAINTERS WHO WORKED LIKE DOGS ON WALLS ── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            The painters who worked like dogs on walls.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              The painters who made these signs were called walldogs. The name carried a double meaning: they worked like dogs, and they were tethered to the wall like dogs on a leash.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              To reach high surfaces, walldogs suspended themselves from rooflines using a bosun&rsquo;s chair: a simple wooden plank or canvas sling on ropes, borrowed from maritime rigging. A painter would sit in the chair carrying heavy cans of toxic paint and be lowered down the wall face while lettering six-foot-tall words several stories up. No harnesses. No safety nets.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Their craft required them to be draftsmen, colorists, chemists, and acrobats at once. They used the pounce technique to transfer designs: paper patterns perforated with a spiked wheel, then patted with chalk-filled bags to leave dotted outlines on the brick. They mixed their own paint from white lead powder, linseed oil, and pigments like iron oxide red and chrome yellow. Each formula was personal.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A skilled walldog could letter a three-story advertisement in a single day. Every ghost sign is the trace of that one specific painter: their formula, their skill, their tolerance for heights, and the hours they spent creating something that has outlasted the business, the product, and the painter by a century.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The peak years ran from the 1890s through the Great Depression, when painted walls were America&rsquo;s dominant outdoor advertising medium. Coca-Cola alone had more than 16,000 wall signs painted across the country. The profession declined through the mid-twentieth century as vinyl lettering, neon signage, and the Highway Beautification Act of 1965 reshaped the advertising landscape. By the 1970s, the era of the walldog was over. The signs they left behind are the only proof they were ever here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VII · SIGNS YOU CAN STILL FIND ON RICHMOND'S WALLS ─── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            Signs you can still find on Richmond&rsquo;s walls.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              The Uneeda Biscuit advertisement at 25th and Broad, directly across the street from St. John&rsquo;s Church in Church Hill, is Richmond&rsquo;s most iconic ghost sign. The National Biscuit Company launched the Uneeda brand in 1898 with what became the first million-dollar national advertising campaign, and this sign has survived ever since.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              It is far from the only one.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The Imperial Broom Company sign on North 21st Street marks a business founded by George Benjamin Robinson, who learned broom-making while enslaved and passed the knowledge through five generations of his family. The Milam Medicine Company sign at Venable and Mosby Streets advertises a Danville patent medicine that has not been manufactured in over a century. In Shockoe Bottom, the Phillips-Lewis wholesale grocers sign at 1329 East Cary Street features a woman at a spinning wheel advertising their &ldquo;Home Spun&rdquo; canned goods line. Artist Ernest C. Tarcen painted it sometime between 1929 and 1933. Beneath it, an even earlier Imperial Coffee advertisement is ghosting through as the upper paint layer deteriorates.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              In Oregon Hill, a single wall at the corner of Albemarle and Laurel carries at least four overlapping ghost signs from different decades: Victory Rug Cleaning, a Hollywood Cemetery directional, and traces of businesses that operated in the 1890s. Jackson Ward&rsquo;s King&rsquo;s Fish Market sign at 12 East Marshall Street is one of Richmond&rsquo;s youngest ghost signs, the restaurant having closed during the pandemic.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              In 2014, photographer Robert Volk donated his &ldquo;Richmond Ghost Signs&rdquo; collection to The Valentine museum. In October 2025, Harry Kollatz Jr. published &ldquo;Artifacts of Commerce Past&rdquo; in Richmond Magazine, the most thorough survey to date. Nobody has cataloged every surviving ghost sign in Richmond. Nobody has mapped them. Nobody has built a walking tour or a formal inventory. The most complete record of Richmond&rsquo;s hand-painted commercial history does not yet exist.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              And the signs are running out of time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VIII · WHAT RICHMOND LOSES WHEN THE WRITING FADES ── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            What Richmond loses when the writing fades.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Ghost signs are anchors. They connect a block to its own past in a way that no historical marker or Wikipedia article can replicate. A bronze plaque tells you something happened here. A ghost sign shows you the evidence, still embedded in the brick, still responding to the rain.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Geographers have a word for what happens when a city loses these kinds of physical markers: placelessness. A street becomes uniform, neutral, interchangeable with any other street in any other city. Ghost signs are the opposite of placelessness. They are physical proof that this block has a lineage: that real people built real businesses here and put their names on the wall by hand.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              When a ghost sign fades past the point of recognition, the building loses a piece of itself. When someone paints over it, that piece is erased permanently. There are no backups. There is no archive of what these signs looked like at full vibrancy. Once they are gone, they are gone.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The same development pressure that is transforming Church Hill, Manchester, and Scott&rsquo;s Addition into desirable neighborhoods is accelerating the loss. New construction removes walls. Renovations sandblast surfaces. Property owners paint over fading letters without knowing what they are destroying. The paradox is that the neglect that preserved these signs for a century is now ending, and the investment replacing it does not always account for what is already on the wall.
+            </p>
+          </div>
+
+          <!-- Editorial closing question -->
+          <div class="mt-20 lg:mt-28 relative pt-10 lg:pt-14" data-animate="fade">
+            <span aria-hidden="true" class="block h-px bg-titanium-white w-20 mb-10 lg:mb-14"></span>
+            <p
+              class="font-heading italic text-titanium-white max-w-[28ch]"
+              style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+            >
+              The question for every building owner with a ghost sign is simple: does this history survive your ownership, or does it end with it?
+            </p>
+          </div>
+
+          <p
+            class="mt-16 lg:mt-20 font-body text-soft-gray"
+            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+          >
+            Restoring a ghost sign is not a cosmetic decision. It is a choice to keep a block connected to its own story.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── IX · YOUR BUILDING HAS A GHOST SIGN ──────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            Your building has a ghost sign. Here is what you can do.
+          </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              If you own a building with a ghost sign, you have options. The sign can be stabilized to slow further deterioration. It can be restored to full vibrancy, or brought back just enough to be legible while preserving the weathered character that makes it feel authentic. You choose the level.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              I evaluate the condition of the sign, research the history of the original, and tell you what is realistic. Some signs can be fully restored. Others are better served by conservation. I will tell you which approach makes sense for your building.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Not sure if your sign can be saved? <a href="/contact" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">Send me a photograph.</a> I&rsquo;ll tell you what&rsquo;s possible.
+            </p>
+            <div class="pt-4" data-animate="fade">
+              <a
+                href="/contact"
+                class="cta-link group inline-flex items-baseline gap-4 lg:gap-6 font-heading text-titanium-white pb-3 border-b border-titanium-white hover:border-soft-gray"
+                style="font-size: var(--text-fluid-xl); letter-spacing: var(--tracking-snug);"
+              >
+                <span>Schedule a Restoration Evaluation</span>
+                <span aria-hidden="true" class="cta-arrow inline-block">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── X · FAQ ──────────────────────────────────────── -->
+    <!-- Split layout: H2 left (col-span-5), accordion right (col-span-7) -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+
+        <div class="lg:col-span-5 mb-12 lg:mb-0">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            Common questions about ghost signs.
+          </h2>
+        </div>
+
+        <div class="lg:col-span-7" data-animate="fade">
+          {faqItems.map((item, i) => (
+            <details class={`faq-item group border-t border-slate-gray ${i === faqItems.length - 1 ? 'border-b' : ''}`}>
+              <summary class="faq-summary flex items-start justify-between gap-8 py-7 lg:py-8 cursor-pointer">
+                <span
+                  class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200"
+                  style="font-size: var(--text-fluid-lg); line-height: 1.3;"
+                >
+                  {item.question}
+                </span>
+                <span class="faq-icon shrink-0 text-titanium-white" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content pb-8 lg:pb-10 pr-0 lg:pr-12">
+                <p
+                  class="font-body text-soft-gray"
+                  style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+                >
+                  {item.answer}
+                </p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <RelatedPages heading="Related" pages={[
-      { title: 'Historic Sign Restoration', href: '/hand-painted-signs/sign-restoration/historic-sign-restoration', description: 'Full restoration for deteriorating historic signs.' },
-      { title: 'Secretary of the Interior Standards', href: '/hand-painted-signs/sign-restoration/secretary-of-interior-standards', description: 'Federal standards for historic sign restoration.' },
-      { title: 'Sign Restoration Cost', href: '/hand-painted-signs/sign-restoration/sign-restoration-cost', description: 'What drives the cost of restoring a sign.' },
+      { title: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration', description: 'Ghost sign and historic sign restoration in Richmond.' },
+      { title: 'Hand-Painted Signs', href: '/hand-painted-signs', description: 'All hand-painted sign services.' },
     ]} />
-    <CTABlock />
+
+    <CTABlock
+      headline="Let's figure out what belongs on your wall."
+      description="Free site visit. You see the design before we start. Richmond, VA and surrounding areas."
+      primaryHref="/contact"
+      primaryLabel="Schedule Your Free Discovery Session"
+      secondaryHref="/work"
+      secondaryLabel="See Our Work"
+    />
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  /* CTA arrow glide */
+  .cta-link .cta-arrow {
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-link:hover .cta-arrow,
+  .cta-link:focus-visible .cta-arrow {
+    transform: translateX(0.5rem);
+  }
+
+  /* Hide native details marker */
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-summary {
+    list-style: none;
+  }
+  .faq-summary::marker {
+    display: none;
+  }
+
+  /* Plus / minus icon */
+  .faq-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 0.35em;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 300ms ease, opacity 300ms ease;
+  }
+  .faq-icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+  .faq-icon::after {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%) scaleY(1);
+    transform-origin: center;
+  }
+  .faq-item[open] .faq-icon::after {
+    transform: translateX(-50%) scaleY(0);
+  }
+
+  .faq-item[open] .faq-content {
+    animation: faqFadeIn 360ms ease both;
+  }
+
+  @keyframes faqFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-summary:focus-visible {
+    outline: 2px solid var(--color-titanium-white, #EEECE9);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-icon::before,
+    .faq-icon::after {
+      transition: none;
+    }
+    .faq-item[open] .faq-content {
+      animation: none;
+    }
+    .cta-link .cta-arrow {
+      transition: none;
+    }
+  }
+</style>

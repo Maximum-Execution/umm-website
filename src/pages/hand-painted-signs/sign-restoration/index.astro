@@ -4,94 +4,507 @@ import Nav from '../../../components/Nav.astro';
 import Footer from '../../../components/Footer.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import CTABlock from '../../../components/CTABlock.astro';
-import ServiceCard from '../../../components/ServiceCard.astro';
+
+const faqItems = [
+  {
+    question: "I don't want to erase the original patina and make it look fake.",
+    answer: "You choose the level of restoration. Some owners want full vibrancy. Others want the sign brought back just enough to be legible while preserving the weathered character. I never make a ghost sign look like it was painted yesterday unless that's what you specifically ask for.",
+  },
+  {
+    question: "How do I know the painter won't just paint over history with their own interpretation?",
+    answer: "I research the original sign before I design anything. I study the surviving paint, the letterforms, the archival record, and any photographs I can find. The goal is to recover what was there, not to invent something new. You approve the restoration plan before any work begins.",
+  },
+  {
+    question: "What if prep work damages the brick or releases hazardous paint?",
+    answer: "Old exterior paint on pre-1978 buildings can contain lead. I assess the surface condition and paint layers before any prep work begins. I use methods that protect the substrate rather than grinding or burning, and I follow safe work practices for handling old paint.",
+  },
+  {
+    question: "Will this turn into a bigger project than expected? Permits, inspections, timeline surprises?",
+    answer: "I give you a clear scope of work and timeline before we start. If your building is in a historic district and requires additional review, I'll tell you upfront during the assessment so you can decide whether to proceed with full information.",
+  },
+  {
+    question: "Can my ghost sign even be restored, or is it too far gone?",
+    answer: "Most ghost signs can be partially restored if any paint survives on the surface. I evaluate the condition in person and tell you what's realistic. I won't overstate what's possible.",
+  },
+  {
+    question: "How much does restoration cost?",
+    answer: "It depends on the size, condition, and complexity. I provide a detailed estimate after the site assessment. See the restoration cost guide for a breakdown of what determines pricing.",
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'I assess the sign and research the original.',
+    body: "I visit the site, photograph the sign, and evaluate what survives. I research the history of the original sign and the business that put it there. The goal is to understand what the original painter intended, not to impose my own interpretation.",
+  },
+  {
+    number: '02',
+    title: 'You approve the restoration plan.',
+    body: "I present a plan showing the target look, the color matches, and the approach. You see what the finished restoration will look like before any work begins. Nothing moves forward until you approve it.",
+  },
+  {
+    number: '03',
+    title: 'I restore it by hand.',
+    body: "The approved plan goes on the wall by hand. Materials chosen for the surface and climate. Every phase documented. When the work is finished, you receive a Certificate of Provenance tracing the restoration back to its sources.",
+  },
+];
 ---
 
 <BaseLayout
-  title="Sign Restoration — Untitled Mixed Media | Richmond VA"
-  description="Restoring faded, damaged, and historic hand-painted signs in Richmond, Virginia. Ghost signs, gilded lettering, and century-old advertisements brought back to life."
+  title="Ghost Sign Restoration in Richmond, VA | Untitled Mixed Media"
+  description="Restoring faded ghost signs and historic hand-painted lettering in Richmond, Virginia. Century-old advertisements brought back to life by hand."
+  faqItems={faqItems}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Work', url: '/work' },
     { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
     { name: 'Sign Restoration' },
   ]}
   service={{
-    name: 'Sign Restoration',
-    description: 'Restoring faded, damaged, and historic hand-painted signs in Richmond, Virginia.',
+    name: 'Ghost Sign Restoration',
+    description: 'Restoring faded ghost signs and historic hand-painted lettering in Richmond, Virginia.',
     priceRange: '$1,500 - $15,000',
   }}
 >
   <Nav />
-  <main class="pt-24 pb-16 px-6 lg:px-12">
-    <div class="max-w-7xl mx-auto">
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Work', href: '/work' },
-        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
-        { label: 'Sign Restoration' },
-      ]} />
+  <main class="pb-0">
 
-      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Sign Restoration
-      </p>
+    <!-- ─── I · HERO ─────────────────────────────────────── -->
+    <!-- Grid: H1 wide (col-span-11), subhead offset right (col-span-7/col-start-5) -->
+    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+          { label: 'Sign Restoration' },
+        ]} />
 
-      <h1 class="font-heading text-titanium-white mb-6 text-balance" data-animate>
-        Bringing back the craft that was already there.
-      </h1>
+        <div class="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-11">
+            <h1
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+              data-animate="headline"
+            >
+              Your building has a history painted on it. Don&rsquo;t let it disappear.
+            </h1>
+          </div>
+        </div>
 
-      <p class="font-body text-shadow-gray mb-16 max-w-2xl" style="font-size: var(--text-fluid-lg);" data-animate>
-        Richmond's ghost signs and gilded lettering are disappearing — fading off brick walls one winter at a time. We restore them using the same techniques the original sign painters used: matching materials, studying the original letterforms, and bringing the work back faithfully. The goal isn't to make old signs look new. It's to make them look the way they did when someone first painted them with care.
-      </p>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-[var(--spacing-section)]">
-        <div data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Ghost Signs Richmond VA"
-            description="Faded painted advertisements on brick. Preserving and restoring Richmond's ghost signs before they disappear."
-            href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="Historic Sign Restoration"
-            description="Restoring signs on historic buildings. Matching original materials and techniques, faithful to the original craft."
-            href="/hand-painted-signs/sign-restoration/historic-sign-restoration"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="3">
-          <ServiceCard
-            title="Secretary of Interior Standards"
-            description="Restoration work that meets the Secretary of the Interior's Standards for historic preservation compliance."
-            href="/hand-painted-signs/sign-restoration/secretary-of-interior-standards"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="1">
-          <ServiceCard
-            title="Sign Restoration Cost"
-            description="What determines restoration cost. Condition, materials, size, and historic district requirements explained."
-            href="/hand-painted-signs/sign-restoration/sign-restoration-cost"
-          />
-        </div>
-        <div data-animate="fade" data-animate-delay="2">
-          <ServiceCard
-            title="How It Works"
-            description="The restoration process from assessment to completion. Documentation, materials matching, restoration, and sealing."
-            href="/hand-painted-signs/sign-restoration/how-it-works"
-          />
+        <div class="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-7 lg:col-start-5 space-y-10">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              I restore fading ghost signs and historic hand-painted lettering across Richmond. You tell me how you want the finished sign to look, whether that&rsquo;s perfectly crisp or weathered with character, and I bring it back by hand.
+            </p>
+            <div class="space-y-5" data-animate="fade" data-animate-delay="2">
+              <a
+                href="/contact"
+                class="cta-link group inline-flex items-baseline gap-4 lg:gap-6 font-heading text-titanium-white pb-3 border-b border-titanium-white hover:border-soft-gray"
+                style="font-size: var(--text-fluid-xl); letter-spacing: var(--tracking-snug);"
+              >
+                <span>Schedule a Restoration Evaluation</span>
+                <span aria-hidden="true" class="cta-arrow inline-block">&rarr;</span>
+              </a>
+              <p
+                class="font-body text-soft-gray"
+                style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+              >
+                Not sure if your sign can be saved? <a href="/contact" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">Send me a photograph.</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Parent link -->
-      <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg);">
-        <a href="/hand-painted-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">
-          &larr; Back to Hand-Painted Signs
-        </a>
-      </p>
-    </div>
+    <!-- ─── II · THE STAKES ──────────────────────────────── -->
+    <!-- Grid: H2 wide left (col-span-8), body offset far right (col-span-6/col-start-7) -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-8 lg:col-start-1">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Nobody else is going to save it.
+            </h2>
+          </div>
+        </div>
+
+        <div class="mt-16 lg:mt-20 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-6 lg:col-start-7 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Ghost signs are the hand-painted advertisements and business names that have been on Richmond&rsquo;s walls for decades. Some go back over a century. They are proof that someone worked on this block, cared enough to put their name on the building by hand, and stayed long enough for the paint to become part of the brick.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              These signs are not decoration. They are part of what makes the building honest about where it came from. When one fades, the building loses a piece of itself. When someone paints over it, that piece is gone forever.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="2"
+            >
+              Most people walk past them every day without noticing. Most property owners don&rsquo;t think about them until they&rsquo;re gone. The sign won&rsquo;t save itself, and nobody else on the block is going to do it for you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── III · HOW I APPROACH RESTORATION ──────────────── -->
+    <!-- Grid: H2 narrow left (col-span-5), body offset right (col-span-6/col-start-7) -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 lg:gap-x-16">
+          <div class="lg:col-span-5 lg:col-start-1">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              I take the time most painters won&rsquo;t.
+            </h2>
+          </div>
+
+          <div class="lg:col-span-6 lg:col-start-7 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Any painter can restore a ghost sign. The question is whether they&rsquo;ll care enough to do it right. Most won&rsquo;t. They&rsquo;ll rush through it with no research, no attention to the original letterforms, and no thought about what the sign meant when it was first painted. The result might look fine from a distance, but it won&rsquo;t feel authentic up close.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              I sit with the sign before I plan anything. I study what survives in the paint, the letterforms, and whatever records I can find. I look for old photographs, property documents, and any trace of the original business. I document everything before I touch the wall, because the care that goes into the research is what makes the restoration honest.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="2"
+            >
+              You decide what the finished sign should look like. Some owners want the lettering restored to full vibrancy, sharp and readable from the street. Others want the sign brought back just enough to be legible while preserving the aged, weathered character that makes it feel authentic. I can do either. The goal is always to honor the original, not replace it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── IV · THREE STEPS ─────────────────────────────── -->
+    <!-- Grid: H2 wide (col-span-10), steps as rows (number col-span-2, content col-span-8/col-start-4) -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 lg:gap-x-16 mb-16 lg:mb-24">
+          <div class="lg:col-span-10 lg:col-start-1">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Three steps. The sign is documented before, during, and after.
+            </h2>
+          </div>
+        </div>
+
+        <ol class="list-none space-y-0">
+          {steps.map((step, i) => (
+            <li class={`grid lg:grid-cols-12 gap-x-8 lg:gap-x-16 py-12 lg:py-16 border-t border-slate-gray ${i === steps.length - 1 ? 'border-b' : ''}`} data-animate="fade">
+              <div class="lg:col-span-2 lg:col-start-1 mb-6 lg:mb-0">
+                <span
+                  class="font-heading text-slate-gray"
+                  style="font-size: var(--text-fluid-4xl); line-height: 0.85;"
+                  aria-hidden="true"
+                >
+                  {step.number}
+                </span>
+              </div>
+              <div class="lg:col-span-8 lg:col-start-4 space-y-6">
+                <h3
+                  class="font-heading text-titanium-white"
+                  style="font-size: var(--text-fluid-xl); line-height: 1.2; letter-spacing: var(--tracking-snug);"
+                >
+                  {step.title}
+                </h3>
+                <p
+                  class="font-body text-soft-gray"
+                  style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+                >
+                  {step.body}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <!-- Post-steps CTA -->
+        <div class="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16" data-animate="fade">
+          <div class="lg:col-span-10 lg:col-start-3">
+            <a
+              href="/contact"
+              class="cta-link group inline-flex items-baseline gap-4 lg:gap-6 font-heading text-titanium-white pb-3 border-b border-titanium-white hover:border-soft-gray"
+              style="font-size: var(--text-fluid-xl); letter-spacing: var(--tracking-snug);"
+            >
+              <span>Schedule a Restoration Evaluation</span>
+              <span aria-hidden="true" class="cta-arrow inline-block">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── V · WHAT HAPPENS WHEN THE WORK IS DONE ───────── -->
+    <!-- Grid: Body offset right (col-span-7/col-start-5), editorial statement wide (col-span-10/col-start-2) -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-7 lg:col-start-5 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Neighbors stop to look. People who walked past the building every day suddenly notice what was always there. The sign that was fading into nothing is visible again, and the block looks different because of it.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              The building doesn&rsquo;t look old. It looks whole. The history that was always part of it is visible again, and the space feels complete in a way it didn&rsquo;t before.
+            </p>
+          </div>
+        </div>
+
+        <!-- Emotional closing as editorial display statement -->
+        <div class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-10 lg:col-start-2">
+            <div class="relative pt-10 lg:pt-14" data-animate="fade" data-animate-delay="2">
+              <span aria-hidden="true" class="block h-px bg-titanium-white w-20 mb-10 lg:mb-14"></span>
+              <p
+                class="font-heading italic text-titanium-white max-w-[24ch]"
+                style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+              >
+                You become the person who saved something irreplaceable. The one who cared enough to act.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VI · EXPLANATORY PARAGRAPH ───────────────────── -->
+    <!-- Grid: H2 wide (col-span-9), body offset right (col-span-7/col-start-5) -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-9 lg:col-start-1">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-2xl); line-height: 1.12; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Ghost sign restoration and historic sign repair in Richmond, VA.
+            </h2>
+          </div>
+        </div>
+
+        <div class="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+          <div class="lg:col-span-7 lg:col-start-5 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              You want to save the sign on your building before it&rsquo;s too late. You want the restoration done right, by someone who cares enough to research the original instead of rushing through it. Very few painters have the skill or the patience to restore hand-painted lettering without destroying the original character.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              I restore <a href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">ghost signs</a> across Richmond, from faded brick advertisements to century-old business names. I handle historic sign restoration for buildings of all ages.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="2"
+            >
+              Not sure if your sign can be saved? <a href="/contact" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">Send me a photograph.</a> I&rsquo;ll tell you what&rsquo;s possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VII · FAQ ────────────────────────────────────── -->
+    <!-- Grid: Split. H2 left (col-span-4), accordion right (col-span-7/col-start-6) -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+
+        <div class="lg:col-span-4 lg:col-start-1 mb-12 lg:mb-0">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            Common questions and concerns about sign restoration.
+          </h2>
+        </div>
+
+        <div class="lg:col-span-7 lg:col-start-6" data-animate="fade">
+          {faqItems.map((item, i) => (
+            <details class={`faq-item group border-t border-slate-gray ${i === faqItems.length - 1 ? 'border-b' : ''}`}>
+              <summary class="faq-summary flex items-start justify-between gap-8 py-7 lg:py-8 cursor-pointer">
+                <span
+                  class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200"
+                  style="font-size: var(--text-fluid-lg); line-height: 1.3;"
+                >
+                  {item.question}
+                </span>
+                <span class="faq-icon shrink-0 text-titanium-white" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content pb-8 lg:pb-10 pr-0 lg:pr-12">
+                {i === 5 ? (
+                  <p
+                    class="font-body text-soft-gray"
+                    style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+                    set:html={`It depends on the size, condition, and complexity. I provide a detailed estimate after the site assessment. <a href="/contact" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">Send me a photograph</a> and I&rsquo;ll tell you what to expect.`}
+                  />
+                ) : (
+                  <p
+                    class="font-body text-soft-gray"
+                    style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+                  >
+                    {item.answer}
+                  </p>
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABlock />
   </main>
-
-  <CTABlock />
-
   <Footer />
 </BaseLayout>
+
+<style>
+  /* CTA arrow glide */
+  .cta-link .cta-arrow {
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-link:hover .cta-arrow,
+  .cta-link:focus-visible .cta-arrow {
+    transform: translateX(0.5rem);
+  }
+
+  /* Hide native details marker */
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-summary {
+    list-style: none;
+  }
+  .faq-summary::marker {
+    display: none;
+  }
+
+  /* Plus / minus icon */
+  .faq-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 0.35em;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 300ms ease, opacity 300ms ease;
+  }
+  .faq-icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+  .faq-icon::after {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%) scaleY(1);
+    transform-origin: center;
+  }
+  .faq-item[open] .faq-icon::after {
+    transform: translateX(-50%) scaleY(0);
+  }
+
+  .faq-item[open] .faq-content {
+    animation: faqFadeIn 360ms ease both;
+  }
+
+  @keyframes faqFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-summary:focus-visible {
+    outline: 2px solid var(--color-titanium-white, #EEECE9);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-icon::before,
+    .faq-icon::after {
+      transition: none;
+    }
+    .faq-item[open] .faq-content {
+      animation: none;
+    }
+    .cta-link .cta-arrow {
+      transition: none;
+    }
+  }
+</style>

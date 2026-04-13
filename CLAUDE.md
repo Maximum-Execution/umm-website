@@ -66,8 +66,22 @@ All fonts self-hosted as WOFF2. No external font services.
 
 - **Theme:** Dark (bone black `#000205` background, titanium white `#EEECE9` text)
 - **Colors:** 8 artist primaries (Pyrrole Red, Cobalt Blue, etc.) + 6-step gray bridge
-- **Type scale:** 9-level fluid system using `clamp()` (xs → 5xl)
+- **Type scale:** 9-level fluid Apple HIG hierarchy using `clamp()` (xs → 5xl)
 - **DaisyUI theme:** `umm` (primary=cobalt, secondary=mauve, accent=orange)
+
+### Type Scale (Apple HIG Hierarchy)
+
+| Token | Apple Style | Mobile | Desktop | Leading | Tracking | Font Role |
+|-------|------------|--------|---------|---------|----------|-----------|
+| `--text-fluid-xs` | Caption 1 | 12px | 13px | 1.4 | 0.08em (caps) | Mono — tags, metadata |
+| `--text-fluid-sm` | Subhead | 15px | 16px | 1.4 | 0.01em | Sans — nav, UI labels |
+| `--text-fluid-base` | Body | 17px | 18px | 1.4 | 0 | Body — reading text |
+| `--text-fluid-lg` | Callout | 18px | 21px | 1.4 | 0 | Body — lead text |
+| `--text-fluid-xl` | Title 3 | 20px | 24px | 1.25 | -0.01em | Heading — h3, cards |
+| `--text-fluid-2xl` | Title 2 | 22px | 28px | 1.25 | -0.01em | Heading — content h2 |
+| `--text-fluid-3xl` | Title 1 | 28px | 40px | 1.2 | -0.01em | Heading — section h2 |
+| `--text-fluid-4xl` | Large Title | 34px | 56px | 1.1 | -0.015em | Heading — page h1 |
+| `--text-fluid-5xl` | Display | 44px | 72px | 1.1 | -0.02em | Heading — hero |
 
 ## Content Collection
 

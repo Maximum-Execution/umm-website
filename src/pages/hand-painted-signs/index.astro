@@ -5,6 +5,8 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import StatCallout from '../../components/patterns/StatCallout.astro';
+import ComparisonBar from '../../components/patterns/ComparisonBar.astro';
 
 const signProjects = (await getCollection('projects'))
   .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('sign')))
@@ -36,14 +38,24 @@ const signProjects = (await getCollection('projects'))
     </div>
 
     <!-- HERO -->
-    <section class="px-6 lg:px-12 max-w-7xl mx-auto pt-8 pb-24 lg:pb-32">
+    <section class="relative overflow-hidden px-6 lg:px-12 max-w-7xl mx-auto pt-8 pb-24 lg:pb-32">
+      <div class="absolute inset-0" aria-hidden="true">
+        <img
+          src="/images/content-design/hand-painted-sign.jpg"
+          alt=""
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/90 via-bone-black/70 to-bone-black/50"></div>
+      </div>
+      <div class="relative z-10">
       <p class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
         Hand-Painted Signs
       </p>
       <h1 class="font-heading text-titanium-white text-balance mb-10 max-w-5xl" data-animate="headline" style="font-size: var(--text-fluid-5xl); line-height: 1.02;">
         Hand-painted signs in Richmond, Virginia.
       </h1>
-      <p class="font-body text-shadow-gray max-w-2xl mb-12" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
+      <p class="font-body text-soft-gray max-w-2xl mb-12" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
         Your sign is the first thing people judge about your business. We paint signs by hand because we believe your name deserves more than a sticker. Every sign we make is an artistic expression of your brand, built with craft and care.
       </p>
       <div class="flex flex-col sm:flex-row gap-4" data-animate data-animate-delay="1">
@@ -60,6 +72,7 @@ const signProjects = (await getCollection('projects'))
           Start with a Brand Mark
         </a>
       </div>
+      </div>
     </section>
 
     <!-- THE PROBLEM -->
@@ -75,16 +88,16 @@ const signProjects = (await getCollection('projects'))
             </h2>
           </div>
           <div class="lg:col-span-7 lg:pt-2 space-y-6">
-            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
               They crank out as many cheap signs as possible, as fast as possible. They print your logo on vinyl, stick it to the wall, and move on to the next order. They don't think about your brand, your customers, or whether the sign actually works. The people designing your sign at these shops aren't designers. They're operators who know how to hit print.
             </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               The result looks the same as every other storefront on the block. It peels in three to five years. It makes your business look cheap and temporary. And it adds more visual noise to a street that already has too much of it.
             </p>
             <p class="font-body text-titanium-white border-l border-titanium-white pl-6 py-1" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
               That's not a sign. That's pollution.
             </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               We care enough about your business to paint by hand. People can tell when time, care, and focus went into making something. They feel that difference the moment they walk past your building, even if they can't explain why.
             </p>
           </div>
@@ -94,27 +107,32 @@ const signProjects = (await getCollection('projects'))
 
     <!-- YOUR SIGN IS MORE THAN A LABEL (feature section, tinted background) -->
     <section class="border-t border-slate-gray bg-midnight-graphite py-28 lg:py-40">
-      <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="px-6 lg:px-12 max-w-3xl mx-auto">
         <p class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
           02 / The Signal
         </p>
-        <h2 class="font-heading text-titanium-white text-balance max-w-5xl mb-16 lg:mb-20" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.02;">
+        <h2 class="font-heading text-titanium-white text-balance mb-12" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.02;">
           Your sign is the strongest signal your business sends.
         </h2>
 
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div class="lg:col-span-7 lg:col-start-3 space-y-8">
-            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
-              Before anyone walks through your door, your sign has already told them who you are. It tells them whether you're serious or careless, permanent or temporary, worth their time or not. This is not a guess: 68% of consumers believe a store's signage reflects the quality of its products, and 52% say they're less willing to enter a store with a poorly made sign.
-            </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-              Your sign is not just identification. It is the first conversation you have with every person who passes your building. Does it express who you actually are? Does it enhance the community around it, or does it add more generic noise to the street?
-            </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-              We design letterforms that carry the specific weight of your name. Not a font from a catalog. Letters built for your sign, painted by a human hand, on a surface that ages with character instead of peeling in the sun.
-            </p>
-          </div>
+        <div class="space-y-8">
+          <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
+            Before anyone walks through your door, your sign has already told them who you are. It tells them whether you're serious or careless, permanent or temporary, worth their time or not. This is not a guess: 68% of consumers believe a store's signage reflects the quality of its products, and 52% say they're less willing to enter a store with a poorly made sign.
+          </p>
+          <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Your sign is not just identification. It is the first conversation you have with every person who passes your building. Does it express who you actually are? Does it enhance the community around it, or does it add more generic noise to the street?
+          </p>
+          <p class="font-body text-soft-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We design letterforms that carry the specific weight of your name. Not a font from a catalog. Letters built for your sign, painted by a human hand, on a surface that ages with character instead of peeling in the sun.
+          </p>
         </div>
+
+        <StatCallout
+          value="68%"
+          label="of consumers judge a business by its signage"
+          source="FedEx Office Survey, 2012"
+          class="my-12"
+        />
       </div>
     </section>
 
@@ -131,13 +149,13 @@ const signProjects = (await getCollection('projects'))
             </h2>
           </div>
           <div class="lg:col-span-7 lg:pt-2 space-y-6">
-            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
               But a beautiful sign that nobody can read is still a waste of money. Most sign shops don't think about that. We do.
             </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               We visit your location and gather data before we design anything. We figure out the optimum viewing distances and angles so we know what size the letters need to be and where to place them. Letters have to be a certain size to be read at 30 feet, and a completely different size to be read at 100 feet. Same with color contrast, material choice, and lighting conditions.
             </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               Getting this wrong means your sign doesn't work. People drive past and can't read it. People walk by and don't notice it. You spend money on a sign that confuses your intended audience, or worse, one that's invisible to them entirely.
             </p>
             <p class="font-body text-titanium-white" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
@@ -161,15 +179,24 @@ const signProjects = (await getCollection('projects'))
             </h2>
           </div>
           <div class="lg:col-span-7 lg:pt-2 space-y-6">
-            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
               Vinyl is plastic film applied with adhesive. It starts failing the day it goes up. Sun, rain, and temperature changes work against it from the beginning. Three to five years is typical before it peels, fades, and needs replacement.
             </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               A hand-painted sign is enamel or acrylic applied directly to your surface by hand. It bonds to the material. It ages into the building. A properly painted sign lasts 15 to 20 years.
             </p>
             <p class="font-body text-titanium-white" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               Over 12 years, a $2,000 vinyl sign replaced three times costs $6,000. A hand-painted sign at $5,000 is a one-time investment. Vinyl costs more per year and looks worse over time. Hand-painted costs less per year and looks better.
             </p>
+
+            <ComparisonBar
+              title="20-Year Cost of Ownership"
+              items={[
+                { label: 'Hand-painted sign (one-time)', value: '$2,500', percent: 25, highlight: true },
+                { label: 'Vinyl replacement (every 3-5 years)', value: '$8,000+', percent: 80 },
+              ]}
+              class="my-12 max-w-xl"
+            />
           </div>
         </div>
       </div>
@@ -188,10 +215,10 @@ const signProjects = (await getCollection('projects'))
             </h2>
           </div>
           <div class="lg:col-span-7 lg:pt-2 space-y-6">
-            <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
               Ghost signs are the hand-painted advertisements and business names that have been fading on Richmond's walls for decades. They are physical proof that someone worked here and cared enough to put their name on the building by hand. Every year, another one disappears. Another landlord paints over a century of history on a Saturday afternoon.
             </p>
-            <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               I restore ghost signs to roughly 70% of their original vibrancy. Not brand new. Not a replica. Restored to look like they've been there all along, because they have. I research the original sign, the original business, and what survives in the paint, the letterforms, and the archival record. Then I bring it back by hand.
             </p>
             <p class="font-body text-titanium-white" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
@@ -245,17 +272,17 @@ const signProjects = (await getCollection('projects'))
           Signs for storefronts, restaurants, interiors, and historic buildings.
         </h2>
         <div class="space-y-6">
-          <p class="font-body text-shadow-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
             You want your business to look established, intentional, and real. You want a sign that expresses who you are, not one that looks like it came off a printer. The problem is that most sign shops sell the same vinyl to every client, and that leaves your business looking like everything else on the block.
           </p>
-          <p class="font-body text-shadow-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+          <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
             We believe your sign should reflect who you are, not just display your name. That's why we start every project with a site visit to gather as much information as possible about your location, your audience, and the environment your sign has to work in. We're looking for the right visual language, but we're also looking for unexpected details that make the finished sign feel like it belongs to you and nobody else.
           </p>
-          <p class="font-body text-shadow-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            We paint <a href="/hand-painted-signs/storefront-signs-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">storefront signs</a> that make your building impossible to walk past. We do <a href="/hand-painted-signs/window-lettering" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">window lettering</a> painted on the interior face of glass so the sign is part of the window, not stuck to it. We paint signs for <a href="/hand-painted-signs/bar-and-restaurant-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">bars and restaurants</a> that set the atmosphere before anyone walks in. We handle <a href="/hand-painted-signs/interior-signs" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">interior signs</a>, lobby lettering, and wayfinding systems. We paint <a href="/hand-painted-signs/hand-painted-menus" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">menu boards</a> built for years of daily use. And we <a href="/hand-painted-signs/sign-restoration" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">restore ghost signs</a> and historic hand-painted lettering across Richmond.
+          <p class="font-body text-soft-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            We paint storefront signs that make your building impossible to walk past. We do window lettering painted on the interior face of glass so the sign is part of the window, not stuck to it. We paint signs for bars and restaurants that set the atmosphere before anyone walks in. We handle interior signs, lobby lettering, and wayfinding systems. And we <a href="/hand-painted-signs/sign-restoration" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">restore ghost signs</a> and historic hand-painted lettering across Richmond.
           </p>
           <p class="font-body text-titanium-white" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-            Schedule your <a href="/contact" class="underline underline-offset-4 hover:text-soft-gray transition-colors">free discovery session</a> so you can stop settling for vinyl and start seeing a sign that actually represents who you are. Read <a href="/hand-painted-signs/hand-painted-vs-vinyl" class="underline underline-offset-4 hover:text-soft-gray transition-colors">hand-painted vs. vinyl</a> for a direct comparison, see the <a href="/hand-painted-signs/cost-per-year-comparison" class="underline underline-offset-4 hover:text-soft-gray transition-colors">cost per year breakdown</a>, or learn <a href="/hand-painted-signs/why-hand-painted-signs-last-longer" class="underline underline-offset-4 hover:text-soft-gray transition-colors">why hand-painted signs last longer</a>.
+            Schedule your <a href="/contact" class="underline underline-offset-4 hover:text-soft-gray transition-colors">free discovery session</a> so you can stop settling for vinyl and start seeing a sign that actually represents who you are. Read <a href="/hand-painted-signs/hand-painted-vs-vinyl" class="underline underline-offset-4 hover:text-soft-gray transition-colors">hand-painted vs. vinyl</a> for a direct comparison.
           </p>
         </div>
       </div>
@@ -270,7 +297,7 @@ const signProjects = (await getCollection('projects'))
         <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
           Your logo, hand-painted.
         </h2>
-        <p class="font-body text-shadow-gray mb-10" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <p class="font-body text-soft-gray mb-10" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
           Most people start here. You send your logo, we paint it by hand on wood or directly on your wall. No design meetings. No weeks of waiting. Just your name, painted with care, on a surface that lasts.
         </p>
         <a
@@ -285,7 +312,7 @@ const signProjects = (await getCollection('projects'))
     <!-- CROSS-LINK -->
     <div class="border-t border-slate-gray">
       <div class="px-6 lg:px-12 max-w-7xl mx-auto py-16">
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-lg);">
+        <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg);">
           We also paint <a href="/murals" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">murals</a>.
         </p>
       </div>

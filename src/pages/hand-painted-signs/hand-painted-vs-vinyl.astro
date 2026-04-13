@@ -4,99 +4,766 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
-import FAQSection from '../../components/FAQSection.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+import TransformationPair from '../../components/patterns/TransformationPair.astro';
+import ArchitecturalReveal from '../../components/patterns/ArchitecturalReveal.astro';
 
 const faqItems = [
-  { question: 'How long do vinyl signs actually last?', answer: 'Most exterior vinyl lettering lasts 3 to 7 years depending on sun exposure, temperature swings, and surface prep. Premium cast vinyl can last longer, but adhesive failure and edge lifting are inevitable on most surfaces.' },
-  { question: 'How long do hand-painted signs last?', answer: 'A properly painted sign on a well-prepared surface lasts 15 to 25 years or more. Marine-grade enamel bonds into the surface rather than sitting on top of it, which is why hand-painted signs weather rather than peel.' },
-  { question: 'What about maintenance?', answer: 'Vinyl cannot be repaired. Once it starts peeling, the whole sign needs replacing. Hand-painted signs can be touched up in place. A minor touch-up at year 8 or 10 costs a fraction of a full replacement.' },
-  { question: 'How do they compare in different weather?', answer: 'Vinyl adhesive weakens in heat and becomes brittle in cold. Hand-painted enamel flexes with temperature changes because it is bonded to the substrate. In Richmond hot summers and occasional ice storms, paint outlasts adhesive every time.' },
+  {
+    question: 'How long do hand-painted signs last?',
+    answer: '15 to 25 years or more on a properly prepared surface. Marine-grade alkyd enamel bonds into the surface and weathers rather than peeling. Touch-ups at year 8 to 10 can extend the life further.',
+  },
+  {
+    question: 'How long do vinyl signs last outdoors?',
+    answer: "3 to 7 years for most exterior vinyl. Calendered vinyl (the type most shops use) can begin shrinking within its first year due to molecular memory from the manufacturing process. Even premium cast vinyl has a finite adhesive lifespan outdoors.",
+  },
+  {
+    question: 'Is a hand-painted sign more expensive?',
+    answer: 'Upfront, yes. A typical 3-by-8-foot storefront sign costs $1,000 to $1,500 hand-painted versus $300 to $600 for vinyl. Over 12 years, hand-painted costs less because vinyl requires multiple replacements plus removal labor. The crossover point is around year four.',
+  },
+  {
+    question: 'Can hand-painted signs be repaired?',
+    answer: "Yes. Faded or chipped areas can be touched up in place without replacing the entire sign. Vinyl can't be repaired. Once it starts peeling, the whole sign has to come off.",
+  },
+  {
+    question: 'How do signs hold up in Virginia weather?',
+    answer: "Richmond's combination of intense summer heat (100+ degrees), winter cold (below 20 degrees), and high humidity (averaging 70 percent) is hard on vinyl. Temperature cycling causes adhesive failure and delamination. Humidity traps moisture behind the film. Hand-painted enamel bonds to the surface and flexes with temperature changes, which is why it outlasts vinyl in this climate.",
+  },
+  {
+    question: 'Are hand-painted signs better for historic buildings?',
+    answer: 'Yes. Many historic districts in Richmond require sign approval through the Commission of Architectural Review. Hand-painted signs are consistent with historic building character. Vinyl applied to historic masonry traps moisture with a perm rating near zero, which can cause spalling (brick damage) over time.',
+  },
+  {
+    question: 'How long does it take to paint a sign?',
+    answer: 'It depends on the size and complexity. A simple storefront sign can be finished in one to two days on site. Larger or more detailed work may take a week. I give you a timeline before we start.',
+  },
+  {
+    question: 'Does vinyl damage the wall underneath?',
+    answer: 'It can. Vinyl has a vapor permeability rating near zero, roughly equivalent to plastic wrap. Moisture trapped behind vinyl on masonry can freeze in winter, expanding by 9 percent and fracturing the brick face (spalling). Removal also leaves adhesive residue that can strip paint or chip brick.',
+  },
 ];
 ---
 
 <BaseLayout
   title="Hand-Painted Signs vs Vinyl: Which Lasts Longer? | Untitled Mixed Media"
-  description="An honest comparison of hand-painted signs versus vinyl lettering. Lifespan, maintenance, weather resistance, and long-term appearance."
+  description="A hand-painted sign costs more upfront but less over 12 years. The real cost comparison and the science behind vinyl failure in Richmond's climate."
+  ogType="article"
   faqItems={faqItems}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Work', url: '/work' },
     { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
     { name: 'Hand-Painted vs Vinyl' },
   ]}
   service={{
-    name: 'Hand-Painted vs Vinyl Signs',
+    name: 'Hand-Painted Signs vs Vinyl Comparison',
     description: 'An honest comparison of hand-painted signs versus vinyl lettering for businesses in Richmond, Virginia.',
+  }}
+  blogPosting={{
+    headline: 'Hand-Painted Signs vs Vinyl: Which Lasts Longer?',
+    description: 'A hand-painted sign costs more upfront but less over 12 years. The real cost comparison, the science of why vinyl peels, and what each material says about your business.',
+    datePublished: '2026-04-10',
+    author: 'Untitled Mixed Media',
   }}
 >
   <Nav />
-  <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Work', href: '/work' },
-        { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
-        { label: 'Hand-Painted vs Vinyl' },
-      ]} />
+  <main class="pb-0">
 
-      <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        Hand-Painted Signs
-      </p>
+    <!-- ─── I · HERO ─────────────────────────────────────── -->
+    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+          { label: 'Hand-Painted vs Vinyl' },
+        ]} />
 
-      <!-- Hero: split layout -->
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-20">
-        <div class="lg:col-span-7">
-          <h1 class="font-heading text-titanium-white mb-6" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
-        Hand-Painted Signs vs Vinyl: Which Lasts Longer?
-      </h1>
+        <div class="mt-12 lg:mt-20">
+            <h1
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+              data-animate="headline"
+            >
+              Your building is an investment. Don&rsquo;t wrap it in a sticker.
+            </h1>
         </div>
-        <div class="lg:col-span-5 lg:flex lg:items-end">
-          <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          You are trying to decide between hand-painted signage and vinyl lettering, and you want the honest answer, not a sales pitch. Vinyl is cheaper upfront, but it fails within 3 to 7 years. You have seen it on other buildings: peeling edges, UV fading, adhesive residue on the wall. You should not have to choose between looking good now and looking good in ten years.
-        </p>
+
+        <div class="mt-16 lg:mt-24 max-w-3xl mx-auto">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+              data-animate-delay="1"
+            >
+              Vinyl costs less on day one but fails by year five. I provide hand-painted signs and murals that bond to your building permanently, saving you thousands in replacement costs and protecting your masonry from hidden moisture damage.
+            </p>
+            <div class="mt-10" data-animate="fade" data-animate-delay="2">
+              <a
+                href="/mural-cost-estimator"
+                class="cta-link group inline-flex items-baseline gap-4 lg:gap-6 font-heading text-titanium-white pb-3 border-b border-titanium-white hover:border-soft-gray"
+                style="font-size: var(--text-fluid-xl); letter-spacing: var(--tracking-snug);"
+              >
+                <span>Get a Price Estimate</span>
+                <span aria-hidden="true" class="cta-arrow inline-block">&rarr;</span>
+              </a>
+            </div>
         </div>
       </div>
+    </section>
 
-      <!-- Body: two-column editorial -->
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
-        <div class="space-y-6" data-animate="fade" data-animate-delay="1">
-                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          We have seen both sides. We have painted over peeling vinyl and we have maintained hand-painted signs that are 15 years old and still sharp. The difference comes down to how each material bonds to the surface. Vinyl sits on top, held by adhesive that weakens in heat and becomes brittle in cold. Paint penetrates the substrate and becomes part of it. This page lays out the facts so you can decide for yourself.
-        </p>
-        </div>
-        <div class="space-y-6" data-animate="fade" data-animate-delay="2">
-                    <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
-          If you choose hand-painted, the process is straightforward: we visit your site, show you the design, and paint it. The result is a sign that looks better at year 10 than vinyl looks at year 3. A single investment instead of a recurring replacement cost.
-        </p>
-        </div>
-      </div>
-
-      <blockquote class="text-center py-12 mb-20 border-t border-b border-slate-gray" data-animate="settle"><p class="font-heading text-titanium-white italic max-w-3xl mx-auto" style="font-size: var(--text-fluid-2xl);" data-animate="fade">
-        <p>Vinyl signs tell your customers you cut corners.</p>
-      </blockquote>
-
-      <!-- 12-Year Cost Breakdown Table Placeholder -->
-      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Table placeholder: 12-Year Cost Breakdown</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Build a comparison table with columns for: Year (1 through 12), Vinyl cumulative cost (initial install plus replacements every 3 to 5 years plus removal labor), Hand-painted cumulative cost (initial install plus minor touch-ups at year 7 to 8), and Appearance rating (vinyl degrades while hand-painted weathers gracefully). Show the crossover point where hand-painted becomes cheaper per year.</p>
-      </div>
-
-      <div class="aspect-[16/9] overflow-hidden bg-midnight-graphite border border-slate-gray mb-20 flex items-center justify-center p-8">
-        <p class="font-mono text-smoke-gray uppercase mb-3" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">Image placeholder</p>
-        <p class="font-body text-shadow-gray" style="font-size: var(--text-fluid-sm);">Add side-by-side comparison photo: a 5-year-old vinyl sign showing edge peeling and UV fade next to a 10-year-old hand-painted sign still holding its color and edges.</p>
+    <!-- Transformation Pair: Vinyl vs Hand-Painted -->
+    <div class="px-6 lg:px-12 py-8">
+      <div class="max-w-7xl mx-auto">
+        <TransformationPair
+          leftImage="/images/content-design/texture-detail-2.jpg"
+          rightImage="/images/content-design/hand-painted-sign.jpg"
+          leftAlt="Deteriorating vinyl signage"
+          rightAlt="Hand-painted sign still legible after decades"
+          leftLabel="Vinyl (5 years)"
+          rightLabel="Hand-painted (20+ years)"
+        />
       </div>
     </div>
 
-    <FAQSection items={faqItems} />
+    <!-- ─── II · THE 12-YEAR COST COMPARISON ─────────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              The real cost of a hand-painted sign vs vinyl over 12 years.
+            </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              A hand-painted sign costs more upfront. Vinyl costs more over time. The crossover point is around year four. After that, every year you keep the hand-painted sign saves you money.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The table below shows the real numbers for a typical 3-by-8-foot storefront sign over 12 years.
+            </p>
+          </div>
+        </div>
+
+        <!-- Cost comparison table -->
+        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto" data-animate="fade">
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
+              <thead>
+                <tr class="border-b border-titanium-white">
+                  <th class="text-left py-4 pr-6 font-heading text-titanium-white" style="font-size: var(--text-fluid-sm);"></th>
+                  <th class="text-left py-4 px-6 font-heading text-titanium-white" style="font-size: var(--text-fluid-sm);">Vinyl</th>
+                  <th class="text-left py-4 pl-6 font-heading text-titanium-white" style="font-size: var(--text-fluid-sm);">Hand-Painted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-slate-gray">
+                  <td class="py-4 pr-6">Initial cost</td>
+                  <td class="py-4 px-6">$300&ndash;$600</td>
+                  <td class="py-4 pl-6">$1,000&ndash;$1,500</td>
+                </tr>
+                <tr class="border-b border-slate-gray">
+                  <td class="py-4 pr-6">Year 3&ndash;4: First replacement</td>
+                  <td class="py-4 px-6">$400&ndash;$700 (includes removal)</td>
+                  <td class="py-4 pl-6">$0</td>
+                </tr>
+                <tr class="border-b border-slate-gray">
+                  <td class="py-4 pr-6">Year 6&ndash;7: Second replacement</td>
+                  <td class="py-4 px-6">$400&ndash;$700</td>
+                  <td class="py-4 pl-6">$0</td>
+                </tr>
+                <tr class="border-b border-slate-gray">
+                  <td class="py-4 pr-6">Year 8&ndash;10: Maintenance</td>
+                  <td class="py-4 px-6">$0 (replacing again)</td>
+                  <td class="py-4 pl-6">$150&ndash;$300 (touch-up)</td>
+                </tr>
+                <tr class="border-b border-slate-gray">
+                  <td class="py-4 pr-6">Year 9&ndash;10: Third replacement</td>
+                  <td class="py-4 px-6">$400&ndash;$700</td>
+                  <td class="py-4 pl-6">$0</td>
+                </tr>
+                <tr class="border-b border-titanium-white">
+                  <td class="py-4 pr-6 font-heading text-titanium-white">Total cost over 12 years</td>
+                  <td class="py-4 px-6 font-heading text-titanium-white">$1,500&ndash;$2,700</td>
+                  <td class="py-4 pl-6 font-heading text-titanium-white">$1,150&ndash;$1,800</td>
+                </tr>
+                <tr class="border-b border-slate-gray">
+                  <td class="py-4 pr-6 font-heading text-titanium-white">Cost per year</td>
+                  <td class="py-4 px-6 font-heading text-titanium-white">$125&ndash;$225/year</td>
+                  <td class="py-4 pl-6 font-heading text-titanium-white">$96&ndash;$150/year</td>
+                </tr>
+                <tr>
+                  <td class="py-4 pr-6">Appearance at year 10</td>
+                  <td class="py-4 px-6">Peeling, faded, on 3rd or 4th install</td>
+                  <td class="py-4 pl-6">Weathered with character, original paint</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              These numbers are conservative. They assume you use a reputable vinyl shop with clean removal. Cheaper vinyl installed by a less careful shop fails sooner and costs more to remove.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              But the cost table only tells half the story. The other half is what vinyl does to your building while it&rsquo;s attached.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── III · THE HIDDEN INVOICE ─────────────────────── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 lg:gap-x-16">
+          <div class="lg:col-span-5">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Why do vinyl signs peel? And what they do to your building while they&rsquo;re up.
+            </h2>
+          </div>
+
+          <div class="lg:col-span-7 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Vinyl signs fail outdoors because of three forces that work on them constantly. In Richmond, all three hit hard. Most exterior vinyl lasts 3 to 7 years. But the biggest risk isn&rsquo;t the sign failing. It&rsquo;s what the sign does to your building while it&rsquo;s up.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">UV degradation.</strong> Richmond averages roughly 200 sunny days per year (NOAA climate data). Ultraviolet light breaks down the plasticizers (the chemicals that keep vinyl flexible), making it rigid and brittle. Calendered vinyl (the cheaper type most sign shops use) has what manufacturers call &ldquo;molecular memory&rdquo; from the roller-pressing process: it tries to shrink back toward its original shape. In its first year outdoors, calendered vinyl can shrink as much as 1/32 of an inch per 24 inches. That shrinkage pulls edges away from the surface and starts the failure.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">Temperature cycling.</strong> Richmond summers reach 100 degrees. Winter nights drop to 20. That 80-degree swing happens every year. Vinyl and brick expand and contract at different rates. The pressure-sensitive adhesive holding them together can&rsquo;t flex fast enough to keep up. Edges lift first. Water gets behind the vinyl. The adhesive breaks down. The sign starts to delaminate.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">Trapped moisture: the hidden invoice.</strong> This is the one most property owners don&rsquo;t know about, and it&rsquo;s the most expensive.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Richmond&rsquo;s average relative humidity sits around 70 percent (NOAA). Vinyl film has a vapor permeability rating near zero: roughly equivalent to wrapping your building in 6-mil plastic sheeting. Your brick needs to breathe. Moisture moves through mortar joints all year. When vinyl seals the surface, that moisture gets trapped. It can&rsquo;t escape.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Trapped moisture freezes in winter. Water expands by 9 percent when it turns to ice. That expansion fractures the brick face from the inside, a process called spalling. The brick surface cracks, flakes, and crumbles. You won&rsquo;t see it happening. The damage builds behind the vinyl, invisible, until the day someone peels the sign off and finds deteriorating masonry underneath.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A $500 vinyl installation on historic brick can generate a $10,000 to $50,000 masonry restoration bill. Property owners shouldn&rsquo;t have to choose between a sign and the structural integrity of their building. With vinyl on masonry, that is exactly the choice you&rsquo;re making.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── IV · WHY PAINT BECOMES PART OF YOUR BUILDING ── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Chemical commitment vs temporary sticker. How the two materials bond.
+            </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              A properly painted sign on a well-prepared surface lasts 15 to 25 years. Vinyl sits on top of the wall, held by pressure-sensitive adhesive. Paint penetrates and becomes part of the building. Every paint system we use at Untitled Mixed Media (alkyd enamel, KEIM mineral silicate, StreetBond) forms a chemical bond, not a mechanical one.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Marine-grade alkyd enamel soaks into the pores of wood, metal, or masonry and hardens as it cures. The paint doesn&rsquo;t sit on the surface. It locks into it.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pull quote: paint ages, vinyl fails -->
+        <div class="mt-20 lg:mt-28 max-w-3xl mx-auto">
+            <div class="relative pt-10 lg:pt-14" data-animate="fade">
+              <span aria-hidden="true" class="block h-px bg-titanium-white w-20 mb-10 lg:mb-14"></span>
+              <p
+                class="font-heading italic text-titanium-white max-w-[28ch]"
+                style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+              >
+                Paint ages. Vinyl fails. That is the distinction that changes the conversation.
+              </p>
+            </div>
+        </div>
+
+        <ArchitecturalReveal
+          image="/images/content-design/hand-painted-sign.jpg"
+          alt="Hand-painted sign that has aged beautifully over decades"
+          class="my-8"
+        />
+
+        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Hand-painted signs weather rather than peel. As the surface layer wears under sunlight, it develops a patina: the colors mellow, the edges soften, and the sign starts to look like it belongs to the building. Over decades, a hand-painted sign can mature into a <a href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">ghost sign</a>: the kind of century-old hand-painted lettering that drives tourism and museum documentation in cities like Richmond. A sign that started as a business decision becomes part of the block&rsquo;s identity. Vinyl doesn&rsquo;t develop patina. It develops cracks, then peeling, then the adhesive residue you have to scrape off before starting over.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">KEIM mineral silicate paint</strong> bonds through a process called silicification: the paint becomes stone within the brick. I use this on heritage and masonry projects. KEIM has a perm rating of 77+, which is 3.5 times more breathable than the brick itself (KEIM manufacturer documentation). While vinyl traps moisture with a rating near zero, KEIM lets the building breathe. KEIM has documented exterior durability exceeding 100 years on European buildings. No vinyl product can make the same claim.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A hand-painted sign protects your building. A vinyl sign puts it at risk. That is the difference between an investment and a maintenance liability.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Paint holds one more structural advantage over vinyl at scale.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── V · THE ADVANTAGE NO VINYL SHOP CAN MATCH ───── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Vinyl printers max out at 54 inches. Your building doesn&rsquo;t.
+            </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Standard vinyl printers max out at 54 inches wide. Any sign, mural, or graphic wider than that requires seams: visible joints where two pieces of vinyl overlap. Those seams collect dirt and darken into visible lines within the first year. They trap moisture. They become the first point of failure, lifting and peeling before the rest of the sign.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Seams show up everywhere on a building facade. A 10-foot-wide storefront sign requires at least two. A full-wall graphic requires dozens. Every seam invites water and accelerates adhesive failure.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Hand-painted work has no seams at any scale. A 5-foot sign, a 50-foot mural, a full building facade: the painted surface is continuous. No joints. No overlap. No weak points.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Hand-painted work is the only option that gives you a continuous, permanent surface with no weak points at any scale wider than 5 feet. We are the only studio in Richmond that provides this for both signs and large-scale murals. No vinyl shop can.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The cost gap between vinyl and hand-painted grows wider once you factor in removal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VI · THE COST NOBODY QUOTES: VINYL REMOVAL ──── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              Nobody includes removal labor in the vinyl estimate. Here is what it costs.
+            </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Vinyl removal costs you money every time a vinyl sign fails, and no vinyl shop includes it in the original quote. Old vinyl leaves adhesive residue that has to be cleaned with solvents or scraped off by hand. On painted surfaces, removal strips the paint underneath, leaving a ghost outline of the old sign. On brick, aggressive removal chips the masonry face.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Each removal-and-replacement cycle adds $100 to $200 in labor. Four cycles in 12 years cost $400 to $800 in removal labor alone, on top of the cost of the new vinyl.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Hand-painted signs skip this. When the time comes to update, the surface can be repainted directly. No removal. No residue. No damage.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              So far, this page has covered cost, durability, building damage, and removal. All of those are practical arguments. The next one is different.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VII · WHAT YOUR WALL TELLS PEOPLE ────────────── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-x-8 gap-y-12 lg:gap-x-16">
+          <div class="lg:col-span-5">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              76% of consumers have entered a store based on its sign alone. A mural does even more.
+            </h2>
+          </div>
+
+          <div class="lg:col-span-7 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              76 percent of consumers have entered a store they&rsquo;d never visited before based solely on the sign (FedEx Office / ORC International survey). 68 percent have purchased because a sign caught their eye. And 52 percent said they&rsquo;re less willing to enter a store whose sign is poorly made or hard to read.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              Those numbers are about signs. But the same principle applies to murals, and the gap between hand-painted and vinyl is even wider at mural scale.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A vinyl mural is a printed image applied in strips, like wallpaper. It was designed on a screen, printed on a machine, and mailed in a tube. It could have been installed on any wall in any city. It belongs nowhere because it could have been anywhere. People process it the way they process advertising: they see it, they register it, they move on.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A hand-painted mural is made in the presence of the wall. The colors are mixed for that specific surface. The lines carry the hand of the person who painted them. People register this difference instinctively. The slight variations in the brushwork, the density and warmth of real pigment, the way paint sits differently than ink on plastic. A hand-painted mural becomes a destination. A vinyl wrap becomes background.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              The visual science backs this up. Alkyd enamel achieves a 90+ Gardner gloss reading, creating what painters call optical depth: the perception of color glowing from within the surface rather than sitting flat on top of it (Ronan enamel technical documentation). Digital printing lays ink on a plastic film. The result is flatter, thinner, and shallower. People notice even when they can&rsquo;t name why.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A hand-painted mural also gives the neighborhood something a vinyl installation never can: the experience of watching it being made. The community sees the work happening on their block, day by day. People stop on the sidewalk. Kids watch from across the street. The process becomes part of the building&rsquo;s story before the mural is even finished. A vinyl crew shows up, installs, and leaves. The wall gets a sticker. Nobody has a memory of it being made.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pull quote: how your wall is made -->
+        <div class="mt-20 lg:mt-28 max-w-3xl mx-auto">
+            <div class="relative pt-10 lg:pt-14" data-animate="fade">
+              <span aria-hidden="true" class="block h-px bg-titanium-white w-20 mb-10 lg:mb-14"></span>
+              <p
+                class="font-heading italic text-titanium-white max-w-[32ch]"
+                style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+              >
+                How your wall is made tells people what kind of business you run and what kind of neighbor you are.
+              </p>
+            </div>
+        </div>
+
+        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              A hand-painted sign or mural says you invested in this building and this block. A vinyl installation says you needed something fast. Both are honest signals. Choose the one you want to send.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VIII · WHEN VINYL IS THE RIGHT CHOICE ────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto">
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              When vinyl is the right choice (and when it isn&rsquo;t).
+            </h2>
+
+          <div class="mt-16 lg:mt-20 space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              Vinyl is the right choice in specific situations, and I&rsquo;ll tell you when.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">Temporary signage.</strong> Event banners, seasonal promotions, grand opening signs you plan to remove within a year. Vinyl is fast, cheap, and disposable. That is exactly what temporary signage should be.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">Interior applications.</strong> Vinyl on interior walls and windows lasts much longer without UV exposure and temperature cycling. Window lettering for hours, menus, or directional signage is a legitimate use.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">Short-term locations.</strong> If you&rsquo;re in a space for two to three years and plan to move, vinyl makes financial sense. You won&rsquo;t be there long enough for the hand-painted sign to pay for itself.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              <strong class="text-titanium-white">Where vinyl is the wrong choice:</strong> permanent storefronts, exterior brick or wood, buildings in historic districts, any location where the sign needs to last more than three years, and anywhere the sign faces direct sun. In those situations, vinyl costs more over time, looks worse over time, and can damage the surface underneath.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              If your building is permanent, your sign should be too.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── IX · THE FINISHED RESULT ─────────────────────── -->
+    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-3xl mx-auto space-y-8">
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+              data-animate="fade"
+            >
+              When the work is done, you won&rsquo;t be thinking about adhesive ratings or replacement cycles. You&rsquo;ll be looking at a sign or mural that belongs to your building. The colors sit in the surface, not on top of it. The lettering has weight. The wall looks like it was always supposed to look this way.
+            </p>
+            <p
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
+            >
+              That is what a hand-painted sign gives you that vinyl never will. Not just a sign that lasts longer. A building that finally looks like yours.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── X · FAQ ──────────────────────────────────────── -->
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+
+        <div class="lg:col-span-5 mb-12 lg:mb-0">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+            data-animate="headline"
+          >
+            Common questions about hand-painted signs vs vinyl.
+          </h2>
+        </div>
+
+        <div class="lg:col-span-7" data-animate="fade">
+          {faqItems.map((item, i) => (
+            <details class={`faq-item group border-t border-slate-gray ${i === faqItems.length - 1 ? 'border-b' : ''}`}>
+              <summary class="faq-summary flex items-start justify-between gap-8 py-7 lg:py-8 cursor-pointer">
+                <span
+                  class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors duration-200"
+                  style="font-size: var(--text-fluid-lg); line-height: 1.3;"
+                >
+                  {item.question}
+                </span>
+                <span class="faq-icon shrink-0 text-titanium-white" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content pb-8 lg:pb-10 pr-0 lg:pr-12">
+                <p
+                  class="font-body text-soft-gray"
+                  style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
+                >
+                  {item.answer}
+                </p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <RelatedPages heading="Related" pages={[
-      { title: 'Cost Per Year Comparison', href: '/hand-painted-signs/cost-per-year-comparison', description: 'The real numbers behind hand-painted vs vinyl pricing.' },
-      { title: 'Why Hand-Painted Signs Last Longer', href: '/hand-painted-signs/why-hand-painted-signs-last-longer', description: 'The science of paint bonding vs adhesive failure.' },
-      { title: 'Storefront Signs', href: '/hand-painted-signs/storefront-signs-richmond-va', description: 'Full storefront signage for Richmond businesses.' },
+      { title: 'Hand-Painted Signs', href: '/hand-painted-signs', description: 'All hand-painted sign services.' },
+      { title: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration', description: 'Ghost sign and historic sign restoration in Richmond.' },
     ]} />
 
-    <CTABlock />
+    <CTABlock
+      headline="Let's figure out what belongs on your wall."
+      description="Free site visit. You see the design before we start. Richmond, VA and surrounding areas."
+      primaryHref="/contact"
+      primaryLabel="Schedule Your Free Discovery Session"
+      secondaryHref="/mural-cost-estimator"
+      secondaryLabel="Get a Price Estimate"
+    />
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  /* CTA arrow glide */
+  .cta-link .cta-arrow {
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-link:hover .cta-arrow,
+  .cta-link:focus-visible .cta-arrow {
+    transform: translateX(0.5rem);
+  }
+
+  /* Hide native details marker */
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-summary {
+    list-style: none;
+  }
+  .faq-summary::marker {
+    display: none;
+  }
+
+  /* Plus / minus icon */
+  .faq-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 0.35em;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 300ms ease, opacity 300ms ease;
+  }
+  .faq-icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+  .faq-icon::after {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%) scaleY(1);
+    transform-origin: center;
+  }
+  .faq-item[open] .faq-icon::after {
+    transform: translateX(-50%) scaleY(0);
+  }
+
+  .faq-item[open] .faq-content {
+    animation: faqFadeIn 360ms ease both;
+  }
+
+  @keyframes faqFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-summary:focus-visible {
+    outline: 2px solid var(--color-titanium-white, #EEECE9);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-icon::before,
+    .faq-icon::after {
+      transition: none;
+    }
+    .faq-item[open] .faq-content {
+      animation: none;
+    }
+    .cta-link .cta-arrow {
+      transition: none;
+    }
+  }
+</style>

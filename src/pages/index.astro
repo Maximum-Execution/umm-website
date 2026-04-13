@@ -12,6 +12,7 @@ import ServiceShowcase from '../components/sections/ServiceShowcase.astro';
 import ExplanatorySection from '../components/sections/ExplanatorySection.astro';
 import JournalCard from '../components/JournalCard.astro';
 import CTABlock from '../components/CTABlock.astro';
+import ArchitecturalReveal from '../components/patterns/ArchitecturalReveal.astro';
 import { getCollection } from 'astro:content';
 
 const journalPosts = (await getCollection('journal'))
@@ -34,11 +35,17 @@ const journalPosts = (await getCollection('journal'))
     {/* 4. Problem */}
     <StakesSection />
 
+    {/* 4b. Architectural Reveal */}
+    <ArchitecturalReveal
+      image="/images/content-design/trolley-render.jpg"
+      alt="A Richmond building wall before mural work begins"
+    />
+
     {/* 5. How It Works */}
     <ProcessSection />
 
     {/* 6. Spencer Quote */}
-    <TestimonialSection />
+    <TestimonialSection backgroundImage="/images/content-design/texture-detail-1.jpg" />
 
     {/* 7. Landmarks, Not Lookalikes */}
     <ExplanatorySection />
@@ -55,7 +62,7 @@ const journalPosts = (await getCollection('journal'))
         <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
           Your logo, hand-painted.
         </h2>
-        <p class="font-body text-shadow-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
+        <p class="font-body text-soft-gray mb-8 max-w-xl mx-auto" style="font-size: var(--text-fluid-base);">
           Most people start here. You send your logo, we paint it by hand on wood or directly on your wall. No design meetings. No weeks of waiting. Just your name, painted with care, on a surface that lasts.
         </p>
         <a
@@ -104,7 +111,7 @@ const journalPosts = (await getCollection('journal'))
     )}
 
     {/* 11. Footer CTA */}
-    <CTABlock />
+    <CTABlock backgroundImage="/images/content-design/carytown-finished.jpg" />
   </main>
   <Footer />
 </BaseLayout>

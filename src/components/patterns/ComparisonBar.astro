@@ -1,0 +1,53 @@
+---
+interface BarItem {
+  label: string;
+  value: string;
+  percent: number;
+  highlight?: boolean;
+}
+
+interface Props {
+  title?: string;
+  items: BarItem[];
+  class?: string;
+}
+
+const {
+  title,
+  items,
+  class: className = '',
+} = Astro.props;
+---
+
+<div class:list={['space-y-4', className]} data-animate="fade" role="figure" aria-label={title || 'Comparison chart'}>
+  {title && (
+    <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+      {title}
+    </p>
+  )}
+  {items.map((item) => (
+    <div class="space-y-2">
+      <div class="flex justify-between items-baseline">
+        <span class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
+          {item.label}
+        </span>
+        <span class:list={[
+          'font-heading',
+          item.highlight ? 'text-titanium-white' : 'text-soft-gray',
+        ]} style="font-size: var(--text-fluid-base);">
+          {item.value}
+        </span>
+      </div>
+      <div class="h-2 bg-slate-gray/30 overflow-hidden">
+        <div
+          class:list={[
+            'h-full transition-all duration-500',
+            item.highlight ? 'bg-titanium-white' : 'bg-soft-gray/50',
+          ]}
+          style={`width: ${item.percent}%;`}
+          role="presentation"
+        ></div>
+      </div>
+    </div>
+  ))}
+</div>

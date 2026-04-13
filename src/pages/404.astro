@@ -7,8 +7,16 @@ import Button from '../components/Button.astro';
 
 <BaseLayout title="Page Not Found | Untitled Mixed Media" description="The page you're looking for doesn't exist. Head back to the homepage." noindex={true}>
   <Nav />
-  <main class="pt-24 pb-16 px-6 lg:px-12 flex items-center min-h-[60vh]">
-    <div>
+  <main class="relative pt-24 pb-16 px-6 lg:px-12 flex items-center min-h-[60vh]">
+    <div class="absolute inset-0 opacity-[0.06]" aria-hidden="true">
+      <img
+        src="/images/content-design/texture-detail-2.jpg"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div class="relative z-10">
       <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
         404
       </p>

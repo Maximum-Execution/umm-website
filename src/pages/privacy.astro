@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const effectiveDate = 'April 14, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy | Untitled Mixed Media"
+  description="How Untitled Mixed Media LLC collects, uses, and protects information from visitors and clients."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Privacy Policy' },
+  ]}
+>
+  <Nav />
+  <main class="pb-0">
+    <section class="pt-36 lg:pt-44 pb-16 lg:pb-24 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Privacy Policy' },
+        ]} />
+
+        <div class="mt-12 lg:mt-20 max-w-3xl mx-auto text-center">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Legal
+          </p>
+          <h1
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: var(--tracking-tight);"
+            data-animate="headline"
+          >
+            Privacy Policy
+          </h1>
+          <p class="font-mono text-soft-gray mt-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Effective {effectiveDate}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 lg:py-28 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto space-y-14">
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Who we are
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Untitled Mixed Media LLC is a Virginia limited liability company based in Richmond, Virginia. This policy explains what information we collect when you visit untitledmixedmedia.com, request a project, or subscribe to updates, and how we use and protect that information.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            What we collect
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We collect only the information you give us. That includes your name, email address, phone number, business or project details, location, and any files you attach when you submit a form or email us directly. If you upload a logo or reference image with a Brand Mark request, we store that file so we can respond to your inquiry.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We use a privacy-respecting analytics tool that records anonymous, aggregated data about how visitors use the site (pages viewed, referring source, country, device type). We do not use cookies or trackers that identify you personally. We do not fingerprint your browser.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            How we use it
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We use your contact information to respond to your inquiry, send project documents, follow up on proposals, and deliver completed work. If you subscribe to our newsletter, we use your email to send occasional updates about new projects, Richmond history, and sign and mural work. You can unsubscribe from any email with one click.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We do not sell your information. We do not share your contact details with third parties for marketing. We do not rent lists.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Who we share it with
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We use trusted service providers to operate the business: a form handler to receive inquiries, an email platform to send newsletters, a bookkeeping platform for invoices, and a cloud host to serve the website. These providers only receive the information required to perform their service. We do not authorize them to use your data for their own purposes.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We disclose information when required by law or to protect our rights or the safety of others.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Project photography
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We photograph completed projects for our portfolio and social media. For private or sensitive projects, we ask before publishing and respect your preferences. You can request that we do not publish images of your project at any time by emailing hello@untitledmixedmedia.com.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Your rights
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            You can ask us what information we hold about you, ask us to correct it, or ask us to delete it. Email <a href="mailto:hello@untitledmixedmedia.com" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">hello@untitledmixedmedia.com</a> and we will respond within 30 days.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Virginia residents
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Under the Virginia Consumer Data Protection Act, you have the right to confirm whether we process your personal data, access that data, correct inaccuracies, delete data we hold about you, obtain a portable copy, and opt out of the sale of personal data, targeted advertising, and profiling that produces legal effects.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We do not sell personal data, do not engage in targeted advertising, and do not conduct profiling that produces legal effects on you. To exercise any right, email hello@untitledmixedmedia.com. If we deny a request, you may appeal by replying to our response, and you may contact the Virginia Attorney General if the appeal is not resolved to your satisfaction.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            California residents
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Under the California Consumer Privacy Act, you have the right to know what personal information we collect, use, and disclose; to request deletion of your personal information; to opt out of the sale of personal information (we do not sell personal information); and to be free from discrimination for exercising any of these rights.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            EU, UK, and EEA residents (GDPR)
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Under the General Data Protection Regulation, you have the right to access your personal data, rectify inaccuracies, erase your data, restrict or object to processing, and receive your data in a portable format. You also have the right to lodge a complaint with your supervisory authority.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Our lawful bases for processing are your consent (for the newsletter, which you can withdraw at any time) and our legitimate interest in responding to inquiries and delivering projects you have engaged us for. We only collect data that is reasonably required.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            How long we keep information
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We keep inquiry information for as long as the inquiry is active or the client relationship is ongoing. After that, we retain basic project records for our business and tax obligations. Newsletter subscribers stay on the list until they unsubscribe.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Children
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            This site is not directed at children under 13. We do not knowingly collect information from children.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Changes to this policy
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            If we update this policy, we will change the effective date at the top of this page. Significant changes will be communicated to active clients and newsletter subscribers.
+          </p>
+        </div>
+
+        <div class="space-y-4 pt-8 border-t border-slate-gray">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Contact
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Untitled Mixed Media LLC<br />
+            Richmond, Virginia<br />
+            <a href="mailto:hello@untitledmixedmedia.com" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">hello@untitledmixedmedia.com</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

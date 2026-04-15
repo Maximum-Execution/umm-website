@@ -3,17 +3,19 @@ type NavChild = { label: string; href: string };
 type NavLink = { label: string; href: string; children?: NavChild[] };
 
 const navLinks: NavLink[] = [
-  { label: 'About', href: '/about' },
   {
-    label: 'Work',
-    href: '/work',
+    label: 'Services',
+    href: '/murals',
     children: [
       { label: 'Murals', href: '/murals' },
       { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
+      { label: 'Sign Restoration', href: '/sign-restoration' },
       { label: 'Brand Mark', href: '/brand-mark' },
     ],
   },
+  { label: 'Work', href: '/work' },
   { label: 'Journal', href: '/journal' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 ---
@@ -29,7 +31,7 @@ const navLinks: NavLink[] = [
     </a>
 
     <!-- Desktop Nav -->
-    <ul class="hidden md:flex items-center gap-8">
+    <ul class="hidden lg:flex items-center gap-8">
       {navLinks.map((link) => (
         <li class="relative group">
           <a
@@ -69,13 +71,13 @@ const navLinks: NavLink[] = [
     </ul>
 
     <!-- Desktop CTA -->
-    <a href="/mural-cost-estimator" class="hidden md:inline-block bg-titanium-white text-bone-black font-sans px-6 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+    <a href="/mural-cost-estimator" class="hidden lg:inline-block bg-titanium-white text-bone-black font-sans px-6 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
       Get a Price Estimate
     </a>
 
     <!-- Mobile Menu Button -->
     <button
-      class="md:hidden text-titanium-white p-2.5"
+      class="lg:hidden text-titanium-white p-2.5"
       id="mobile-menu-btn"
       aria-label="Toggle menu"
       aria-expanded="false"
@@ -91,7 +93,7 @@ const navLinks: NavLink[] = [
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="hidden md:hidden bg-bone-black/95 backdrop-blur-md border-t border-slate-gray" id="mobile-menu" role="region" aria-label="Mobile navigation">
+  <div class="hidden lg:hidden bg-bone-black/95 backdrop-blur-md border-t border-slate-gray" id="mobile-menu" role="region" aria-label="Mobile navigation">
     <ul class="flex flex-col items-center gap-6 py-8">
       {navLinks.map((link) => (
         <li class="flex flex-col items-center gap-4">

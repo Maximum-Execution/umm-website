@@ -7,6 +7,7 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import JournalCard from '../../components/JournalCard.astro';
+import BrandMarkCallout from '../../components/BrandMarkCallout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('journal');
@@ -110,6 +111,11 @@ const relatedPosts = allPosts
 
         <div class="case-study-prose">
           <Content />
+        </div>
+
+        <!-- Brand Mark Callout -->
+        <div class="mt-16 lg:mt-24">
+          <BrandMarkCallout variant="journal" />
         </div>
       </div>
     </article>

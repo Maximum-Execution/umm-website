@@ -8,8 +8,37 @@ import CTABlock from '../../components/CTABlock.astro';
 import JournalCard from '../../components/JournalCard.astro';
 import EditorialAside from '../../components/patterns/EditorialAside.astro';
 
-const posts = (await getCollection('journal'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const collectionPosts = (await getCollection('journal')).map((post) => ({
+  id: post.id,
+  href: `/journal/${post.id}`,
+  title: post.data.title,
+  description: post.data.description,
+  date: post.data.date,
+  tags: post.data.tags,
+}));
+
+// Manual entries for long-form .astro articles that live under /journal/ but aren't in the content collection
+const manualPosts = [
+  {
+    id: 'hand-painted-vs-vinyl',
+    href: '/journal/hand-painted-vs-vinyl',
+    title: 'Hand-Painted Signs vs Vinyl: Which Lasts Longer?',
+    description: "A hand-painted sign costs more upfront but less over 12 years. The real cost comparison and the science behind vinyl failure in Richmond's climate.",
+    date: new Date('2026-04-10'),
+    tags: ['signs', 'materials'],
+  },
+  {
+    id: 'ghost-signs-richmond-va',
+    href: '/journal/ghost-signs-richmond-va',
+    title: "Ghost Signs in Richmond, VA: A Guide to the City's Fading Hand-Painted History",
+    description: "What ghost signs are, why they survive, and what makes Richmond one of the best cities to find them. A guide to the city's fading hand-painted history.",
+    date: new Date('2026-04-10'),
+    tags: ['history', 'restoration'],
+  },
+];
+
+const posts = [...collectionPosts, ...manualPosts]
+  .sort((a, b) => b.date.valueOf() - a.date.valueOf());
 ---
 
 <BaseLayout
@@ -134,11 +163,11 @@ const posts = (await getCollection('journal'))
           {posts.map((post, i) => (
             <div class="border-b border-slate-gray pb-12" data-animate="fade" data-animate-delay={String(Math.min(i + 1, 5))}>
               <JournalCard
-                title={post.data.title}
-                description={post.data.description}
-                href={`/journal/${post.id}`}
-                date={post.data.date}
-                tags={post.data.tags}
+                title={post.title}
+                description={post.description}
+                href={post.href}
+                date={post.date}
+                tags={post.tags}
               />
             </div>
           ))}

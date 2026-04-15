@@ -3,12 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
+import BrandMarkCallout from '../components/BrandMarkCallout.astro';
 ---
 
 <BaseLayout title="Page Not Found | Untitled Mixed Media" description="The page you're looking for doesn't exist. Head back to the homepage." noindex={true}>
   <Nav />
-  <main class="relative pt-24 pb-16 px-6 lg:px-12 flex items-center min-h-[60vh]">
-    <div class="absolute inset-0 opacity-[0.06]" aria-hidden="true">
+  <main class="relative pt-24 pb-16">
+    <div class="absolute inset-0 opacity-[0.06] pointer-events-none" aria-hidden="true">
       <img
         src="/images/content-design/texture-detail-2.jpg"
         alt=""
@@ -16,16 +17,22 @@ import Button from '../components/Button.astro';
         loading="lazy"
       />
     </div>
-    <div class="relative z-10">
-      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
-        404
-      </p>
-      <h1 class="font-heading text-titanium-white mb-6 text-balance" style="font-size: var(--text-fluid-4xl); line-height: 1.1;">
-        This page doesn't exist.
-      </h1>
-      <Button href="/" variant="ghost">
-        Back to Home
-      </Button>
+    <div class="relative z-10 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto text-center min-h-[50vh] flex flex-col justify-center items-center py-16">
+        <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: 0.08em;">
+          404
+        </p>
+        <h1 class="font-heading text-titanium-white mb-6 text-balance" style="font-size: var(--text-fluid-4xl); line-height: 1.1;">
+          This page doesn't exist.
+        </h1>
+        <Button href="/" variant="ghost">
+          Back to Home
+        </Button>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-8">
+        <BrandMarkCallout variant="404" />
+      </div>
     </div>
   </main>
   <Footer />

@@ -1,0 +1,7 @@
+# Site architecture migration: 2026-04-14
+# Sign Restoration promoted from /hand-painted-signs/sign-restoration to top-level /sign-restoration
+/hand-painted-signs/sign-restoration                          /sign-restoration                     301
+
+# Educational articles moved from service sub-pages to /journal/
+/hand-painted-signs/sign-restoration/ghost-signs-richmond-va  /journal/ghost-signs-richmond-va      301
+/hand-painted-signs/hand-painted-vs-vinyl                     /journal/hand-painted-vs-vinyl        301

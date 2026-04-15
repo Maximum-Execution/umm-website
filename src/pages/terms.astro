@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const effectiveDate = 'April 14, 2026';
+---
+
+<BaseLayout
+  title="Terms of Service | Untitled Mixed Media"
+  description="Terms of service for Untitled Mixed Media LLC. Project agreements, deposits, the Collector's Guarantee, cancellations, and intellectual property."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Terms of Service' },
+  ]}
+>
+  <Nav />
+  <main class="pb-0">
+    <section class="pt-36 lg:pt-44 pb-16 lg:pb-24 px-6 lg:px-12 border-b border-slate-gray">
+      <div class="max-w-7xl mx-auto">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Terms of Service' },
+        ]} />
+
+        <div class="mt-12 lg:mt-20 max-w-3xl mx-auto text-center">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Legal
+          </p>
+          <h1
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: var(--tracking-tight);"
+            data-animate="headline"
+          >
+            Terms of Service
+          </h1>
+          <p class="font-mono text-soft-gray mt-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Effective {effectiveDate}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 lg:py-28 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto space-y-14">
+
+        <div class="space-y-4">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            These terms govern your use of untitledmixedmedia.com and any project engagement with Untitled Mixed Media LLC. By visiting this site or engaging us for a project, you agree to these terms. Each project is also governed by a written project agreement. Where the project agreement and these terms conflict, the project agreement controls.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Who we are
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Untitled Mixed Media LLC is a Virginia limited liability company, registered and operating in Richmond, Virginia. We provide hand-painted murals, hand-painted signs, sign restoration, and Brand Mark services for commercial and residential clients.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Proposals and agreements
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Every project starts with a proposal that covers scope, timeline, surface preparation, materials, and price. A proposal is valid for 30 days from the date we send it. A project becomes binding when you accept the proposal in writing (email counts) and the deposit is received.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Deposits and payment
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Murals, signs, and restoration projects typically require a 50 percent deposit to reserve your project slot and order materials. The remaining balance is due on completion. For small projects or the Brand Mark, the full price may be invoiced on scheduling. Specific payment terms are always spelled out in the project agreement.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We accept payment by bank transfer, check, or credit card. Credit card payments may include a small processing fee. Invoices are due on receipt unless otherwise stated.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            The Collector's Guarantee (Brand Mark)
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Every Brand Mark panel ships with a written Collector's Guarantee. If the finished panel is not what you expected when you open the box, you can return it for a full refund within 14 days of delivery. The panel must be returned in the same condition it was shipped in. Return shipping is covered by us for panels shipped within the continental United States.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            The Collector's Guarantee does not apply to wall installations or custom on-site work, which are governed by the project agreement for that engagement.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Cancellation and refunds
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            If you cancel before we have ordered materials or scheduled a site visit, we refund the deposit in full. If we have begun work, ordered materials, or blocked out calendar dates, we keep the portion of the deposit that covers time spent and materials ordered, and refund the rest. If we cancel a project before completion for any reason other than a breach on your part, we refund any unearned portion of the deposit.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Intellectual property
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Spencer Bennett retains copyright and all moral rights in the artwork he creates, including sketches, renders, and finished work. When you pay the final balance, you receive a perpetual, royalty-free license to display and use images of the finished piece for your business, building, or personal enjoyment. You may photograph your piece, post it on social media, and use images in your own marketing.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Reproduction of the artwork as a product (prints, merchandise, licensed derivative works) requires a separate license. Please ask. We retain the right to photograph, publish, and promote all completed work in our portfolio and marketing unless we agree otherwise in the project agreement.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Client materials and approvals
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            If you provide logos, photographs, or other materials for us to incorporate into a project, you represent that you own them or have the right to use them. You approve each stage of design in writing before we move to the next. Once you approve a final design, changes after that point may carry an additional fee.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Site conditions and access
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            You are responsible for providing safe, lawful access to the site, including permission to paint on the surface, access to power and water as needed, and a reasonable work area. If we discover hidden conditions (structural damage, lead paint, surface failure) after work begins, we stop, notify you, and discuss how to proceed. Additional work required to address hidden conditions is billed separately.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Warranties and materials
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We warrant that our work is performed in a professional manner, using appropriate materials for the surface and environment. We specify the expected lifespan in the project agreement based on the materials and conditions involved. We do not warrant against damage caused by building failure, water intrusion, vandalism, or conditions outside our control. Material warranties from manufacturers pass through to you to the extent allowed.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Limitation of liability
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Our total liability for any project is limited to the amount paid to us for that project. We are not liable for indirect, incidental, or consequential damages. Nothing in these terms limits liability for fraud, willful misconduct, or anything that cannot be limited by law.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            IN NO EVENT WILL UNTITLED MIXED MEDIA LLC BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY LOST PROFITS, LOST DATA, OR INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATING TO THESE TERMS OR YOUR USE OF THE SITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Disclaimer of warranties for the site
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            THE SITE AND ITS CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. WE MAKE NO WARRANTIES, EXPRESS OR IMPLIED, ABOUT THE SITE, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Some jurisdictions do not allow the exclusion of implied warranties, so the exclusion above may not apply to you. This disclaimer governs the website only. It does not limit the specific warranties we make in a signed project agreement.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Indemnification
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            You agree to defend, indemnify, and hold Untitled Mixed Media LLC and its owners, employees, contractors, and agents harmless from any claims, damages, losses, costs, or expenses (including reasonable attorney's fees) arising out of your use of the site, your violation of these terms, materials you provide to us that infringe a third party's rights, or your violation of applicable law.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Third-party links
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            This site may contain links to third-party websites. We do not control those sites and are not responsible for their content, practices, or security. Once you leave our site, the terms and privacy policy of the site you land on apply. Linking to a third-party site is not an endorsement of it.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Copyright policy (DMCA)
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We respect the intellectual property rights of others. If you believe content on this site infringes your copyright, send a written notice under the Digital Millennium Copyright Act (17 U.S.C. &sect; 512) to <a href="mailto:hello@untitledmixedmedia.com" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">hello@untitledmixedmedia.com</a> containing: your physical or electronic signature; identification of the copyrighted work you claim has been infringed; identification of the material you want removed and enough information for us to locate it; your address, phone number, and email; a statement that you believe in good faith the use is not authorized by the copyright owner, its agent, or the law; and a statement, under penalty of perjury, that the information is accurate and that you are the owner of the copyright or authorized to act on the owner's behalf.
+          </p>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Under 17 U.S.C. &sect; 512(f), knowingly misrepresenting that material is infringing carries its own liability.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Dispute resolution
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            If a dispute arises between us, we both agree to try to resolve it first through direct, good-faith negotiation. If that does not work within 30 days, we both agree to try mediation with a mutually-agreed mediator in Richmond, Virginia before either side starts a lawsuit. Either party may still seek emergency or injunctive relief from a court when needed to prevent irreparable harm.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Governing law
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            These terms are governed by the laws of the Commonwealth of Virginia. Any dispute will be resolved in the state or federal courts located in Richmond, Virginia.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Claim limitations
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Any claim arising out of these terms or from your use of the site must be brought within one year after the claim arose. Otherwise, it is permanently barred to the extent allowed by law.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Severability and entire agreement
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            If any provision of these terms is held invalid or unenforceable, the remaining provisions stay in effect. Our failure to enforce any right is not a waiver of that right. These terms, together with your project agreement and our Privacy Policy, make up the entire agreement between us regarding the site and any project engagement. Where these terms and the project agreement conflict, the project agreement controls.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Changes to these terms
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            We may update these terms. The effective date at the top of this page indicates when the current version took effect. Your project agreement controls the terms of any specific engagement regardless of later changes to this page.
+          </p>
+        </div>
+
+        <div class="space-y-4 pt-8 border-t border-slate-gray">
+          <h2 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-2xl); line-height: 1.15;">
+            Contact
+          </h2>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed); text-align: left;">
+            Untitled Mixed Media LLC<br />
+            Richmond, Virginia<br />
+            <a href="mailto:hello@untitledmixedmedia.com" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors">hello@untitledmixedmedia.com</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

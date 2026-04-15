@@ -12,7 +12,7 @@
         <ul>
           <li class="mb-3"><a href="/murals" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Murals</a></li>
           <li class="mb-3"><a href="/hand-painted-signs" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Hand-Painted Signs</a></li>
-          <li class="mb-3"><a href="/hand-painted-signs/sign-restoration" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Sign Restoration</a></li>
+          <li class="mb-3"><a href="/sign-restoration" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Sign Restoration</a></li>
           <li class="mb-3"><a href="/brand-mark" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Brand Mark</a></li>
         </ul>
       </div>
@@ -23,8 +23,8 @@
         <ul>
           <li class="mb-3"><a href="/journal" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Journal</a></li>
           <li class="mb-3"><a href="/mural-cost-estimator" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Mural Cost Estimator</a></li>
-          <li class="mb-3"><a href="/hand-painted-signs/hand-painted-vs-vinyl" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Hand-Painted vs Vinyl</a></li>
-          <li class="mb-3"><a href="/hand-painted-signs/sign-restoration/ghost-signs-richmond-va" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Ghost Signs Richmond</a></li>
+          <li class="mb-3"><a href="/journal/hand-painted-vs-vinyl" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Hand-Painted vs Vinyl</a></li>
+          <li class="mb-3"><a href="/journal/ghost-signs-richmond-va" class="font-body text-shadow-gray hover:text-titanium-white transition-colors block" style="font-size: var(--text-fluid-sm);">Ghost Signs Richmond</a></li>
         </ul>
       </div>
 
@@ -45,7 +45,7 @@
         <p class="font-body text-shadow-gray mb-4" style="font-size: var(--text-fluid-sm);">
           Quarterly updates on new projects, public art in Richmond, and what we're painting next.
         </p>
-        <form class="flex gap-2" action="#" method="POST" data-newsletter-form aria-label="Newsletter signup">
+        <form class="flex flex-col sm:flex-row gap-2" action="#" method="POST" data-newsletter-form aria-label="Newsletter signup">
           <input
             type="email"
             name="email"
@@ -114,9 +114,15 @@
       </div>
     </div>
 
-    <!-- Copyright -->
-    <p class="font-sans text-smoke-gray tracking-wide mt-8" style="font-size: var(--text-fluid-xs);">
-      &copy; 2026 Untitled Mixed Media LLC. All rights reserved.
-    </p>
+    <!-- Copyright + Legal -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-8">
+      <p class="font-sans text-smoke-gray tracking-wide" style="font-size: var(--text-fluid-xs);">
+        &copy; 2026 Untitled Mixed Media LLC. All rights reserved.
+      </p>
+      <nav aria-label="Legal" class="flex items-center gap-6">
+        <a href="/privacy" class="font-sans text-smoke-gray tracking-wide hover:text-titanium-white transition-colors" style="font-size: var(--text-fluid-xs);">Privacy</a>
+        <a href="/terms" class="font-sans text-smoke-gray tracking-wide hover:text-titanium-white transition-colors" style="font-size: var(--text-fluid-xs);">Terms</a>
+      </nav>
+    </div>
   </div>
 </footer>

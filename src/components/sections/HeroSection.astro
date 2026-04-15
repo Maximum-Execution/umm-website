@@ -17,7 +17,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative min-h-screen flex items-end overflow-hidden">
+<section class="relative min-h-dvh flex items-end overflow-hidden">
   <Image
     src={heroPoster}
     alt="Hand-painted mural and sign work by Untitled Mixed Media in Richmond, Virginia"
@@ -31,7 +31,7 @@ const {
 
   <!-- Content -->
   <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
-    <div class="max-w-5xl">
+    <div class="max-w-5xl mx-auto text-center">
       <p
         class="font-mono text-smoke-gray uppercase mb-6"
         style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
@@ -49,25 +49,25 @@ const {
       </h1>
       {subline && (
         <div
-          class="mb-10 max-w-2xl space-y-4"
+          class="mb-10 max-w-2xl mx-auto space-y-4"
           data-animate
           data-animate-delay="2"
         >
           <p
             class="font-body text-soft-gray"
-            style="font-size: var(--text-fluid-lg);"
+            style="font-size: var(--text-fluid-lg); text-align: left;"
           >
             {subline}
           </p>
           <p
             class="font-body text-soft-gray"
-            style="font-size: var(--text-fluid-lg);"
+            style="font-size: var(--text-fluid-lg); text-align: left;"
           >
             Your building, your story, your business.
           </p>
         </div>
       )}
-      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="3">
+      <div class="flex flex-wrap justify-center gap-4" data-animate data-animate-delay="3">
         <a
           href={ctaHref}
           class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"

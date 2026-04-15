@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Nav from '../../../components/Nav.astro';
-import Footer from '../../../components/Footer.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
-import CTABlock from '../../../components/CTABlock.astro';
-import RelatedPages from '../../../components/RelatedPages.astro';
-import VideoEmbed from '../../../components/patterns/VideoEmbed.astro';
-import ArchitecturalReveal from '../../../components/patterns/ArchitecturalReveal.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import VideoEmbed from '../../components/patterns/VideoEmbed.astro';
+import ArchitecturalReveal from '../../components/patterns/ArchitecturalReveal.astro';
 
 const faqItems = [
   {
@@ -39,8 +39,7 @@ const faqItems = [
   faqItems={faqItems}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Hand-Painted Signs', url: '/hand-painted-signs' },
-    { name: 'Sign Restoration', url: '/hand-painted-signs/sign-restoration' },
+    { name: 'Journal', url: '/journal' },
     { name: 'Ghost Signs in Richmond' },
   ]}
   service={{
@@ -63,8 +62,7 @@ const faqItems = [
       <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
-          { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
-          { label: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration' },
+          { label: 'Journal', href: '/journal' },
           { label: 'Ghost Signs in Richmond' },
         ]} />
 
@@ -638,7 +636,7 @@ const faqItems = [
     </section>
 
     <RelatedPages heading="Related" pages={[
-      { title: 'Sign Restoration', href: '/hand-painted-signs/sign-restoration', description: 'Ghost sign and historic sign restoration in Richmond.' },
+      { title: 'Sign Restoration', href: '/sign-restoration', description: 'Ghost sign and historic sign restoration in Richmond.' },
       { title: 'Hand-Painted Signs', href: '/hand-painted-signs', description: 'All hand-painted sign services.' },
     ]} />
 

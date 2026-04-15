@@ -1,0 +1,40 @@
+---
+interface Props {
+  variant?: 'journal' | '404';
+}
+
+const { variant = 'journal' } = Astro.props;
+
+const copy = {
+  journal: {
+    headline: "Not ready for a full mural?",
+    body: "The Brand Mark is where most of my clients start. Your words, hand-painted on a wood panel. On your wall by the end of the week. $500.",
+  },
+  '404': {
+    headline: "Looking for something?",
+    body: "Most businesses start with the Brand Mark: your words, hand-painted on wood. On your wall by the end of the week. $500.",
+  },
+};
+
+const { headline, body } = copy[variant];
+---
+
+<aside class="bg-midnight-graphite border border-slate-gray px-6 py-10 lg:px-10 lg:py-12">
+  <div class="max-w-xl mx-auto text-center">
+    <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+      The Brand Mark / Starting at $500
+    </p>
+    <h3 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
+      {headline}
+    </h3>
+    <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+      {body}
+    </p>
+    <a
+      href="/brand-mark"
+      class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+    >
+      See The Brand Mark
+    </a>
+  </div>
+</aside>

@@ -35,7 +35,7 @@ const navLinks: NavLink[] = [
         <li class="relative group">
           <a
             href={link.href}
-            class="font-sans text-soft-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors inline-flex items-center gap-1.5"
+            class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase hover:text-light-ash transition-colors inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titanium-white focus-visible:ring-offset-2 focus-visible:ring-offset-bone-black"
             aria-haspopup={link.children ? 'true' : undefined}
             aria-expanded={link.children ? 'false' : undefined}
           >
@@ -57,7 +57,7 @@ const navLinks: NavLink[] = [
                   <a
                     href={child.href}
                     role="menuitem"
-                    class="block px-5 py-2.5 font-sans text-soft-gray text-xs tracking-[0.15em] uppercase hover:text-titanium-white hover:bg-midnight-graphite transition-colors whitespace-nowrap"
+                    class="block px-5 py-2.5 font-sans text-titanium-white text-xs tracking-[0.15em] uppercase hover:text-light-ash hover:bg-midnight-graphite transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:bg-midnight-graphite focus-visible:text-titanium-white"
                   >
                     {child.label}
                   </a>
@@ -98,7 +98,7 @@ const navLinks: NavLink[] = [
         <li class="flex flex-col items-center gap-4">
           <a
             href={link.href}
-            class="font-sans text-soft-gray text-base tracking-[0.15em] uppercase hover:text-titanium-white transition-colors"
+            class="font-sans text-titanium-white text-base tracking-[0.15em] uppercase hover:text-light-ash transition-colors focus-visible:outline-none focus-visible:underline focus-visible:underline-offset-4"
           >
             {link.label}
           </a>
@@ -108,7 +108,7 @@ const navLinks: NavLink[] = [
                 <li>
                   <a
                     href={child.href}
-                    class="font-sans text-smoke-gray text-xs tracking-[0.2em] uppercase hover:text-titanium-white transition-colors"
+                    class="font-sans text-soft-gray text-xs tracking-[0.2em] uppercase hover:text-titanium-white transition-colors focus-visible:outline-none focus-visible:text-titanium-white focus-visible:underline focus-visible:underline-offset-4"
                   >
                     {child.label}
                   </a>

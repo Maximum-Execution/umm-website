@@ -31,7 +31,7 @@ const {
 
   <!-- Content -->
   <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
-    <div class="max-w-5xl mx-auto text-center">
+    <div class="max-w-3xl mx-auto">
       <p
         class="font-mono text-smoke-gray uppercase mb-6 eyebrow-label"
         style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
@@ -40,7 +40,7 @@ const {
         Richmond, Virginia
       </p>
       <h1
-        class="font-blackletter text-titanium-white mb-4"
+        class="font-blackletter text-titanium-white mb-6"
         style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid); letter-spacing: 0;"
         data-animate
         data-animate-delay="1"
@@ -49,25 +49,19 @@ const {
       </h1>
       {subline && (
         <div
-          class="mb-10 max-w-2xl mx-auto space-y-4"
+          class="mb-10 space-y-4"
           data-animate
           data-animate-delay="2"
         >
-          <p
-            class="font-body text-soft-gray"
-            style="font-size: var(--text-fluid-lg); text-align: left;"
-          >
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg);">
             {subline}
           </p>
-          <p
-            class="font-body text-soft-gray"
-            style="font-size: var(--text-fluid-lg); text-align: left;"
-          >
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg);">
             Your building, your story, your business.
           </p>
         </div>
       )}
-      <div class="flex flex-wrap justify-center gap-4" data-animate data-animate-delay="3">
+      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="3">
         <a
           href={ctaHref}
           class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"

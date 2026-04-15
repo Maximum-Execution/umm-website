@@ -3,6 +3,7 @@ type NavChild = { label: string; href: string };
 type NavLink = { label: string; href: string; children?: NavChild[] };
 
 const navLinks: NavLink[] = [
+  { label: 'Work', href: '/work' },
   {
     label: 'Services',
     href: '/murals',
@@ -13,9 +14,8 @@ const navLinks: NavLink[] = [
       { label: 'Brand Mark', href: '/brand-mark' },
     ],
   },
-  { label: 'Work', href: '/work' },
-  { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
+  { label: 'Journal', href: '/journal' },
   { label: 'Contact', href: '/contact' },
 ];
 ---

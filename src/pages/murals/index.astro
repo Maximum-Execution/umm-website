@@ -18,7 +18,6 @@ const muralProjects = (await getCollection('projects'))
   description="Hand-painted murals in Richmond, Virginia. Every mural starts with real discovery, so the finished work means something from the first day and lasts for decades."
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Work', url: '/work' },
     { name: 'Murals' },
   ]}
   service={{
@@ -32,7 +31,6 @@ const muralProjects = (await getCollection('projects'))
     <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
-        { label: 'Work', href: '/work' },
         { label: 'Murals' },
       ]} />
     </div>

@@ -12,8 +12,8 @@ const {
 } = Astro.props;
 
 const variants = {
-  primary: 'bg-titanium-white text-bone-black hover:bg-light-ash',
-  secondary: 'border border-slate-gray text-soft-gray hover:border-titanium-white hover:text-titanium-white',
+  primary: 'bg-titanium-white text-bone-black hover:bg-light-ash hover:-translate-y-px active:scale-[0.98] active:translate-y-0',
+  secondary: 'border border-slate-gray text-soft-gray hover:border-titanium-white hover:text-titanium-white hover:-translate-y-px active:scale-[0.98] active:translate-y-0',
   ghost: 'text-soft-gray hover:text-titanium-white underline underline-offset-4',
 };
 ---
@@ -21,7 +21,7 @@ const variants = {
 <a
   href={href}
   class:list={[
-    'font-sans inline-block px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titanium-white focus-visible:ring-offset-2 focus-visible:ring-offset-bone-black',
+    'font-sans inline-block px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titanium-white focus-visible:ring-offset-2 focus-visible:ring-offset-bone-black',
     variants[variant],
     className,
   ]}

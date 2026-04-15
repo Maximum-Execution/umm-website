@@ -317,6 +317,7 @@ body {
   [data-animate="headline"] .word {
     opacity: 1;
     transform: none;
+    filter: none;
     transition: none;
   }
   [data-animate-delay="1"],
@@ -373,17 +374,19 @@ body {
   clip-path: inset(0);
 }
 
-/* Word-by-word headline reveal */
+/* Word-by-word headline reveal — blur-clear stamp effect */
 [data-animate="headline"] .word {
   display: inline-block;
   opacity: 0;
-  transform: translateY(0.5em);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transform: translateY(0.4em);
+  filter: blur(4px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out;
 }
 
 [data-animate="headline"].is-visible .word {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
 /* Stagger words: each word gets 60ms more delay */
@@ -402,6 +405,11 @@ body {
 [data-animate="headline"].is-visible .word:nth-child(13) { transition-delay: 720ms; }
 [data-animate="headline"].is-visible .word:nth-child(14) { transition-delay: 780ms; }
 [data-animate="headline"].is-visible .word:nth-child(15) { transition-delay: 840ms; }
+[data-animate="headline"].is-visible .word:nth-child(16) { transition-delay: 900ms; }
+[data-animate="headline"].is-visible .word:nth-child(17) { transition-delay: 960ms; }
+[data-animate="headline"].is-visible .word:nth-child(18) { transition-delay: 1020ms; }
+[data-animate="headline"].is-visible .word:nth-child(19) { transition-delay: 1080ms; }
+[data-animate="headline"].is-visible .word:nth-child(20) { transition-delay: 1140ms; }
 
 /* Pull quote settle — subtle scale + fade */
 [data-animate="settle"] {
@@ -442,6 +450,113 @@ body::before {
 ::selection {
   background-color: var(--color-slate-gray);
   color: var(--color-titanium-white);
+}
+
+/* ─── Scroll Progress Bar ──────────────────────────────── */
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--color-slate-gray),
+    var(--color-soft-gray) 50%,
+    var(--color-slate-gray)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 10001; /* above grain overlay (9999) */
+  transition: transform 0.06s linear;
+  will-change: transform;
+}
+
+/* ─── Neumorphic Shadow Tokens ─────────────────────────── */
+
+:root {
+  /* Dark neumorphism — tuned for surfaces on midnight-graphite (#1E1F22).
+     Light source: top-left. Light shadow: slightly lighter than surface.
+     Dark shadow: near-black. Gap this wide produces visible but tasteful depth. */
+  --shadow-neu-raised:
+    -3px -3px 8px rgba(42, 44, 48, 0.7),
+    3px 3px 8px rgba(0, 0, 2, 0.95);
+  --shadow-neu-pressed:
+    inset -2px -2px 5px rgba(42, 44, 48, 0.6),
+    inset 2px 2px 5px rgba(0, 0, 2, 0.9);
+  --shadow-neu-card:
+    -4px -4px 12px rgba(36, 38, 42, 0.65),
+    4px 4px 12px rgba(0, 0, 2, 0.95),
+    0 0 0 1px rgba(60, 61, 62, 0.12);
+}
+
+/* ─── Gradient Section Divider ─────────────────────────── */
+
+/* Replace flat border-t with a gradient rule that fades at the edges.
+   Apply .section-rule to the section element — the ::before handles spacing. */
+.section-rule {
+  position: relative;
+}
+.section-rule::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-slate-gray) 25%,
+    var(--color-smoke-gray) 50%,
+    var(--color-slate-gray) 75%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* ─── Eyebrow Label ─────────────────────────────────────── */
+
+/* Adds a short horizontal rule on each side: — LABEL —
+   Works in centered layouts (inline-flex is centered by the parent's text-center). */
+.eyebrow-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow-label::before,
+.eyebrow-label::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-slate-gray);
+  flex-shrink: 0;
+}
+
+/* ─── Mobile Sticky CTA ─────────────────────────────────── */
+
+#sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  background-color: var(--color-midnight-graphite);
+  border-top: 1px solid var(--color-slate-gray);
+  transform: translateY(calc(100% + 2px));
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 48;
+}
+#sticky-cta.is-visible {
+  transform: translateY(0);
+}
+@media (min-width: 768px) {
+  #sticky-cta { display: none; }
 }
 
 /* ─── Case Study Content ───────────────────────────────── */

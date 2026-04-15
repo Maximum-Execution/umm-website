@@ -180,11 +180,53 @@ import '../styles/global.css';
     <slot name="head" />
   </head>
   <body class="min-h-dvh flex flex-col">
+    <!-- Scroll progress bar — compositor-only (transform: scaleX), z-index above grain overlay -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
     <div id="main-content" tabindex="-1" class="flex flex-col flex-1">
       <slot />
     </div>
 
+    <!-- Mobile sticky CTA — visible on small screens after scrolling 300px past top -->
+    <div id="sticky-cta" aria-label="Quick contact">
+      <a
+        href="/contact"
+        class="font-sans block w-full text-center bg-titanium-white text-bone-black py-3.5 text-sm font-medium tracking-[0.15em] uppercase"
+      >
+        Request a Site Visit
+      </a>
+    </div>
+
     <script>
+      // ─── Scroll progress bar ───────────────────────────
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) {
+        const updateProgress = () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+          (progressBar as HTMLElement).style.transform = `scaleX(${progress})`;
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+      }
+
+      // ─── Mobile sticky CTA ────────────────────────────
+      const stickyCta = document.getElementById('sticky-cta');
+      if (stickyCta) {
+        let stickyVisible = false;
+        const checkSticky = () => {
+          const shouldShow = window.scrollY > 320;
+          if (shouldShow !== stickyVisible) {
+            stickyVisible = shouldShow;
+            stickyCta.classList.toggle('is-visible', shouldShow);
+          }
+        };
+        window.addEventListener('scroll', checkSticky, { passive: true });
+        checkSticky();
+      }
+
+      // ─── Headline word-split ──────────────────────────
       // Wrap words in spans for headline reveal (source: server-rendered author content only)
       // If data-animate="headline" is on a wrapper, find the heading inside and split that instead
       document.querySelectorAll('[data-animate="headline"]').forEach((el) => {

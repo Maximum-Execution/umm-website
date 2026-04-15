@@ -24,7 +24,7 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={["border-t border-slate-gray py-24 lg:py-32 px-6 lg:px-12", backgroundImage && "relative overflow-hidden"]}>
+<section class:list={["section-rule py-24 lg:py-32 px-6 lg:px-12", backgroundImage && "overflow-hidden"]}>
   {backgroundImage && (
     <div class="absolute inset-0" aria-hidden="true">
       <img

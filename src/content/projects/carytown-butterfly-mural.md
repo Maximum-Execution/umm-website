@@ -39,7 +39,7 @@ A generic butterfly mural would have made this worse, not better. A mural that d
 The only outcome worth pursuing was a mural whose visual forms came from this waystation, these plants, this place. One that couldn't exist on any other wall in Carytown, because the source material behind it came from this address.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled_mixed_media_monarch-butterfly-mural-carytown-ai-art-richmond-virginia.jpg" alt="Wide view of the completed mural on a Carytown building" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled_mixed_media_monarch-butterfly-mural-carytown-ai-art-richmond-virginia.jpg" alt="" />
   <figcaption>The completed mural, adjacent to the Monarch Waystation at 3463 West Cary Street.</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ We photographed every milkweed variety, every nectar plant, and every observable
 The color palette, the forms, and the structural relationships in the finished mural all trace back to what we photographed here. Every visual element can be sourced back to a documented reference from this specific waystation, not a reference library pulled from the internet.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-carytown-richmond-morph-1.jpg" alt="Pattern analysis canvas print of a pink flower from the waystation" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-carytown-richmond-morph-1.jpg" alt="" />
   <figcaption>Pattern analysis of the waystation photographs. Butterfly wing structures and milkweed leaf forms examined together for shared geometry.</figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ The software didn't create those relationships. It made them easier to see. The 
 That observation became the organizing principle for the entire composition. The monarch and its host plant aren't two separate subjects. They're one ecological system. The mural makes that visible.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-carytown-richmond-morph-2.jpg" alt="Pattern analysis showing shared geometry between butterfly and plant forms" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-carytown-richmond-morph-2.jpg" alt="" />
   <figcaption>The shared visual geometry between monarch wing venation and milkweed leaf structure, surfaced through pattern analysis of the waystation photographs.</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ That observation became the organizing principle for the entire composition. The
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-carytown-richmond-morph-4.jpg" alt="Pattern analysis of a monarch on a yellow coneflower" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-carytown-richmond-morph-4.jpg" alt="" />
   <figcaption>The forms were always present in the source material. Analysis revealed what was already there.</figcaption>
 </figure>
 
@@ -127,7 +127,7 @@ The garden and the wall tell the same story. The mural is the waystation made vi
 The pattern analysis reference images were used to produce canvas prints for Northbank Partners' office and client spaces. The prints translate the same ecological forms from the mural into a format suited to interior spaces, using the same visual language: the structural relationships between monarch and milkweed, sourced from the same waystation photographs.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-artificial-intelligence-art-print.jpg" alt="Canvas print showing a monarch caterpillar on milkweed leaves" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/untitled-mixed-media-monarch-butterfly-mural-artificial-intelligence-art-print.jpg" alt="" />
   <figcaption>Canvas prints developed from the pattern analysis reference images. Same source material as the mural. Built for office and client-facing spaces.</figcaption>
 </figure>
 
@@ -140,27 +140,27 @@ The animated video puts those forms in motion. The shapes flow from butterfly to
 The research behind the mural didn't disappear once the paint dried. The canvas prints hang inside the office alongside a screen playing the animated sequence. The whole visual archive is available to anyone who walks in: the waystation outside, the mural on the wall, the research on the canvases, the motion on the screen.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-12ENLARGED-STANDARD-standard-height-1080px.png" alt="View through the office window showing canvas prints inside and the mural visible outside" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-12ENLARGED-STANDARD-standard-height-1080px.png" alt="" />
   <figcaption>The mural outside the window. The canvas prints on the interior wall. Same source material, two formats.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-13ENLARGED-STANDARD-standard-height-1080px.png" alt="Visitors viewing canvas prints in the Northbank Partners gallery space" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-13ENLARGED-STANDARD-standard-height-1080px.png" alt="" />
   <figcaption>Clients and guests at Northbank Partners, walking the research archive that became the mural.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-9ENLARGED-STANDARD-standard-height-1080px.png" alt="Row of canvas prints from the pattern analysis on a white gallery wall" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-9ENLARGED-STANDARD-standard-height-1080px.png" alt="" />
   <figcaption>Canvas prints developed from the waystation photographs. Same source material as the mural, translated for interior spaces.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-14ENLARGED-STANDARD-standard-height-1080px.png" alt="Two visitors viewing the canvas research prints" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-14ENLARGED-STANDARD-standard-height-1080px.png" alt="" />
   <figcaption>The work reaches the people who walk into the office.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-11ENLARGED-STANDARD-standard-height-1080px.png" alt="Full gallery view showing canvas prints, a screen displaying the mural, and guests at a table" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-11ENLARGED-STANDARD-standard-height-1080px.png" alt="" />
   <figcaption>Northbank Partners' gallery space. The wall outside. The research inside. A screen bridging them.</figcaption>
 </figure>
 

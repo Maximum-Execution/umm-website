@@ -37,7 +37,7 @@ Then the harder question surfaced: what do you do with a preserved wall that has
 A saved structure with blank walls is still just a blank wall. It needed a reason to be there.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond.jpeg" alt="Car barn before the project, with a 'For Sale' banner" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond.jpeg" alt="" />
   <figcaption>The car barn before the project. Saved from demolition. Still without a story.</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ Two archival photographs survived from the barn's working years. The first showe
 That's the detail that changed the entire direction of the project.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-original.jpg" alt="Archival photograph of rail workers on a flatbed car" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-original.jpg" alt="" />
   <figcaption>The original archival photograph. The building in the background is the same building you're looking at now.</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ The distance between an archival photograph and a finished mural is not just tec
 If any of these failed, the result would be something worse than nothing: a mural that looked almost right, the way generic public art always looks almost right while belonging nowhere in particular.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-rva-historic-project.jpg" alt="Both walls of the finished mural from an angle" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-rva-historic-project.jpg" alt="" />
   <figcaption>Three walls. Two photographs. One building.</figcaption>
 </figure>
 
@@ -94,17 +94,17 @@ We started with the two archival photographs. Not as reference material or inspi
 Every color in the finished mural was derived directly from what those photographs actually showed. Using Adobe Photoshop, we separated the value channels from the original images to identify the exact tonal relationships in the historical record, then matched paint colors to those values. The workers' faces, postures, and clothing came from the archival record, not from interpretation. Nothing was invented. Everything was found.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-streetart.jpg" alt="Full tonal range of the archival photograph visualized as color bands" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-streetart.jpg" alt="" />
   <figcaption>The archival photograph, visualized across its full tonal range. Every band of color corresponds to a specific value in the original image.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-streetartist.jpg" alt="Red tonal channel isolated from the archival photograph" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-streetartist.jpg" alt="" />
   <figcaption>One channel isolated. The darkest values in the archival photograph: the workers' coats, the shadows under the flatbed, the heavy mechanical shapes.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-handpainted.jpg" alt="Blue tonal channel isolated from the archival photograph" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-handpainted.jpg" alt="" />
   <figcaption>Another channel. Lighter values: the wall behind the workers, the painted sign, the pale sky at the top of the frame.</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ The color palette for the entire project lives inside those two photographs. Tha
 Before painting started, we built a complete 3D rendering of the finished mural in Cinema 4D and Octane Render. Every proportion verified. Every element approved by the client before work began.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-3d-render-mockup.jpg" alt="Cinema 4D rendering of the planned mural" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-3d-render-mockup.jpg" alt="" />
   <figcaption>The full mural in Cinema 4D before the first brushstroke. What the client approved.</figcaption>
 </figure>
 
@@ -132,7 +132,7 @@ The mural uses both archival photographs, placed on separate surfaces of the bui
 The interior photograph, showing the barn's interior and the streetcars inside, is painted on the back wall. It gives depth to what would otherwise read as a flat concrete surface, and it places the viewer conceptually inside the building's working history.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-trolleymural.jpg" alt="Interior trolley mural painted on the back wall" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-trolleymural.jpg" alt="" />
   <figcaption>The interior photograph on the back wall. The barn's working history made visible from the inside out.</figcaption>
 </figure>
 
@@ -143,7 +143,7 @@ The composition was calculated for the corner. Stand at the point where both wal
 It's the kind of detail that reveals itself quietly, once you know to look for it.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-handpainted-sign-historic.jpg" alt="Corner view of the workers mural with the Virginia Electric sign above" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-handpainted-sign-historic.jpg" alt="" />
   <figcaption>The exterior workers' photograph, designed to resolve as a single image from the corner viewing angle.</figcaption>
 </figure>
 
@@ -156,12 +156,12 @@ We developed the exact letter forms from the historical photograph in Adobe Illu
 Sign restoration requires more patience than any other part of a mural project. The letters have to sit in space the way the original sat in space. The weight, the spacing, the subtle irregularities of a hand-painted commercial sign from that era: all of it matters. This isn't recreation. It's recovery.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-virginia-electric-power-hand-painted-sign.jpg" alt="The Virginia Electric and Power Co. sign letterforms" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-virginia-electric-power-hand-painted-sign.jpg" alt="" />
   <figcaption>The "Virginia Electric & Power Co." sign, restored by hand to its original position after more than a century. 24 feet wide. 30 inches tall.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-handpainted-sign.jpg" alt="Restored sign in place on the building" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-handpainted-sign.jpg" alt="" />
   <figcaption>Hand-lettered to match the historical position and weight exactly.</figcaption>
 </figure>
 
@@ -170,17 +170,17 @@ Sign restoration requires more patience than any other part of a mural project. 
 ## The finished work.
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-virginia-historic-rva.jpg" alt="Completed workers mural with the Virginia Electric sign" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-virginia-historic-rva.jpg" alt="" />
   <figcaption>The completed mural. 1,024 square feet across three walls of the 1911 Richmond and Henrico Railway Company car barn.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-virginia-rva.jpg" alt="Workers mural from an angle with the neighboring apartment building" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-virginia-rva.jpg" alt="" />
   <figcaption>Tucked into the Chimborazo neighborhood where the car barn has stood since 1911.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-virginia.jpg" alt="Workers mural straight-on in its residential setting" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-trolley-mural-richmond-virginia.jpg" alt="" />
   <figcaption>The workers of the Richmond and Henrico Railway Company, returned to the building they once worked in.</figcaption>
 </figure>
 
@@ -189,7 +189,7 @@ Sign restoration requires more patience than any other part of a mural project. 
 </figure>
 
 <figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-restoration-mural-richmond-virginia.jpg" alt="Full daylight composition of both walls in context" />
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-restoration-mural-richmond-virginia.jpg" alt="" />
   <figcaption>3801 Glenwood Avenue, Chimborazo neighborhood, Richmond, Virginia.</figcaption>
 </figure>
 

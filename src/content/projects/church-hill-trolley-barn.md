@@ -93,6 +93,21 @@ We started with the two archival photographs. Not as reference material or inspi
 
 Every color in the finished mural was derived directly from what those photographs actually showed. Using Adobe Photoshop, we separated the value channels from the original images to identify the exact tonal relationships in the historical record, then matched paint colors to those values. The workers' faces, postures, and clothing came from the archival record, not from interpretation. Nothing was invented. Everything was found.
 
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-streetart.jpg" alt="Full tonal range of the archival photograph visualized as color bands" />
+  <figcaption>The archival photograph, visualized across its full tonal range. Every band of color corresponds to a specific value in the original image.</figcaption>
+</figure>
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-streetartist.jpg" alt="Red tonal channel isolated from the archival photograph" />
+  <figcaption>One channel isolated. The darkest values in the archival photograph: the workers' coats, the shadows under the flatbed, the heavy mechanical shapes.</figcaption>
+</figure>
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-church-hill-trolley-barn-mural-richmond-handpainted.jpg" alt="Blue tonal channel isolated from the archival photograph" />
+  <figcaption>Another channel. Lighter values: the wall behind the workers, the painted sign, the pale sky at the top of the frame.</figcaption>
+</figure>
+
 The color palette for the entire project lives inside those two photographs. That's not a design choice. It's a principle: the mural belongs to this building because every element traces back to what was actually here.
 
 ### Design: A photorealistic preview before a single brushstroke.

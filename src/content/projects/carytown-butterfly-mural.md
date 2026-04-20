@@ -135,6 +135,37 @@ The animated video puts those forms in motion. The shapes flow from butterfly to
 
 ---
 
+## At Northbank Partners.
+
+The research behind the mural didn't disappear once the paint dried. The canvas prints hang inside the office alongside a screen playing the animated sequence. The whole visual archive is available to anyone who walks in: the waystation outside, the mural on the wall, the research on the canvases, the motion on the screen.
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-12ENLARGED-STANDARD-standard-height-1080px.png" alt="View through the office window showing canvas prints inside and the mural visible outside" />
+  <figcaption>The mural outside the window. The canvas prints on the interior wall. Same source material, two formats.</figcaption>
+</figure>
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-13ENLARGED-STANDARD-standard-height-1080px.png" alt="Visitors viewing canvas prints in the Northbank Partners gallery space" />
+  <figcaption>Clients and guests at Northbank Partners, walking the research archive that became the mural.</figcaption>
+</figure>
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-9ENLARGED-STANDARD-standard-height-1080px.png" alt="Row of canvas prints from the pattern analysis on a white gallery wall" />
+  <figcaption>Canvas prints developed from the waystation photographs. Same source material as the mural, translated for interior spaces.</figcaption>
+</figure>
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-14ENLARGED-STANDARD-standard-height-1080px.png" alt="Two visitors viewing the canvas research prints" />
+  <figcaption>The work reaches the people who walk into the office.</figcaption>
+</figure>
+
+<figure>
+  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-11ENLARGED-STANDARD-standard-height-1080px.png" alt="Full gallery view showing canvas prints, a screen displaying the mural, and guests at a table" />
+  <figcaption>Northbank Partners' gallery space. The wall outside. The research inside. A screen bridging them.</figcaption>
+</figure>
+
+---
+
 ## The impact.
 
 Before the mural, the waystation existed and most people walking past it had no idea. A garden behind a building on West Cary Street doesn't announce itself. The conservation work Northbank Partners was doing was real; it just wasn't visible from the sidewalk.

@@ -563,6 +563,8 @@ body::before {
 
 .case-study-prose {
   max-width: var(--measure-wide);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .case-study-prose h2 {

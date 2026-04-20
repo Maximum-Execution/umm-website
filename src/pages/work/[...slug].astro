@@ -41,7 +41,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
 >
   <Nav />
   <ScrollProgress />
-  <main class="pt-24">
+  <main id="main-content" tabindex="-1" class="pt-24">
     <!-- Title + metadata line -->
     <div class="px-6 lg:px-12 mb-8">
       <div class="max-w-7xl mx-auto">
@@ -60,7 +60,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
         <div class="aspect-[21/9] overflow-hidden">
           <img
             src={cover}
-            alt={title}
+            alt=""
             width="2100"
             height="900"
             decoding="async"
@@ -88,31 +88,31 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
           <aside class="lg:border-l lg:border-slate-gray lg:pl-8 space-y-5">
             {client && (
               <div>
-                <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Client</span>
+                <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Client</span>
                 <p class="font-body text-titanium-white">{client}</p>
               </div>
             )}
             {location && (
               <div>
-                <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Location</span>
+                <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Location</span>
                 <p class="font-body text-titanium-white">{location}</p>
               </div>
             )}
             {materials && (
               <div>
-                <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Materials</span>
+                <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Materials</span>
                 <p class="font-body text-titanium-white">{materials}</p>
               </div>
             )}
             <div>
-              <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Year</span>
+              <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-1 block">Year</span>
               <p class="font-body text-titanium-white">{year}</p>
             </div>
             <div>
-              <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[var(--tracking-wider)] mb-2 block">Tags</span>
+              <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-2 block">Tags</span>
               <div class="flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <span class="font-mono text-[var(--text-fluid-xs)] text-smoke-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider">
+                  <span class="font-mono text-[var(--text-fluid-xs)] text-shadow-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider">
                     {tag}
                   </span>
                 ))}
@@ -175,7 +175,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
     {hubLink && (
       <div class="px-6 lg:px-12 pb-12">
         <div class="max-w-7xl mx-auto">
-          <a href={hubLink} class="font-sans text-smoke-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors">
+          <a href={hubLink} class="font-sans text-shadow-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors">
             &larr; {hubLabel}
           </a>
         </div>
@@ -183,13 +183,13 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
     )}
 
     <!-- Prev / Next Navigation -->
-    <nav class="px-6 lg:px-12 border-t border-slate-gray">
+    <nav aria-label="Case studies" class="px-6 lg:px-12 border-t border-slate-gray">
       <div class="max-w-7xl mx-auto py-12 grid grid-cols-2 gap-8">
         <a
           href={`/work/${prevProject.id}`}
           class="group"
         >
-          <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[0.15em] block mb-3">
+          <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[0.15em] block mb-3">
             Previous
           </span>
           {prevProject.data.cover && (
@@ -211,7 +211,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
           href={`/work/${nextProject.id}`}
           class="group text-right"
         >
-          <span class="font-sans text-[var(--text-fluid-xs)] text-smoke-gray uppercase tracking-[0.15em] block mb-3">
+          <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[0.15em] block mb-3">
             Next
           </span>
           {nextProject.data.cover && (
@@ -234,12 +234,12 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
   </main>
 
   <!-- Section scroll indicators — populated by JS after load -->
-  <div
+  <nav
     id="section-dots"
+    aria-label="Section navigation"
     class="hidden lg:flex flex-col fixed right-6 top-1/2 -translate-y-1/2 z-40"
     style="gap: 12px;"
-    aria-hidden="true"
-  ></div>
+  ></nav>
 
   <Footer />
 </BaseLayout>

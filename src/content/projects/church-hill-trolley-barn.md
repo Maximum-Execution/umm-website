@@ -116,11 +116,6 @@ The mural uses both archival photographs, placed on separate surfaces of the bui
 
 The interior photograph, showing the barn's interior and the streetcars inside, is painted on the back wall. It gives depth to what would otherwise read as a flat concrete surface, and it places the viewer conceptually inside the building's working history.
 
-<figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/09/untitled-mixed-media-historic-trolley-barn-mural-richmond-historicmural.jpg" alt="Interior photograph painted on the back wall" />
-  <figcaption>The interior photograph on the back wall. The barn's working history made visible from the inside out.</figcaption>
-</figure>
-
 The exterior photograph, showing the rail workers assembled outside the building, is painted across two walls that turn a corner. This is where the project does something that only works because of the building's specific geometry.
 
 The composition was calculated for the corner. Stand at the point where both walls enter your field of vision at once, and the image resolves into a single unified photograph. Walk ten feet in either direction, and you're only seeing part of it. The perspective was designed for that one spot: the natural place anyone would stop to take in both walls together.

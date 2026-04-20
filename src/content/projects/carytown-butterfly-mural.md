@@ -10,10 +10,6 @@ location: "Carytown, Richmond, VA"
 materials: "Exterior-grade paints on prepared masonry"
 ---
 
-<figure>
-  <img src="https://untitledmixedmedia.com/wp-content/uploads/2023/10/northbank-mural-opening-angles-7ENLARGED-STANDARD-standard-height-1080px.png" alt="Full-width hero of the completed mural" />
-</figure>
-
 ## What happened here, in plain language.
 
 Northbank Partners is a financial planning firm at 3463 West Cary Street in Richmond's Carytown district. They also maintain a certified Monarch Waystation on their property: a planted habitat of milkweed and nectar plants, registered with Monarch Watch, designed to support monarch butterflies on their annual migration.

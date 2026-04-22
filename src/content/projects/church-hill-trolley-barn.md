@@ -8,7 +8,6 @@ featured: true
 client: "The Humanities Foundation"
 location: "Chimborazo, Richmond, VA"
 materials: "Exterior-grade paints on concrete masonry"
-service: mural
 ---
 
 ## What happened here, in plain language.

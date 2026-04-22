@@ -6,26 +6,17 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 
-// Unified gallery: ALL projects, newest first
 const projects = (await getCollection('projects'))
+  .filter(p => p.data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const serviceLabel = (s: string) => {
-  if (s === 'mural') return 'Mural';
-  if (s === 'public-art') return 'Public Art';
-  if (s === 'sign') return 'Sign';
-  if (s === 'restoration') return 'Restoration';
-  if (s === 'brand-mark') return 'Brand Mark';
-  return s;
-};
 ---
 
 <BaseLayout
-  title="Work | Hand-Painted Murals & Signs in Richmond, VA | Untitled Mixed Media"
-  description="Hand-painted murals, signs, sign restoration, and brand marks in Richmond, Virginia. Every project starts with questions about the building, the business, and what people should notice."
+  title="Services | Hand-Painted Murals & Signs | Untitled Mixed Media"
+  description="Hand-painted murals and signs in Richmond, Virginia. Every project starts with questions about the building, the business, and what people should notice."
   breadcrumbItems={[
     { name: 'Home', url: '/' },
-    { name: 'Work' },
+    { name: 'Services' }
   ]}
 >
   <Nav />
@@ -33,31 +24,28 @@ const serviceLabel = (s: string) => {
     <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
-        { label: 'Work' },
+        { label: 'Services' },
       ]} />
     </div>
 
-    <!-- Hero -->
+    <!-- Hero headline -->
     <section class="px-6 lg:px-12 max-w-7xl mx-auto pt-8 pb-16">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="font-heading text-titanium-white text-balance mb-6" style="font-size: var(--text-fluid-4xl);" data-animate>
           Hand-painted murals and signs in Richmond, Virginia.
         </h1>
-        <p class="font-body text-soft-gray max-w-2xl mx-auto mb-8" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate data-animate-delay="1">
+        <p class="font-body text-soft-gray max-w-2xl mx-auto" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate data-animate-delay="1">
           Every project below started with questions about the building, the business, and what the people who walk past it should notice.
-        </p>
-        <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);" data-animate data-animate-delay="2">
-          Curious what a mural costs? <a href="/mural-cost-estimator" class="text-titanium-white underline hover:no-underline">Run the numbers &rarr;</a>
         </p>
       </div>
     </section>
 
-    <!-- Unified Gallery — ALL projects -->
+    <!-- Featured Projects -->
     <section class="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
-      <h2 class="sr-only">All Projects</h2>
+      <h2 class="sr-only">Featured Projects</h2>
       <div class="flex items-center justify-between mb-8">
         <p class="font-mono text-soft-gray uppercase" aria-hidden="true" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          Projects
+          Featured Projects
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -79,27 +67,22 @@ const serviceLabel = (s: string) => {
             />
             <div class="absolute inset-0 bg-gradient-to-t from-bone-black/80 via-bone-black/20 to-transparent" />
             <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-              <p class="font-mono text-soft-gray uppercase mb-2" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-                {serviceLabel(project.data.service)}
-              </p>
               <h3 class="font-heading text-titanium-white mb-1" style="font-size: var(--text-fluid-xl);">
                 {project.data.title}
               </h3>
-              {project.data.location && (
-                <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
-                  {project.data.location}
-                </p>
-              )}
+              <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
+                {project.data.location}
+              </p>
             </div>
           </a>
         ))}
       </div>
     </section>
 
-    <!-- Service Tiles (4) -->
+    <!-- Category Sections -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-0">
       <!-- Murals -->
-      <a href="/work/murals" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
+      <a href="/murals" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
         <img
           src="/images/projects/trolley-barn/finished-full.jpg"
           alt="Hand-painted exterior mural on a commercial building in Richmond, Virginia"
@@ -121,7 +104,7 @@ const serviceLabel = (s: string) => {
       </a>
 
       <!-- Hand-Painted Signs -->
-      <a href="/work/hand-painted-signs" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
+      <a href="/hand-painted-signs" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
         <img
           src="/images/signs/signs-cover.jpg"
           alt="Hand-painted storefront sign lettering in Richmond, Virginia"
@@ -134,57 +117,36 @@ const serviceLabel = (s: string) => {
             Hand-Painted Signs
           </h2>
           <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
-            Storefront signs, window lettering, and interior signs painted the way they were meant to be made: by hand, with real materials, on real surfaces.
+            Storefront signs and historic sign restorations, hand-painted to last 20+ years. Your name on your building, made by hand. Starting at $500 with The Brand Mark.
           </p>
           <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
             Explore &rarr;
           </span>
         </div>
       </a>
+    </section>
 
-      <!-- Sign Restoration -->
-      <a href="/work/sign-restoration" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
-        <img
-          src="/images/signs/signs-cover.jpg"
-          alt="Ghost sign restoration in progress on a historic Richmond building"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-bone-black/50 group-hover:bg-bone-black/40 transition-colors" />
-        <div class="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
-          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-3xl);">
-            Sign Restoration
-          </h2>
-          <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
-            Ghost signs and historic hand-painted lettering, researched from the original paint and brought back to the level you choose: full vibrancy, or weathered character preserved.
+    <!-- Brand Mark Callout -->
+    <section class="px-6 lg:px-12 py-20 bg-midnight-graphite" data-animate>
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="font-mono text-soft-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+          Starting at $500
+        </p>
+        <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">
+          Your words, hand-painted on wood. On your wall this week.
+        </h2>
+        <div class="space-y-4 mb-8 max-w-xl mx-auto">
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base);">
+            Tell me what you want painted: your logo, your name, a phrase that matters to your business. I hand-paint it on a wood panel up to 16 square feet and finish it however you want. Brand new and clean. A little worn in. Or aged like it's been on that wall for 30 years. You pick.
           </p>
-          <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
-            Explore &rarr;
-          </span>
-        </div>
-      </a>
-
-      <!-- Brand Mark -->
-      <a href="/work/brand-mark" class="group relative block aspect-[4/3] overflow-hidden" data-animate>
-        <img
-          src="/images/projects/trolley-barn/finished-full.jpg"
-          alt="Hand-painted brand mark on a wood panel"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-bone-black/50 group-hover:bg-bone-black/40 transition-colors" />
-        <div class="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
-          <h2 class="font-heading text-titanium-white mb-2" style="font-size: var(--text-fluid-3xl);">
-            The Brand Mark
-          </h2>
-          <p class="font-body text-soft-gray mb-4 max-w-md" style="font-size: var(--text-fluid-base);">
-            Your words, hand-painted on wood. On your wall this week. $500, including panel, installation, protective topcoat, and credit toward a future project.
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base);">
+            Your $500 includes the panel, professional installation, a protective topcoat, a touch-up kit with your exact paint, and $500 in credit toward any future mural or sign project. If you don't love the finished piece, I take it home. You owe nothing.
           </p>
-          <span class="font-sans text-titanium-white text-sm tracking-[0.15em] uppercase">
-            Explore &rarr;
-          </span>
         </div>
-      </a>
+        <a href="/brand-mark" class="inline-block border border-titanium-white text-titanium-white font-sans px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors">
+          Claim Your Brand Mark
+        </a>
+      </div>
     </section>
 
     <CTABlock />

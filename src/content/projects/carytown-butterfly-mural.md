@@ -8,7 +8,6 @@ featured: true
 client: "Northbank Partners"
 location: "Carytown, Richmond, VA"
 materials: "Exterior-grade paints on prepared masonry"
-service: mural
 ---
 
 ## What happened here, in plain language.

@@ -120,69 +120,6 @@ Production target: `untitledmixedmedia.com`
 Mailto only: `hello@untitledmixedmedia.com`
 CTA: "Request a Site Visit"
 
----
-
-## Design Priority Order
-
-iPhone first. Always.
-
-1. **iPhone (newest Safari first)** — ease of use, flawless functionality, zero broken layouts
-2. **Older iPhones** — same standards, tested down to iPhone 12
-3. **Other mobile (Android)** — parity, nothing missing
-4. **iPad / tablets** — layout adapts gracefully
-5. **Desktop** — artistic statement; more visual complexity, editorial layouts, and features than mobile carries
-
-The iPhone experience must be perfect before any desktop work begins. Desktop is additive, not the baseline.
-
-### iPhone-First Non-Negotiables
-
-- All tap targets min 44×44px (`min-h-[44px]` on every CTA)
-- No functionality hidden behind hover states
-- Font sizes never below 16px (prevents iOS Safari auto-zoom on inputs)
-- Sticky/fixed elements must not obscure readable content
-- Bottom CTAs must not conflict with iOS home bar (use `pb-safe` or equivalent)
-- Test sticky mobile CTA: does it show/hide correctly on scroll?
-- Test exit intent: does it trigger appropriately on mobile?
-
----
-
-## Skills — When to Use Each
-
-These are the globally installed skills that apply to this project. Invoke the relevant skill before starting any major task.
-
-### Design
-
-| Skill | Invoke when |
-|---|---|
-| `/frontend-design` | Running a design pass on any new or existing page |
-| `/landing-page-design` | Designing or redesigning a conversion/offer page |
-| `/hig-foundations` | Checking any design decision against Apple HIG (spacing, type, touch targets) |
-| `/hig-platforms` | iPhone- or iPad-specific layout and interaction patterns |
-| `/web-typography` | Auditing or refining the type system (5-font hierarchy, fluid scale) |
-| `/visual-storytelling-design` | Adding photography — "let the work speak," Pentagram aesthetic |
-| `/ux-heuristics` | Reviewing a new page layout for usability |
-
-### Copy
-
-| Skill | Invoke when |
-|---|---|
-| `/copy-editing` | Editing or refining existing copy on any page |
-| `/copywriting` | Writing new copy from scratch |
-| `/storybrand-messaging` | Checking copy against StoryBrand BrandScript (customer-as-hero, villain, guide) |
-| `/hundred-million-offers` | Writing or reviewing offer pages, value stacks, pricing, guarantees |
-| `/landing-page-copywriter` | Full copy pass on a landing/offer page |
-
-### Quality, SEO, Performance
-
-| Skill | Invoke when |
-|---|---|
-| `/accessibility` | Full a11y audit — run before any page is called done |
-| `/web-quality-audit` | Final QA pass (copy, links, markup, accessibility, performance) |
-| `/core-web-vitals` | Performance audit — especially important for iPhone load times |
-| `/page-cro` | Conversion audit on any landing or offer page |
-| `/seo-geo` | Local Richmond VA SEO — run when a new page or section is added |
-| `/schema-markup` | Structured data — run when adding new service or location pages |
-
 ## Messaging Rules
 
 The V4 BrandScript governs all copy on this site. Governing document: `BRAND/Messaging/UMM-StoryBrand-BrandScript-V4.md` (relative to the UMM project root).

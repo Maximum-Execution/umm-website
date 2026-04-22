@@ -14,6 +14,11 @@ const projects = defineCollection({
     client: z.string().optional(),
     location: z.string().optional(),
     materials: z.string().optional(),
+    // Service category — used to filter projects onto scoped galleries
+    // on /work/murals, /work/hand-painted-signs, /work/sign-restoration,
+    // and /work/brand-mark. 'public-art' projects surface in the mural
+    // gallery and the /work hub unified gallery.
+    service: z.enum(['mural', 'sign', 'restoration', 'brand-mark', 'public-art']),
   }),
 });
 

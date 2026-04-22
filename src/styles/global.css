@@ -232,6 +232,35 @@ html {
   outline: none;
 }
 
+/* ─── Active / Tap States (iPhone tactile feedback) ─────── */
+/* Provides visual response on tap — critical for iOS Safari  */
+
+a:active,
+button:active {
+  opacity: 0.75;
+  transition: opacity 80ms ease-out;
+}
+
+/* Solid-background CTAs darken on tap instead of going transparent */
+a.bg-titanium-white:active,
+button.bg-titanium-white:active {
+  background-color: var(--color-light-ash);
+  opacity: 1;
+}
+
+/* ─── Accessibility: details/summary focus ──────────────── */
+details summary:focus-visible {
+  outline: 2px solid var(--color-titanium-white);
+  outline-offset: 4px;
+}
+
+/* ─── Contrast note: smoke-gray on midnight-graphite ───────
+   #767676 on #1E1F22 = 3.62:1 — fails AA for normal text.
+   Use text-soft-gray (#B3B2B0, 9.8:1) for readable content
+   in midnight-graphite sections. Reserve smoke-gray for
+   decorative elements only (numbers, ornamental separators).
+   ─────────────────────────────────────────────────────────── */
+
 
 body {
   font-family: var(--font-body);

@@ -5,3 +5,11 @@
 # Educational articles moved from service sub-pages to /journal/
 /hand-painted-signs/sign-restoration/ghost-signs-richmond-va  /journal/ghost-signs-richmond-va      301
 /hand-painted-signs/hand-painted-vs-vinyl                     /journal/hand-painted-vs-vinyl        301
+
+# Site architecture migration: 2026-04-20
+# Services merged into /work hub; service deep-dives nested under /work/
+/services                                                     /work                                 301
+/murals                                                       /work/murals                          301
+/hand-painted-signs                                           /work/hand-painted-signs              301
+/sign-restoration                                             /work/sign-restoration                301
+/brand-mark                                                   /work/brand-mark                      301

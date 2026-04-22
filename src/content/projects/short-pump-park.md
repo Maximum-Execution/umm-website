@@ -8,6 +8,7 @@ featured: true
 client: "Henrico County"
 location: "Short Pump, Henrico County, VA"
 materials: "Mural paint on restored concrete"
+service: public-art
 ---
 
 ## What happened here, in plain language.

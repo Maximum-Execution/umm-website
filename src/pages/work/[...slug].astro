@@ -27,11 +27,30 @@ const currentIndex = allProjects.findIndex((p) => p.id === project.id);
 const prevProject = allProjects[currentIndex - 1] ?? allProjects[allProjects.length - 1];
 const nextProject = allProjects[currentIndex + 1] ?? allProjects[0];
 
-// Determine hub link based on tags
-const isMural = tags.some((t: string) => t.toLowerCase().includes('mural'));
-const isSign = tags.some((t: string) => t.toLowerCase().includes('sign'));
-const hubLink = isMural ? '/murals' : isSign ? '/hand-painted-signs' : null;
-const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign work' : '';
+// Determine hub link based on service field (fallback to tags for legacy)
+const service = project.data.service;
+const isMural = service === 'mural' || service === 'public-art';
+const isSign = service === 'sign';
+const isRestoration = service === 'restoration';
+const isBrandMark = service === 'brand-mark';
+const hubLink = isMural
+  ? '/work/murals'
+  : isSign
+    ? '/work/hand-painted-signs'
+    : isRestoration
+      ? '/work/sign-restoration'
+      : isBrandMark
+        ? '/work/brand-mark'
+        : '/work';
+const hubLabel = isMural
+  ? 'See more mural projects'
+  : isSign
+    ? 'See more sign work'
+    : isRestoration
+      ? 'See more sign restoration'
+      : isBrandMark
+        ? 'See more brand marks'
+        : 'Back to all work';
 ---
 
 <BaseLayout
@@ -180,6 +199,28 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
           </a>
         </div>
       </div>
+    )}
+
+    {isMural && (
+      <section class="px-6 lg:px-12 border-t border-slate-gray">
+        <div class="max-w-3xl mx-auto py-16 text-center">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            Thinking about a mural for your space?
+          </p>
+          <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl);">
+            See what it would cost on your wall.
+          </h2>
+          <p class="font-body text-soft-gray mb-6 max-w-xl mx-auto" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+            Enter your wall dimensions, surface type, and design complexity. The estimator calculates a ballpark range in 60 seconds. No email required to see your numbers.
+          </p>
+          <a
+            href="/mural-cost-estimator"
+            class="font-sans inline-block border border-titanium-white text-titanium-white px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase min-h-[44px] hover:bg-titanium-white hover:text-bone-black transition-colors"
+          >
+            Run the numbers &rarr;
+          </a>
+        </div>
+      </section>
     )}
 
     <!-- Prev / Next Navigation -->

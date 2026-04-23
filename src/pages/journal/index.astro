@@ -7,6 +7,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import JournalCard from '../../components/JournalCard.astro';
 import EditorialAside from '../../components/patterns/EditorialAside.astro';
+import Button from '../../components/Button.astro';
 
 const collectionPosts = (await getCollection('journal')).map((post) => ({
   id: post.id,
@@ -50,8 +51,8 @@ const posts = [...collectionPosts, ...manualPosts]
   ]}
 >
   <Nav />
-  <main class="pt-24 pb-16 px-6 lg:px-12">
-    <div class="max-w-7xl mx-auto">
+  <main class="pb-16 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto pt-36 lg:pt-44">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Journal' },
@@ -106,13 +107,9 @@ const posts = [...collectionPosts, ...manualPosts]
               class="flex-1 bg-bone-black border border-slate-gray text-titanium-white px-4 py-3 font-body placeholder:text-smoke-gray focus:outline-none focus:border-titanium-white transition-colors"
               style="font-size: var(--text-fluid-base);"
             />
-            <button
-              type="submit"
-              class="bg-titanium-white text-bone-black font-sans px-8 py-3 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-midnight-graphite whitespace-nowrap"
-              style="font-size: var(--text-fluid-sm);"
-            >
+            <Button type="submit" variant="primary" size="default" icon="none" class="whitespace-nowrap">
               Subscribe
-            </button>
+            </Button>
           </form>
           <p id="journal-newsletter-error" class="hidden font-body text-red-400 mt-3" style="font-size: var(--text-fluid-xs);" role="alert">
             Please enter a valid email address.

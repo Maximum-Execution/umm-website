@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Button from '../Button.astro';
 import heroPoster from '../../assets/images/hero-poster.jpg';
 
 interface Props {
@@ -33,15 +34,14 @@ const {
   <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
     <div class="max-w-3xl mx-auto">
       <p
-        class="font-mono text-soft-gray uppercase mb-6 eyebrow-label"
-        style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
+        class="label-eyebrow mb-6 eyebrow-label"
         data-animate
       >
         Richmond, Virginia
       </p>
       <h1
-        class="font-blackletter text-titanium-white mb-6"
-        style="font-size: var(--text-fluid-5xl); line-height: var(--leading-solid); letter-spacing: 0;"
+        class="font-blackletter text-titanium-white text-5xl mb-6"
+        style="line-height: var(--leading-solid); letter-spacing: 0;"
         data-animate
         data-animate-delay="1"
       >
@@ -53,31 +53,35 @@ const {
           data-animate
           data-animate-delay="2"
         >
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg);">
+          <p class="font-body text-soft-gray text-lg">
             {subline}
           </p>
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-lg);">
+          <p class="font-body text-soft-gray text-lg">
             Your building, your story, your business.
           </p>
         </div>
       )}
       <div class="flex flex-wrap gap-4" data-animate data-animate-delay="3">
-        <a
+        <Button
           href={ctaHref}
-          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+          variant="primary"
+          size="large"
+          data-plausible-event-name="CtaClick"
+          data-plausible-event-position="HeroPrimary"
+          class="plausible-event-name=CtaClick plausible-event-position=HeroPrimary"
         >
           {ctaLabel}
-        </a>
-        <a
+        </Button>
+        <Button
           href="/mural-cost-estimator"
-          class="font-sans inline-block border border-titanium-white text-titanium-white px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors duration-200"
+          variant="secondary"
+          size="large"
         >
-          Get a Price Estimate <span aria-hidden="true">&rarr;</span>
-        </a>
+          Get a Price Estimate
+        </Button>
       </div>
       <p
-        class="font-body text-soft-gray italic mt-6"
-        style="font-size: var(--text-fluid-sm);"
+        class="font-body text-soft-gray italic text-sm mt-6"
         data-animate
         data-animate-delay="4"
       >

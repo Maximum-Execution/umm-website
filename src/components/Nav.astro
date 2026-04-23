@@ -1,11 +1,13 @@
 ---
+import Button from './Button.astro';
+
 type NavChild = { label: string; href: string };
 type NavLink = { label: string; href: string; children?: NavChild[] };
 
 const navLinks: NavLink[] = [
   {
-    label: 'Services',
-    href: '/services',
+    label: 'Work',
+    href: '/work',
     children: [
       { label: 'Murals', href: '/murals' },
       { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
@@ -13,8 +15,15 @@ const navLinks: NavLink[] = [
       { label: 'Brand Mark', href: '/brand-mark' },
     ],
   },
-  { label: 'About', href: '/about' },
-  { label: 'Journal', href: '/journal' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'Process', href: '/about/process' },
+      { label: 'Philosophy', href: '/about/philosophy' },
+      { label: 'Insurance & Licensing', href: '/about/insurance-and-licensing' },
+    ],
+  },
   { label: 'Contact', href: '/contact' },
 ];
 ---
@@ -22,15 +31,16 @@ const navLinks: NavLink[] = [
 <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-titanium-white focus:text-bone-black focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:tracking-[0.15em] focus:uppercase">
   Skip to content
 </a>
-<header class="fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter] duration-300" id="main-nav">
+<header class="fixed top-0 left-0 right-0 z-50 bg-bone-black/60 backdrop-blur-md transition-[background-color,backdrop-filter] duration-300" id="main-nav">
   <nav aria-label="Main navigation" class="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="text-titanium-white font-blackletter text-xl tracking-wide hover:opacity-80 transition-opacity">
       untitled<span class="font-heading font-normal"> mixed media</span>
     </a>
 
-    <!-- Desktop Nav -->
-    <ul class="hidden lg:flex items-center gap-8">
+    <!-- Desktop Nav + CTA (right-aligned group) -->
+    <div class="hidden lg:flex items-center gap-8">
+    <ul class="flex items-center gap-8">
       {navLinks.map((link) => (
         <li class="relative group">
           <a
@@ -70,12 +80,19 @@ const navLinks: NavLink[] = [
     </ul>
 
     <!-- Desktop CTA -->
-    <a href="/mural-cost-estimator" class="hidden lg:inline-block bg-titanium-white text-bone-black font-sans px-6 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+    <Button
+      href="/mural-cost-estimator"
+      variant="primary"
+      size="compact"
+      icon="none"
+    >
       Get a Price Estimate
-    </a>
+    </Button>
+    </div>
 
     <!-- Mobile Menu Button -->
     <button
+      type="button"
       class="lg:hidden text-titanium-white p-2.5"
       id="mobile-menu-btn"
       aria-label="Toggle menu"
@@ -120,9 +137,9 @@ const navLinks: NavLink[] = [
       ))}
     </ul>
     <div class="flex justify-center pb-8">
-      <a href="/mural-cost-estimator" class="inline-block bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors">
+      <Button href="/mural-cost-estimator" variant="primary" size="default">
         Get a Price Estimate
-      </a>
+      </Button>
     </div>
   </div>
 </header>

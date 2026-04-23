@@ -141,6 +141,19 @@
   --text-fluid-3xl:  clamp(1.75rem,   1.568rem  + 0.777vw, 2.5rem);     /* 28→40px  Title 1 — section title / h2  */
   --text-fluid-4xl:  clamp(2.125rem,  1.791rem  + 1.424vw, 3.5rem);     /* 34→56px  Large Title — page title / h1 */
   --text-fluid-5xl:  clamp(2.75rem,   2.325rem  + 1.812vw, 4.5rem);     /* 44→72px  Display — hero headline       */
+
+  /* Wire the fluid scale to Tailwind v4's default text-* utilities.
+     This makes `text-xs`, `text-sm`, ..., `text-5xl` fluid by default,
+     so authors never need inline `style="font-size: var(--text-fluid-*)"`. */
+  --text-xs:   var(--text-fluid-xs);
+  --text-sm:   var(--text-fluid-sm);
+  --text-base: var(--text-fluid-base);
+  --text-lg:   var(--text-fluid-lg);
+  --text-xl:   var(--text-fluid-xl);
+  --text-2xl:  var(--text-fluid-2xl);
+  --text-3xl:  var(--text-fluid-3xl);
+  --text-4xl:  var(--text-fluid-4xl);
+  --text-5xl:  var(--text-fluid-5xl);
 }
 
 /* ─── Spacing & Rhythm Tokens ──────────────────────────── */
@@ -185,8 +198,12 @@
   --measure-normal: 65ch;
   --measure-wide:   75ch;
 
-  /* Section spacing alias (used by SectionWrapper) */
-  --spacing-section: var(--space-16);  /* 64px */
+  /* Section spacing (mobile-first).
+     Mobile baseline = 64px; desktop = 96px; major breaks = 128px.
+     Used by SectionWrapper via py-[var(...)] responsive classes. */
+  --spacing-section-mobile: var(--space-16);  /* 64px  */
+  --spacing-section:        var(--space-24);  /* 96px  desktop baseline */
+  --spacing-section-major:  var(--space-32);  /* 128px hero / footer boundary */
 }
 
 /* ─── DaisyUI Theme ─────────────────────────────────────── */
@@ -533,6 +550,18 @@ body::before {
   height: 1px;
   background: var(--color-slate-gray);
   flex-shrink: 0;
+}
+
+/* Single source of truth for the "eyebrow" voice: mono, caps, wider tracking,
+   smoke-gray. Replaces ~40 inline styles like
+   style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);". */
+.label-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-fluid-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);  /* 0.08em */
+  color: var(--color-soft-gray);
+  line-height: var(--leading-relaxed);
 }
 
 /* ─── Mobile Sticky CTA ─────────────────────────────────── */

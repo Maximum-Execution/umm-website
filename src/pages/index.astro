@@ -12,6 +12,7 @@ import ServiceShowcase from '../components/sections/ServiceShowcase.astro';
 import ExplanatorySection from '../components/sections/ExplanatorySection.astro';
 import JournalCard from '../components/JournalCard.astro';
 import CTABlock from '../components/CTABlock.astro';
+import Button from '../components/Button.astro';
 import ArchitecturalReveal from '../components/patterns/ArchitecturalReveal.astro';
 import { getCollection } from 'astro:content';
 
@@ -54,28 +55,25 @@ const journalPosts = (await getCollection('journal'))
     <ServiceShowcase />
 
     {/* 9. Brand Mark */}
-    <section class="bg-midnight-graphite border-y border-slate-gray py-16 lg:py-20 px-6 lg:px-12">
+    <section class="bg-midnight-graphite border-y border-slate-gray py-[var(--spacing-section-mobile)] md:py-[var(--spacing-section)] px-6 lg:px-12">
       <div class="max-w-4xl mx-auto text-center" data-animate="fade">
-        <p class="font-mono text-soft-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+        <p class="label-eyebrow mb-4">
           Starting at $500
         </p>
-        <h2 class="font-heading text-titanium-white mb-4" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
+        <h2 class="font-heading text-titanium-white text-2xl mb-4" style="line-height: var(--leading-tight);">
           Your words, hand-painted on wood. On your wall this week.
         </h2>
         <div class="space-y-4 mb-8 max-w-xl mx-auto">
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base);">
+          <p class="font-body text-soft-gray text-base">
             Tell me what you want painted: your logo, your name, a phrase that matters to your business. I hand-paint it on a wood panel up to 16 square feet and finish it however you want. Brand new and clean. A little worn in. Or aged like it's been on that wall for 30 years. You pick.
           </p>
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base);">
+          <p class="font-body text-soft-gray text-base">
             Your $500 includes the panel, professional installation, a protective topcoat, a touch-up kit with your exact paint, and $500 in credit toward any future mural or sign project. If you don't love the finished piece, I take it home. You owe nothing.
           </p>
         </div>
-        <a
-          href="/brand-mark"
-          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
-        >
+        <Button href="/brand-mark" variant="primary" size="default">
           Claim Your Brand Mark
-        </a>
+        </Button>
       </div>
     </section>
 

@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   headline?: string;
   subhead?: string;
@@ -31,6 +33,7 @@ const {
     >
       <!-- Close button -->
       <button
+        type="button"
         id="exit-popup-close"
         class="absolute top-4 right-4 text-smoke-gray hover:text-titanium-white transition-colors p-2"
         aria-label="Close popup"
@@ -53,19 +56,17 @@ const {
 
       <!-- CTA -->
       <div class="flex flex-col sm:flex-row items-start gap-4">
-        <a
-          href={ctaHref}
-          class="bg-titanium-white text-bone-black font-sans px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
-          id="exit-popup-cta"
-        >
+        <Button href={ctaHref} variant="primary" size="default" id="exit-popup-cta">
           {ctaLabel}
-        </a>
-        <button
+        </Button>
+        <Button
+          type="button"
+          variant="ghost"
+          icon="none"
           id="exit-popup-decline"
-          class="font-sans text-smoke-gray text-sm tracking-[0.15em] uppercase hover:text-titanium-white transition-colors py-3.5"
         >
           {declineLabel}
-        </button>
+        </Button>
       </div>
     </div>
   </div>

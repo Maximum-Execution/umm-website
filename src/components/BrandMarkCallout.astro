@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   variant?: 'journal' | '404';
 }
@@ -30,11 +32,8 @@ const { headline, body } = copy[variant];
     <p class="font-body text-soft-gray mb-8" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
       {body}
     </p>
-    <a
-      href="/brand-mark"
-      class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
-    >
+    <Button href="/brand-mark" variant="primary" size="default">
       Claim Your Brand Mark
-    </a>
+    </Button>
   </div>
 </aside>

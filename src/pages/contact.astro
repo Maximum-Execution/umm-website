@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
 ---
 
 <BaseLayout
@@ -13,8 +14,8 @@ import Footer from '../components/Footer.astro';
   ]}
 >
   <Nav />
-  <main class="pt-32 pb-16">
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+  <main class="pb-16">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto pt-36 lg:pt-44">
 
       <!-- ============================================ -->
       <!-- HERO: DEFAULT VARIANT                         -->
@@ -133,9 +134,9 @@ import Footer from '../components/Footer.astro';
               </div>
             </fieldset>
             <div class="mt-10 space-y-3">
-              <button type="submit" class="bg-titanium-white text-bone-black font-sans px-8 py-4 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-bone-black" style="font-size: var(--text-fluid-sm);">
+              <Button type="submit" variant="primary" size="large">
                 Send Your Project Details
-              </button>
+              </Button>
               <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">Spencer reads every message personally. No auto-replies. No sales team.</p>
               <p id="form-status" class="font-body text-soft-gray hidden" role="status" aria-live="polite" style="font-size: var(--text-fluid-sm);"></p>
             </div>
@@ -207,9 +208,9 @@ import Footer from '../components/Footer.astro';
             </fieldset>
 
             <div class="mt-10 space-y-3">
-              <button type="submit" class="bg-titanium-white text-bone-black font-sans px-8 py-4 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus:outline-none focus:ring-2 focus:ring-titanium-white focus:ring-offset-2 focus:ring-offset-bone-black" style="font-size: var(--text-fluid-sm);">
+              <Button type="submit" variant="primary" size="large">
                 Send to Spencer
-              </button>
+              </Button>
               <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">Spencer will follow up within 24 hours.</p>
               <p id="bm-form-status" class="font-body text-soft-gray hidden" role="status" aria-live="polite" style="font-size: var(--text-fluid-sm);"></p>
             </div>

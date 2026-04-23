@@ -1,30 +1,106 @@
 ---
+/**
+ * Button — the single CTA primitive for the UMM site.
+ *
+ * Variants:
+ *   primary   — filled titanium-white plate, inset hairline, inverts to hairline-only on hover
+ *   secondary — transparent with 1px slate-gray hairline, brightens on hover
+ *   ghost     — inline text link with arrow, no chrome
+ *
+ * Sizes (padding + type size only, never tracking):
+ *   compact — sticky mobile, utility rows, nav CTAs
+ *   default — most page CTAs
+ *   large   — hero, pricing anchor, section-closing moments
+ *
+ * Typography: sentence case. Gotham Medium at Subhead (15→16px) on default.
+ * Uppercase 0.15em tracking is reserved for nav + eyebrow labels ONLY.
+ *
+ * Icon arrow animates on hover via CSS (no JS). Arrow is structural — never
+ * write `&rarr;` in the copy string of a page.
+ */
+
 interface Props {
   href?: string;
+  type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'compact' | 'default' | 'large';
+  icon?: 'arrow' | 'none';
   class?: string;
+  id?: string;
+  [key: `data-${string}`]: string | undefined;
+  [key: `aria-${string}`]: string | undefined;
 }
 
 const {
-  href = 'mailto:hello@untitledmixedmedia.com',
+  href,
+  type,
   variant = 'primary',
+  size = 'default',
+  icon = 'arrow',
   class: className = '',
+  id,
+  ...rest
 } = Astro.props;
 
-const variants = {
-  primary: 'bg-titanium-white text-bone-black hover:bg-light-ash hover:-translate-y-px active:scale-[0.98] active:translate-y-0',
-  secondary: 'border border-slate-gray text-soft-gray hover:border-titanium-white hover:text-titanium-white hover:-translate-y-px active:scale-[0.98] active:translate-y-0',
-  ghost: 'text-soft-gray hover:text-titanium-white underline underline-offset-4',
+const isLink = Boolean(href);
+
+const base = [
+  'group relative inline-flex items-center justify-center gap-3',
+  'font-sans font-medium text-center',
+  'transition-[background-color,color,box-shadow,transform] duration-300 ease-out',
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titanium-white',
+  'focus-visible:ring-offset-2 focus-visible:ring-offset-bone-black',
+].join(' ');
+
+const sizes = {
+  compact: 'px-5 py-2.5 text-xs',
+  default: 'px-7 py-3.5 text-sm',
+  large:   'px-9 py-5 text-base',
 };
+
+const variants = {
+  primary: [
+    'bg-titanium-white text-bone-black',
+    'shadow-[inset_0_0_0_1px_var(--color-titanium-white)]',
+    'hover:bg-transparent hover:text-titanium-white',
+    'hover:shadow-[inset_0_0_0_1px_var(--color-titanium-white),inset_0_0_0_2px_rgba(0,0,0,0.22)]',
+    'active:translate-y-px',
+  ].join(' '),
+  secondary: [
+    'bg-transparent text-titanium-white',
+    'shadow-[inset_0_0_0_1px_var(--color-slate-gray)]',
+    'hover:shadow-[inset_0_0_0_1px_var(--color-titanium-white)]',
+    'active:translate-y-px',
+  ].join(' '),
+  ghost: [
+    'text-soft-gray gap-2',
+    'hover:text-titanium-white',
+  ].join(' '),
+};
+
+const sizeClass = variant === 'ghost' ? 'px-0 py-1 text-sm' : sizes[size];
+
+const Tag = isLink ? 'a' : 'button';
+const tagProps = isLink ? { href } : { type: type ?? 'button' };
 ---
 
-<a
-  href={href}
-  class:list={[
-    'font-sans inline-block px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-titanium-white focus-visible:ring-offset-2 focus-visible:ring-offset-bone-black',
-    variants[variant],
-    className,
-  ]}
+<Tag
+  {...tagProps}
+  id={id}
+  class:list={[base, sizeClass, variants[variant], className]}
+  {...rest}
 >
   <slot />
-</a>
+  {icon === 'arrow' && (
+    <svg
+      class="w-[1.1em] h-[1.1em] shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.25"
+      aria-hidden="true"
+    >
+      <path d="M1.5 8h12M9 3l5 5-5 5" stroke-linecap="square" stroke-linejoin="miter" />
+    </svg>
+  )}
+</Tag>

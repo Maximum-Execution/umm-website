@@ -41,9 +41,9 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
 >
   <Nav />
   <ScrollProgress />
-  <main id="main-content" tabindex="-1" class="pt-24">
+  <main id="main-content" tabindex="-1">
     <!-- Title + metadata line -->
-    <div class="px-6 lg:px-12 mb-8">
+    <div class="px-6 lg:px-12 pt-36 lg:pt-44 mb-8">
       <div class="max-w-7xl mx-auto">
         <h1 class="font-heading text-titanium-white mb-3 text-balance">
           {title}
@@ -165,7 +165,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
         <p class="font-heading text-[var(--text-fluid-2xl)] text-titanium-white mb-6 text-balance">
           Tell us about your walls.
         </p>
-        <Button href="mailto:hello@untitledmixedmedia.com">
+        <Button href="/contact" class="plausible-event-name=CtaClick plausible-event-position=CaseStudyFooter">
           Start a Conversation
         </Button>
       </div>

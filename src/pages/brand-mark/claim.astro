@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Button from '../../components/Button.astro';
+---
+
+<BaseLayout
+  title="Commission a Brand Mark | Untitled Mixed Media"
+  description="Your logo, phrase, or chosen words, hand-painted on a wood panel and hung on your wall. Same week. $500. Nine spots at launch price. Richmond, VA."
+  breadcrumbItems={[
+    { name: 'Home', url: '/' },
+    { name: 'Brand Mark', url: '/brand-mark' },
+    { name: 'Claim Your Spot' },
+  ]}
+>
+  <Nav />
+  <main class="pb-16">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto pt-36 lg:pt-44">
+
+      <!-- ============================================ -->
+      <!-- HERO                                          -->
+      <!-- ============================================ -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-10 lg:mb-16">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+            The Brand Mark / $500 / Same Week
+          </p>
+          <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
+            Tell me what you're thinking.
+          </h1>
+          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
+            Your words, hand-painted on wood. On your wall by the end of the week. I read every inquiry myself, and if it's a fit, I'll follow up within 24 hours to confirm the details and get started.
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="aspect-[4/3] overflow-hidden border border-slate-gray">
+            <img
+              src="/images/content-design/carytown-finished.jpg"
+              alt="Hand-painted Brand Mark on a wood panel"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- FORM + SIDEBAR                                -->
+      <!-- ============================================ -->
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+        <div class="lg:col-span-7">
+
+          <form class="space-y-6 mb-16" action="https://formspree.io/f/xpwrzqkl" method="POST" id="brand-mark-form" enctype="multipart/form-data">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="project_type" value="brand-mark" />
+            <input type="hidden" name="format" value="panel" />
+            <fieldset class="space-y-6 border-0 m-0 p-0">
+              <legend class="sr-only">Commission a Brand Mark</legend>
+
+              <div>
+                <label for="bm-words" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">What words do you want painted?</label>
+                <p class="font-body text-smoke-gray mb-2" style="font-size: var(--text-fluid-xs); line-height: var(--leading-relaxed);">Your business name, your logo wordmark, a phrase. Whatever belongs on the panel.</p>
+                <input type="text" id="bm-words" name="words" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="e.g., Scott's Addition Supply Co." />
+              </div>
+
+              <div>
+                <label for="bm-neighborhood" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Which neighborhood is your business in?</label>
+                <select id="bm-neighborhood" name="neighborhood" required class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);">
+                  <option value="" disabled selected>Select a neighborhood</option>
+                  <option value="scotts-addition">Scott's Addition</option>
+                  <option value="carytown">Carytown</option>
+                  <option value="church-hill">Church Hill</option>
+                  <option value="manchester">Manchester</option>
+                  <option value="the-fan">The Fan</option>
+                  <option value="jackson-ward">Jackson Ward</option>
+                  <option value="shockoe-bottom">Shockoe Bottom</option>
+                  <option value="brookland-park">Brookland Park</option>
+                  <option value="oregon-hill">Oregon Hill</option>
+                  <option value="other">Other / Outside Richmond</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="bm-logo" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Upload your logo or reference image <span class="text-smoke-gray">(optional)</span></label>
+                <p class="font-body text-smoke-gray mb-2" style="font-size: var(--text-fluid-xs); line-height: var(--leading-relaxed);">PNG, JPG, PDF, or SVG. If you don't have a logo yet, skip this and describe it in the notes below.</p>
+                <input type="file" id="bm-logo" name="logo" accept="image/*,.pdf,.svg" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white file:bg-bone-black file:text-titanium-white file:border-0 file:px-4 file:py-1 file:mr-4 file:font-sans file:uppercase file:tracking-wider file:text-xs" style="font-size: var(--text-fluid-sm);" />
+              </div>
+
+              <div>
+                <label for="bm-notes" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Anything else I should know? <span class="text-smoke-gray">(optional)</span></label>
+                <textarea id="bm-notes" name="notes" rows="4" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Colors you're drawn to, where the panel will hang, a specific date you need it by."></textarea>
+              </div>
+
+              <div class="pt-2 border-t border-slate-gray">
+                <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">Your Information</p>
+              </div>
+
+              <div>
+                <label for="bm-name" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Name</label>
+                <input type="text" id="bm-name" name="name" required autocomplete="name" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="Your name" />
+              </div>
+
+              <div>
+                <label for="bm-email" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Email</label>
+                <input type="email" id="bm-email" name="email" required autocomplete="email" aria-describedby="bm-email-error" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="you@example.com" />
+                <p id="bm-email-error" class="hidden font-body text-red-400 mt-2" style="font-size: var(--text-fluid-xs);" role="alert">Please enter a valid email address (e.g., name@example.com).</p>
+              </div>
+
+              <div>
+                <label for="bm-phone" class="block font-sans text-soft-gray mb-2" style="font-size: var(--text-fluid-sm);">Phone <span class="text-smoke-gray">(optional)</span></label>
+                <input type="tel" id="bm-phone" name="phone" autocomplete="tel" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body focus:outline-none focus:border-titanium-white" style="font-size: var(--text-fluid-base);" placeholder="(804) 555-0100" />
+              </div>
+            </fieldset>
+
+            <div class="mt-10 space-y-3">
+              <Button type="submit" variant="primary" size="large">
+                Send to Spencer
+              </Button>
+              <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">Spencer will follow up within 24 hours.</p>
+              <p id="bm-form-status" class="font-body text-soft-gray hidden" role="status" aria-live="polite" style="font-size: var(--text-fluid-sm);"></p>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SIDEBAR                                       -->
+        <!-- ============================================ -->
+        <div class="lg:col-span-4 lg:col-start-9">
+          <div class="lg:sticky lg:top-32 border border-slate-gray bg-midnight-graphite p-6 lg:p-8">
+            <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
+              What's Included
+            </p>
+            <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-xl); line-height: 1.3;">
+              $500. Same week.
+            </h2>
+            <ul class="space-y-3 mb-8">
+              <li class="font-body text-soft-gray flex gap-3" style="font-size: var(--text-fluid-sm); line-height: var(--leading-relaxed);">
+                <span class="text-titanium-white">/</span>
+                <span>Your words, hand-painted on a wood panel</span>
+              </li>
+              <li class="font-body text-soft-gray flex gap-3" style="font-size: var(--text-fluid-sm); line-height: var(--leading-relaxed);">
+                <span class="text-titanium-white">/</span>
+                <span>Professional-grade archival materials</span>
+              </li>
+              <li class="font-body text-soft-gray flex gap-3" style="font-size: var(--text-fluid-sm); line-height: var(--leading-relaxed);">
+                <span class="text-titanium-white">/</span>
+                <span>Finished panel, ready to hang</span>
+              </li>
+              <li class="font-body text-soft-gray flex gap-3" style="font-size: var(--text-fluid-sm); line-height: var(--leading-relaxed);">
+                <span class="text-titanium-white">/</span>
+                <span>The Collector's Guarantee</span>
+              </li>
+            </ul>
+            <div class="pt-6 border-t border-slate-gray">
+              <p class="font-body text-soft-gray mb-2" style="font-size: var(--text-fluid-sm); line-height: var(--leading-relaxed);">
+                <strong class="text-titanium-white block mb-1">Questions first?</strong>
+                <a href="mailto:hello@untitledmixedmedia.com" class="text-soft-gray hover:text-titanium-white transition-colors duration-200">hello@untitledmixedmedia.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        const bmForm = document.getElementById('brand-mark-form') as HTMLFormElement;
+        const bmStatus = document.getElementById('bm-form-status') as HTMLElement;
+        const bmEmailInput = document.getElementById('bm-email') as HTMLInputElement;
+        const bmEmailError = document.getElementById('bm-email-error') as HTMLElement;
+
+        bmEmailInput?.addEventListener('blur', () => {
+          if (bmEmailInput.value && !bmEmailInput.validity.valid) {
+            bmEmailInput.classList.add('border-red-400');
+            bmEmailInput.classList.remove('border-slate-gray');
+            bmEmailInput.setAttribute('aria-invalid', 'true');
+            bmEmailError?.classList.remove('hidden');
+          } else {
+            bmEmailInput.classList.remove('border-red-400');
+            bmEmailInput.classList.add('border-slate-gray');
+            bmEmailInput.removeAttribute('aria-invalid');
+            bmEmailError?.classList.add('hidden');
+          }
+        });
+
+        bmEmailInput?.addEventListener('focus', () => {
+          bmEmailInput.classList.remove('border-red-400');
+          bmEmailInput.classList.add('border-slate-gray');
+          bmEmailInput.removeAttribute('aria-invalid');
+          bmEmailError?.classList.add('hidden');
+        });
+
+        bmForm?.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = bmForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          bmStatus.classList.add('hidden');
+
+          try {
+            const res = await fetch(bmForm.action, {
+              method: 'POST',
+              body: new FormData(bmForm),
+              headers: { 'Accept': 'application/json' },
+            });
+
+            if (res.ok) {
+              bmStatus.textContent = 'Message sent. Spencer will follow up within 24 hours.';
+              bmStatus.classList.remove('hidden');
+              bmStatus.classList.remove('text-red-400');
+              bmStatus.classList.add('text-titanium-white');
+              bmForm.reset();
+            } else {
+              throw new Error('Form submission failed');
+            }
+          } catch {
+            bmStatus.textContent = 'Something went wrong. Please email hello@untitledmixedmedia.com directly.';
+            bmStatus.classList.remove('hidden');
+            bmStatus.classList.remove('text-titanium-white');
+            bmStatus.classList.add('text-red-400');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = 'Send to Spencer';
+          }
+        });
+      </script>
+
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

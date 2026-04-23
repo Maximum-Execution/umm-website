@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import CTABlock from '../components/CTABlock.astro';
 import RelatedPages from '../components/RelatedPages.astro';
+import Button from '../components/Button.astro';
 
 const faqItems = [
   { question: "How much does a mural cost per square foot?", answer: "$15 to $80 per square foot depending on complexity. Simple graphics and lettering run $15 to $25. Moderate detail (most commercial murals) runs $25 to $40. Detailed photorealistic work runs $40 to $55. Archival heritage murals using KEIM mineral paint run $55 to $80. Volume discounts of 10 to 40 percent apply based on wall size." },
@@ -363,9 +364,9 @@ const faqItems = [
                     <input type="email" id="lead-email" name="email" required autocomplete="email" class="w-full bg-midnight-graphite border border-slate-gray text-titanium-white px-4 py-3 font-body transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-titanium-white" style="font-size: var(--text-fluid-base); min-height: 48px;" placeholder="you@example.com" />
                     <p id="email-error" class="font-body text-pyrrole-red mt-2 hidden" style="font-size: var(--text-fluid-xs);" role="alert">Please enter a valid email address.</p>
                   </div>
-                  <button type="submit" id="lead-submit" class="w-full bg-titanium-white text-bone-black font-sans px-6 py-4 font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-titanium-white" style="font-size: var(--text-fluid-sm); min-height: 48px;">
+                  <Button type="submit" id="lead-submit" variant="primary" size="large" class="w-full">
                     Get My Planning Guide
-                  </button>
+                  </Button>
                   <p class="font-mono text-smoke-gray text-center" style="font-size: var(--text-fluid-xs);">
                     Free. No spam. Spencer responds within 24 hours.
                   </p>

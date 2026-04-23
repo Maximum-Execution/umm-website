@@ -1,5 +1,5 @@
 ---
-
+import Button from './Button.astro';
 ---
 
 <footer class="section-rule mt-auto" role="contentinfo">
@@ -56,12 +56,9 @@
             class="flex-1 bg-transparent border border-slate-gray px-4 py-2.5 font-mono text-titanium-white placeholder:text-smoke-gray focus:border-soft-gray focus:outline-none transition-colors"
             style="font-size: var(--text-fluid-xs);"
           />
-          <button
-            type="submit"
-            class="bg-titanium-white text-bone-black font-sans px-4 py-3 text-sm font-medium tracking-[0.08em] uppercase hover:bg-light-ash transition-colors"
-          >
+          <Button type="submit" variant="primary" size="compact" icon="none">
             Join
-          </button>
+          </Button>
         </form>
       </div>
     </nav>

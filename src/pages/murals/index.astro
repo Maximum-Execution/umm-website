@@ -7,6 +7,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import TransformationPair from '../../components/patterns/TransformationPair.astro';
 import EditorialAside from '../../components/patterns/EditorialAside.astro';
+import Button from '../../components/Button.astro';
 
 const muralProjects = (await getCollection('projects'))
   .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('mural')))
@@ -27,7 +28,7 @@ const muralProjects = (await getCollection('projects'))
   }}
 >
   <Nav />
-  <main class="pt-24">
+  <main>
     <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
@@ -36,7 +37,7 @@ const muralProjects = (await getCollection('projects'))
     </div>
 
     <!-- HERO -->
-    <section class="relative overflow-hidden pt-8 pb-24 lg:pb-32">
+    <section class="relative overflow-hidden pt-36 lg:pt-44 pb-24 lg:pb-32">
       <div class="absolute inset-0" aria-hidden="true">
         <img
           src="/images/content-design/trolley-full.jpg"
@@ -57,18 +58,12 @@ const muralProjects = (await getCollection('projects'))
         We create murals with intention, care, and depth. The style changes with every project. The meaning is always there from the start.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4" data-animate data-animate-delay="1">
-        <a
-          href="/contact"
-          class="inline-flex items-center justify-center bg-titanium-white text-bone-black font-sans px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors"
-        >
+        <Button href="/contact" variant="primary" size="large">
           Schedule Your Free Discovery Session
-        </a>
-        <a
-          href="/mural-cost-estimator"
-          class="inline-flex items-center justify-center border border-titanium-white text-titanium-white font-sans px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors"
-        >
+        </Button>
+        <Button href="/mural-cost-estimator" variant="secondary" size="large">
           See What It Costs
-        </a>
+        </Button>
       </div>
       </div>
     </section>
@@ -317,12 +312,9 @@ const muralProjects = (await getCollection('projects'))
             Your $500 includes the panel, professional installation, a protective topcoat, a touch-up kit with your exact paint, and $500 in credit toward any future mural or sign project. If you don't love the finished piece, I take it home. You owe nothing.
           </p>
         </div>
-        <a
-          href="/brand-mark"
-          class="inline-flex items-center justify-center border border-titanium-white text-titanium-white font-sans px-8 py-3 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors"
-        >
+        <Button href="/brand-mark" variant="secondary" size="default">
           Claim Your Brand Mark
-        </a>
+        </Button>
       </div>
     </section>
 

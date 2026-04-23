@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import Button from '../components/Button.astro';
 import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 import ComparisonBar from '../components/patterns/ComparisonBar.astro';
 ---
@@ -21,7 +22,7 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
   }}
 >
   <Nav />
-  <main class="pt-24 pb-16">
+  <main class="pb-16">
 
     <!-- ═══════════════════════════════════════════
          SECTION 1: HERO
@@ -80,18 +81,22 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
       </div>
 
       <div class="flex flex-wrap justify-center gap-4 mb-4" data-animate data-animate-delay="2">
-        <a
-          href="/contact?type=brand-mark"
-          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
+        <Button
+          href="/brand-mark/claim"
+          variant="primary"
+          size="large"
+          class="plausible-event-name=CtaClick plausible-event-position=BrandMarkHero"
         >
           Claim Your Spot
-        </a>
-        <a
+        </Button>
+        <Button
           href="#how-it-works"
-          class="font-sans inline-block border border-titanium-white text-titanium-white px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-titanium-white hover:text-bone-black transition-colors duration-200"
+          variant="secondary"
+          size="large"
+          icon="none"
         >
-          See How It Works <span aria-hidden="true">&darr;</span>
-        </a>
+          See How It Works
+        </Button>
       </div>
 
       <p
@@ -218,13 +223,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
       <!-- [SPENCER] Add before/after photo or Brand Mark photo here once it exists -->
 
       <div class="text-center" data-animate="fade">
-        <a
-          href="/contact?type=brand-mark"
-          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200 mb-2"
+        <Button
+          href="/brand-mark/claim"
+          variant="primary"
+          size="default"
+          class="mb-2 plausible-event-name=CtaClick plausible-event-position=BrandMarkWhatGetsPainted"
         >
           Claim Your Spot
-        </a>
-        <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">
+        </Button>
+        <p class="font-body text-smoke-gray text-xs">
           5 questions. Takes 60 seconds.
         </p>
       </div>
@@ -308,13 +315,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
         </div>
 
         <div class="mt-16 text-center" data-animate="fade" data-animate-delay="2">
-          <a
-            href="/contact?type=brand-mark"
-            class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200 mb-2"
+          <Button
+            href="/brand-mark/claim"
+            variant="primary"
+            size="default"
+            class="mb-2 plausible-event-name=CtaClick plausible-event-position=BrandMarkProcess"
           >
             Claim Your Spot
-          </a>
-          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">
+          </Button>
+          <p class="font-body text-smoke-gray text-xs">
             5 questions. Takes 60 seconds.
           </p>
         </div>
@@ -327,7 +336,7 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
     <section class="px-6 lg:px-12 max-w-3xl mx-auto mb-24">
       <div class="text-center mb-10">
         <p class="font-body text-smoke-gray mb-8" style="font-size: var(--text-fluid-sm);" data-animate="fade">
-          Already sold? <a href="/contact?type=brand-mark" class="font-sans text-titanium-white underline hover:no-underline">Claim Your Spot</a>. Want to see the numbers first? Keep reading.
+          Already sold? <a href="/brand-mark/claim" class="font-sans text-titanium-white underline hover:no-underline">Claim Your Spot</a>. Want to see the numbers first? Keep reading.
         </p>
 
         <h2 class="font-heading text-titanium-white mb-0" style="font-size: var(--text-fluid-3xl);" data-animate="fade">
@@ -358,15 +367,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
         class="my-12 max-w-xl mx-auto"
       />
 
-      <div class="text-center">
-        <a
+      <div class="text-center" data-animate="fade" data-animate-delay="2">
+        <Button
           href="/journal/hand-painted-vs-vinyl"
-          class="font-sans inline-block border border-slate-gray text-smoke-gray px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:border-titanium-white hover:text-titanium-white transition-colors duration-200"
-          data-animate="fade"
-          data-animate-delay="2"
+          variant="secondary"
+          size="default"
+          icon="none"
         >
           Download: Hand-Painted vs. Vinyl (PDF)
-        </a>
+        </Button>
       </div>
     </section>
 
@@ -463,13 +472,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
             I'm building a portfolio, neighborhood by neighborhood. The first 9 businesses lock in the starting price. After that, the price goes up.
           </p>
 
-          <a
-            href="/contact?type=brand-mark"
-            class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200 mb-2"
+          <Button
+            href="/brand-mark/claim"
+            variant="primary"
+            size="default"
+            class="mb-2 plausible-event-name=CtaClick plausible-event-position=BrandMarkPricing"
           >
             Claim Your Spot
-          </a>
-          <p class="font-body text-smoke-gray mb-6" style="font-size: var(--text-fluid-xs);">
+          </Button>
+          <p class="font-body text-smoke-gray mb-6 text-xs">
             5 questions. Takes 60 seconds. Rather text? <span class="text-titanium-white">[phone]</span>
           </p>
 
@@ -544,13 +555,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
         </p>
 
         <div class="text-center">
-          <a
-            href="/contact?type=brand-mark"
-            class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200 mb-2"
+          <Button
+            href="/brand-mark/claim"
+            variant="primary"
+            size="default"
+            class="mb-2 plausible-event-name=CtaClick plausible-event-position=BrandMarkGuarantee"
           >
             Claim Your Spot
-          </a>
-          <p class="font-body text-smoke-gray" style="font-size: var(--text-fluid-xs);">
+          </Button>
+          <p class="font-body text-smoke-gray text-xs">
             5 questions. Takes 60 seconds.
           </p>
         </div>
@@ -587,15 +600,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
           If your neighborhood isn't open yet, reserve your spot. You lock in first priority when I come to your area.
         </p>
 
-        <div class="mb-16 text-center">
-          <a
-            href="/contact?type=brand-mark"
-            class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200"
-            data-animate="fade"
-            data-animate-delay="2"
+        <div class="mb-16 text-center" data-animate="fade" data-animate-delay="2">
+          <Button
+            href="/brand-mark/claim"
+            variant="primary"
+            size="default"
+            class="plausible-event-name=CtaClick plausible-event-position=BrandMarkNeighborhood"
           >
             Reserve Your Spot
-          </a>
+          </Button>
         </div>
 
         <!-- FAQ (collapsed/expandable) -->
@@ -700,13 +713,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
           <p>And the week the Brand Mark goes up, you'll watch it happen. Someone will stop. Someone will take a photo. Someone will walk in and say, "When did you get that? It's beautiful."</p>
           <p>That's what a hand-painted original does. A vinyl print never will.</p>
         </div>
-        <a
-          href="/contact?type=brand-mark"
-          class="font-sans inline-block bg-titanium-white text-bone-black px-8 py-3.5 text-sm font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors duration-200 mb-2"
+        <Button
+          href="/brand-mark/claim"
+          variant="primary"
+          size="large"
+          class="mb-2 plausible-event-name=CtaClick plausible-event-position=BrandMarkClosing"
         >
           Claim Your Spot
-        </a>
-        <p class="font-body text-smoke-gray mb-6" style="font-size: var(--text-fluid-xs);">
+        </Button>
+        <p class="font-body text-smoke-gray mb-6 text-xs">
           5 questions. Takes 60 seconds. Rather text? <span class="text-titanium-white">[phone]</span>
         </p>
         <p
@@ -731,12 +746,15 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
         <p class="font-heading text-titanium-white" style="font-size: var(--text-fluid-sm);">The Brand Mark</p>
         <p class="font-mono text-smoke-gray" style="font-size: 11px;">$500 / Same week</p>
       </div>
-      <a
-        href="/contact?type=brand-mark"
-        class="font-sans bg-titanium-white text-bone-black px-6 py-2.5 text-xs font-medium tracking-[0.15em] uppercase hover:bg-light-ash transition-colors shrink-0"
+      <Button
+        href="/brand-mark/claim"
+        variant="primary"
+        size="compact"
+        icon="none"
+        class="shrink-0 plausible-event-name=CtaClick plausible-event-position=BrandMarkStickyMobile"
       >
         Claim Your Spot
-      </a>
+      </Button>
     </div>
   </div>
 
@@ -744,7 +762,7 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
     headline="Before you go."
     subhead="Download the full cost comparison: Hand-Painted vs. Vinyl over 12 years. See why a $500 Brand Mark costs less than vinyl in the long run."
     ctaLabel="Download the Comparison"
-    ctaHref="/contact?type=brand-mark"
+    ctaHref="/brand-mark/claim"
     declineLabel="I'll keep the sticker."
   />
   <Footer />

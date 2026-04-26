@@ -1,6 +1,6 @@
 ---
 interface Props {
-  num: string;
+  num?: string;
   name: string;
   action?: string;
   actionHref?: string;
@@ -9,7 +9,6 @@ interface Props {
 }
 
 const {
-  num,
   name,
   action,
   actionHref,
@@ -20,7 +19,6 @@ const {
 
 <div class={`label-section ${variant === 'light' ? 'is-light' : ''} ${className}`.trim()}>
   <span class="label-section-left">
-    <span class="label-section-num">§ {num}</span>
     <span class="label-section-name">{name}</span>
   </span>
   {action && actionHref && (

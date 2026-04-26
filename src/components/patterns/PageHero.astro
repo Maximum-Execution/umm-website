@@ -8,9 +8,6 @@ interface Props {
   secondSubline?: string;
   image?: string;
   alt?: string;
-  hudLeft?: string;
-  hudCenter?: string;
-  hudRight?: string;
   hudFootLeft?: string;
   hudFootRight?: string;
 }
@@ -24,9 +21,6 @@ const {
   secondSubline,
   image,
   alt = '',
-  hudLeft = 'Richmond, Virginia',
-  hudCenter = '37.5407\u00B0 N / 77.4360\u00B0 W',
-  hudRight = 'Hand-painted murals & signs',
   hudFootLeft,
   hudFootRight = 'Scroll to enter \u2193',
 } = Astro.props;
@@ -49,8 +43,8 @@ const {
       <div class="pagehero-c-rule" aria-hidden="true"></div>
       {(sectionNum || eyebrow) && (
         <p class="pagehero-c-eyebrow">
-          {sectionNum && <span class="pagehero-c-eyebrow-num">&sect; {sectionNum}</span>}
-          {sectionNum && eyebrow && <span class="pagehero-c-eyebrow-sep">&middot;</span>}
+          {sectionNum && <span class="pagehero-c-eyebrow-num">{sectionNum}</span>}
+          {sectionNum && eyebrow && <span class="pagehero-c-eyebrow-sep">&nbsp;</span>}
           {eyebrow && <span>{eyebrow}</span>}
         </p>
       )}

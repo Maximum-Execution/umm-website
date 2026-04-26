@@ -6,6 +6,8 @@ import ScrollProgress from '../../components/ScrollProgress.astro';
 import Footer from '../../components/Footer.astro';
 import Button from '../../components/Button.astro';
 import GalleryMosaic from '../../components/patterns/GalleryMosaic.astro';
+import HeroMeta from '../../components/HeroMeta.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -43,14 +45,19 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
   <ScrollProgress />
   <main id="main-content" tabindex="-1">
     <!-- Title + metadata line -->
-    <div class="px-6 lg:px-12 pt-36 lg:pt-44 mb-8">
+    <div class="px-6 lg:px-12 pt-32 lg:pt-36 mb-8">
       <div class="max-w-7xl mx-auto">
+        <HeroMeta
+          items={[
+            ...(location ? [{ label: location }] : []),
+            ...(client ? [{ label: client, dot: true }] : []),
+            { label: String(year), dot: true },
+          ]}
+          class="mb-6"
+        />
         <h1 class="font-heading text-titanium-white mb-3 text-balance">
           {title}
         </h1>
-        <p class="font-sans text-[var(--text-fluid-sm)] text-soft-gray tracking-wide">
-          {[client, location, year].filter(Boolean).join(' · ')}
-        </p>
       </div>
     </div>
 
@@ -74,9 +81,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
     <!-- About This Project — always visible, two-column -->
     <div class="px-6 lg:px-12 mb-20">
       <div class="max-w-7xl mx-auto">
-        <p class="font-sans text-[var(--text-fluid-xs)] text-soft-gray uppercase tracking-[var(--tracking-wider)] mb-8">
-          About This Project
-        </p>
+        <SectionLabel num="01" name="About This Project" class="mb-8" />
 
         <div class="grid lg:grid-cols-[1fr_280px] gap-12">
           <!-- Description -->
@@ -112,7 +117,7 @@ const hubLabel = isMural ? 'See more mural projects' : isSign ? 'See more sign w
               <span class="font-sans text-[var(--text-fluid-xs)] text-shadow-gray uppercase tracking-[var(--tracking-wider)] mb-2 block">Tags</span>
               <div class="flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <span class="font-mono text-[var(--text-fluid-xs)] text-shadow-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider">
+                  <span class="font-mono text-[var(--text-fluid-xs)] text-shadow-gray border border-slate-gray px-2.5 py-0.5 uppercase tracking-wider stamp-shadow">
                     {tag}
                   </span>
                 ))}

@@ -2,16 +2,19 @@
 import { Image } from 'astro:assets';
 import serviceMurals from '../../assets/images/service-murals.jpg';
 import serviceSigns from '../../assets/images/service-signs.jpg';
+import SectionLabel from '../SectionLabel.astro';
 
 const services = [
   {
+    num: '07',
     title: 'Murals',
-    description: 'Not a template. Not someone else\'s portfolio on your wall. A mural built from your story, painted by hand, that belongs to your building and nobody else\'s. Starting at $15/sqft.',
+    description: "Not a template. Not someone else's portfolio on your wall. A mural built from your story, painted by hand, that belongs to your building and nobody else's. Starting at $15/sqft.",
     href: '/murals',
     image: serviceMurals,
     imageAlt: 'Hand-painted exterior mural on a commercial building',
   },
   {
+    num: '08',
     title: 'Hand-Painted Signs',
     description: 'Storefront signs and historic sign restorations, hand-painted to last 20+ years. Your name on your building, made by hand. Starting at $500 with The Brand Mark.',
     href: '/hand-painted-signs',
@@ -21,55 +24,169 @@ const services = [
 ];
 ---
 
-<section class="pt-24 lg:pt-32 pb-4">
+<section class="services-c">
   <h2 class="sr-only">Work</h2>
-  <div class="mx-auto max-w-7xl px-6 lg:px-12 mb-6">
-    <p
-      class="font-mono text-soft-gray uppercase"
-      aria-hidden="true"
-      style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-    >
-      Work
-    </p>
+  <div class="services-c-inner">
+    <SectionLabel num="07" name="Services" />
   </div>
 
-  <div class="grid md:grid-cols-2 gap-1">
+  <div class="services-c-grid">
     {services.map((service, i) => (
       <a
         href={service.href}
-        class="group relative block overflow-hidden min-h-[60vh] md:min-h-[70vh]"
+        class="services-c-tile"
         data-animate="scale"
         data-animate-delay={String(i + 1)}
       >
-        <Image
-          src={service.image}
-          alt={service.imageAlt}
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-midnight-graphite" aria-hidden="true"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/90 via-bone-black/40 to-transparent" aria-hidden="true"></div>
-        <div class="relative z-10 h-full flex flex-col justify-end p-8 lg:p-12">
-          <h3
-            class="font-heading text-titanium-white mb-3"
-            style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);"
-          >
-            {service.title}
-          </h3>
-          <p
-            class="font-body text-soft-gray mb-6 max-w-md"
-            style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
-          >
-            {service.description}
-          </p>
-          <span
-            class="font-mono text-soft-gray uppercase group-hover:text-titanium-white transition-colors"
-            style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-          >
-            Explore <span aria-hidden="true">&rarr;</span>
-          </span>
+        <div class="services-c-image">
+          <Image
+            src={service.image}
+            alt={service.imageAlt}
+            loading="lazy"
+          />
+          <div class="services-c-grade" aria-hidden="true"></div>
+          <div class="services-c-watermark" aria-hidden="true">{service.title.charAt(0)}</div>
+          <div class="services-c-hud" aria-hidden="true">
+            <span class="services-c-hud-num">{String(service.num).padStart(2, '0')}</span>
+            <span class="services-c-hud-dot"></span>
+            <span class="services-c-hud-label">Service</span>
+          </div>
+        </div>
+        <div class="services-c-body">
+          <h3 class="services-c-title">{service.title}</h3>
+          <p class="services-c-desc">{service.description}</p>
+          <span class="services-c-cta">Explore <span aria-hidden="true">&rarr;</span></span>
         </div>
       </a>
     ))}
   </div>
 </section>
+
+<style>
+  .services-c {
+    padding-top: clamp(4rem, 8vw, 8rem);
+    padding-bottom: clamp(4rem, 8vw, 8rem);
+    background: var(--color-bone-black);
+  }
+  .services-c-inner {
+    margin-inline: auto;
+    max-width: 1400px;
+    padding-inline: clamp(1.5rem, 3vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .services-c-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    background: rgba(238,236,233,0.08);
+  }
+  @media (min-width: 900px) {
+    .services-c-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .services-c-tile {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: var(--color-bone-black);
+  }
+  .services-c-image {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+  .services-c-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.58) contrast(1.05);
+    transition: transform 700ms ease-out, filter 400ms ease-out;
+  }
+  .services-c-tile:hover .services-c-image img,
+  .services-c-tile:focus-visible .services-c-image img {
+    transform: scale(1.03);
+    filter: brightness(0.72) contrast(1.05);
+  }
+  .services-c-grade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(0,2,5,0.1) 0%, rgba(0,2,5,0.35) 55%, rgba(0,2,5,0.9) 100%);
+    pointer-events: none;
+  }
+  .services-c-watermark {
+    position: absolute;
+    right: 4%;
+    bottom: -2%;
+    font-family: var(--font-blackletter);
+    font-size: clamp(6rem, 11vw, 10rem);
+    line-height: 0.82;
+    color: rgba(238, 236, 233, 0.06);
+    user-select: none;
+    pointer-events: none;
+  }
+  .services-c-hud {
+    position: absolute;
+    top: 20px; left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    background: rgba(0,2,5,0.72);
+    border: 1px solid rgba(238,236,233,0.18);
+    backdrop-filter: blur(4px);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(238,236,233,0.78);
+  }
+  .services-c-hud-num { color: var(--color-editorial-accent); font-weight: 600; }
+  .services-c-hud-dot {
+    width: 4px; height: 4px; border-radius: 999px;
+    background: rgba(238,236,233,0.35);
+  }
+
+  .services-c-body {
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .services-c-title {
+    font-family: var(--font-heading);
+    color: var(--color-titanium-white);
+    font-size: var(--text-fluid-4xl);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    font-weight: 500;
+    margin-bottom: var(--space-4);
+    text-wrap: balance;
+  }
+  .services-c-desc {
+    font-family: var(--font-body);
+    color: rgba(238,236,233,0.72);
+    font-size: var(--text-fluid-base);
+    line-height: 1.55;
+    max-width: 52ch;
+    margin-bottom: var(--space-5);
+  }
+  .services-c-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(238,236,233,0.72);
+    border-bottom: 1px solid rgba(238,236,233,0.2);
+    padding-bottom: 3px;
+    transition: color 220ms ease, border-color 220ms ease;
+  }
+  .services-c-tile:hover .services-c-cta,
+  .services-c-tile:focus-visible .services-c-cta {
+    color: var(--color-titanium-white);
+    border-color: var(--color-editorial-accent);
+  }
+</style>

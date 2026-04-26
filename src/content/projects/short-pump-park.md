@@ -20,7 +20,7 @@ The result is an outdoor museum. Three walls, each fully wrapped on both faces, 
 
 The walls and the ground now tell the same story. You don't read Short Pump's history here. You stand inside it.
 
-**[Start a conversation →](mailto:hello@untitledmixedmedia.com)**
+**[Start a conversation →](/contact)**
 
 <img src="/images/projects/short-pump/hero-wide.jpg" alt="All three walls and the ground map in context at Short Pump Park" />
 

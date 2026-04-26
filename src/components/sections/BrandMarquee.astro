@@ -2,51 +2,76 @@
 interface Props {
   text?: string;
   speed?: string;
+  phrases?: string[];
 }
 
 const {
   text = 'Landmarks Not Lookalikes',
-  speed = '25s',
+  speed = '45s',
+  phrases,
 } = Astro.props;
 
-const repeated = Array(6).fill(text);
+const items = phrases && phrases.length > 0 ? phrases : [text];
+const loop = Array(8).fill(items).flat();
 ---
 
-<section class="border-y border-slate-gray overflow-hidden py-6 lg:py-8" aria-hidden="true">
-  <div class="marquee-track flex whitespace-nowrap" style={`--marquee-speed: ${speed};`}>
-    {repeated.map((t) => (
-      <span
-        class="font-heading text-titanium-white/10 uppercase shrink-0 mx-8 lg:mx-12"
-        style="font-size: var(--text-fluid-4xl); letter-spacing: var(--tracking-wider);"
-      >
-        {t}
-      </span>
+<section class="marquee-c" aria-hidden="true">
+  <div class="marquee-c-track" style={`--marquee-speed: ${speed};`}>
+    {loop.map((t, i) => (
+      <>
+        <span class="marquee-c-word">{t}</span>
+        <span class="marquee-c-sep" aria-hidden="true">&middot;</span>
+      </>
     ))}
-    {repeated.map((t) => (
-      <span
-        class="font-heading text-titanium-white/10 uppercase shrink-0 mx-8 lg:mx-12"
-        style="font-size: var(--text-fluid-4xl); letter-spacing: var(--tracking-wider);"
-        aria-hidden="true"
-      >
-        {t}
-      </span>
+    {loop.map((t, i) => (
+      <>
+        <span class="marquee-c-word" aria-hidden="true">{t}</span>
+        <span class="marquee-c-sep" aria-hidden="true">&middot;</span>
+      </>
     ))}
   </div>
 </section>
 
 <style>
-  .marquee-track {
-    animation: marquee-scroll var(--marquee-speed, 25s) linear infinite;
+  .marquee-c {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-bone-black);
+    border-block: 1px solid rgba(238, 236, 233, 0.12);
+    padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .marquee-c-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee-c-scroll var(--marquee-speed, 45s) linear infinite;
+    will-change: transform;
+  }
+  .marquee-c-word {
+    flex-shrink: 0;
+    font-family: var(--font-blackletter);
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    color: var(--color-titanium-white);
+    padding-inline: clamp(1rem, 2vw, 2rem);
+    letter-spacing: 0;
+    line-height: 1;
+  }
+  .marquee-c-sep {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    color: var(--color-editorial-accent);
+    font-weight: 500;
+    line-height: 1;
   }
 
-  @keyframes marquee-scroll {
+  @keyframes marquee-c-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
-    }
+    .marquee-c-track { animation: none; }
   }
 </style>

@@ -8,6 +8,9 @@ import CTABlock from '../../components/CTABlock.astro';
 import StatCallout from '../../components/patterns/StatCallout.astro';
 import ComparisonBar from '../../components/patterns/ComparisonBar.astro';
 import Button from '../../components/Button.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import WorkCaption from '../../components/WorkCaption.astro';
+import PageHero from '../../components/patterns/PageHero.astro';
 
 const signProjects = (await getCollection('projects'))
   .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('sign')))
@@ -37,36 +40,54 @@ const signProjects = (await getCollection('projects'))
     </div>
 
     <!-- HERO -->
-    <section class="relative overflow-hidden pt-36 lg:pt-44 pb-24 lg:pb-32">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img
-          src="/images/content-design/hand-painted-sign.jpg"
-          alt=""
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/90 via-bone-black/70 to-bone-black/50"></div>
-      </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
-      <p class="font-mono text-soft-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Hand-Painted Signs
-      </p>
-      <h1 class="font-heading text-titanium-white text-balance mb-10 max-w-5xl mx-auto" data-animate="headline" style="font-size: var(--text-fluid-5xl); line-height: 1.02;">
-        Hand-painted signs in Richmond, Virginia.
-      </h1>
-      <p class="font-body text-soft-gray max-w-2xl mx-auto mb-12" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
-        Your sign is the first thing people judge about your business. We paint signs by hand because we believe your name deserves more than a sticker. Every sign we make is an artistic expression of your brand, built with craft and care.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4" data-animate data-animate-delay="1">
-        <Button href="/contact" variant="primary" size="large">
-          Schedule Your Free Discovery Session
-        </Button>
-        <Button href="/brand-mark" variant="secondary" size="large">
-          Start with a Brand Mark
-        </Button>
-      </div>
-      </div>
-    </section>
+    <PageHero
+      sectionNum="01"
+      eyebrow="Hand-Painted Signs"
+      headline="Hand-painted signs in Richmond, Virginia."
+      subline="Your sign is the first thing people judge about your business. We paint signs by hand because we believe your name deserves more than a sticker. Every sign we make is an artistic expression of your brand, built with craft and care."
+      image="/images/content-design/hand-painted-sign.jpg"
+      alt=""
+      hudRight="Signs & lettering"
+      hudFootLeft="Hand-painted sign / Richmond, VA"
+    >
+      <Button href="/contact" variant="primary" size="large" class="plausible-event-name=CtaClick plausible-event-position=SignsHero">
+        Schedule Your Free Discovery Session
+      </Button>
+      <Button href="/brand-mark" variant="secondary" size="large">
+        Start with a Brand Mark
+      </Button>
+    </PageHero>
+
+    <!-- FEATURED PROJECTS (leads the page) -->
+    {signProjects.length > 0 && (
+      <section class="border-t border-slate-gray py-20 lg:py-28">
+        <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+          <SectionLabel num="01" name="Selected Signs" actionHref="/work" action="View all →" />
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {signProjects.slice(0, 6).map((project) => (
+              <a href={`/work/${project.id}`} class="group block" data-animate>
+                <div class="aspect-[4/5] overflow-hidden bg-midnight-graphite mb-5">
+                  <img
+                    src={project.data.cover}
+                    alt={project.data.title}
+                    width="1600"
+                    height="2000"
+                    decoding="async"
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                </div>
+                <WorkCaption
+                  title={project.data.title}
+                  place={project.data.location}
+                  action="View →"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <!-- THE PROBLEM -->
     <section class="border-t border-slate-gray py-24 lg:py-32">
@@ -74,7 +95,7 @@ const signProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              01 / The Problem
+              02 / The Problem
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               Most sign shops are just copy machines with storefronts.
@@ -87,7 +108,7 @@ const signProjects = (await getCollection('projects'))
             <p class="font-body text-soft-gray" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
               The result looks the same as every other storefront on the block. It peels in three to five years. It makes your business look cheap and temporary. And it adds more visual noise to a street that already has too much of it.
             </p>
-            <p class="font-body text-titanium-white border-l border-titanium-white pl-6 py-1" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
+            <p class="font-body italic-accent text-titanium-white border-l border-titanium-white pl-6 py-1" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
               That's not a sign. That's pollution.
             </p>
             <p class="font-body text-soft-gray" data-animate data-animate-delay="3" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
@@ -103,7 +124,7 @@ const signProjects = (await getCollection('projects'))
       <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <div class="max-w-3xl mx-auto">
         <p class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          02 / The Signal
+          03 / The Signal
         </p>
         <h2 class="font-heading text-titanium-white text-balance mb-12" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.02;">
           Your sign is the strongest signal your business sends.
@@ -137,7 +158,7 @@ const signProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              03 / Design Science
+              04 / Design Science
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               There's a science to making signs people actually notice.
@@ -167,7 +188,7 @@ const signProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              04 / The Math
+              05 / The Math
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               Vinyl costs more than you think.
@@ -203,7 +224,7 @@ const signProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              05 / Restoration
+              06 / Restoration
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               Some signs are worth saving.
@@ -223,42 +244,6 @@ const signProjects = (await getCollection('projects'))
         </div>
       </div>
     </section>
-
-    <!-- FEATURED PROJECTS -->
-    {signProjects.length > 0 && (
-      <section class="border-t border-slate-gray py-24 lg:py-32">
-        <div class="px-6 lg:px-12 max-w-7xl mx-auto">
-          <p class="font-mono text-smoke-gray uppercase mb-12" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            Featured Sign Work
-          </p>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {signProjects.slice(0, 3).map((project) => (
-              <a href={`/work/${project.id}`} class="group block" data-animate>
-                <div class="aspect-[4/5] overflow-hidden bg-midnight-graphite mb-5">
-                  <img
-                    src={project.data.cover}
-                    alt={project.data.title}
-                    width="1600"
-                    height="2000"
-                    decoding="async"
-                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors mb-2" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
-                  {project.data.title}
-                </h3>
-                {project.data.location && (
-                  <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-                    {project.data.location}
-                  </p>
-                )}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
 
     <!-- EXPLANATORY PARAGRAPH -->
     <section class="border-t border-slate-gray py-24 lg:py-32">
@@ -291,7 +276,7 @@ const signProjects = (await getCollection('projects'))
         <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
           Starting at $500
         </p>
-        <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
+        <h2 class="font-heading text-titanium-white mb-10 lg:mb-14" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
           Your words, hand-painted on wood. On your wall this week.
         </h2>
         <div class="space-y-4 mb-10">

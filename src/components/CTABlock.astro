@@ -24,44 +24,97 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={["section-rule py-24 lg:py-32 px-6 lg:px-12", backgroundImage && "overflow-hidden"]}>
+<section class="cta-c">
   {backgroundImage && (
-    <div class="absolute inset-0" aria-hidden="true">
-      <img
-        src={backgroundImage}
-        alt=""
-        class="w-full h-full object-cover"
-        loading="lazy"
-      />
-      <div class="absolute inset-0 bg-bone-black/80"></div>
+    <div class="cta-c-bg" aria-hidden="true">
+      <img src={backgroundImage} alt="" loading="lazy" />
+      <div class="cta-c-grade"></div>
     </div>
   )}
-  <div class="relative z-10 max-w-4xl mx-auto text-center" data-animate="fade">
-    <h2
-      class="font-heading text-titanium-white mb-6"
-      style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);"
-    >
-      {headline}
-    </h2>
-    {description && (
-      <p
-        class="font-body text-soft-gray mb-10 max-w-2xl mx-auto"
-        style="font-size: var(--text-fluid-lg);"
-      >
-        {description}
-      </p>
-    )}
-    <div class="flex flex-wrap items-center justify-center gap-6 mb-8">
+  <div class="cta-c-inner" data-animate="fade">
+    <div class="cta-c-rule" aria-hidden="true"></div>
+    <p class="cta-c-eyebrow">Final word</p>
+    <h2 class="cta-c-heading">{headline}</h2>
+    {description && <p class="cta-c-desc">{description}</p>}
+    <div class="cta-c-actions">
       <Button href={primaryHref} variant="primary" size="large" class="plausible-event-name=CtaClick plausible-event-position=FooterPrimary">{primaryLabel}</Button>
       <Button href={secondaryHref} variant="ghost">{secondaryLabel}</Button>
     </div>
-    {trustLine && (
-      <p
-        class="font-mono text-smoke-gray uppercase"
-        style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-      >
-        {trustLine}
-      </p>
-    )}
+    {trustLine && <p class="cta-c-trust">{trustLine}</p>}
   </div>
 </section>
+
+<style>
+  .cta-c {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(7rem, 14vw, 13rem);
+    padding-inline: clamp(1.5rem, 3vw, 3rem);
+    background: var(--color-bone-black);
+    border-top: 1px solid rgba(238,236,233,0.08);
+  }
+  .cta-c-bg { position: absolute; inset: 0; }
+  .cta-c-bg img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.35) contrast(1.08);
+  }
+  .cta-c-grade {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,2,5,0.7), rgba(0,2,5,0.95));
+  }
+  .cta-c-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .cta-c-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--color-editorial-accent);
+    margin: 0 auto var(--space-5);
+  }
+  .cta-c-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(238,236,233,0.72);
+    margin-bottom: clamp(var(--space-10), 4vw, var(--space-16));
+  }
+  .cta-c-heading {
+    font-family: var(--font-heading);
+    color: var(--color-titanium-white);
+    font-size: var(--text-fluid-5xl);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-bottom: clamp(var(--space-10), 4vw, var(--space-16));
+    max-width: 22ch;
+    margin-inline: auto;
+    text-wrap: balance;
+  }
+  .cta-c-desc {
+    font-family: var(--font-body);
+    color: rgba(238,236,233,0.78);
+    font-size: var(--text-fluid-lg);
+    line-height: 1.55;
+    max-width: 52ch;
+    margin: 0 auto clamp(var(--space-10), 4vw, var(--space-16));
+  }
+  .cta-c-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-5);
+    margin-bottom: var(--space-8);
+  }
+  .cta-c-trust {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(238,236,233,0.55);
+  }
+</style>

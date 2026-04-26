@@ -16,33 +16,24 @@ import Button from '../../components/Button.astro';
 >
   <Nav />
   <main class="pb-16">
-    <div class="px-6 lg:px-12 max-w-7xl mx-auto pt-36 lg:pt-44">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto pt-32 lg:pt-36">
 
       <!-- ============================================ -->
       <!-- HERO                                          -->
       <!-- ============================================ -->
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 mb-10 lg:mb-16">
-        <div class="lg:col-span-7">
-          <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            The Brand Mark / $500 / Same Week
-          </p>
-          <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate="headline">
-            Tell me what you're thinking.
-          </h1>
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate>
-            Your words, hand-painted on wood. On your wall by the end of the week. I read every inquiry myself, and if it's a fit, I'll follow up within 24 hours to confirm the details and get started.
-          </p>
-        </div>
-        <div class="lg:col-span-5">
-          <div class="aspect-[4/3] overflow-hidden border border-slate-gray">
-            <img
-              src="/images/content-design/carytown-finished.jpg"
-              alt="Hand-painted Brand Mark on a wood panel"
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
-        </div>
+      <div class="mt-6 lg:mt-8 max-w-3xl mx-auto mb-10 lg:mb-16">
+        <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+        <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+          <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 01</span>
+          <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+          The Brand Mark / $500 / Same Week
+        </p>
+        <h1 class="font-heading text-titanium-white" style="font-size: var(--text-fluid-5xl); line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; text-wrap: balance; max-width: 22ch;" data-animate="headline">
+          Tell me <span class="italic-accent">what you're thinking.</span>
+        </h1>
+        <p class="mt-8 lg:mt-10 font-body text-soft-gray" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate>
+          Your words, hand-painted on wood. On your wall by the end of the week. I read every inquiry myself, and if it's a fit, I'll follow up within 24 hours to confirm the details and get started.
+        </p>
       </div>
 
       <!-- ============================================ -->
@@ -51,7 +42,7 @@ import Button from '../../components/Button.astro';
       <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
         <div class="lg:col-span-7">
 
-          <form class="space-y-6 mb-16" action="https://formspree.io/f/xpwrzqkl" method="POST" id="brand-mark-form" enctype="multipart/form-data">
+          <form class="space-y-6 mb-16" action="mailto:hello@untitledmixedmedia.com" method="POST" id="brand-mark-form">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
             <input type="hidden" name="project_type" value="brand-mark" />
             <input type="hidden" name="format" value="panel" />
@@ -132,7 +123,7 @@ import Button from '../../components/Button.astro';
             <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
               What's Included
             </p>
-            <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-xl); line-height: 1.3;">
+            <h2 class="font-heading text-titanium-white mb-10 lg:mb-14" style="font-size: var(--text-fluid-xl); line-height: 1.3;">
               $500. Same week.
             </h2>
             <ul class="space-y-3 mb-8">
@@ -191,38 +182,34 @@ import Button from '../../components/Button.astro';
           bmEmailError?.classList.add('hidden');
         });
 
-        bmForm?.addEventListener('submit', async (e) => {
+        bmForm?.addEventListener('submit', (e) => {
           e.preventDefault();
-          const btn = bmForm.querySelector('button[type="submit"]') as HTMLButtonElement;
-          btn.disabled = true;
-          btn.textContent = 'Sending...';
-          bmStatus.classList.add('hidden');
-
-          try {
-            const res = await fetch(bmForm.action, {
-              method: 'POST',
-              body: new FormData(bmForm),
-              headers: { 'Accept': 'application/json' },
-            });
-
-            if (res.ok) {
-              bmStatus.textContent = 'Message sent. Spencer will follow up within 24 hours.';
-              bmStatus.classList.remove('hidden');
-              bmStatus.classList.remove('text-red-400');
-              bmStatus.classList.add('text-titanium-white');
-              bmForm.reset();
-            } else {
-              throw new Error('Form submission failed');
-            }
-          } catch {
-            bmStatus.textContent = 'Something went wrong. Please email hello@untitledmixedmedia.com directly.';
-            bmStatus.classList.remove('hidden');
-            bmStatus.classList.remove('text-titanium-white');
-            bmStatus.classList.add('text-red-400');
-          } finally {
-            btn.disabled = false;
-            btn.textContent = 'Send to Spencer';
+          const labels: Record<string, string> = {
+            words: 'Words to paint',
+            neighborhood: 'Neighborhood',
+            notes: 'Notes',
+            name: 'Name',
+            email: 'Email',
+            phone: 'Phone',
+            project_type: 'Project Type',
+            format: 'Format',
+          };
+          const data = new FormData(bmForm);
+          const lines: string[] = [];
+          for (const [key, value] of data.entries()) {
+            if (key === '_gotcha') continue;
+            if (value instanceof File) continue;
+            const v = String(value).trim();
+            if (!v) continue;
+            lines.push(`${labels[key] || key}: ${v}`);
           }
+          const body = lines.join('\n') + '\n\n(If you have a logo or reference image, please attach it to this email before sending.)';
+          const subject = 'Brand Mark commission inquiry';
+          window.location.href = `mailto:hello@untitledmixedmedia.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          bmStatus.textContent = 'Your email app should open with your message ready to send. Attach your logo or reference image before sending. If nothing happens, email hello@untitledmixedmedia.com directly.';
+          bmStatus.classList.remove('hidden');
+          bmStatus.classList.remove('text-red-400');
+          bmStatus.classList.add('text-titanium-white');
         });
       </script>
 

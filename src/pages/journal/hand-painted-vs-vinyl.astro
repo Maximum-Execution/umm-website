@@ -47,6 +47,7 @@ const faqItems = [
 <BaseLayout
   title="Hand-Painted Signs vs Vinyl: Which Lasts Longer? | Untitled Mixed Media"
   description="A hand-painted sign costs more upfront but less over 12 years. The real cost comparison and the science behind vinyl failure in Richmond's climate."
+  noindex={true}
   ogType="article"
   faqItems={faqItems}
   breadcrumbItems={[
@@ -69,7 +70,7 @@ const faqItems = [
   <main class="pb-0">
 
     <!-- ─── I · HERO ─────────────────────────────────────── -->
-    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+    <section class="pt-32 lg:pt-36 pb-16 lg:pb-20 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
@@ -77,17 +78,23 @@ const faqItems = [
           { label: 'Hand-Painted vs Vinyl' },
         ]} />
 
-        <div class="mt-12 lg:mt-20">
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
+            <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+            <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+              <span style="color: var(--color-editorial-accent); font-weight: 600;">Journal</span>
+              <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+              Signs &amp; Craft
+            </p>
             <h1
               class="font-heading text-titanium-white"
-              style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+              style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight); max-width: 22ch; text-wrap: balance;"
               data-animate="headline"
             >
-              Your building is an investment. Don&rsquo;t wrap it in a sticker.
+              Your building is an investment. <span class="italic-accent">Don&rsquo;t wrap it in a sticker.</span>
             </h1>
         </div>
 
-        <div class="mt-16 lg:mt-24 max-w-3xl mx-auto">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -137,7 +144,7 @@ const faqItems = [
               The real cost of a hand-painted sign vs vinyl over 12 years.
             </h2>
 
-          <div class="mt-16 lg:mt-20 space-y-8">
+          <div class="mt-8 lg:mt-10 space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -155,7 +162,7 @@ const faqItems = [
         </div>
 
         <!-- Cost comparison table -->
-        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto" data-animate="fade">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto" data-animate="fade">
           <div class="overflow-x-auto">
             <table class="w-full border-collapse font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
               <thead>
@@ -211,7 +218,7 @@ const faqItems = [
           </div>
         </div>
 
-        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto space-y-8">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -305,7 +312,7 @@ const faqItems = [
               Chemical commitment vs temporary sticker. How the two materials bond.
             </h2>
 
-          <div class="mt-16 lg:mt-20 space-y-8">
+          <div class="mt-8 lg:mt-10 space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -341,7 +348,7 @@ const faqItems = [
           class="my-8"
         />
 
-        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto space-y-8">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -383,7 +390,7 @@ const faqItems = [
               Vinyl printers max out at 54 inches. Your building doesn&rsquo;t.
             </h2>
 
-          <div class="mt-16 lg:mt-20 space-y-8">
+          <div class="mt-8 lg:mt-10 space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -433,7 +440,7 @@ const faqItems = [
               Nobody includes removal labor in the vinyl estimate. Here is what it costs.
             </h2>
 
-          <div class="mt-16 lg:mt-20 space-y-8">
+          <div class="mt-8 lg:mt-10 space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -533,7 +540,7 @@ const faqItems = [
             </div>
         </div>
 
-        <div class="mt-16 lg:mt-20 max-w-3xl mx-auto">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -557,7 +564,7 @@ const faqItems = [
               When vinyl is the right choice (and when it isn&rsquo;t).
             </h2>
 
-          <div class="mt-16 lg:mt-20 space-y-8">
+          <div class="mt-8 lg:mt-10 space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -604,7 +611,23 @@ const faqItems = [
     <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
 
-        <div class="max-w-3xl mx-auto space-y-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+            <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+              <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 09</span>
+              <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+              The finished result
+            </p>
+            <h2
+              class="font-heading text-titanium-white"
+              style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
+              data-animate="headline"
+            >
+              A wall that looks like it <span class="italic-accent">was always supposed to look this way.</span>
+            </h2>
+        </div>
+
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto space-y-8">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"

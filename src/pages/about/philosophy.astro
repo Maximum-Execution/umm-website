@@ -13,6 +13,7 @@ import serviceMurals from '../../assets/images/service-murals.jpg';
 <BaseLayout
   title="Why We Start with Discovery, Not Design | Untitled Mixed Media"
   description="Why we start with discovery, not design. Our philosophy on public art, hand-painted signs, and working with intention. Untitled Mixed Media, Richmond, VA."
+  noindex={true}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
     { name: 'About', url: '/about' },
@@ -23,7 +24,7 @@ import serviceMurals from '../../assets/images/service-murals.jpg';
   <main class="pb-0">
 
     <!-- ─── I · HERO ─────────────────────────────────────── -->
-    <section class="pt-36 lg:pt-44 pb-20 lg:pb-28 px-6 lg:px-12">
+    <section class="pt-32 lg:pt-36 pb-14 lg:pb-20 px-6 lg:px-12">
       <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
@@ -31,17 +32,23 @@ import serviceMurals from '../../assets/images/service-murals.jpg';
           { label: 'Philosophy' },
         ]} />
 
-        <div class="mt-12 lg:mt-20">
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 01</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Philosophy / Meaning discovered, not imposed
+          </p>
           <h1
-            class="font-heading text-titanium-white max-w-5xl"
-            style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-5xl); line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; text-wrap: balance; max-width: 22ch;"
             data-animate="headline"
           >
-            Your space should tell your story. Not someone else&rsquo;s.
+            Your space should tell your story. <span class="italic-accent">Not someone else&rsquo;s.</span>
           </h1>
         </div>
 
-        <div class="mt-20 lg:mt-32 max-w-3xl mx-auto space-y-8">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto space-y-6">
           <p
             class="lede font-body text-soft-gray"
             style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -254,17 +261,6 @@ import serviceMurals from '../../assets/images/service-murals.jpg';
 </BaseLayout>
 
 <style>
-  /* Drop-cap lede: editorial opening mark */
-  .lede::first-letter {
-    font-family: var(--font-heading);
-    font-weight: 500;
-    font-size: 3.4em;
-    line-height: 0.84;
-    float: left;
-    padding: 0.08em 0.14em 0 0;
-    color: var(--color-titanium-white);
-  }
-
   /* CTA arrow glide */
   .cta-link .cta-arrow {
     transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);

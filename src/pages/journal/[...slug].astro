@@ -44,6 +44,7 @@ const relatedPosts = allPosts
 <BaseLayout
   title={`${title} | Untitled Mixed Media Journal`}
   description={description}
+  noindex={true}
   ogImage={cover}
   ogType="article"
   blogPosting={{
@@ -60,7 +61,7 @@ const relatedPosts = allPosts
   <ScrollProgress />
   <main class="pb-16">
     <article class="px-6 lg:px-12">
-      <div class="max-w-3xl mx-auto pt-36 lg:pt-44">
+      <div class="max-w-3xl mx-auto pt-32 lg:pt-36">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
           { label: 'Journal', href: '/journal' },

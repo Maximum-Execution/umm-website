@@ -11,19 +11,10 @@ const navLinks: NavLink[] = [
     children: [
       { label: 'Murals', href: '/murals' },
       { label: 'Hand-Painted Signs', href: '/hand-painted-signs' },
-      { label: 'Sign Restoration', href: '/sign-restoration' },
       { label: 'Brand Mark', href: '/brand-mark' },
     ],
   },
-  {
-    label: 'About',
-    href: '/about',
-    children: [
-      { label: 'Process', href: '/about/process' },
-      { label: 'Philosophy', href: '/about/philosophy' },
-      { label: 'Insurance & Licensing', href: '/about/insurance-and-licensing' },
-    ],
-  },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 ---
@@ -31,11 +22,19 @@ const navLinks: NavLink[] = [
 <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-titanium-white focus:text-bone-black focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:tracking-[0.15em] focus:uppercase">
   Skip to content
 </a>
-<header class="fixed top-0 left-0 right-0 z-50 bg-bone-black/60 backdrop-blur-md transition-[background-color,backdrop-filter] duration-300" id="main-nav">
-  <nav aria-label="Main navigation" class="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
+<header class="nav-c fixed top-0 left-0 right-0 z-50" id="main-nav">
+  <div class="nav-c-meta" aria-hidden="true">
+    <span class="nav-c-meta-item">
+      <span class="nav-c-meta-dot"></span>
+      Richmond, Virginia
+    </span>
+    <span class="nav-c-meta-item nav-c-meta-item--center">Untitled Mixed Media LLC</span>
+    <span class="nav-c-meta-item nav-c-meta-item--right">Est. 2019</span>
+  </div>
+  <nav aria-label="Main navigation" class="nav-c-row mx-auto max-w-7xl px-6 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="text-titanium-white font-blackletter text-xl tracking-wide hover:opacity-80 transition-opacity">
-      untitled<span class="font-heading font-normal"> mixed media</span>
+    <a href="/" class="nav-c-logo">
+      <span class="nav-c-logo-blackletter">untitled</span><span class="nav-c-logo-serif"> mixed media</span>
     </a>
 
     <!-- Desktop Nav + CTA (right-aligned group) -->
@@ -107,6 +106,69 @@ const navLinks: NavLink[] = [
       </svg>
     </button>
   </nav>
+
+  <style>
+    .nav-c {
+      background: rgba(0, 2, 5, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(238, 236, 233, 0.08);
+      transition: background-color 200ms ease, border-color 200ms ease;
+    }
+    .nav-c.is-scrolled {
+      background: rgba(0, 2, 5, 0.94);
+      border-bottom-color: rgba(238, 236, 233, 0.14);
+    }
+    .nav-c-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: var(--space-4);
+      padding: 8px clamp(1.5rem, 3vw, 3rem);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(238, 236, 233, 0.55);
+      border-bottom: 1px solid rgba(238, 236, 233, 0.06);
+    }
+    .nav-c-meta-item { display: inline-flex; align-items: center; gap: 8px; }
+    .nav-c-meta-item--center { justify-self: center; }
+    .nav-c-meta-item--right { justify-self: end; }
+    .nav-c-meta-dot {
+      width: 6px; height: 6px; border-radius: 999px;
+      background: var(--color-editorial-accent);
+      box-shadow: 0 0 0 3px rgba(228, 26, 28, 0.15);
+    }
+    .nav-c-row { padding-block: 18px; }
+    .nav-c-logo {
+      color: var(--color-titanium-white);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      transition: opacity 200ms ease;
+    }
+    .nav-c-logo:hover { opacity: 0.82; }
+    .nav-c-logo-blackletter {
+      font-family: var(--font-blackletter);
+      font-size: 22px;
+      line-height: 1;
+    }
+    .nav-c-logo-serif {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 17px;
+      letter-spacing: -0.005em;
+    }
+    @media (max-width: 768px) {
+      .nav-c-meta { grid-template-columns: 1fr 1fr; padding: 6px clamp(1rem, 3vw, 1.5rem); font-size: 9px; letter-spacing: 0.2em; }
+      .nav-c-meta-item--center { display: none; }
+      .nav-c-logo-serif { font-size: 15px; }
+    }
+  </style>
 
   <!-- Mobile Menu -->
   <div class="hidden lg:hidden bg-bone-black/95 backdrop-blur-md border-t border-slate-gray" id="mobile-menu" role="region" aria-label="Mobile navigation">
@@ -256,10 +318,10 @@ const navLinks: NavLink[] = [
     requestAnimationFrame(() => {
       const y = window.scrollY;
       if (!isScrolled && y > 50) {
-        nav?.classList.add('bg-bone-black/90', 'backdrop-blur-md');
+        nav?.classList.add('is-scrolled');
         isScrolled = true;
       } else if (isScrolled && y < 20) {
-        nav?.classList.remove('bg-bone-black/90', 'backdrop-blur-md');
+        nav?.classList.remove('is-scrolled');
         isScrolled = false;
       }
       ticking = false;

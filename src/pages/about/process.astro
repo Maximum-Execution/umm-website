@@ -70,6 +70,7 @@ const steps = [
 <BaseLayout
   title="How We Work | Untitled Mixed Media"
   description="Three phases: discovery, design, and paint. You see a photorealistic render of your wall before we start. Untitled Mixed Media, Richmond, VA."
+  noindex={true}
   faqItems={faqItems}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
@@ -81,7 +82,7 @@ const steps = [
   <main class="pb-0">
 
     <!-- ─── I · HERO ─────────────────────────────────────── -->
-    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+    <section class="pt-32 lg:pt-36 pb-16 lg:pb-20 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
@@ -89,19 +90,23 @@ const steps = [
           { label: 'Process' },
         ]} />
 
-        <div class="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
-          <div class="lg:col-span-11">
-            <h1
-              class="font-heading text-titanium-white"
-              style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
-              data-animate="headline"
-            >
-              Your project has more depth than you think. Our process finds it.
-            </h1>
-          </div>
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 01</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Process / Discover &middot; Design &middot; Paint
+          </p>
+          <h1
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-5xl); line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; text-wrap: balance; max-width: 22ch;"
+            data-animate="headline"
+          >
+            Your project has more depth than you think. <span class="italic-accent">Our process finds it.</span>
+          </h1>
         </div>
 
-        <div class="mt-16 lg:mt-24 max-w-3xl mx-auto">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto">
           <p
             class="font-body text-soft-gray"
             style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -282,20 +287,25 @@ const steps = [
     <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
 
-        <!-- Heading + pullquote -->
         <div class="max-w-3xl mx-auto">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 04</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            The outcome
+          </p>
           <h2
             class="font-heading text-titanium-white"
             style="font-size: var(--text-fluid-3xl); line-height: 1.04; letter-spacing: var(--tracking-snug);"
             data-animate="headline"
           >
-            The finished work doesn&rsquo;t just look good. It feels like yours.
+            The finished work doesn&rsquo;t just look good. <span class="italic-accent">It feels like yours.</span>
           </h2>
 
-          <div class="mt-16 lg:mt-24 pt-10 lg:pt-14 border-t border-slate-gray" data-animate="fade">
+          <div class="mt-8 lg:mt-10" data-animate="fade">
             <p
-              class="font-heading italic text-titanium-white max-w-[30ch]"
-              style="font-size: var(--text-fluid-2xl); line-height: 1.22; letter-spacing: var(--tracking-snug);"
+              class="font-body text-soft-gray"
+              style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
             >
               The idea you started with is still there. But it&rsquo;s sharper, deeper, and more specific than you thought it could be. The mural tells your story in a way you couldn&rsquo;t have articulated on your own. The sign carries your name with intention you didn&rsquo;t know was possible. The restored ghost sign brings back a piece of history that was disappearing one year at a time. That&rsquo;s what the process is for.
             </p>

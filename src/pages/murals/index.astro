@@ -8,6 +8,9 @@ import CTABlock from '../../components/CTABlock.astro';
 import TransformationPair from '../../components/patterns/TransformationPair.astro';
 import EditorialAside from '../../components/patterns/EditorialAside.astro';
 import Button from '../../components/Button.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import WorkCaption from '../../components/WorkCaption.astro';
+import PageHero from '../../components/patterns/PageHero.astro';
 
 const muralProjects = (await getCollection('projects'))
   .filter((p) => p.data.tags.some((t: string) => t.toLowerCase().includes('mural')))
@@ -37,36 +40,54 @@ const muralProjects = (await getCollection('projects'))
     </div>
 
     <!-- HERO -->
-    <section class="relative overflow-hidden pt-36 lg:pt-44 pb-24 lg:pb-32">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img
-          src="/images/content-design/trolley-full.jpg"
-          alt=""
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/90 via-bone-black/70 to-bone-black/50"></div>
-      </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
-      <p class="font-mono text-soft-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        Murals
-      </p>
-      <h1 class="font-heading text-titanium-white text-balance mb-10 max-w-5xl mx-auto" data-animate="headline" style="font-size: var(--text-fluid-5xl); line-height: 1.02;">
-        Hand-painted murals in Richmond, Virginia.
-      </h1>
-      <p class="font-body text-soft-gray max-w-2xl mx-auto mb-12" data-animate style="font-size: var(--text-fluid-xl); line-height: var(--leading-relaxed);">
-        We create murals with intention, care, and depth. The style changes with every project. The meaning is always there from the start.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4" data-animate data-animate-delay="1">
-        <Button href="/contact" variant="primary" size="large">
-          Schedule Your Free Discovery Session
-        </Button>
-        <Button href="/mural-cost-estimator" variant="secondary" size="large">
-          See What It Costs
-        </Button>
-      </div>
-      </div>
-    </section>
+    <PageHero
+      sectionNum="01"
+      eyebrow="Murals"
+      headline="Hand-painted murals in Richmond, Virginia."
+      subline="We create murals with intention, care, and depth. The style changes with every project. The meaning is always there from the start."
+      image="/images/content-design/trolley-full.jpg"
+      alt=""
+      hudRight="Murals & public art"
+      hudFootLeft="Trolley Mural / Richmond, VA"
+    >
+      <Button href="/contact" variant="primary" size="large" class="plausible-event-name=CtaClick plausible-event-position=MuralsHero">
+        Schedule Your Free Discovery Session
+      </Button>
+      <Button href="/mural-cost-estimator" variant="secondary" size="large">
+        See What It Costs
+      </Button>
+    </PageHero>
+
+    <!-- FEATURED PROJECTS (leads the page) -->
+    {muralProjects.length > 0 && (
+      <section class="border-t border-slate-gray py-20 lg:py-28">
+        <div class="px-6 lg:px-12 max-w-7xl mx-auto">
+          <SectionLabel num="01" name="Selected Murals" actionHref="/work" action="View all →" />
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {muralProjects.slice(0, 6).map((project) => (
+              <a href={`/work/${project.id}`} class="group block" data-animate>
+                <div class="aspect-[4/5] overflow-hidden bg-midnight-graphite mb-5">
+                  <img
+                    src={project.data.cover}
+                    alt={project.data.title}
+                    width="1600"
+                    height="2000"
+                    decoding="async"
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                </div>
+                <WorkCaption
+                  title={project.data.title}
+                  place={project.data.location}
+                  action="View →"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <!-- THE PROBLEM -->
     <section class="border-t border-slate-gray py-24 lg:py-32">
@@ -74,7 +95,7 @@ const muralProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              01 / The Problem
+              02 / The Problem
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               The hardest part of a mural isn't the painting.
@@ -84,7 +105,7 @@ const muralProjects = (await getCollection('projects'))
             <p class="font-body text-soft-gray" data-animate style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);">
               It's figuring out what the mural should be about. Most muralists skip that part entirely. They ask about wall dimensions, budget, and colors. They paint whatever is in their portfolio. When it's done, they write a paragraph about "community" and "connection" to make the work sound deeper than it is.
             </p>
-            <p class="font-body text-titanium-white border-l border-titanium-white pl-6 py-1" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
+            <p class="font-body italic-accent text-titanium-white border-l border-titanium-white pl-6 py-1" data-animate data-animate-delay="1" style="font-size: var(--text-fluid-lg); line-height: var(--leading-snug);">
               That is performative meaning. It was never in the work. It was added after.
             </p>
             <p class="font-body text-soft-gray" data-animate data-animate-delay="2" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
@@ -114,7 +135,7 @@ const muralProjects = (await getCollection('projects'))
       <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <div class="max-w-3xl mx-auto">
         <p class="font-mono text-smoke-gray uppercase mb-8" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          02 / The Landmark Moment
+          03 / The Landmark Moment
         </p>
         <h2 class="font-heading text-titanium-white text-balance mb-12" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.02;">
           Your mural should be about something you can actually point to.
@@ -149,7 +170,7 @@ const muralProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              03 / Provenance
+              04 / Provenance
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               Real meaning, documented from the first conversation.
@@ -176,7 +197,7 @@ const muralProjects = (await getCollection('projects'))
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-20 mb-16">
           <div class="lg:col-span-5">
             <p class="font-mono text-smoke-gray uppercase mb-6" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-              04 / Materials & Longevity
+              05 / Materials & Longevity
             </p>
             <h2 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-3xl); line-height: 1.05;">
               Your mural is a real investment. I treat it like one.
@@ -234,42 +255,6 @@ const muralProjects = (await getCollection('projects'))
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    {muralProjects.length > 0 && (
-      <section class="border-t border-slate-gray py-24 lg:py-32">
-        <div class="px-6 lg:px-12 max-w-7xl mx-auto">
-          <p class="font-mono text-smoke-gray uppercase mb-12" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-            Featured Projects
-          </p>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {muralProjects.slice(0, 3).map((project) => (
-              <a href={`/work/${project.id}`} class="group block" data-animate>
-                <div class="aspect-[4/5] overflow-hidden bg-midnight-graphite mb-5">
-                  <img
-                    src={project.data.cover}
-                    alt={project.data.title}
-                    width="1600"
-                    height="2000"
-                    decoding="async"
-                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 class="font-heading text-titanium-white group-hover:text-soft-gray transition-colors mb-2" style="font-size: var(--text-fluid-xl); line-height: var(--leading-snug);">
-                  {project.data.title}
-                </h3>
-                {project.data.location && (
-                  <p class="font-mono text-smoke-gray uppercase" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-                    {project.data.location}
-                  </p>
-                )}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
-
     <!-- EXPLANATORY PARAGRAPH -->
     <section class="border-t border-slate-gray py-24 lg:py-32">
       <div class="px-6 lg:px-12 max-w-7xl mx-auto">
@@ -301,7 +286,7 @@ const muralProjects = (await getCollection('projects'))
         <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
           Starting at $500
         </p>
-        <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
+        <h2 class="font-heading text-titanium-white mb-10 lg:mb-14" style="font-size: var(--text-fluid-2xl); line-height: var(--leading-tight);">
           Your words, hand-painted on wood. On your wall this week.
         </h2>
         <div class="space-y-4 mb-10">

@@ -6,10 +6,11 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Button from '../components/Button.astro';
 import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 import ComparisonBar from '../components/patterns/ComparisonBar.astro';
+import PageHero from '../components/patterns/PageHero.astro';
 ---
 
 <BaseLayout
-  title="The Brand Mark | Your Words, Hand-Painted on Wood. $500. | Untitled Mixed Media"
+  title="Hand-Painted Brand Mark | $500 | Richmond, VA"
   description="Your logo, phrase, or chosen words, hand-painted on a wood panel and hung on your wall. Same week. $500. Nine spots at launch price. Richmond, VA."
   breadcrumbItems={[
     { name: 'Home', url: '/' },
@@ -27,105 +28,50 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
     <!-- ═══════════════════════════════════════════
          SECTION 1: HERO
          ═══════════════════════════════════════════ -->
-    <div class="relative overflow-hidden mb-24" id="brand-mark-hero">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img
-          src="/images/content-design/hand-painted-sign.jpg"
-          alt=""
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-bone-black/90 via-bone-black/70 to-bone-black/50"></div>
-      </div>
-      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center py-24 lg:py-32">
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Brand Mark' },
       ]} />
-
-      <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-        The Brand Mark
-      </p>
-
-      <h1 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-4xl); line-height: 1.05;" data-animate>
-        Your words, hand-painted on wood. On your wall by the end of the week. $500.
-      </h1>
-
-      <p
-        class="font-body text-soft-gray max-w-xl mx-auto mb-6"
-        style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
-        data-animate
-        data-animate-delay="1"
-      >
-        Your logo. Your neighborhood. Your family name. Whatever words define your business, painted by hand on a wood panel and hung on your wall. You own something no one else on the block has: an original.
-      </p>
-
-      <!-- Credit preview -->
-      <p
-        class="font-body text-smoke-gray max-w-xl mx-auto mb-10"
-        style="font-size: var(--text-fluid-sm); line-height: var(--leading-relaxed);"
-        data-animate
-        data-animate-delay="1"
-      >
-        Every Brand Mark includes a $500 credit toward a future mural. Go bigger, and the Brand Mark was free.
-      </p>
-
-      <!-- Spencer photo placeholder -->
-      <div class="flex items-center justify-center gap-4 mb-10" data-animate data-animate-delay="1">
-        <div class="w-12 h-12 rounded-full bg-slate-gray/50 border border-slate-gray shrink-0" aria-hidden="true">
-          <!-- [SPENCER] Replace with candid process photo -->
-        </div>
-        <p class="font-mono text-smoke-gray" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          Spencer Bennett / Untitled Mixed Media / Richmond, VA
-        </p>
-      </div>
-
-      <div class="flex flex-wrap justify-center gap-4 mb-4" data-animate data-animate-delay="2">
-        <Button
-          href="/brand-mark/claim"
-          variant="primary"
-          size="large"
-          class="plausible-event-name=CtaClick plausible-event-position=BrandMarkHero"
-        >
-          Claim Your Spot
-        </Button>
-        <Button
-          href="#how-it-works"
-          variant="secondary"
-          size="large"
-          icon="none"
-        >
-          See How It Works
-        </Button>
-      </div>
-
-      <p
-        class="font-body text-smoke-gray mb-2"
-        style="font-size: var(--text-fluid-xs);"
-        data-animate
-        data-animate-delay="2"
-      >
-        5 questions. Takes 60 seconds. Rather text? <span class="text-titanium-white">[phone]</span>
-      </p>
-
-      <!-- Scarcity counter -->
-      <p
-        class="font-mono text-smoke-gray uppercase"
-        style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-        data-animate
-        data-animate-delay="2"
-      >
-        9 spots at $500. One per neighborhood. [X] remaining.
-      </p>
-      </div>
     </div>
+
+    <PageHero
+      sectionNum="01"
+      eyebrow="The Brand Mark &middot; Starting at $500"
+      headline="Your words, hand-painted on wood. On your wall by the end of the week. $500."
+      subline="Your logo. Your neighborhood. Your family name. Whatever words define your business, painted by hand on a wood panel and hung on your wall. You own something no one else on the block has: an original."
+      secondSubline="Every Brand Mark includes a $500 credit toward a future mural. Go bigger, and the Brand Mark was free."
+      image="/images/content-design/hand-painted-sign.jpg"
+      alt=""
+      hudRight="Brand Mark / $500"
+      hudFootLeft="9 spots at $500. One per neighborhood."
+      hudFootRight="5 questions. 60 seconds. &darr;"
+    >
+      <Button
+        href="/brand-mark/claim"
+        variant="primary"
+        size="large"
+        class="plausible-event-name=CtaClick plausible-event-position=BrandMarkHero"
+      >
+        Claim Your Spot
+      </Button>
+      <Button
+        href="#how-it-works"
+        variant="secondary"
+        size="large"
+        icon="none"
+      >
+        See How It Works
+      </Button>
+    </PageHero>
+    <div class="h-24" aria-hidden="true"></div>
 
     <!-- ═══════════════════════════════════════════
          SECTION 2: WHAT GETS PAINTED
          ═══════════════════════════════════════════ -->
     <section class="px-6 lg:px-12 max-w-5xl mx-auto mb-24">
       <div class="max-w-3xl mx-auto text-center mb-12">
-        <h2 class="font-heading text-titanium-white mb-6" style="font-size: var(--text-fluid-3xl);" data-animate="fade">
+        <h2 class="font-heading text-titanium-white mb-10 lg:mb-14" style="font-size: var(--text-fluid-3xl);" data-animate="fade">
           It doesn't have to be your logo.
         </h2>
         <p class="font-body text-soft-gray max-w-xl mx-auto" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);" data-animate="fade" data-animate-delay="1">
@@ -700,7 +646,7 @@ import ComparisonBar from '../components/patterns/ComparisonBar.astro';
     <section class="border-t border-slate-gray py-24 lg:py-32 px-6 lg:px-12">
       <div class="max-w-3xl mx-auto text-center" data-animate="fade">
         <h2
-          class="font-heading text-titanium-white mb-6"
+          class="font-heading text-titanium-white mb-10 lg:mb-14"
           style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);"
         >
           This isn't signage. It's an original.

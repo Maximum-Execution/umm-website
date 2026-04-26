@@ -35,6 +35,7 @@ const faqItems = [
 <BaseLayout
   title="Ghost Signs in Richmond, VA | Untitled Mixed Media"
   description="What ghost signs are, why they survive, and what makes Richmond one of the best cities to find them. A guide to the city's fading hand-painted history."
+  noindex={true}
   ogType="article"
   faqItems={faqItems}
   breadcrumbItems={[
@@ -58,7 +59,7 @@ const faqItems = [
   <main class="pb-0">
 
     <!-- ─── I · HERO ─────────────────────────────────────── -->
-    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+    <section class="pt-32 lg:pt-36 pb-16 lg:pb-20 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
@@ -66,17 +67,23 @@ const faqItems = [
           { label: 'Ghost Signs in Richmond' },
         ]} />
 
-        <div class="mt-12 lg:mt-20 max-w-3xl mx-auto">
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">Journal</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Richmond History
+          </p>
           <h1
             class="font-heading text-titanium-white"
-            style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+            style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight); max-width: 22ch; text-wrap: balance;"
             data-animate="headline"
           >
-            Richmond&rsquo;s walls are talking. Here is how to listen.
+            Richmond&rsquo;s walls are talking. <span class="italic-accent">Here is how to listen.</span>
           </h1>
 
           <p
-            class="mt-16 lg:mt-24 font-body text-soft-gray"
+            class="mt-8 lg:mt-10 font-body text-soft-gray"
             style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
             data-animate="fade"
             data-animate-delay="1"

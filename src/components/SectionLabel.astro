@@ -1,0 +1,34 @@
+---
+interface Props {
+  num: string;
+  name: string;
+  action?: string;
+  actionHref?: string;
+  variant?: 'dark' | 'light';
+  class?: string;
+}
+
+const {
+  num,
+  name,
+  action,
+  actionHref,
+  variant = 'dark',
+  class: className = '',
+} = Astro.props;
+---
+
+<div class={`label-section ${variant === 'light' ? 'is-light' : ''} ${className}`.trim()}>
+  <span class="label-section-left">
+    <span class="label-section-num">§ {num}</span>
+    <span class="label-section-name">{name}</span>
+  </span>
+  {action && actionHref && (
+    <a href={actionHref} class="label-section-action hover:text-titanium-white transition-colors">
+      {action}
+    </a>
+  )}
+  {action && !actionHref && (
+    <span class="label-section-action">{action}</span>
+  )}
+</div>

@@ -1,0 +1,22 @@
+---
+interface Item {
+  label: string;
+  dot?: boolean;
+}
+
+interface Props {
+  items: Item[];
+  class?: string;
+}
+
+const { items, class: className = '' } = Astro.props;
+---
+
+<div class={`hero-meta ${className}`.trim()}>
+  {items.map((item) => (
+    <span class="hero-meta-item">
+      {item.dot && <span class="hero-meta-dot" aria-hidden="true"></span>}
+      {item.label}
+    </span>
+  ))}
+</div>

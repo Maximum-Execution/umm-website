@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import PageHero from '../../components/patterns/PageHero.astro';
 ---
 
 <BaseLayout
@@ -22,16 +23,19 @@ import ServiceCard from '../../components/ServiceCard.astro';
         { label: 'Home', href: '/' },
         { label: 'About' },
       ]} />
+    </div>
 
-      <!-- Hero -->
-      <div class="max-w-4xl mx-auto pt-36 lg:pt-44 mb-20 text-center">
-        <p class="font-mono text-smoke-gray uppercase mb-4" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          About
-        </p>
-        <h1 class="font-heading text-titanium-white text-balance" data-animate="headline" style="font-size: var(--text-fluid-4xl); line-height: 1.05;">
-          Most artists want everyone to know their name. We want everyone to know yours.
-        </h1>
-      </div>
+    <PageHero
+      sectionNum="01"
+      eyebrow="About / Spencer Bennett"
+      headline="Most artists want everyone to know their name."
+      italicTail="We want everyone to know yours."
+      subline="Hand-painted murals and signs in Richmond, Virginia. No templates. No signature style. Every project starts with questions, not sketches."
+      hudRight="About the studio"
+      hudFootLeft="Fully insured / Licensed in Virginia"
+    />
+
+    <div class="px-6 lg:px-12 max-w-7xl mx-auto pt-20">
 
       <!-- Pull quote — full width -->
       <div class="text-center py-12 mb-20" data-animate="settle">

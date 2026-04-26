@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import processVisit from '../../assets/images/process-visit.jpg';
 import processRender from '../../assets/images/process-render.jpg';
 import processPaint from '../../assets/images/process-paint.jpg';
+import SectionLabel from '../SectionLabel.astro';
 
 const steps = [
   {
@@ -41,22 +42,11 @@ const steps = [
 ];
 ---
 
-<section id="process" class="bg-midnight-graphite py-24 lg:py-32 px-6 lg:px-12">
-  <div class="max-w-7xl mx-auto">
-    <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-      <p
-        class="font-mono text-soft-gray uppercase mb-6 eyebrow-label"
-        style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-        data-animate="fade"
-      >
-        How It Works
-      </p>
-
-      <h2
-        class="font-heading text-titanium-white"
-        style="font-size: var(--text-fluid-3xl); line-height: var(--leading-tight);"
-        data-animate="fade"
-      >
+<section id="process" class="process-c">
+  <div class="process-c-inner">
+    <div class="process-c-header">
+      <SectionLabel num="05" name="How It Works" />
+      <h2 class="process-c-heading" data-animate="fade">
         How we get from your idea to your wall.
       </h2>
     </div>
@@ -113,27 +103,16 @@ const steps = [
 
             {/* Text */}
             <div class={isReversed ? 'lg:[direction:ltr]' : ''} data-animate="fade">
-              <span
-                class="font-mono block mb-4"
-                style="font-size: var(--text-fluid-sm); letter-spacing: var(--tracking-wider);"
-                aria-hidden="true"
-              >
-                <span class="text-titanium-white">{step.number}</span><span class="text-slate-gray"> / {step.label}</span>
+              <div class="process-c-rule" aria-hidden="true"></div>
+              <span class="process-c-step" aria-hidden="true">
+                <span class="process-c-step-num">{String(step.number).padStart(2, '0')}</span>
+                <span class="process-c-step-sep">&middot;</span>
+                <span class="process-c-step-label">{step.label}</span>
               </span>
-              <h3
-                class="font-heading text-titanium-white mb-4"
-                style="font-size: var(--text-fluid-xl);"
-              >
-                {step.title}
-              </h3>
-              <div class="space-y-4">
+              <h3 class="process-c-title">{step.title}</h3>
+              <div class="process-c-body">
                 {step.body.map((paragraph: string) => (
-                  <p
-                    class="font-body text-soft-gray"
-                    style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
-                  >
-                    {paragraph}
-                  </p>
+                  <p class="process-c-body-p">{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -143,3 +122,73 @@ const steps = [
     </div>
   </div>
 </section>
+
+<style>
+  .process-c {
+    padding-top: clamp(5rem, 9vw, 9rem);
+    padding-bottom: clamp(5rem, 9vw, 9rem);
+    padding-inline: clamp(1.5rem, 3vw, 3rem);
+    background: var(--color-bone-black);
+    border-top: 1px solid rgba(238,236,233,0.08);
+  }
+  .process-c-inner {
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+  .process-c-header {
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+    max-width: 900px;
+  }
+  .process-c-heading {
+    font-family: var(--font-heading);
+    color: var(--color-titanium-white);
+    font-size: var(--text-fluid-4xl);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    font-weight: 500;
+    margin-top: var(--space-5);
+    text-wrap: balance;
+  }
+  .process-c-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--color-editorial-accent);
+    margin-bottom: var(--space-5);
+  }
+  .process-c-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-8);
+  }
+  .process-c-step-num { color: var(--color-editorial-accent); font-weight: 600; }
+  .process-c-step-sep { color: rgba(238,236,233,0.45); }
+  .process-c-step-label { color: rgba(238,236,233,0.72); }
+  .process-c-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-titanium-white);
+    font-size: clamp(1.75rem, 3.2vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.018em;
+    margin-bottom: var(--space-8);
+    max-width: 22ch;
+  }
+  .process-c-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .process-c-body-p {
+    font-family: var(--font-body);
+    color: rgba(238,236,233,0.74);
+    font-size: var(--text-fluid-base);
+    line-height: 1.6;
+    max-width: 56ch;
+  }
+</style>

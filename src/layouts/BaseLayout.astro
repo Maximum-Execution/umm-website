@@ -37,6 +37,9 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const isBrandMarkRoute = Astro.url.pathname.startsWith('/brand-mark');
+const stickyCtaHref = isBrandMarkRoute ? '/brand-mark/claim' : '/contact';
+const stickyCtaLabel = isBrandMarkRoute ? 'Claim Your Spot' : 'Request a Site Visit';
 
 import '../styles/global.css';
 ---
@@ -71,14 +74,12 @@ import '../styles/global.css';
     <!-- Fonts — preload critical paths -->
     <link rel="preload" href="/fonts/woff2/LyonText-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/woff2/Canela-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/woff2/Canela-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/woff2/CanelaBlackletter-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/woff2/Gotham-Book.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Plausible Analytics (tagged-events extension) -->
-    <script defer data-domain="umm-website.pages.dev" src="https://plausible.io/js/script.tagged-events.js"></script>
 
     <!-- LocalBusiness JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -196,13 +197,13 @@ import '../styles/global.css';
     <!-- Mobile sticky CTA — visible on small screens after scrolling 300px past top -->
     <div id="sticky-cta" aria-label="Quick contact">
       <Button
-        href="/contact"
+        href={stickyCtaHref}
         variant="primary"
         size="default"
         icon="none"
         class="w-full plausible-event-name=CtaClick plausible-event-position=StickyMobile"
       >
-        Request a Site Visit
+        {stickyCtaLabel}
       </Button>
     </div>
 

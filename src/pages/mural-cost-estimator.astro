@@ -47,7 +47,7 @@ const faqItems = [
   <main class="pb-0">
 
     <!-- ─── I · HERO ─────────────────────────────────────── -->
-    <section class="relative overflow-hidden pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+    <section class="relative overflow-hidden pt-32 lg:pt-36 pb-12 lg:pb-16 px-6 lg:px-12 border-b border-slate-gray">
       <div class="absolute inset-0" aria-hidden="true">
         <img
           src="/images/content-design/trolley-full.jpg"
@@ -63,66 +63,76 @@ const faqItems = [
           { label: 'Mural Cost Estimator' },
         ]} />
 
-        <div class="mt-12 lg:mt-20">
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 01</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Cost Estimator / 2026
+          </p>
           <h1
-            class="font-heading text-titanium-white max-w-3xl mx-auto"
-            style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; text-wrap: balance; max-width: 22ch;"
             data-animate="headline"
           >
-            How much does a mural cost?
+            How much does a mural <span class="italic-accent">cost?</span>
           </h1>
         </div>
 
-        <div class="mt-16 lg:mt-24 max-w-3xl mx-auto">
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
           <p
             class="font-body text-soft-gray"
             style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
             data-animate="fade"
             data-animate-delay="1"
           >
-            A hand-painted mural costs $15 to $80 per square foot depending on complexity. Most commercial murals in the Richmond, Virginia market run $25 to $40 per square foot. A typical 200-square-foot restaurant wall costs $4,500 to $7,200 at moderate detail after volume discount. Five factors drive the price: wall size, design complexity, surface condition, interior vs exterior, and access requirements.
+            Hand-painted murals run $15 to $80 per square foot. Most Richmond commercial murals run $25 to $40. Use the estimator for your specific wall. No email required.
           </p>
-          <p
-            class="font-body text-soft-gray mt-6"
-            style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
-            data-animate="fade"
-            data-animate-delay="2"
-          >
-            Use the free estimator below for your specific wall. No email required to see your estimate.
-          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-4" data-animate="fade" data-animate-delay="2">
+            <a
+              href="#estimator"
+              class="estimator-hero-cta plausible-event-name=CtaClick plausible-event-position=EstimatorHero"
+            >
+              <span class="estimator-hero-cta-label">Start the Estimator</span>
+              <span class="estimator-hero-cta-arrow" aria-hidden="true">&darr;</span>
+            </a>
+            <span class="font-mono uppercase text-smoke-gray" style="font-size: 11px; letter-spacing: 0.2em;">
+              30 seconds &middot; no email
+            </span>
+          </div>
+
+          {/* PLACEHOLDER — Spencer to update */}
+          <div class="mt-10 lg:mt-12 pt-6 border-t border-[rgba(238,236,233,0.12)]" data-animate="fade" data-animate-delay="3">
+            <p class="font-mono uppercase text-smoke-gray mb-3" style="font-size: 10px; letter-spacing: 0.28em;">
+              Trusted across Richmond
+            </p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono uppercase text-soft-gray" style="font-size: 11px; letter-spacing: 0.2em;">
+              <span>[ 20+ murals painted ]</span>
+              <span class="text-smoke-gray">&middot;</span>
+              <span>[ Henrico County commissioned ]</span>
+              <span class="text-smoke-gray">&middot;</span>
+              <span>[ Featured in Richmond Magazine ]</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ─── II · THE ESTIMATOR TOOL ──────────────────────── -->
-    <section class="bg-midnight-graphite py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray" id="estimator">
+    <section class="bg-midnight-graphite py-12 lg:py-16 px-6 lg:px-12 border-b border-slate-gray scroll-mt-24" id="estimator">
       <div class="max-w-7xl mx-auto">
 
-        <div class="grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
-          <div class="lg:col-span-5 mb-12 lg:mb-0">
-            <h2
-              class="font-heading text-titanium-white mb-6"
-              style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
-              data-animate="headline"
-            >
-              Get your ballpark estimate in 30 seconds.
-            </h2>
-            <p
-              class="font-body text-soft-gray"
-              style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
-            >
-              Enter your wall dimensions, surface type, and design complexity. The estimator calculates a ballpark range instantly. No email required to see your numbers.
-            </p>
-            <p
-              class="font-body text-soft-gray mt-4"
-              style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);"
-            >
-              The estimate is all-inclusive. Design, materials, paint, surface prep, equipment, and labor are all built into the number. You provide a wall and an idea. I handle everything else.
-            </p>
-          </div>
+        <div class="mb-8 lg:mb-12 max-w-3xl">
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-3xl); line-height: 1.1; letter-spacing: -0.02em;"
+            data-animate="headline"
+          >
+            Get your ballpark estimate in 30 seconds.
+          </h2>
         </div>
 
-        <div class="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
+        <div class="grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
 
           <!-- ── Left Column: Form Inputs ── -->
           <div class="lg:col-span-7">
@@ -342,7 +352,7 @@ const faqItems = [
                   Enter your email and I'll send a planning guide with budget ranges, timeline estimates, and next steps for your specific project. No commitment. Yours within one business day.
                 </p>
 
-                <form id="lead-form" class="space-y-4" action="https://formspree.io/f/xpwrzqkl" method="POST">
+                <form id="lead-form" class="space-y-4" action="mailto:hello@untitledmixedmedia.com" method="POST">
                   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
                   <input type="hidden" name="estimated_low" id="hidden-low" />
                   <input type="hidden" name="estimated_high" id="hidden-high" />
@@ -418,16 +428,21 @@ const faqItems = [
     <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
 
-        <h2
-          class="font-heading text-titanium-white"
-          style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
-          data-animate="headline"
-        >
-          $15 to $80 per square foot. Here is how to find your tier.
-        </h2>
-
-        <div class="mt-8 max-w-3xl mx-auto" data-animate="fade" data-animate-delay="1">
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <div class="max-w-3xl">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 03</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Pricing tiers
+          </p>
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
+            data-animate="headline"
+          >
+            $15 to $80 per square foot. <span class="italic-accent">Here is how to find your tier.</span>
+          </h2>
+          <p class="font-body text-soft-gray mt-6" style="font-size: var(--text-fluid-lg); line-height: 1.55;" data-animate="fade" data-animate-delay="1">
             Most commercial projects fall in the Moderate tier. All prices are before surface, location, and access adjustments.
           </p>
         </div>
@@ -507,16 +522,21 @@ const faqItems = [
     <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
 
-        <h2
-          class="font-heading text-titanium-white"
-          style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
-          data-animate="headline"
-        >
-          5 factors that determine your mural price.
-        </h2>
-
-        <div class="mt-8 max-w-3xl mx-auto" data-animate="fade" data-animate-delay="1">
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <div class="max-w-3xl">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 04</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            What drives the price
+          </p>
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
+            data-animate="headline"
+          >
+            5 factors that determine <span class="italic-accent">your mural price.</span>
+          </h2>
+          <p class="font-body text-soft-gray mt-6" style="font-size: var(--text-fluid-lg); line-height: 1.55;" data-animate="fade" data-animate-delay="1">
             Surface, location, and access modifiers are additive, not multiplicative, and capped at 35 percent combined.
           </p>
         </div>
@@ -595,16 +615,21 @@ const faqItems = [
     <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
 
-        <h2
-          class="font-heading text-titanium-white"
-          style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
-          data-animate="headline"
-        >
-          What a project like yours might cost.
-        </h2>
-
-        <div class="mt-8 max-w-3xl mx-auto">
-          <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-base); line-height: var(--leading-relaxed);">
+        <div class="max-w-3xl">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 05</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Example projects
+          </p>
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
+            data-animate="headline"
+          >
+            What a project like yours <span class="italic-accent">might cost.</span>
+          </h2>
+          <p class="font-body text-soft-gray mt-6" style="font-size: var(--text-fluid-lg); line-height: 1.55;" data-animate="fade" data-animate-delay="1">
             These examples illustrate common project types across all four pricing tiers. Use them to get a sense of where your project might land. All examples include volume discount where applicable.
           </p>
         </div>
@@ -752,6 +777,66 @@ const faqItems = [
       </div>
     </section>
 
+    <!-- ─── TESTIMONIALS ─────────────────────────────────── -->
+    {/* PLACEHOLDER — Spencer to update all quotes, names, businesses */}
+    <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray bg-midnight-graphite">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl mb-12 lg:mb-16">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 07</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            What clients say
+          </p>
+          <h2
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-4xl); line-height: 1.05; letter-spacing: -0.02em;"
+            data-animate="headline"
+          >
+            Real walls. <span class="italic-accent">Real businesses.</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" data-animate="fade">
+          {[
+            {
+              quote: "[PLACEHOLDER QUOTE] The estimator gave us a number we could actually plan around. Spencer walked the wall, showed us the render, and what he painted is exactly what we saw in the mockup. Our customers stop on the sidewalk now.",
+              name: "[Client Name]",
+              role: "[Title, Business Name]",
+              location: "[Neighborhood, Richmond]",
+            },
+            {
+              quote: "[PLACEHOLDER QUOTE] We got three quotes. Two were vinyl wraps pretending to be art. Spencer was the only one who asked about the story behind the building. The finished mural is the first thing people photograph.",
+              name: "[Client Name]",
+              role: "[Title, Business Name]",
+              location: "[Neighborhood, Richmond]",
+            },
+            {
+              quote: "[PLACEHOLDER QUOTE] No surprises on the invoice. The price we saw on the estimator was the price we paid. Timeline held. Materials were exactly what he said. That's rare.",
+              name: "[Client Name]",
+              role: "[Title, Business Name]",
+              location: "[Neighborhood, Richmond]",
+            },
+          ].map((t) => (
+            <figure class="testimonial-card relative p-8 lg:p-10 border border-slate-gray bg-bone-black flex flex-col">
+              <span aria-hidden="true" class="absolute top-4 left-6 font-heading italic text-[var(--color-editorial-accent)]" style="font-size: 48px; line-height: 1;">&ldquo;</span>
+              <blockquote class="relative z-10 pt-6">
+                <p class="font-body text-titanium-white" style="font-size: var(--text-fluid-lg); line-height: 1.5;">
+                  {t.quote}
+                </p>
+              </blockquote>
+              <figcaption class="mt-auto pt-8">
+                <div class="w-8 h-px bg-slate-gray mb-4"></div>
+                <p class="font-heading text-titanium-white" style="font-size: var(--text-fluid-base); line-height: 1.3;">{t.name}</p>
+                <p class="font-mono uppercase text-smoke-gray mt-1" style="font-size: 10px; letter-spacing: 0.22em;">{t.role}</p>
+                <p class="font-mono uppercase text-smoke-gray mt-1" style="font-size: 10px; letter-spacing: 0.22em;">{t.location}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- ─── V · FAQ ──────────────────────────────────────── -->
     <section class="py-24 lg:py-36 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
@@ -798,19 +883,57 @@ const faqItems = [
       { title: 'Hand-Painted Signs', href: '/hand-painted-signs', description: 'All hand-painted sign services.' },
     ]} />
 
+    {/* PLACEHOLDER — Spencer to update headline, description, trust line */}
     <CTABlock
+      backgroundImage="/images/content-design/trolley-full.jpg"
       headline="Let's figure out what belongs on your wall."
       description="Free site visit. You see the design before we start. Richmond, VA and surrounding areas."
       primaryHref="/contact"
       primaryLabel="Schedule Your Free Discovery Session"
-      secondaryHref="/murals"
-      secondaryLabel="See Our Work"
+      secondaryHref="#estimator"
+      secondaryLabel="Run the Estimator"
+      trustLine="[ Free site visit ] · [ Render-to-reality mockup ] · [ Richmond, VA ]"
     />
   </main>
   <Footer />
 </BaseLayout>
 
 <style>
+  /* ── Hero scroll-to-estimator CTA ── */
+  .estimator-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.5rem 0.9rem 1.75rem;
+    background: var(--color-editorial-accent);
+    color: var(--color-bone-black);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid var(--color-editorial-accent);
+    transition: background 200ms ease, transform 200ms ease, color 200ms ease;
+    min-height: 48px;
+  }
+  .estimator-hero-cta:hover,
+  .estimator-hero-cta:focus-visible {
+    background: var(--color-titanium-white);
+    color: var(--color-bone-black);
+    border-color: var(--color-titanium-white);
+  }
+  .estimator-hero-cta:hover .estimator-hero-cta-arrow,
+  .estimator-hero-cta:focus-visible .estimator-hero-cta-arrow {
+    transform: translateY(3px);
+  }
+  .estimator-hero-cta-arrow {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 300ms ease;
+  }
+
   /* ── FAQ accordion ── */
   .faq-summary::-webkit-details-marker { display: none; }
   .faq-summary { list-style: none; }
@@ -870,7 +993,7 @@ const faqItems = [
 
   /* ── Email validation error state ── */
   .email-invalid {
-    border-color: var(--color-pyrrole-red, #c00) !important;
+    border-color: var(--color-pyrrole-red) !important;
   }
 
   /* ── Reduced motion ── */
@@ -1314,49 +1437,44 @@ const faqItems = [
     if (formError) formError.classList.add('hidden');
   }
 
-  leadForm?.addEventListener('submit', async (e) => {
+  leadForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     hideFormError();
 
-    // Validate email before submit
     if (!validateEmail()) {
       emailInput?.focus();
       return;
     }
 
-    const submitBtn = $('lead-submit') as HTMLButtonElement;
-    if (!submitBtn) return;
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    leadForm.setAttribute('aria-busy', 'true');
-
-    try {
-      const response = await fetch('https://formspree.io/f/xpwrzqkl', {
-        method: 'POST',
-        body: new FormData(leadForm),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      leadForm.removeAttribute('aria-busy');
-
-      if (response.ok) {
-        leadCapture.classList.add('hidden');
-        thankYou.classList.remove('hidden');
-        thankYou.classList.add('fade-in');
-        // Move focus to the thank-you message so screen readers announce it
-        thankYou.focus();
-      } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Get My Planning Guide';
-        showFormError();
-      }
-    } catch {
-      leadForm.removeAttribute('aria-busy');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Get My Planning Guide';
-      showFormError();
+    const labels: Record<string, string> = {
+      name: 'Name',
+      email: 'Email',
+      estimated_low: 'Estimated low',
+      estimated_high: 'Estimated high',
+      wall_sqft: 'Wall sqft',
+      wall_width: 'Wall width',
+      wall_height: 'Wall height',
+      surface: 'Surface',
+      location: 'Location',
+      complexity: 'Complexity',
+      access: 'Access',
+    };
+    const data = new FormData(leadForm);
+    const lines: string[] = [];
+    for (const [key, value] of data.entries()) {
+      if (key === '_gotcha' || key === '_subject') continue;
+      if (value instanceof File) continue;
+      const v = String(value).trim();
+      if (!v) continue;
+      lines.push(`${labels[key] || key}: ${v}`);
     }
+    const body = lines.join('\n');
+    const subject = 'Mural Cost Estimator Lead';
+    window.location.href = `mailto:hello@untitledmixedmedia.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    leadCapture.classList.add('hidden');
+    thankYou.classList.remove('hidden');
+    thankYou.classList.add('fade-in');
+    thankYou.focus();
   });
 
   // ── Initialize: run calculation with defaults ──

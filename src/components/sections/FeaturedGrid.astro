@@ -1,108 +1,184 @@
 ---
 import { getCollection } from 'astro:content';
+import SectionLabel from '../SectionLabel.astro';
 
 const projects = (await getCollection('projects'))
   .filter((p) => p.data.featured)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 5);
+
+const hero = projects.slice(0, 2);
+const rest = projects.slice(2, 5);
 ---
 
-<section class="pt-24 lg:pt-32 pb-4">
+<section class="featured-c">
   <h2 class="sr-only">Selected Work</h2>
-  <!-- Section Label -->
-  <div class="mx-auto max-w-7xl px-6 lg:px-12 flex items-baseline justify-between mb-6 pb-4 border-b border-slate-gray">
-    <p
-      class="font-mono text-soft-gray uppercase"
-      aria-hidden="true"
-      style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-    >
-      Selected Work
-    </p>
-    <a
-      href="/murals"
-      class="font-mono text-soft-gray uppercase hover:text-titanium-white transition-colors"
-      style="font-size: var(--text-fluid-xs);"
-    >
-      View all <span aria-hidden="true">&rarr;</span>
-    </a>
-  </div>
+  <div class="featured-c-inner">
+    <SectionLabel num="01" name="Selected Work" action="View all →" actionHref="/murals" />
 
-  <!-- Asymmetric Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-1">
-    {projects.map((project, i) => {
-      const spans = [
-        'lg:col-span-7 lg:row-span-2',
-        'lg:col-span-5',
-        'lg:col-span-5',
-        'lg:col-span-5 lg:row-span-2',
-        'lg:col-span-7',
-      ];
-      const aspects = [
-        'aspect-[16/10]',
-        'aspect-[4/3]',
-        'aspect-[4/3]',
-        'aspect-[3/4]',
-        'aspect-[16/9]',
-      ];
-      const span = spans[i % spans.length];
-      const aspect = aspects[i % aspects.length];
+    {hero.length > 0 && (
+      <div class="featured-c-row featured-c-row--hero">
+        {hero.map((project, i) => {
+          const num = String(i + 1).padStart(2, '0');
+          return (
+            <a href={`/work/${project.id}`} class="featured-c-tile" data-animate="scale" data-animate-delay={String(i + 1)}>
+              <div class="featured-c-image">
+                <img
+                  src={project.data.cover}
+                  alt={project.data.title}
+                  width="1200"
+                  height="825"
+                  decoding="async"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+              <div class="featured-c-cap">
+                <div class="featured-c-cap-left">
+                  <p class="featured-c-cap-meta">&#8470; {num}{project.data.location && <> &middot; {project.data.location}</>}</p>
+                  <h3 class="featured-c-cap-title">{project.data.title}</h3>
+                  {project.data.materials && <p class="featured-c-cap-medium">{project.data.materials}</p>}
+                </div>
+                <span class="featured-c-cap-view">View &rarr;</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    )}
 
-      return (
-        <a
-          href={`/work/${project.id}`}
-          class={`group relative overflow-hidden block ${span}`}
-          data-animate="scale"
-          data-animate-delay={String(Math.min(i + 1, 5))}
-        >
-          <div class={`w-full h-full ${aspect}`}>
-            <img
-              src={project.data.cover}
-              alt={project.data.title}
-              width="1200"
-              height="900"
-              decoding="async"
-              class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              loading={i === 0 ? 'eager' : 'lazy'}
-            />
-          </div>
-          <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-bone-black/0 group-hover:bg-bone-black/60 group-focus-within:bg-bone-black/60 transition-colors duration-300 flex flex-col justify-end p-6 lg:p-8">
-            <div class="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 transition-[transform,opacity] duration-300">
-              <h3
-                class="font-heading text-titanium-white mb-1"
-                style="font-size: var(--text-fluid-xl);"
-              >
-                {project.data.title}
-              </h3>
-              {project.data.location && (
-                <p
-                  class="font-mono text-soft-gray uppercase"
-                  style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-                >
-                  {project.data.location}
-                </p>
-              )}
-            </div>
-          </div>
-          <!-- Mobile: Always-visible caption -->
-          <div class="lg:hidden p-4">
-            <h3
-              class="font-heading text-titanium-white mb-1"
-              style="font-size: var(--text-fluid-lg);"
-            >
-              {project.data.title}
-            </h3>
-            {project.data.location && (
-              <p
-                class="font-mono text-smoke-gray uppercase"
-                style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-              >
-                {project.data.location}
-              </p>
-            )}
-          </div>
-        </a>
-      );
-    })}
+    {rest.length > 0 && (
+      <div class="featured-c-row featured-c-row--rest">
+        {rest.map((project, i) => {
+          const num = String(i + 3).padStart(2, '0');
+          return (
+            <a href={`/work/${project.id}`} class="featured-c-tile" data-animate="scale" data-animate-delay={String(i + 3)}>
+              <div class="featured-c-image featured-c-image--portrait">
+                <img
+                  src={project.data.cover}
+                  alt={project.data.title}
+                  width="600"
+                  height="750"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </div>
+              <div class="featured-c-cap">
+                <div class="featured-c-cap-left">
+                  <p class="featured-c-cap-meta">&#8470; {num}{project.data.location && <> &middot; {project.data.location}</>}</p>
+                  <h3 class="featured-c-cap-title featured-c-cap-title--sm">{project.data.title}</h3>
+                  {project.data.materials && <p class="featured-c-cap-medium">{project.data.materials}</p>}
+                </div>
+                <span class="featured-c-cap-view">View &rarr;</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    )}
   </div>
 </section>
+
+<style>
+  .featured-c {
+    padding-top: clamp(4rem, 8vw, 8rem);
+    padding-bottom: clamp(4rem, 8vw, 8rem);
+    padding-inline: clamp(1.5rem, 3vw, 3rem);
+    background: var(--color-bone-black);
+  }
+  .featured-c-inner {
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+
+  .featured-c-row {
+    display: grid;
+    gap: clamp(1.5rem, 2.5vw, 2rem);
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+  }
+  .featured-c-row--hero { grid-template-columns: 1fr; }
+  .featured-c-row--rest { grid-template-columns: 1fr; }
+
+  @media (min-width: 768px) {
+    .featured-c-row--hero { grid-template-columns: 7fr 5fr; }
+    .featured-c-row--rest { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  }
+
+  .featured-c-tile {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .featured-c-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-midnight-graphite, #0a0d12);
+    aspect-ratio: 16 / 11;
+  }
+  .featured-c-image--portrait { aspect-ratio: 4 / 5; }
+
+  .featured-c-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms var(--ease-out, ease-out);
+    filter: brightness(0.92) contrast(1.04);
+  }
+  .featured-c-tile:hover .featured-c-image img,
+  .featured-c-tile:focus-visible .featured-c-image img {
+    transform: scale(1.03);
+  }
+
+  .featured-c-cap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-6);
+    padding-top: var(--space-5);
+  }
+  .featured-c-cap-left { min-width: 0; }
+  .featured-c-cap-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(238,236,233,0.55);
+    margin-bottom: var(--space-2);
+  }
+  .featured-c-cap-title {
+    font-family: var(--font-heading);
+    color: var(--color-titanium-white);
+    font-size: clamp(1.375rem, 1.8vw, 1.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    margin: 0 0 var(--space-2);
+  }
+  .featured-c-cap-title--sm {
+    font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  }
+  .featured-c-cap-medium {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(238,236,233,0.6);
+    margin: 0;
+  }
+  .featured-c-cap-view {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(238,236,233,0.7);
+    white-space: nowrap;
+    margin-top: 2px;
+    transition: color 200ms var(--ease-out, ease-out), transform 200ms var(--ease-out, ease-out);
+  }
+  .featured-c-tile:hover .featured-c-cap-view,
+  .featured-c-tile:focus-visible .featured-c-cap-view {
+    color: var(--color-editorial-accent);
+    transform: translateX(4px);
+  }
+</style>

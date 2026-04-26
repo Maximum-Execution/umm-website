@@ -6,6 +6,9 @@ import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import Button from '../../components/Button.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import WorkCaption from '../../components/WorkCaption.astro';
+import PageHero from '../../components/patterns/PageHero.astro';
 
 const projects = (await getCollection('projects'))
   .filter(p => p.data.featured)
@@ -30,25 +33,19 @@ const projects = (await getCollection('projects'))
     </div>
 
     <!-- Hero headline -->
-    <section class="px-6 lg:px-12 max-w-7xl mx-auto pt-36 lg:pt-44 pb-16">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="font-heading text-titanium-white text-balance mb-6" style="font-size: var(--text-fluid-4xl);" data-animate>
-          Hand-painted murals and signs in Richmond, Virginia.
-        </h1>
-        <p class="font-body text-soft-gray max-w-2xl mx-auto" style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);" data-animate data-animate-delay="1">
-          Every project below started with questions about the building, the business, and what the people who walk past it should notice.
-        </p>
-      </div>
-    </section>
+    <PageHero
+      sectionNum="01"
+      eyebrow="Selected work / 2019\u20132026"
+      headline="Hand-painted murals and signs in Richmond, Virginia."
+      subline="Every project below started with questions about the building, the business, and what the people who walk past it should notice."
+      hudRight="Portfolio index"
+      hudFootLeft="Selected commissions / Richmond, VA"
+    />
 
     <!-- Featured Projects -->
     <section class="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
       <h2 class="sr-only">Featured Projects</h2>
-      <div class="flex items-center justify-between mb-8">
-        <p class="font-mono text-soft-gray uppercase" aria-hidden="true" style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);">
-          Featured Projects
-        </p>
-      </div>
+      <SectionLabel num="01" name="Featured Projects" />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, i) => (
           <a
@@ -68,12 +65,11 @@ const projects = (await getCollection('projects'))
             />
             <div class="absolute inset-0 bg-gradient-to-t from-bone-black/80 via-bone-black/20 to-transparent" />
             <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-              <h3 class="font-heading text-titanium-white mb-1" style="font-size: var(--text-fluid-xl);">
-                {project.data.title}
-              </h3>
-              <p class="font-body text-soft-gray" style="font-size: var(--text-fluid-sm);">
-                {project.data.location}
-              </p>
+              <WorkCaption
+                title={project.data.title}
+                place={project.data.location}
+                medium={project.data.materials}
+              />
             </div>
           </a>
         ))}

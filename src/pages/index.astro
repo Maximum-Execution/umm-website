@@ -14,6 +14,7 @@ import JournalCard from '../components/JournalCard.astro';
 import CTABlock from '../components/CTABlock.astro';
 import Button from '../components/Button.astro';
 import ArchitecturalReveal from '../components/patterns/ArchitecturalReveal.astro';
+import SectionLabel from '../components/SectionLabel.astro';
 import { getCollection } from 'astro:content';
 
 const journalPosts = (await getCollection('journal'))
@@ -55,47 +56,272 @@ const journalPosts = (await getCollection('journal'))
     <ServiceShowcase />
 
     {/* 9. Brand Mark */}
-    <section class="bg-midnight-graphite border-y border-slate-gray py-[var(--spacing-section-mobile)] md:py-[var(--spacing-section)] px-6 lg:px-12">
-      <div class="max-w-4xl mx-auto text-center" data-animate="fade">
-        <p class="label-eyebrow mb-4">
-          Starting at $500
-        </p>
-        <h2 class="font-heading text-titanium-white text-2xl mb-4" style="line-height: var(--leading-tight);">
-          Your words, hand-painted on wood. On your wall this week.
-        </h2>
-        <div class="space-y-4 mb-8 max-w-xl mx-auto">
-          <p class="font-body text-soft-gray text-base">
-            Tell me what you want painted: your logo, your name, a phrase that matters to your business. I hand-paint it on a wood panel up to 16 square feet and finish it however you want. Brand new and clean. A little worn in. Or aged like it's been on that wall for 30 years. You pick.
-          </p>
-          <p class="font-body text-soft-gray text-base">
-            Your $500 includes the panel, professional installation, a protective topcoat, a touch-up kit with your exact paint, and $500 in credit toward any future mural or sign project. If you don't love the finished piece, I take it home. You owe nothing.
-          </p>
+    <section class="brandmark-c">
+      <div class="brandmark-c-inner">
+        <div class="brandmark-c-header">
+          <SectionLabel num="09" name="The Brand Mark" />
         </div>
-        <Button href="/brand-mark" variant="primary" size="default">
-          Claim Your Brand Mark
-        </Button>
+        <div class="brandmark-c-grid">
+          <div class="brandmark-c-panel" aria-hidden="true" data-animate="scale">
+            <div class="brandmark-c-panel-grain"></div>
+            <div class="brandmark-c-panel-frame">
+              <div class="brandmark-c-panel-mark">Untitled</div>
+              <div class="brandmark-c-panel-hair"></div>
+              <div class="brandmark-c-panel-sub">est. MMXIX</div>
+            </div>
+            <div class="brandmark-c-panel-corner brandmark-c-panel-corner--tl"></div>
+            <div class="brandmark-c-panel-corner brandmark-c-panel-corner--tr"></div>
+            <div class="brandmark-c-panel-corner brandmark-c-panel-corner--bl"></div>
+            <div class="brandmark-c-panel-corner brandmark-c-panel-corner--br"></div>
+          </div>
+          <div class="brandmark-c-body" data-animate="fade" data-animate-delay="1">
+            <p class="brandmark-c-eyebrow">
+              <span class="brandmark-c-eyebrow-dot" aria-hidden="true"></span>
+              Starting at $500 &middot; Hand-painted on wood
+            </p>
+            <h2 class="brandmark-c-title">
+              Your words, hand-painted on wood. <span class="italic-accent">On your wall this week.</span>
+            </h2>
+            <div class="brandmark-c-copy">
+              <p class="brandmark-c-lede">Tell me what you want painted: your logo, your name, a phrase that matters to your business. I hand-paint it on a wood panel up to 16 square feet and finish it however you want. Brand new and clean. A little worn in. Or aged like it's been on that wall for 30 years. You pick.</p>
+              <p>Your $500 includes the panel, professional installation, a protective topcoat, a touch-up kit with your exact paint, and $500 in credit toward any future mural or sign project. If you don't love the finished piece, I take it home. You owe nothing.</p>
+            </div>
+            <div class="brandmark-c-cta">
+              <Button href="/brand-mark" variant="primary" size="default" class="plausible-event-name=CtaClick plausible-event-position=HomepageBrandMark">
+                Claim Your Brand Mark
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+    <style is:global>
+      .brandmark-c {
+        background: var(--color-bone-black);
+        padding-block: clamp(5rem, 9vw, 9rem);
+        padding-inline: clamp(1.5rem, 3vw, 3rem);
+        border-top: 1px solid rgba(238,236,233,0.08);
+        border-bottom: 1px solid rgba(238,236,233,0.08);
+        position: relative;
+      }
+      .brandmark-c::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 60% 50% at 30% 40%, rgba(201, 168, 120, 0.06), transparent 70%);
+        pointer-events: none;
+      }
+      .brandmark-c-inner {
+        max-width: 1400px;
+        margin-inline: auto;
+        position: relative;
+      }
+      .brandmark-c-header { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+
+      .brandmark-c-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(2.5rem, 5vw, 4.5rem);
+        align-items: center;
+      }
+      @media (min-width: 900px) {
+        .brandmark-c-grid { grid-template-columns: 1.05fr 1fr; }
+      }
+
+      .brandmark-c-panel {
+        position: relative;
+        aspect-ratio: 5 / 4;
+        background:
+          radial-gradient(ellipse 80% 60% at 50% 50%, #D4B289 0%, #B8925E 70%, #9C7A4A 100%);
+        overflow: hidden;
+        box-shadow:
+          0 30px 60px -15px rgba(0,0,0,0.65),
+          0 10px 20px rgba(0,0,0,0.3),
+          inset 0 0 0 1px rgba(0,0,0,0.18),
+          inset 0 2px 0 rgba(255,255,255,0.15);
+      }
+      .brandmark-c-panel-grain {
+        position: absolute;
+        inset: 0;
+        background:
+          repeating-linear-gradient(
+            92deg,
+            rgba(120, 75, 35, 0.0) 0px,
+            rgba(120, 75, 35, 0.28) 2px,
+            rgba(184, 130, 70, 0.0) 5px,
+            rgba(90, 55, 25, 0.22) 9px,
+            rgba(120, 75, 35, 0.0) 14px
+          ),
+          repeating-linear-gradient(
+            2deg,
+            transparent 0px,
+            rgba(60, 35, 15, 0.05) 40px,
+            transparent 80px
+          );
+        mix-blend-mode: multiply;
+        pointer-events: none;
+      }
+      .brandmark-c-panel-frame {
+        position: absolute;
+        inset: clamp(1.5rem, 4vw, 3rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+        border: 1px solid rgba(43, 26, 11, 0.35);
+        padding: clamp(1.5rem, 3vw, 2.5rem);
+      }
+      .brandmark-c-panel-mark {
+        font-family: var(--font-blackletter);
+        font-size: clamp(3rem, 7vw, 6.5rem);
+        line-height: 0.95;
+        color: #2b1a0b;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.22);
+        letter-spacing: 0.01em;
+        text-align: center;
+      }
+      .brandmark-c-panel-hair {
+        width: clamp(40px, 6vw, 72px);
+        height: 1px;
+        background: rgba(43, 26, 11, 0.55);
+      }
+      .brandmark-c-panel-sub {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+        color: rgba(43, 26, 11, 0.78);
+        letter-spacing: 0.08em;
+      }
+      .brandmark-c-panel-corner {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-color: rgba(43, 26, 11, 0.5);
+        border-style: solid;
+        border-width: 0;
+      }
+      .brandmark-c-panel-corner--tl { top: clamp(0.75rem, 2vw, 1.25rem); left: clamp(0.75rem, 2vw, 1.25rem); border-top-width: 1px; border-left-width: 1px; }
+      .brandmark-c-panel-corner--tr { top: clamp(0.75rem, 2vw, 1.25rem); right: clamp(0.75rem, 2vw, 1.25rem); border-top-width: 1px; border-right-width: 1px; }
+      .brandmark-c-panel-corner--bl { bottom: clamp(0.75rem, 2vw, 1.25rem); left: clamp(0.75rem, 2vw, 1.25rem); border-bottom-width: 1px; border-left-width: 1px; }
+      .brandmark-c-panel-corner--br { bottom: clamp(0.75rem, 2vw, 1.25rem); right: clamp(0.75rem, 2vw, 1.25rem); border-bottom-width: 1px; border-right-width: 1px; }
+
+      .brandmark-c-body { max-width: 58ch; }
+      .brandmark-c-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(238,236,233,0.78);
+        margin-bottom: var(--space-6);
+        padding: 6px 14px 6px 10px;
+        border: 1px solid rgba(238,236,233,0.14);
+        border-radius: 999px;
+        background: rgba(238,236,233,0.03);
+      }
+      .brandmark-c-eyebrow-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--color-editorial-accent);
+        box-shadow: 0 0 0 3px rgba(228, 26, 28, 0.2);
+      }
+      .brandmark-c-title {
+        font-family: var(--font-heading);
+        color: var(--color-titanium-white);
+        font-size: clamp(2.25rem, 4.5vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        font-weight: 400;
+        margin-bottom: var(--space-6);
+        text-wrap: balance;
+      }
+      .brandmark-c-title .italic-accent {
+        font-style: italic;
+        font-weight: 400;
+        color: var(--color-editorial-accent);
+      }
+      .brandmark-c-copy {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+        padding-left: var(--space-5);
+        border-left: 1px solid rgba(238,236,233,0.12);
+      }
+      .brandmark-c-copy p {
+        font-family: var(--font-body);
+        color: rgba(238,236,233,0.74);
+        font-size: var(--text-fluid-base);
+        line-height: 1.6;
+        margin: 0;
+      }
+      .brandmark-c-lede {
+        font-style: italic;
+        color: rgba(238,236,233,0.88) !important;
+        font-size: var(--text-fluid-lg) !important;
+      }
+
+      .brandmark-c-specs {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 var(--space-10);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        border-top: 1px solid rgba(238,236,233,0.12);
+      }
+      @media (min-width: 640px) {
+        .brandmark-c-specs { grid-template-columns: 1fr 1fr; }
+      }
+      .brandmark-c-specs li {
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-3);
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid rgba(238,236,233,0.12);
+        font-family: var(--font-body);
+        font-size: 14px;
+        line-height: 1.45;
+        color: rgba(238,236,233,0.82);
+      }
+      @media (min-width: 640px) {
+        .brandmark-c-specs li:nth-child(odd) { padding-right: var(--space-4); }
+        .brandmark-c-specs li:nth-child(even) { padding-left: var(--space-4); border-left: 1px solid rgba(238,236,233,0.12); }
+      }
+      .brandmark-c-specs li span {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        color: var(--color-editorial-accent);
+        flex-shrink: 0;
+      }
+
+      .brandmark-c-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+      }
+      .brandmark-c-guarantee {
+        font-family: var(--font-body);
+        font-style: italic;
+        font-size: 13px;
+        color: rgba(238,236,233,0.55);
+        line-height: 1.5;
+      }
+    </style>
 
     {/* 10. Journal */}
     {journalPosts.length > 0 && (
       <section class="py-24 lg:py-32 px-6 lg:px-12 border-t border-slate-gray">
         <div class="max-w-7xl mx-auto">
-          <div class="flex items-baseline justify-between mb-12">
-            <p
-              class="font-mono text-soft-gray uppercase"
-              style="font-size: var(--text-fluid-xs); letter-spacing: var(--tracking-wider);"
-            >
-              Journal
-            </p>
-            <a
-              href="/journal"
-              class="font-mono text-soft-gray uppercase hover:text-titanium-white transition-colors"
-              style="font-size: var(--text-fluid-xs);"
-            >
-              View all <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
+          <SectionLabel num="08" name="Journal" action="View all →" actionHref="/journal" />
+
           <div class="grid md:grid-cols-3 gap-8">
             {journalPosts.map((post, i) => (
               <div data-animate="fade" data-animate-delay={String(i + 1)}>

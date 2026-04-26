@@ -18,50 +18,30 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative min-h-dvh flex items-end overflow-hidden">
+<section class="hero-c relative w-full overflow-hidden">
   <Image
     src={heroPoster}
     alt="Hand-painted mural and sign work by Untitled Mixed Media in Richmond, Virginia"
-    class="absolute inset-0 w-full h-full object-cover"
+    class="hero-c-image"
     loading="eager"
     fetchpriority="high"
   />
 
-  <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-bone-black via-bone-black/60 to-bone-black/10" aria-hidden="true"></div>
+  <div class="hero-c-grade" aria-hidden="true"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 w-full px-6 lg:px-12 pb-24 lg:pb-32">
-    <div class="max-w-3xl mx-auto">
-      <p
-        class="label-eyebrow mb-6 eyebrow-label"
-        data-animate
-      >
-        Richmond, Virginia
-      </p>
-      <h1
-        class="font-blackletter text-titanium-white text-5xl mb-6"
-        style="line-height: var(--leading-solid); letter-spacing: 0;"
-        data-animate
-        data-animate-delay="1"
-      >
-        {headline}
-      </h1>
+  <!-- Body -->
+  <div class="hero-c-body">
+    <div class="hero-c-body-inner">
+      <div class="hero-c-rule" aria-hidden="true"></div>
+      <p class="hero-c-eyebrow">Untitled Mixed Media &nbsp;&middot;&nbsp; Est. 2019</p>
+      <h1 class="hero-c-headline" data-animate>{headline}</h1>
       {subline && (
-        <div
-          class="mb-10 space-y-4"
-          data-animate
-          data-animate-delay="2"
-        >
-          <p class="font-body text-soft-gray text-lg">
-            {subline}
-          </p>
-          <p class="font-body text-soft-gray text-lg">
-            Your building, your story, your business.
-          </p>
+        <div class="hero-c-sub" data-animate data-animate-delay="2">
+          <p>{subline}</p>
+          <p>Your building, your story, your business.</p>
         </div>
       )}
-      <div class="flex flex-wrap gap-4" data-animate data-animate-delay="3">
+      <div class="hero-c-ctas" data-animate data-animate-delay="3">
         <Button
           href={ctaHref}
           variant="primary"
@@ -72,26 +52,139 @@ const {
         >
           {ctaLabel}
         </Button>
-        <Button
-          href="/mural-cost-estimator"
-          variant="secondary"
-          size="large"
-        >
+        <Button href="/mural-cost-estimator" variant="secondary" size="large">
           Get a Price Estimate
         </Button>
       </div>
-      <p
-        class="font-body text-soft-gray italic text-sm mt-6"
-        data-animate
-        data-animate-delay="4"
-      >
+      <p class="hero-c-trust" data-animate data-animate-delay="4">
         You don't need a finished concept to get started.
       </p>
     </div>
   </div>
+
+  <!-- Bottom HUD -->
+  <div class="hero-c-hud hero-c-hud--bottom">
+    <span class="hero-c-hud-item">Portfolio photograph &nbsp;/&nbsp; hand-painted wall</span>
+    <span class="hero-c-hud-item hero-c-hud-item--right">Scroll to enter &nbsp;&darr;</span>
+  </div>
 </section>
 
 <style>
+  .hero-c {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(1rem, 2.5vw, 3rem);
+    padding-top: calc(var(--nav-height) + clamp(1rem, 2.5vw, 2.5rem));
+    padding-bottom: clamp(1rem, 2.5vw, 3rem);
+    background: var(--color-bone-black);
+  }
+  .hero-c-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5) contrast(1.05);
+  }
+  .hero-c-grade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(0,2,5,0.55) 0%, rgba(0,2,5,0.2) 35%, rgba(0,2,5,0.85) 100%);
+    pointer-events: none;
+  }
+
+  .hero-c-hud {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding-block: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: rgba(238, 236, 233, 0.72);
+    border-block: 1px solid rgba(238, 236, 233, 0.14);
+  }
+  .hero-c-hud--top { order: -1; margin-bottom: auto; }
+  .hero-c-hud--bottom { grid-template-columns: 1fr 1fr; margin-top: var(--space-4); }
+  .hero-c-hud-item { display: inline-flex; align-items: center; gap: var(--space-2); }
+  .hero-c-hud-item--center { justify-self: center; }
+  .hero-c-hud-item--right { justify-self: end; text-align: right; }
+  .hero-c-hud-dot {
+    width: 7px; height: 7px; border-radius: 999px;
+    background: var(--color-editorial-accent);
+    box-shadow: 0 0 0 3px rgba(228, 26, 28, 0.18);
+  }
+
+  .hero-c-body { position: relative; z-index: 2; }
+  .hero-c-body-inner { max-width: 48rem; margin-inline: auto; width: 100%; }
+
+  .hero-c-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--color-editorial-accent);
+    margin-bottom: var(--space-3);
+  }
+  .hero-c-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: rgba(238, 236, 233, 0.7);
+    margin-bottom: clamp(var(--space-4), 2vw, var(--space-8));
+  }
+  .hero-c-headline {
+    font-family: var(--font-heading);
+    color: var(--color-titanium-white);
+    font-size: var(--text-fluid-5xl);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-bottom: clamp(var(--space-5), 2.5vw, var(--space-10));
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+  .hero-c-sub {
+    margin-bottom: clamp(var(--space-5), 2.5vw, var(--space-10));
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .hero-c-sub p {
+    font-family: var(--font-body);
+    font-size: var(--text-fluid-lg);
+    line-height: 1.55;
+    color: rgba(238, 236, 233, 0.82);
+  }
+  .hero-c-ctas { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .hero-c-trust {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: var(--text-fluid-sm);
+    color: rgba(238, 236, 233, 0.6);
+    margin-top: var(--space-3);
+  }
+
+  @media (max-width: 768px) {
+    .hero-c-hud { grid-template-columns: 1fr; gap: var(--space-2); padding-block: var(--space-3); }
+    .hero-c-hud--bottom { grid-template-columns: 1fr; }
+    .hero-c-hud-item--center,
+    .hero-c-hud-item--right { justify-self: start; text-align: left; }
+    .hero-c-hud--top .hero-c-hud-item--center,
+    .hero-c-hud--top .hero-c-hud-item--right { display: none; }
+    .hero-c-hud--bottom .hero-c-hud-item:not(.hero-c-hud-item--right) { display: none; }
+    .hero-c-sub p + p { display: none; }
+    .hero-c-trust { display: none; }
+    .hero-c-headline { margin-bottom: var(--space-4); }
+    .hero-c-sub { margin-bottom: var(--space-4); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     video { display: none; }
   }

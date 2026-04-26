@@ -52,8 +52,9 @@ const steps = [
 ---
 
 <BaseLayout
-  title="Ghost Sign Restoration in Richmond, VA | Untitled Mixed Media"
+  title="Ghost Sign Restoration in Richmond | Save Fading History"
   description="Restoring faded ghost signs and historic hand-painted lettering in Richmond, Virginia. Century-old advertisements brought back to life by hand."
+  noindex={true}
   faqItems={faqItems}
   breadcrumbItems={[
     { name: 'Home', url: '/' },
@@ -70,27 +71,30 @@ const steps = [
 
     <!-- ─── I · HERO ─────────────────────────────────────── -->
     <!-- Grid: H1 wide (col-span-11), subhead offset right (col-span-7/col-start-5) -->
-    <section class="pt-36 lg:pt-44 pb-24 lg:pb-32 px-6 lg:px-12 border-b border-slate-gray">
+    <section class="pt-32 lg:pt-36 pb-16 lg:pb-20 px-6 lg:px-12 border-b border-slate-gray">
       <div class="max-w-7xl mx-auto">
         <Breadcrumb items={[
           { label: 'Home', href: '/' },
           { label: 'Sign Restoration' },
         ]} />
 
-        <div class="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
-          <div class="lg:col-span-11">
-            <h1
-              class="font-heading text-titanium-white"
-              style="font-size: var(--text-fluid-5xl); line-height: 0.95; letter-spacing: var(--tracking-tight);"
-              data-animate="headline"
-            >
-              Your building has a history painted on it. Don&rsquo;t let it disappear.
-            </h1>
-          </div>
+        <div class="mt-6 lg:mt-8 max-w-3xl mx-auto">
+          <div class="w-12 h-0.5 bg-[var(--color-editorial-accent)] mb-4"></div>
+          <p class="font-mono uppercase mb-5 lg:mb-6" style="font-size: 11px; letter-spacing: 0.24em; color: rgba(238,236,233,0.72);">
+            <span style="color: var(--color-editorial-accent); font-weight: 600;">&sect; 01</span>
+            <span style="color: rgba(238,236,233,0.45); margin: 0 8px;">&middot;</span>
+            Ghost Sign Restoration
+          </p>
+          <h1
+            class="font-heading text-titanium-white"
+            style="font-size: var(--text-fluid-5xl); line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; text-wrap: balance; max-width: 22ch;"
+            data-animate="headline"
+          >
+            Your building has a history painted on it. <span class="italic-accent">Don&rsquo;t let it disappear.</span>
+          </h1>
         </div>
 
-        <div class="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-x-8 lg:gap-x-16">
-          <div class="lg:col-span-7 lg:col-start-5 space-y-10">
+        <div class="mt-8 lg:mt-10 max-w-3xl mx-auto space-y-6">
             <p
               class="font-body text-soft-gray"
               style="font-size: var(--text-fluid-lg); line-height: var(--leading-relaxed);"
@@ -115,7 +119,6 @@ const steps = [
                 Not sure if your sign can be saved? <a href="/contact" class="text-titanium-white underline underline-offset-4 hover:text-soft-gray transition-colors duration-200">Send me a photograph.</a>
               </p>
             </div>
-          </div>
         </div>
       </div>
     </section>

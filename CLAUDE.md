@@ -115,6 +115,50 @@ Cloudflare Pages auto-deploys from GitHub `main` branch.
 Preview URL: `umm-website.pages.dev`
 Production target: `untitledmixedmedia.com`
 
+## Launch Strategy — Subtract First (2026-04-26)
+
+The site launches with a deliberately small page set. Deferred pages stay in the repo as files but are not served. One deferred page comes back online per month as a content drop. Full design doc: `docs/plans/2026-04-26-subtract-first-launch-design.md`.
+
+### Live pages on launch
+
+`/` · `/murals` · `/hand-painted-signs` · `/brand-mark` · `/brand-mark/claim` · `/work` (+ 3 case studies) · `/contact` · `/mural-cost-estimator` · `/privacy` · `/terms` · `/404`
+
+### Deferred pages (excluded from build, redirected at edge)
+
+| URL | Redirect target | Status |
+|---|---|---|
+| `/sign-restoration` | `/hand-painted-signs` | Deferred |
+| `/about` | `/` | Deferred |
+| `/about/process` | `/` | Deferred |
+| `/about/philosophy` | `/` | Deferred |
+| `/about/insurance-and-licensing` | `/` | Deferred |
+| `/journal` | `/` | Deferred |
+| `/journal/ghost-signs-richmond-va` | `/` | Deferred |
+| `/journal/hand-painted-vs-vinyl` | `/` | Deferred |
+
+Redirects live in `public/_redirects`. Build exclusion is handled by moving deferred pages out of `src/pages/` (or via per-page export, decided at implementation time).
+
+### Re-enable checklist (when bringing a deferred page back live)
+
+1. Move the page file back into `src/pages/` (and its assets if applicable)
+2. Remove that URL's line from `public/_redirects`
+3. Verify all images on the page are production-ready, not placeholders
+4. Verify Spencer's copywriter has approved every text block on the page
+5. Add internal links from kept pages back to it (nav, footer, RelatedPages, contact form select, etc.)
+6. Run `npm run build` and verify clean
+7. Preview on `umm-website.pages.dev` and verify mobile + desktop
+8. Commit and push to `main`. Cloudflare auto-deploys.
+9. Update the table above: status `Deferred` → `Live`
+10. Announce the drop on Instagram + email list + Slack `#untitled-mixed-media`
+
+### Hard rule
+
+**No internal link in a kept page may point to a deferred URL.** If a deferred page is referenced anywhere in `src/pages/` or `src/components/` outside the deferred files themselves, the audit failed. Re-grep before every deploy:
+
+```bash
+grep -rE 'href="(/sign-restoration|/about|/journal)' src/pages src/components
+```
+
 ## Contact
 
 Mailto only: `hello@untitledmixedmedia.com`

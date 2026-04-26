@@ -17,9 +17,8 @@ import ArchitecturalReveal from '../components/patterns/ArchitecturalReveal.astr
 import SectionLabel from '../components/SectionLabel.astro';
 import { getCollection } from 'astro:content';
 
-const journalPosts = (await getCollection('journal'))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+// Journal deferred per subtract-first launch (2026-04-26). Section hidden until /journal returns live.
+const journalPosts: Array<{ id: string; data: { title: string; description: string; date: Date; tags: string[] } }> = [];
 ---
 
 <BaseLayout>

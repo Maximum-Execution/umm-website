@@ -6,3 +6,11 @@
 /hand-painted-signs/sign-restoration/ghost-signs-richmond-va  /journal/ghost-signs-richmond-va      301
 /hand-painted-signs/hand-painted-vs-vinyl                     /journal/hand-painted-vs-vinyl        301
 /services                                                      /work                                 301
+
+# Subtract-first launch: 2026-04-26
+# Deferred pages — files preserved in src/pages-deferred/, not built. Old URLs land on closest live page.
+/sign-restoration       /hand-painted-signs   301
+/about                  /                     301
+/about/*                /                     301
+/journal                /                     301
+/journal/*              /                     301
